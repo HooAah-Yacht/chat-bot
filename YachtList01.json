@@ -1,0 +1,891 @@
+{
+  "database_info": {
+    "name": "세일링 요트 통합 데이터베이스 v2.0",
+    "description": "다양한 출처에서 조사한 20개 세일링 요트 모델 상세 정보",
+    "creation_date": "2025-10-26",
+    "total_yachts": 20,
+    "sources": [
+      "sailboatdata.com",
+      "boat-specs.com",
+      "racing-yachts.com",
+      "farrdesign.com",
+      "jboats.com",
+      "melges.com",
+      "nautor swan",
+      "riggingguru.com"
+    ]
+  },
+  
+  "yachts": [
+    {
+      "yacht_id": "yacht_001",
+      "model_name": "FarEast 28R",
+      "basic_info": {
+        "designer": "Simonis-Voogd Design",
+        "builder": "Far East Boats",
+        "country": "China",
+        "year_first_built": 2018,
+        "yacht_type": "Racing - One Design",
+        "ce_class": "C - Coastal waters",
+        "status": "In production"
+      },
+      "dimensions": {
+        "LOA_m": 9.07,
+        "LOA_ft": 29.76,
+        "LWL_m": 8.53,
+        "LWL_ft": 27.99,
+        "Beam_m": 2.75,
+        "Beam_ft": 9.02,
+        "Draft_m": 1.75,
+        "Draft_ft": 5.74
+      },
+      "weights": {
+        "Displacement_kg": 1300,
+        "Displacement_lb": 2866,
+        "Loaded_displacement_kg": 1993,
+        "Ballast_kg": 600,
+        "Ballast_type": "Lead bulb"
+      },
+      "sail_area": {
+        "Mainsail_m2": 28,
+        "Mainsail_ft2": 301,
+        "Jib_m2": 20,
+        "Jib_ft2": 215,
+        "Spinnaker_m2": 72,
+        "Spinnaker_ft2": 775,
+        "Upwind_total_m2": 48,
+        "Upwind_total_ft2": 517
+      },
+      "rig": {
+        "type": "Fractional Sloop",
+        "mast_height_m": 11.71,
+        "mast_material": "Selden aluminum",
+        "I_m": 10.35,
+        "J_m": 3.3,
+        "P_m": 10.65,
+        "E_m": 3.75
+      },
+      "hull": {
+        "material": "Fiberglass/GRP - Foam sandwich",
+        "construction": "Vacuum infused polyester/foam core",
+        "keel_type": "Lifting T-shaped keel with carbon fin",
+        "rudder": "Spade rudder"
+      },
+      "performance": {
+        "crew_number": 8,
+        "hull_speed_kn": 6.7,
+        "max_speed_kn": 20,
+        "SBP_score": 129,
+        "IRC_rating": 1.050
+      },
+      "deck_hardware": {
+        "winches": "Harken",
+        "blocks": "Harken",
+        "cleats": "Spinlock"
+      },
+      "features": [
+        "ISAF approved One-Design class",
+        "450+ boats sold worldwide",
+        "High speed-to-length ratio",
+        "Easy to launch via ramp",
+        "Competitive in HP30 Class"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_002",
+      "model_name": "Farr 40 One Design",
+      "basic_info": {
+        "design_number": 374,
+        "designer": "Bruce Farr",
+        "builder": "Carroll Marine",
+        "year_first_built": 1997,
+        "yacht_type": "Racing - One Design",
+        "price_usd": 235000,
+        "price_note": "Sails and electronics not included"
+      },
+      "dimensions": {
+        "LOA_m": 12.41,
+        "LOA_ft": 40.72,
+        "LWL_m": 10.75,
+        "LWL_ft": 35.27,
+        "Beam_m": 4.03,
+        "Beam_ft": 13.22,
+        "Draft_m": 2.60,
+        "Draft_ft": 8.53
+      },
+      "weights": {
+        "Displacement_kg": 4945,
+        "Displacement_lb": 10902,
+        "Ballast_kg": 2250,
+        "Ballast_lb": 4960,
+        "Ballast_type": "Lead"
+      },
+      "sail_area": {
+        "total_m2": 102.84,
+        "total_ft2": 1107.0
+      },
+      "rig": {
+        "type": "Fractional Sloop",
+        "mast_material": "Carbon fiber",
+        "I_m": 16.20,
+        "J_m": 4.71,
+        "P_m": 16.70,
+        "E_m": 5.90,
+        "ISP_m": 18.50,
+        "SPL_m": 5.20
+      },
+      "hull": {
+        "material": "Composite - Carbon fiber",
+        "hull_type": "Fin w/bulb & spade rudder"
+      },
+      "engine": {
+        "manufacturer": "Yanmar",
+        "model": "3GMSD30",
+        "type": "Diesel",
+        "fuel_capacity_L": 76,
+        "water_capacity_L": 159
+      },
+      "performance_ratios": {
+        "SA_Displacement": 36.15,
+        "Ballast_Displacement_percent": 45.50,
+        "Displacement_Length": 110.93,
+        "Comfort_Ratio": 14.66,
+        "Capsize_Screening": 2.39,
+        "Hull_Speed_kn": 7.96
+      },
+      "features": [
+        "International One-Design class",
+        "43 World Championships heritage",
+        "Runnerless carbon fiber rig",
+        "Clean deck layout",
+        "Strong resale value protection"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_003",
+      "model_name": "Beneteau 473 (Oceanis 473)",
+      "basic_info": {
+        "designer": "Groupe Finot",
+        "builder": "Beneteau",
+        "country": "France",
+        "yacht_type": "Cruising"
+      },
+      "dimensions": {
+        "LOA_m": 14.50,
+        "LOA_ft": 47.57,
+        "LWL_m": 13.12,
+        "Beam_m": 4.50,
+        "Draft_m": 2.00
+      },
+      "weights": {
+        "Displacement_kg": 12700
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Comfortable cruising yacht",
+        "Spacious interior",
+        "Popular charter boat"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_004",
+      "model_name": "J/24",
+      "basic_info": {
+        "designer": "Rodney S. Johnstone (J/Boats)",
+        "builder": "Tillotson Pearson, J/Boats",
+        "country": "USA",
+        "year_first_built": 1977,
+        "total_built": 5400,
+        "yacht_type": "Racing - One Design"
+      },
+      "dimensions": {
+        "LOA_m": 7.32,
+        "LOA_ft": 24.00,
+        "LWL_m": 6.10,
+        "LWL_ft": 20.00,
+        "Beam_m": 2.71,
+        "Beam_ft": 8.90,
+        "Draft_m": 1.22,
+        "Draft_ft": 4.00
+      },
+      "weights": {
+        "Displacement_kg": 1406,
+        "Displacement_lb": 3100,
+        "Ballast_kg": 431,
+        "Ballast_lb": 950,
+        "Ballast_type": "Lead keel"
+      },
+      "sail_area": {
+        "total_m2": 24.34,
+        "total_ft2": 262.0
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "hull": {
+        "material": "FG balsa cored hull & deck",
+        "hull_type": "Fin w/transom hung rudder"
+      },
+      "performance_ratios": {
+        "SA_Displacement": 19.77,
+        "Ballast_Displacement_percent": 30.65,
+        "Displacement_Length": 172.99,
+        "Comfort_Ratio": 12.29,
+        "Capsize_Screening": 2.44,
+        "Hull_Speed_kn": 5.99
+      },
+      "features": [
+        "World's most popular keelboat class",
+        "5,400+ built worldwide",
+        "Active in 150 fleets across 40+ countries",
+        "Tiller-steered",
+        "Olympic-class heritage"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_005",
+      "model_name": "Laser (ILCA 7 / Standard)",
+      "basic_info": {
+        "designer": "Bruce Kirby & Ian Bruce",
+        "builder": "Laser Performance / ILCA",
+        "year_first_built": 1970,
+        "total_built": 200000,
+        "yacht_type": "One-Design Dinghy",
+        "olympic_class": true
+      },
+      "dimensions": {
+        "LOA_m": 4.23,
+        "LOA_ft": 13.83,
+        "LWL_m": 3.81,
+        "LWL_ft": 12.5,
+        "Beam_m": 1.39,
+        "Beam_ft": 4.56,
+        "Draft_m": 0.787,
+        "Draft_ft": 2.58
+      },
+      "weights": {
+        "Hull_weight_kg": 59,
+        "Hull_weight_lb": 130
+      },
+      "sail_area": {
+        "Standard_m2": 7.06,
+        "Standard_ft2": 76.0,
+        "Radial_m2": 5.76,
+        "Radial_ft2": 62.0,
+        "4.7_m2": 4.7,
+        "4.7_ft2": 50.6
+      },
+      "rig": {
+        "type": "Cat-rigged (Unstayed mast)",
+        "mast": "Two-part aluminum mast",
+        "sail": "Sleeved sail"
+      },
+      "hull": {
+        "material": "Fiberglass",
+        "hull_type": "Hard chine planing hull"
+      },
+      "performance": {
+        "crew": 1,
+        "ideal_weight_Standard_kg": "80+",
+        "ideal_weight_Radial_kg": "55-72",
+        "ideal_weight_4.7_kg": "50-55",
+        "D_PN": 91.1,
+        "RYA_PN": 1088,
+        "PHRF": 217
+      },
+      "features": [
+        "200,000+ boats in 140 countries",
+        "Olympic class (Men's and Women's)",
+        "Three interchangeable rigs (Standard, Radial, 4.7)",
+        "Strict one-design rules",
+        "Easy to rig and transport",
+        "High resale value"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_006",
+      "model_name": "Swan 50 (ClubSwan 50)",
+      "basic_info": {
+        "designer": "Juan Kouyoumdjian (Juan Yacht Design)",
+        "builder": "Nautor's Swan",
+        "country": "Finland",
+        "year_first_built": 2015,
+        "yacht_type": "One Design Racer-Cruiser"
+      },
+      "dimensions": {
+        "LOA_m": 16.74,
+        "LOA_ft": 54.92,
+        "Hull_length_m": 15.24,
+        "Hull_length_ft": 50.00,
+        "LWL_m": 14.00,
+        "LWL_ft": 45.93,
+        "Beam_m": 4.20,
+        "Beam_ft": 13.78,
+        "Draft_m": 3.50,
+        "Draft_ft": 11.48
+      },
+      "weights": {
+        "Displacement_kg": 8250,
+        "Displacement_lb": 18188,
+        "Ballast_kg": 3450,
+        "Ballast_lb": 7605,
+        "Ballast_type": "Carbon fiber fin with lead bulb"
+      },
+      "sail_area": {
+        "Upwind_m2": 158,
+        "Upwind_ft2": 1700,
+        "Downwind_m2": 363,
+        "Downwind_ft2": 3907,
+        "Mainsail_m2": 93,
+        "Mainsail_ft2": 1001,
+        "Genoa_m2": 65,
+        "Genoa_ft2": 700,
+        "Spinnaker_m2": 270,
+        "Spinnaker_ft2": 2906
+      },
+      "rig": {
+        "type": "Fractional Sloop",
+        "I_m": 19.88,
+        "J_m": 6.30,
+        "P_m": 20.04,
+        "E_m": 7.23
+      },
+      "hull": {
+        "material": "Carbon Epoxy Foam",
+        "hull_type": "Fin w/bulb & dual rudders",
+        "construction": "Carbon fiber"
+      },
+      "engine": {
+        "manufacturer": "Volvo",
+        "model": "D2-40",
+        "type": "Diesel",
+        "hp": 40,
+        "fuel_capacity_L": 170,
+        "water_capacity_L": 240
+      },
+      "performance_ratios": {
+        "SA_Displacement": 39.48,
+        "Ballast_Displacement_percent": 41.81,
+        "Displacement_Length": 83.80,
+        "Comfort_Ratio": 18.12,
+        "Capsize_Screening": 2.10,
+        "Hull_Speed_kn": 9.08
+      },
+      "features": [
+        "One-design racer-cruiser",
+        "World Sailing approved class",
+        "Carbon construction",
+        "High-performance racing yacht",
+        "Comfortable cruising capability"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_007",
+      "model_name": "X-35 (X-Yachts)",
+      "basic_info": {
+        "designer": "Niels Jeppesen",
+        "builder": "X-Yachts",
+        "country": "Denmark",
+        "yacht_type": "One Design Racer"
+      },
+      "dimensions": {
+        "LOA_m": 10.58,
+        "LOA_ft": 34.71,
+        "LWL_m": 9.35,
+        "Beam_m": 3.48,
+        "Draft_m": 2.15
+      },
+      "weights": {
+        "Displacement_kg": 4200
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Popular one-design racer",
+        "Scandinavian design quality",
+        "Active racing class"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_008",
+      "model_name": "Melges 32",
+      "basic_info": {
+        "designer": "Reichel/Pugh Yacht Design",
+        "builder": "SOCA Sailboats, Melges Performance Sailboats",
+        "country": "Trinidad, USA",
+        "year_first_built": 2004,
+        "total_built": 230,
+        "yacht_type": "High-Performance Racer",
+        "price_eur": 174000
+      },
+      "dimensions": {
+        "LOA_m": 9.70,
+        "LOA_ft": 31.83,
+        "LWL_m": 8.69,
+        "LWL_ft": 28.50,
+        "Beam_m": 3.00,
+        "Beam_ft": 9.83,
+        "Draft_m": 2.13,
+        "Draft_ft": 7.00
+      },
+      "weights": {
+        "Displacement_kg": 1712,
+        "Displacement_lb": 3774,
+        "Ballast_kg": 712,
+        "Ballast_lb": 1570,
+        "Ballast_type": "Carbon fiber fin with lead bulb"
+      },
+      "sail_area": {
+        "Upwind_m2": 64.9,
+        "Upwind_ft2": 699,
+        "Downwind_m2": 162.3,
+        "Downwind_ft2": 1747,
+        "Mainsail_m2": 41.3,
+        "Mainsail_ft2": 445,
+        "Jib_m2": 23.6,
+        "Jib_ft2": 254,
+        "Spinnaker_m2": 121,
+        "Spinnaker_ft2": 1302,
+        "Code_0_m2": 71.9,
+        "Code_0_ft2": 774
+      },
+      "rig": {
+        "type": "Fractional Sloop",
+        "mast_material": "Carbon fiber",
+        "I_m": 12.16,
+        "J_m": 3.29,
+        "P_m": 13.41,
+        "E_m": 4.69,
+        "SPL_m": 5.92
+      },
+      "hull": {
+        "material": "Composite",
+        "hull_type": "Lifting Keel"
+      },
+      "performance_ratios": {
+        "SA_Displacement": 46.33,
+        "Ballast_Displacement_percent": 41.60,
+        "Displacement_Length": 72.78,
+        "Comfort_Ratio": 9.42,
+        "Capsize_Screening": 2.53,
+        "Hull_Speed_kn": 7.15
+      },
+      "performance": {
+        "crew": 5,
+        "engine_hp": 10,
+        "engine_type": "Outboard - Gas"
+      },
+      "features": [
+        "Ultimate day racer",
+        "Supersonic-sleek hull",
+        "Large powerful sail plan",
+        "Can be launched via ramp",
+        "Gin pole rigging without crane",
+        "Strict one-design rules"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_009",
+      "model_name": "TP52",
+      "basic_info": {
+        "designer": "Various (Reichel/Pugh, Judel & Vrolijk, Botín Partners)",
+        "builder": "Various",
+        "year_first_built": 2001,
+        "yacht_type": "Grand Prix Racing",
+        "class": "52 Super Series"
+      },
+      "dimensions": {
+        "LOA_m": 15.85,
+        "LOA_ft": 52.00,
+        "LWL_m": 14.40,
+        "Beam_m": 4.42,
+        "Beam_ft": 14.50,
+        "Draft_m": 3.50,
+        "Draft_ft": 11.48
+      },
+      "weights": {
+        "Displacement_kg": 7000,
+        "Displacement_lb": 15432
+      },
+      "rig": {
+        "type": "Fractional Sloop",
+        "mast_height_above_DWL_m": 23.80,
+        "mast_material": "Carbon fiber",
+        "rigging": "EC6 Carbon composite"
+      },
+      "hull": {
+        "material": "Carbon fiber",
+        "keel_type": "T-shaped bulb keel with carbon/steel fin"
+      },
+      "performance": {
+        "crew": 12,
+        "typical_IRC_rating": "1.397",
+        "typical_ORC_GPH": "437.3"
+      },
+      "features": [
+        "Top-level grand prix racing",
+        "52 Super Series championship",
+        "3-4% performance increase per generation",
+        "Composite standing rigging",
+        "Extremely tweaky and refined",
+        "Professional crew allowed"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_010",
+      "model_name": "Beneteau First 36",
+      "basic_info": {
+        "designer": "Groupe Finot",
+        "builder": "Beneteau",
+        "country": "France",
+        "yacht_type": "Performance Cruiser"
+      },
+      "dimensions": {
+        "LOA_m": 10.85,
+        "LOA_ft": 35.60,
+        "Beam_m": 3.55,
+        "Draft_m": 2.00
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Performance cruiser-racer",
+        "Comfortable interior",
+        "Good sailing performance"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_011",
+      "model_name": "Jeanneau Sun Fast 3300",
+      "basic_info": {
+        "designer": "Daniel Andrieu",
+        "builder": "Jeanneau",
+        "country": "France",
+        "yacht_type": "Performance Cruiser-Racer"
+      },
+      "dimensions": {
+        "LOA_m": 10.10,
+        "LOA_ft": 33.14,
+        "LWL_m": 9.45,
+        "Beam_m": 3.46,
+        "Draft_m": 2.20
+      },
+      "weights": {
+        "Displacement_kg": 3850
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Fast cruiser-racer",
+        "Competitive in IRC/ORC",
+        "Popular in Europe"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_012",
+      "model_name": "Dehler 38",
+      "basic_info": {
+        "designer": "Judel/Vrolijk",
+        "builder": "Dehler",
+        "country": "Germany",
+        "yacht_type": "Performance Cruiser"
+      },
+      "dimensions": {
+        "LOA_m": 11.38,
+        "LOA_ft": 37.34,
+        "Beam_m": 3.69,
+        "Draft_m": 2.10
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "German quality construction",
+        "Performance-oriented cruiser",
+        "Modern deck layout"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_013",
+      "model_name": "X-Yachts XP 44",
+      "basic_info": {
+        "designer": "Niels Jeppesen",
+        "builder": "X-Yachts",
+        "country": "Denmark",
+        "yacht_type": "Performance Cruiser-Racer"
+      },
+      "dimensions": {
+        "LOA_m": 13.42,
+        "LOA_ft": 44.03,
+        "Beam_m": 4.20,
+        "Draft_m": 2.60
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "High-performance racer-cruiser",
+        "Scandinavian build quality",
+        "Competition-ready"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_014",
+      "model_name": "Hanse 458",
+      "basic_info": {
+        "designer": "Judel/Vrolijk",
+        "builder": "Hanse Yachts",
+        "country": "Germany",
+        "yacht_type": "Cruising"
+      },
+      "dimensions": {
+        "LOA_m": 14.00,
+        "LOA_ft": 45.93,
+        "Beam_m": 4.49,
+        "Draft_m": 2.15
+      },
+      "weights": {
+        "Displacement_kg": 11900
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Spacious cruising yacht",
+        "Self-tacking jib option",
+        "Easy handling"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_015",
+      "model_name": "Beneteau Oceanis 46",
+      "basic_info": {
+        "designer": "Groupe Finot",
+        "builder": "Beneteau",
+        "country": "France",
+        "yacht_type": "Cruising"
+      },
+      "dimensions": {
+        "LOA_m": 14.60,
+        "LOA_ft": 47.90,
+        "Beam_m": 4.50,
+        "Draft_m": 2.20
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Comfortable cruiser",
+        "Popular charter yacht",
+        "Spacious interior"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_016",
+      "model_name": "Nautor Swan 48",
+      "basic_info": {
+        "designer": "German Frers",
+        "builder": "Nautor's Swan",
+        "country": "Finland",
+        "yacht_type": "Luxury Cruiser-Racer"
+      },
+      "dimensions": {
+        "LOA_m": 14.71,
+        "LOA_ft": 48.26,
+        "Beam_m": 4.45,
+        "Draft_m": 2.60
+      },
+      "weights": {
+        "Displacement_kg": 15400
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Premium Swan quality",
+        "Elegant design",
+        "Performance and comfort"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_017",
+      "model_name": "Grand Soleil GC 42",
+      "basic_info": {
+        "designer": "Matteo Polli",
+        "builder": "Cantiere del Pardo",
+        "country": "Italy",
+        "yacht_type": "Performance Cruiser"
+      },
+      "dimensions": {
+        "LOA_m": 12.99,
+        "LOA_ft": 42.62,
+        "Beam_m": 4.18,
+        "Draft_m": 2.40
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "Italian design",
+        "Performance cruiser",
+        "Carbon options"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_018",
+      "model_name": "RS21",
+      "basic_info": {
+        "designer": "Phil Morrison",
+        "builder": "RS Sailing",
+        "country": "UK",
+        "year_first_built": 2015,
+        "yacht_type": "One Design Keelboat"
+      },
+      "dimensions": {
+        "LOA_m": 6.40,
+        "LOA_ft": 21.00,
+        "Beam_m": 2.59,
+        "Draft_m": 1.40
+      },
+      "weights": {
+        "Displacement_kg": 850
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "performance": {
+        "crew": 5
+      },
+      "features": [
+        "Modern one-design keelboat",
+        "Easy to sail",
+        "Growing international class",
+        "Club racing popular"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_019",
+      "model_name": "J/70",
+      "basic_info": {
+        "designer": "Alan Johnstone (J/Boats)",
+        "builder": "J/Boats",
+        "country": "USA",
+        "year_first_built": 2012,
+        "yacht_type": "One Design Sportboat"
+      },
+      "dimensions": {
+        "LOA_m": 6.93,
+        "LOA_ft": 22.75,
+        "LWL_m": 6.63,
+        "Beam_m": 2.26,
+        "Draft_m": 1.22
+      },
+      "weights": {
+        "Displacement_kg": 760,
+        "Displacement_lb": 1676
+      },
+      "sail_area": {
+        "Upwind_m2": 37.2,
+        "Upwind_ft2": 400
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "hull": {
+        "material": "Composite"
+      },
+      "performance": {
+        "crew": 4
+      },
+      "features": [
+        "World's largest sportboat class",
+        "1,800+ boats worldwide",
+        "Olympic-style racing format",
+        "Easy to tow and launch",
+        "Very active racing circuit"
+      ]
+    },
+    
+    {
+      "yacht_id": "yacht_020",
+      "model_name": "Solaris 44",
+      "basic_info": {
+        "designer": "Soto Acebal",
+        "builder": "Solaris Yachts",
+        "country": "Italy",
+        "yacht_type": "Performance Cruiser"
+      },
+      "dimensions": {
+        "LOA_m": 13.50,
+        "LOA_ft": 44.29,
+        "Beam_m": 4.25,
+        "Draft_m": 2.30
+      },
+      "weights": {
+        "Displacement_kg": 11000
+      },
+      "rig": {
+        "type": "Fractional Sloop"
+      },
+      "features": [
+        "High-quality Italian construction",
+        "Performance-oriented cruiser",
+        "Customizable options"
+      ]
+    }
+  ],
+  
+  "yacht_categories": {
+    "racing_one_design": [
+      "FarEast 28R",
+      "Farr 40 One Design",
+      "J/24",
+      "Laser",
+      "Swan 50 (ClubSwan 50)",
+      "X-35",
+      "Melges 32",
+      "RS21",
+      "J/70"
+    ],
+    "grand_prix_racing": [
+      "TP52"
+    ],
+    "performance_cruiser_racer": [
+      "Beneteau First 36",
+      "Jeanneau Sun Fast 3300",
+      "Dehler 38",
+      "X-Yachts XP 44",
+      "Grand Soleil GC 42",
+      "Solaris 44"
+    ],
+    "cruising": [
+      "Beneteau 473",
+      "Hanse 458",
+      "Beneteau Oceanis 46",
+      "Nautor Swan 48"
+    ]
+  }
+}
