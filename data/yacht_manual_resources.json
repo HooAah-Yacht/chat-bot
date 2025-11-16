@@ -1,0 +1,276 @@
+{
+  "manualResources": [
+    {
+      "yacht": "FarEast 28",
+      "manufacturer": "FarEast Yachts",
+      "websiteUrl": "https://www.fareastyachts.com",
+      "manualLocation": "Contact manufacturer or dealer",
+      "classAssociation": null,
+      "notes": "Korean manufacturer, may need to contact directly"
+    },
+    {
+      "yacht": "Farr 40",
+      "manufacturer": "Farr Yacht Design",
+      "websiteUrl": "https://www.farr40.org",
+      "manualLocation": "Class association website - Owner Resources section",
+      "classAssociation": "Farr 40 Class Association",
+      "notes": "One Design class - strict specifications available"
+    },
+    {
+      "yacht": "Beneteau 473",
+      "manufacturer": "Beneteau",
+      "websiteUrl": "https://www.beneteau.com",
+      "ownerPortal": "https://www.beneteau.com/en/owners",
+      "manualLocation": "Owner portal or dealer",
+      "classAssociation": null,
+      "notes": "May require boat registration to access owner resources"
+    },
+    {
+      "yacht": "J/24",
+      "manufacturer": "J/Boats",
+      "websiteUrl": "https://www.jboats.com",
+      "classWebsite": "https://www.j24class.org",
+      "manualLocation": "J/24 Class Association - Technical section",
+      "classAssociation": "International J/24 Class Association",
+      "notes": "Extensive documentation available through class association"
+    },
+    {
+      "yacht": "Laser",
+      "manufacturer": "LaserPerformance / ILCA",
+      "websiteUrl": "https://www.laserperformance.com",
+      "classWebsite": "https://www.laserinternational.org",
+      "manualLocation": "Manufacturer website or class association",
+      "classAssociation": "International Laser Class Association (ILCA)",
+      "notes": "Now officially called ILCA dinghy"
+    },
+    {
+      "yacht": "Swan 50",
+      "manufacturer": "Nautor's Swan",
+      "websiteUrl": "https://www.nautorswan.com",
+      "ownerPortal": "https://www.nautorswan.com/owners",
+      "manualLocation": "Owner portal - requires registration",
+      "classAssociation": null,
+      "notes": "Premium manufacturer with dedicated owner support"
+    },
+    {
+      "yacht": "X-35",
+      "manufacturer": "X-Yachts",
+      "websiteUrl": "https://www.x-yachts.com",
+      "ownerPortal": "https://www.x-yachts.com/owners",
+      "manualLocation": "Owner resources or dealer",
+      "classAssociation": "X-35 Class",
+      "notes": "May have one-design class resources"
+    },
+    {
+      "yacht": "Melges 32",
+      "manufacturer": "Melges Performance Sailboats",
+      "websiteUrl": "https://www.melges.com",
+      "classWebsite": "https://melges32.com",
+      "manualLocation": "Class website - Technical section",
+      "classAssociation": "Melges 32 Class Association",
+      "notes": "One Design class with detailed specifications"
+    },
+    {
+      "yacht": "TP52",
+      "manufacturer": "Various builders",
+      "websiteUrl": "https://www.52superseries.com",
+      "classWebsite": "https://www.tp52.com",
+      "manualLocation": "Class rules and technical specifications available",
+      "classAssociation": "TP52 Class",
+      "notes": "High-performance racing class with strict rules"
+    },
+    {
+      "yacht": "Beneteau First 36",
+      "manufacturer": "Beneteau",
+      "websiteUrl": "https://www.beneteau.com",
+      "ownerPortal": "https://www.beneteau.com/en/owners",
+      "manualLocation": "Owner portal or dealer",
+      "classAssociation": null,
+      "notes": "May require boat registration"
+    },
+    {
+      "yacht": "Jeanneau Sun Fast 3300",
+      "manufacturer": "Jeanneau",
+      "websiteUrl": "https://www.jeanneau.com",
+      "ownerPortal": "https://www.jeanneau.com/en/owners-area",
+      "manualLocation": "Owner area or dealer",
+      "classAssociation": null,
+      "notes": "Part of Beneteau Group"
+    },
+    {
+      "yacht": "Dehler 38",
+      "manufacturer": "Dehler Yachts (Hanse Group)",
+      "websiteUrl": "https://www.dehler.com",
+      "manualLocation": "Contact dealer or Hanse Group",
+      "classAssociation": null,
+      "notes": "Part of Hanse Yachts Group"
+    },
+    {
+      "yacht": "X-Yachts XP 44",
+      "manufacturer": "X-Yachts",
+      "websiteUrl": "https://www.x-yachts.com",
+      "ownerPortal": "https://www.x-yachts.com/owners",
+      "manualLocation": "Owner resources or dealer",
+      "classAssociation": null,
+      "notes": "Performance cruising line"
+    },
+    {
+      "yacht": "Hanse 458",
+      "manufacturer": "Hanse Yachts",
+      "websiteUrl": "https://www.hanseyachts.com",
+      "ownerPortal": "https://www.hanseyachts.com/en/service/owner-service/",
+      "manualLocation": "Owner service area",
+      "classAssociation": null,
+      "notes": "May need HIN (Hull Identification Number)"
+    },
+    {
+      "yacht": "Beneteau Oceanis 46",
+      "manufacturer": "Beneteau",
+      "websiteUrl": "https://www.beneteau.com",
+      "ownerPortal": "https://www.beneteau.com/en/owners",
+      "manualLocation": "Owner portal or dealer",
+      "classAssociation": null,
+      "notes": "Cruising-oriented model"
+    },
+    {
+      "yacht": "Nautor Swan 48",
+      "manufacturer": "Nautor's Swan",
+      "websiteUrl": "https://www.nautorswan.com",
+      "ownerPortal": "https://www.nautorswan.com/owners",
+      "manualLocation": "Owner portal - requires registration",
+      "classAssociation": null,
+      "notes": "Premium manufacturer with excellent owner support"
+    },
+    {
+      "yacht": "Grand Soleil GC 42",
+      "manufacturer": "Grand Soleil (Cantiere del Pardo)",
+      "websiteUrl": "https://www.grandsoleil.net",
+      "manualLocation": "Contact manufacturer or dealer",
+      "classAssociation": null,
+      "notes": "Italian manufacturer, high-quality cruiser-racer"
+    },
+    {
+      "yacht": "RS21",
+      "manufacturer": "RS Sailing",
+      "websiteUrl": "https://www.rssailing.com",
+      "classWebsite": "https://www.rs21.org",
+      "manualLocation": "Manufacturer website or class association",
+      "classAssociation": "RS21 Class Association",
+      "notes": "One Design keelboat with comprehensive documentation"
+    },
+    {
+      "yacht": "J/70",
+      "manufacturer": "J/Boats",
+      "websiteUrl": "https://www.jboats.com",
+      "classWebsite": "https://www.j70class.org",
+      "manualLocation": "J/70 Class Association - Owner Resources",
+      "classAssociation": "International J/70 Class Association",
+      "notes": "Very popular one-design with extensive resources"
+    },
+    {
+      "yacht": "Solaris 44",
+      "manufacturer": "Solaris Yachts",
+      "websiteUrl": "https://www.solarisyachts.com",
+      "manualLocation": "Contact manufacturer or dealer",
+      "classAssociation": null,
+      "notes": "Italian performance cruiser"
+    }
+  ],
+  "generalResources": {
+    "sailmakerCatalogs": [
+      {
+        "name": "North Sails",
+        "url": "https://www.northsails.com",
+        "notes": "Sail specifications and sizing guides"
+      },
+      {
+        "name": "Quantum Sails",
+        "url": "https://www.quantumsails.com",
+        "notes": "Sail design and parts"
+      }
+    ],
+    "hardwareManufacturers": [
+      {
+        "name": "Harken",
+        "url": "https://www.harken.com",
+        "catalog": "Complete product catalog with technical specifications"
+      },
+      {
+        "name": "Lewmar",
+        "url": "https://www.lewmar.com",
+        "catalog": "Winches, hatches, anchoring equipment"
+      },
+      {
+        "name": "Ronstan",
+        "url": "https://www.ronstan.com",
+        "catalog": "Blocks, tracks, and deck hardware"
+      },
+      {
+        "name": "Spinlock",
+        "url": "https://www.spinlock.co.uk",
+        "catalog": "Clutches, blocks, and safety equipment"
+      }
+    ],
+    "engineManufacturers": [
+      {
+        "name": "Yanmar",
+        "url": "https://www.yanmar.com/global/marine/",
+        "manuals": "Parts and service manuals available"
+      },
+      {
+        "name": "Volvo Penta",
+        "url": "https://www.volvopenta.com",
+        "manuals": "EPC (Electronic Parts Catalog) available online"
+      }
+    ],
+    "electronicsManufacturers": [
+      {
+        "name": "Garmin",
+        "url": "https://www.garmin.com/en-US/marine/",
+        "manuals": "Product manuals and specifications"
+      },
+      {
+        "name": "Raymarine",
+        "url": "https://www.raymarine.com",
+        "manuals": "Owner handbooks available for download"
+      },
+      {
+        "name": "B&G",
+        "url": "https://www.bandg.com",
+        "manuals": "Sailing instruments and autopilots"
+      }
+    ],
+    "rigManufacturers": [
+      {
+        "name": "Selden",
+        "url": "https://www.seldenmast.com",
+        "catalog": "Mast and boom specifications"
+      },
+      {
+        "name": "Z-Spars",
+        "url": "https://www.z-spars.com",
+        "catalog": "Performance mast systems"
+      }
+    ]
+  },
+  "dataCollectionTips": {
+    "step1": "Register your boat with manufacturer's owner portal",
+    "step2": "Contact local dealer for manual access",
+    "step3": "Join class associations for one-design boats",
+    "step4": "Check boat survey documents for equipment lists",
+    "step5": "Previous owner may have manuals and documentation",
+    "step6": "Marine equipment manufacturers have product catalogs online",
+    "step7": "Use boat forums and owner groups for information sharing"
+  },
+  "recommendedApproach": {
+    "description": "요트 부품 데이터를 수집하는 권장 방법",
+    "steps": [
+      "1. 각 요트 제조사의 공식 웹사이트에서 오너 포털 등록",
+      "2. 매뉴얼 PDF 다운로드 (보통 등록 필요)",
+      "3. Parts List 섹션에서 부품 정보 추출",
+      "4. yacht_parts_database.json 파일에 정보 입력",
+      "5. 하드웨어 제조사(Harken, Lewmar 등)의 제품 카탈로그 참조",
+      "6. 클래스 협회가 있는 경우 기술 사양서 확인"
+    ]
+  }
+}

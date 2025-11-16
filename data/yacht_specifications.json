@@ -1,0 +1,1537 @@
+{
+  "version": "1.0",
+  "description": "20종 세일링 요트 완전한 스펙 데이터베이스",
+  "lastUpdated": "2024-11-13",
+  "totalYachts": 20,
+  "categories": {
+    "racing": [
+      "fareast-28",
+      "farr-40",
+      "j24",
+      "swan-50",
+      "x-35",
+      "melges-32",
+      "tp52",
+      "rs21",
+      "j70"
+    ],
+    "cruiser": [
+      "beneteau-473",
+      "beneteau-oceanis-46",
+      "hanse-458"
+    ],
+    "cruiserRacer": [
+      "beneteau-first-36",
+      "jeanneau-sunfast-3300",
+      "dehler-38",
+      "xp-44",
+      "nautor-swan-48",
+      "grand-soleil-42",
+      "solaris-44"
+    ],
+    "dinghy": [
+      "laser"
+    ]
+  },
+  "yachts": [
+    {
+      "id": "fareast-28",
+      "name": "FarEast 28",
+      "manufacturer": "FarEast Yachts",
+      "type": "One-Design Racing",
+      "year": "1992-Present",
+      "designer": "Tom Schnackenberg",
+      "manual": "data/yachtpdf/OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "dimensions": {
+        "loa": {
+          "value": 8.53,
+          "unit": "m",
+          "display": "8.53m (28ft)"
+        },
+        "lwl": {
+          "value": 7.32,
+          "unit": "m",
+          "display": "7.32m"
+        },
+        "beam": {
+          "value": 2.75,
+          "unit": "m",
+          "display": "2.75m"
+        },
+        "draft": {
+          "value": 1.8,
+          "unit": "m",
+          "display": "1.80m"
+        },
+        "displacement": {
+          "value": 2200,
+          "unit": "kg",
+          "display": "2200kg"
+        },
+        "mastHeight": {
+          "value": 11.5,
+          "unit": "m",
+          "display": "11.5m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 21.5,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 18.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 60.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 39.5,
+          "unit": "m²",
+          "display": "39.5m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "9.9 HP",
+        "model": "Yamaha or equivalent"
+      },
+      "accommodation": {
+        "crew": "6-7 people",
+        "racing": "5-6 crew typical"
+      }
+    },
+    {
+      "id": "farr-40",
+      "name": "Farr 40",
+      "manufacturer": "Farr Yacht Design",
+      "type": "One-Design Racing",
+      "year": "1996-Present",
+      "designer": "Farr Yacht Design",
+      "manual": "data/yachtpdf/rulebook.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 12.19,
+          "unit": "m",
+          "display": "12.19m (40ft)"
+        },
+        "lwl": {
+          "value": 10.67,
+          "unit": "m",
+          "display": "10.67m"
+        },
+        "beam": {
+          "value": 3.66,
+          "unit": "m",
+          "display": "3.66m"
+        },
+        "draft": {
+          "value": 2.54,
+          "unit": "m",
+          "display": "2.54m"
+        },
+        "displacement": {
+          "value": 4760,
+          "unit": "kg",
+          "display": "4760kg"
+        },
+        "mastHeight": {
+          "value": 17.37,
+          "unit": "m",
+          "display": "17.37m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 46.5,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 46.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 150.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 92.5,
+          "unit": "m²",
+          "display": "92.5m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "29 HP",
+        "model": "Yanmar 3JH3E"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 80,
+          "unit": "l"
+        },
+        "water": {
+          "value": 100,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "crew": "9-11 people",
+        "racing": "8-9 crew typical"
+      }
+    },
+    {
+      "id": "beneteau-473",
+      "name": "Beneteau 473",
+      "manufacturer": "Beneteau",
+      "type": "Cruiser/Racer",
+      "year": "2002-2005",
+      "designer": "Groupe Finot",
+      "manual": "data/yachtpdf/Beneteau 473 Owner's Manual_compressed.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.4,
+          "unit": "m",
+          "display": "14.40m (47.3ft)"
+        },
+        "lwl": {
+          "value": 12.6,
+          "unit": "m",
+          "display": "12.60m"
+        },
+        "beam": {
+          "value": 4.5,
+          "unit": "m",
+          "display": "4.50m"
+        },
+        "draft": {
+          "value": 2.1,
+          "unit": "m",
+          "display": "2.10m (standard)"
+        },
+        "displacement": {
+          "value": 12500,
+          "unit": "kg",
+          "display": "12500kg"
+        },
+        "mastHeight": {
+          "value": 19.5,
+          "unit": "m",
+          "display": "19.5m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 49.5,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 54.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 170.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 103.5,
+          "unit": "m²",
+          "display": "103.5m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "75 HP",
+        "model": "Volvo Penta D2-75"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 250,
+          "unit": "l"
+        },
+        "water": {
+          "value": 450,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 4,
+        "berths": 8,
+        "heads": 2
+      }
+    },
+    {
+      "id": "j24",
+      "name": "J/24",
+      "manufacturer": "J/Boats",
+      "type": "One-Design Racing",
+      "year": "1977-Present",
+      "designer": "Rod Johnstone",
+      "manual": "data/yachtpdf/J242019CR220319-[24866].pdf",
+      "dimensions": {
+        "loa": {
+          "value": 7.32,
+          "unit": "m",
+          "display": "7.32m (24ft)"
+        },
+        "lwl": {
+          "value": 6.1,
+          "unit": "m",
+          "display": "6.10m"
+        },
+        "beam": {
+          "value": 2.69,
+          "unit": "m",
+          "display": "2.69m"
+        },
+        "draft": {
+          "value": 1.22,
+          "unit": "m",
+          "display": "1.22m"
+        },
+        "displacement": {
+          "value": 1360,
+          "unit": "kg",
+          "display": "1360kg"
+        },
+        "mastHeight": {
+          "value": 9.14,
+          "unit": "m",
+          "display": "9.14m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 12.7,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 10.2,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 42.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 22.9,
+          "unit": "m²",
+          "display": "22.9m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "6 HP",
+        "note": "Optional"
+      },
+      "accommodation": {
+        "crew": "5 people",
+        "racing": "5 crew typical"
+      }
+    },
+    {
+      "id": "laser",
+      "name": "Laser (ILCA)",
+      "manufacturer": "LaserPerformance",
+      "type": "One-Design Dinghy",
+      "year": "1970-Present",
+      "designer": "Bruce Kirby",
+      "manual": "data/yachtpdf/owners_manual.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 4.23,
+          "unit": "m",
+          "display": "4.23m (13.9ft)"
+        },
+        "beam": {
+          "value": 1.42,
+          "unit": "m",
+          "display": "1.42m"
+        },
+        "draft": {
+          "value": 0.79,
+          "unit": "m",
+          "display": "0.79m (daggerboard down)"
+        },
+        "weight": {
+          "value": 59,
+          "unit": "kg",
+          "display": "59kg (hull only)"
+        },
+        "mastHeight": {
+          "value": 6.12,
+          "unit": "m",
+          "display": "6.12m"
+        }
+      },
+      "sailArea": {
+        "standard": {
+          "value": 7.06,
+          "unit": "m²",
+          "display": "7.06m² (Standard rig)"
+        },
+        "radial": {
+          "value": 5.76,
+          "unit": "m²",
+          "display": "5.76m² (Radial rig)"
+        },
+        "4.7": {
+          "value": 4.7,
+          "unit": "m²",
+          "display": "4.70m² (4.7 rig)"
+        }
+      },
+      "accommodation": {
+        "crew": "1 person (single-handed)"
+      }
+    },
+    {
+      "id": "swan-50",
+      "name": "ClubSwan 50",
+      "manufacturer": "Nautor's Swan",
+      "type": "One-Design Racing/Cruiser",
+      "year": "2017-Present",
+      "designer": "Juan Kouyoumdjian",
+      "manual": "data/yachtpdf/ClubSwan50ClassRules07042021-[27210].pdf",
+      "dimensions": {
+        "loa": {
+          "value": 16.1,
+          "unit": "m",
+          "display": "16.10m (52.8ft)"
+        },
+        "lwl": {
+          "value": 15.25,
+          "unit": "m",
+          "display": "15.25m"
+        },
+        "beam": {
+          "value": 4.8,
+          "unit": "m",
+          "display": "4.80m"
+        },
+        "draft": {
+          "value": 3.7,
+          "unit": "m",
+          "display": "3.70m"
+        },
+        "displacement": {
+          "value": 12000,
+          "unit": "kg",
+          "display": "12000kg"
+        },
+        "mastHeight": {
+          "value": 24.5,
+          "unit": "m",
+          "display": "24.50m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 115,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 85,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 350,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 200,
+          "unit": "m²",
+          "display": "200m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "110 HP",
+        "model": "Volvo D2-110"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 300,
+          "unit": "l"
+        },
+        "water": {
+          "value": 400,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 6,
+        "heads": 2
+      }
+    },
+    {
+      "id": "x-35",
+      "name": "X-35",
+      "manufacturer": "X-Yachts",
+      "type": "One-Design Racing/Cruiser",
+      "year": "2003-Present",
+      "designer": "Niels Jeppesen",
+      "manual": "data/yachtpdf/X352012CR080412-[12381].pdf",
+      "dimensions": {
+        "loa": {
+          "value": 10.6,
+          "unit": "m",
+          "display": "10.60m (34.8ft)"
+        },
+        "lwl": {
+          "value": 9.25,
+          "unit": "m",
+          "display": "9.25m"
+        },
+        "beam": {
+          "value": 3.49,
+          "unit": "m",
+          "display": "3.49m"
+        },
+        "draft": {
+          "value": 2.1,
+          "unit": "m",
+          "display": "2.10m (standard)"
+        },
+        "displacement": {
+          "value": 5200,
+          "unit": "kg",
+          "display": "5200kg"
+        },
+        "mastHeight": {
+          "value": 15.85,
+          "unit": "m",
+          "display": "15.85m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 35.0,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 35.5,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 110.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 70.5,
+          "unit": "m²",
+          "display": "70.5m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "29 HP",
+        "model": "Volvo D1-30"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 130,
+          "unit": "l"
+        },
+        "water": {
+          "value": 220,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 2,
+        "berths": 5,
+        "heads": 1
+      }
+    },
+    {
+      "id": "melges-32",
+      "name": "Melges 32",
+      "manufacturer": "Melges Performance Sailboats",
+      "type": "One-Design Racing",
+      "year": "2006-Present",
+      "designer": "Reichel/Pugh",
+      "manual": "data/yachtpdf/M32_CR_2025-03March-30.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 9.75,
+          "unit": "m",
+          "display": "9.75m (32ft)"
+        },
+        "lwl": {
+          "value": 9.14,
+          "unit": "m",
+          "display": "9.14m"
+        },
+        "beam": {
+          "value": 3.05,
+          "unit": "m",
+          "display": "3.05m"
+        },
+        "draft": {
+          "value": 2.44,
+          "unit": "m",
+          "display": "2.44m"
+        },
+        "displacement": {
+          "value": 2160,
+          "unit": "kg",
+          "display": "2160kg"
+        },
+        "mastHeight": {
+          "value": 14.63,
+          "unit": "m",
+          "display": "14.63m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 38.0,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 26.5,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 97.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 64.5,
+          "unit": "m²",
+          "display": "64.5m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "9.9 HP",
+        "note": "For transport only"
+      },
+      "accommodation": {
+        "crew": "5-6 people",
+        "racing": "5 crew typical"
+      }
+    },
+    {
+      "id": "tp52",
+      "name": "TP52",
+      "manufacturer": "Various (IRC Class)",
+      "type": "Grand Prix Racing",
+      "year": "2005-Present",
+      "designer": "Various (Class Rules)",
+      "manual": "data/yachtpdf/TP52_CR20220124.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 15.85,
+          "unit": "m",
+          "display": "15.85m (52ft)"
+        },
+        "lwl": {
+          "value": 14.5,
+          "unit": "m",
+          "display": "14.50m"
+        },
+        "beam": {
+          "value": 4.5,
+          "unit": "m",
+          "display": "4.50m (max)"
+        },
+        "draft": {
+          "value": 4.5,
+          "unit": "m",
+          "display": "4.50m (max)"
+        },
+        "displacement": {
+          "value": 7500,
+          "unit": "kg",
+          "display": "7500kg (approx)"
+        },
+        "mastHeight": {
+          "value": 24.0,
+          "unit": "m",
+          "display": "24.0m (approx)"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 120,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 90,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 350,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 210,
+          "unit": "m²",
+          "display": "210m² (upwind)"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "40-60 HP",
+        "note": "Varies by boat"
+      },
+      "accommodation": {
+        "crew": "11-16 people",
+        "racing": "11 crew typical"
+      }
+    },
+    {
+      "id": "beneteau-first-36",
+      "name": "Beneteau First 36.7",
+      "manufacturer": "Beneteau",
+      "type": "Performance Cruiser/Racer",
+      "year": "2004-2009",
+      "designer": "Groupe Finot",
+      "manual": "data/yachtpdf/2020_03_31_11_03_39-48 owners manual.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 11.35,
+          "unit": "m",
+          "display": "11.35m (36.7ft)"
+        },
+        "lwl": {
+          "value": 10.67,
+          "unit": "m",
+          "display": "10.67m"
+        },
+        "beam": {
+          "value": 3.95,
+          "unit": "m",
+          "display": "3.95m"
+        },
+        "draft": {
+          "value": 2.0,
+          "unit": "m",
+          "display": "2.00m (standard)"
+        },
+        "displacement": {
+          "value": 6400,
+          "unit": "kg",
+          "display": "6400kg"
+        },
+        "mastHeight": {
+          "value": 16.2,
+          "unit": "m",
+          "display": "16.20m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 38.5,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 47.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 130.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 85.5,
+          "unit": "m²",
+          "display": "85.5m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "40 HP",
+        "model": "Volvo D1-40"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 130,
+          "unit": "l"
+        },
+        "water": {
+          "value": 300,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 7,
+        "heads": 1
+      }
+    },
+    {
+      "id": "jeanneau-sunfast-3300",
+      "name": "Jeanneau Sun Fast 3300",
+      "manufacturer": "Jeanneau",
+      "type": "Performance Cruiser/Racer",
+      "year": "2015-Present",
+      "designer": "Daniel Andrieu",
+      "manual": "data/yachtpdf/Sun-Fast-3300-technical-inventory.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 10.1,
+          "unit": "m",
+          "display": "10.10m (33ft)"
+        },
+        "lwl": {
+          "value": 9.75,
+          "unit": "m",
+          "display": "9.75m"
+        },
+        "beam": {
+          "value": 3.45,
+          "unit": "m",
+          "display": "3.45m"
+        },
+        "draft": {
+          "value": 2.35,
+          "unit": "m",
+          "display": "2.35m (deep keel)"
+        },
+        "displacement": {
+          "value": 3600,
+          "unit": "kg",
+          "display": "3600kg"
+        },
+        "mastHeight": {
+          "value": 14.9,
+          "unit": "m",
+          "display": "14.90m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 36.0,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 33.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 110.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 69.0,
+          "unit": "m²",
+          "display": "69.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "20 HP",
+        "model": "Volvo D1-20"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 100,
+          "unit": "l"
+        },
+        "water": {
+          "value": 150,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 2,
+        "berths": 5,
+        "heads": 1
+      }
+    },
+    {
+      "id": "dehler-38",
+      "name": "Dehler 38",
+      "manufacturer": "Dehler",
+      "type": "Performance Cruiser",
+      "year": "2014-Present",
+      "designer": "Judel/Vrolijk",
+      "manual": "data/yachtpdf/press-manual-dehler38.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 11.38,
+          "unit": "m",
+          "display": "11.38m (37.3ft)"
+        },
+        "lwl": {
+          "value": 10.6,
+          "unit": "m",
+          "display": "10.60m"
+        },
+        "beam": {
+          "value": 3.79,
+          "unit": "m",
+          "display": "3.79m"
+        },
+        "draft": {
+          "value": 2.25,
+          "unit": "m",
+          "display": "2.25m (deep keel)"
+        },
+        "displacement": {
+          "value": 6800,
+          "unit": "kg",
+          "display": "6800kg"
+        },
+        "mastHeight": {
+          "value": 16.95,
+          "unit": "m",
+          "display": "16.95m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 43.0,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 50.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 140.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 93.0,
+          "unit": "m²",
+          "display": "93.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "40 HP",
+        "model": "Volvo D2-40"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 130,
+          "unit": "l"
+        },
+        "water": {
+          "value": 240,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 2,
+        "berths": 6,
+        "heads": 1
+      }
+    },
+    {
+      "id": "xp-44",
+      "name": "X-Yachts XP 44",
+      "manufacturer": "X-Yachts",
+      "type": "Performance Racing/Cruiser",
+      "year": "2014-Present",
+      "designer": "Niels Jeppesen",
+      "manual": "data/yachtpdf/Xp44-Brochure_July2018_ONLINE.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 13.5,
+          "unit": "m",
+          "display": "13.50m (44.3ft)"
+        },
+        "lwl": {
+          "value": 12.8,
+          "unit": "m",
+          "display": "12.80m"
+        },
+        "beam": {
+          "value": 4.19,
+          "unit": "m",
+          "display": "4.19m"
+        },
+        "draft": {
+          "value": 2.7,
+          "unit": "m",
+          "display": "2.70m (standard)"
+        },
+        "displacement": {
+          "value": 9500,
+          "unit": "kg",
+          "display": "9500kg"
+        },
+        "mastHeight": {
+          "value": 20.5,
+          "unit": "m",
+          "display": "20.50m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 62.0,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 58.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 220.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 120.0,
+          "unit": "m²",
+          "display": "120.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "80 HP",
+        "model": "Volvo D2-80"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 250,
+          "unit": "l"
+        },
+        "water": {
+          "value": 400,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 8,
+        "heads": 2
+      }
+    },
+    {
+      "id": "hanse-458",
+      "name": "Hanse 458",
+      "manufacturer": "Hanse Yachts",
+      "type": "Cruiser",
+      "year": "2017-Present",
+      "designer": "Judel/Vrolijk",
+      "manual": "data/yachtpdf/Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.05,
+          "unit": "m",
+          "display": "14.05m (46.1ft)"
+        },
+        "lwl": {
+          "value": 13.15,
+          "unit": "m",
+          "display": "13.15m"
+        },
+        "beam": {
+          "value": 4.49,
+          "unit": "m",
+          "display": "4.49m"
+        },
+        "draft": {
+          "value": 2.2,
+          "unit": "m",
+          "display": "2.20m (standard)"
+        },
+        "displacement": {
+          "value": 11900,
+          "unit": "kg",
+          "display": "11900kg"
+        },
+        "mastHeight": {
+          "value": 20.8,
+          "unit": "m",
+          "display": "20.80m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 56.0,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 64.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 200.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 120.0,
+          "unit": "m²",
+          "display": "120.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "75 HP",
+        "model": "Volvo D2-75"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 270,
+          "unit": "l"
+        },
+        "water": {
+          "value": 580,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 4,
+        "berths": 8,
+        "heads": 3
+      }
+    },
+    {
+      "id": "beneteau-oceanis-46",
+      "name": "Beneteau Oceanis 46.1",
+      "manufacturer": "Beneteau",
+      "type": "Cruiser",
+      "year": "2017-Present",
+      "designer": "Berret-Racoupeau",
+      "manual": "data/yachtpdf/14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.6,
+          "unit": "m",
+          "display": "14.60m (47.9ft)"
+        },
+        "lwl": {
+          "value": 13.39,
+          "unit": "m",
+          "display": "13.39m"
+        },
+        "beam": {
+          "value": 4.5,
+          "unit": "m",
+          "display": "4.50m"
+        },
+        "draft": {
+          "value": 2.3,
+          "unit": "m",
+          "display": "2.30m (standard)"
+        },
+        "displacement": {
+          "value": 11600,
+          "unit": "kg",
+          "display": "11600kg"
+        },
+        "mastHeight": {
+          "value": 20.31,
+          "unit": "m",
+          "display": "20.31m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 54.0,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 58.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 195.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 112.0,
+          "unit": "m²",
+          "display": "112.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "80 HP",
+        "model": "Yanmar 4JH80"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 200,
+          "unit": "l"
+        },
+        "water": {
+          "value": 530,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 4,
+        "berths": 10,
+        "heads": 3
+      }
+    },
+    {
+      "id": "nautor-swan-48",
+      "name": "Nautor Swan 48",
+      "manufacturer": "Nautor's Swan",
+      "type": "Performance Cruiser",
+      "year": "2000-2004",
+      "designer": "German Frers",
+      "manual": "data/yachtpdf/2020_03_31_11_03_39-48 owners manual.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.9,
+          "unit": "m",
+          "display": "14.90m (48.9ft)"
+        },
+        "lwl": {
+          "value": 13.33,
+          "unit": "m",
+          "display": "13.33m"
+        },
+        "beam": {
+          "value": 4.3,
+          "unit": "m",
+          "display": "4.30m"
+        },
+        "draft": {
+          "value": 2.45,
+          "unit": "m",
+          "display": "2.45m (standard)"
+        },
+        "displacement": {
+          "value": 14500,
+          "unit": "kg",
+          "display": "14500kg"
+        },
+        "mastHeight": {
+          "value": 21.5,
+          "unit": "m",
+          "display": "21.50m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 63.0,
+          "unit": "m²"
+        },
+        "genoa": {
+          "value": 67.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 220.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 130.0,
+          "unit": "m²",
+          "display": "130.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "100 HP",
+        "model": "Yanmar 4JH4-HTE"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 380,
+          "unit": "l"
+        },
+        "water": {
+          "value": 600,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 8,
+        "heads": 2
+      }
+    },
+    {
+      "id": "grand-soleil-42",
+      "name": "Grand Soleil 42 LC",
+      "manufacturer": "Grand Soleil",
+      "type": "Performance Cruiser",
+      "year": "2019-Present",
+      "designer": "Matteo Polli",
+      "manual": "data/yachtpdf/GS42LC_Brochure-1.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 12.99,
+          "unit": "m",
+          "display": "12.99m (42.6ft)"
+        },
+        "lwl": {
+          "value": 12.15,
+          "unit": "m",
+          "display": "12.15m"
+        },
+        "beam": {
+          "value": 4.1,
+          "unit": "m",
+          "display": "4.10m"
+        },
+        "draft": {
+          "value": 2.6,
+          "unit": "m",
+          "display": "2.60m (deep keel)"
+        },
+        "displacement": {
+          "value": 8400,
+          "unit": "kg",
+          "display": "8400kg"
+        },
+        "mastHeight": {
+          "value": 19.5,
+          "unit": "m",
+          "display": "19.50m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 51.0,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 48.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 165.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 99.0,
+          "unit": "m²",
+          "display": "99.0m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "57 HP",
+        "model": "Yanmar 4JH57"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 200,
+          "unit": "l"
+        },
+        "water": {
+          "value": 380,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 7,
+        "heads": 2
+      }
+    },
+    {
+      "id": "rs21",
+      "name": "RS21",
+      "manufacturer": "RS Sailing",
+      "type": "One-Design Keelboat",
+      "year": "2017-Present",
+      "designer": "Phil Morrison",
+      "manual": "data/yachtpdf/RS21Riggingguide.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 6.4,
+          "unit": "m",
+          "display": "6.40m (21ft)"
+        },
+        "lwl": {
+          "value": 6.1,
+          "unit": "m",
+          "display": "6.10m"
+        },
+        "beam": {
+          "value": 2.5,
+          "unit": "m",
+          "display": "2.50m"
+        },
+        "draft": {
+          "value": 1.25,
+          "unit": "m",
+          "display": "1.25m"
+        },
+        "displacement": {
+          "value": 800,
+          "unit": "kg",
+          "display": "800kg"
+        },
+        "mastHeight": {
+          "value": 9.2,
+          "unit": "m",
+          "display": "9.20m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 18.5,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 11.5,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 50.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 30.0,
+          "unit": "m²",
+          "display": "30.0m² (upwind)"
+        }
+      },
+      "accommodation": {
+        "crew": "4-5 people",
+        "racing": "4 crew typical"
+      }
+    },
+    {
+      "id": "j70",
+      "name": "J/70",
+      "manufacturer": "J/Boats",
+      "type": "One-Design Sportboat",
+      "year": "2012-Present",
+      "designer": "Alan Johnstone",
+      "manual": "data/yachtpdf/j70-user-manual.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 6.91,
+          "unit": "m",
+          "display": "6.91m (22.7ft)"
+        },
+        "lwl": {
+          "value": 6.58,
+          "unit": "m",
+          "display": "6.58m"
+        },
+        "beam": {
+          "value": 2.21,
+          "unit": "m",
+          "display": "2.21m"
+        },
+        "draft": {
+          "value": 1.37,
+          "unit": "m",
+          "display": "1.37m"
+        },
+        "displacement": {
+          "value": 760,
+          "unit": "kg",
+          "display": "760kg"
+        },
+        "mastHeight": {
+          "value": 9.75,
+          "unit": "m",
+          "display": "9.75m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 15.8,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 10.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 52.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 25.8,
+          "unit": "m²",
+          "display": "25.8m² (upwind)"
+        }
+      },
+      "accommodation": {
+        "crew": "4 people",
+        "racing": "4 crew typical"
+      }
+    },
+    {
+      "id": "solaris-44",
+      "name": "Solaris 44",
+      "manufacturer": "Solaris Yachts",
+      "type": "Performance Cruiser",
+      "year": "2016-Present",
+      "designer": "Soto Acebal",
+      "manual": "data/yachtpdf/Solaris-44.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 13.4,
+          "unit": "m",
+          "display": "13.40m (44ft)"
+        },
+        "lwl": {
+          "value": 12.37,
+          "unit": "m",
+          "display": "12.37m"
+        },
+        "beam": {
+          "value": 4.18,
+          "unit": "m",
+          "display": "4.18m"
+        },
+        "draft": {
+          "value": 2.45,
+          "unit": "m",
+          "display": "2.45m (deep keel)"
+        },
+        "displacement": {
+          "value": 9800,
+          "unit": "kg",
+          "display": "9800kg"
+        },
+        "mastHeight": {
+          "value": 19.8,
+          "unit": "m",
+          "display": "19.80m"
+        }
+      },
+      "sailArea": {
+        "main": {
+          "value": 53.5,
+          "unit": "m²"
+        },
+        "jib": {
+          "value": 52.0,
+          "unit": "m²"
+        },
+        "spinnaker": {
+          "value": 180.0,
+          "unit": "m²"
+        },
+        "total": {
+          "value": 105.5,
+          "unit": "m²",
+          "display": "105.5m²"
+        }
+      },
+      "engine": {
+        "type": "Inboard Diesel",
+        "power": "75 HP",
+        "model": "Yanmar 4JH75"
+      },
+      "tanks": {
+        "fuel": {
+          "value": 250,
+          "unit": "l"
+        },
+        "water": {
+          "value": 430,
+          "unit": "l"
+        }
+      },
+      "accommodation": {
+        "cabins": 3,
+        "berths": 8,
+        "heads": 2
+      }
+    }
+  ]
+}
