@@ -1,4 +1,4 @@
-// HooAah Yacht AI Chat Screen - 카카오톡 스타일 UI
+// HooAah Yacht AI Chat Screen - Figma 디자인 기반 UI
 // 이 파일을 frontend/lib/screens/ 폴더에 복사하세요
 
 import 'package:flutter/material.dart';
@@ -149,53 +149,38 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFB2C7D9), // 카카오톡 배경색
+      backgroundColor: Colors.white, // HooAah 디자인 시스템 - 흰색 배경
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 0.5,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Row(
-          children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: const Color(0xFF3B5998),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const Icon(Icons.sailing, color: Colors.white, size: 24),
+        elevation: 0,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 24),
+          child: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
             ),
-            const SizedBox(width: 12),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'HooAah AI',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  '요트 전문 어시스턴트',
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ],
+            padding: EdgeInsets.zero,
+            constraints: const BoxConstraints(),
+            onPressed: () => Navigator.pop(context),
+          ),
         ),
+        leadingWidth: 56,
+        title: const Text(
+          'AI',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            letterSpacing: -0.5,
+          ),
+        ),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_outline, color: Colors.black),
             onPressed: _clearChat,
             tooltip: '대화 초기화',
+            padding: const EdgeInsets.only(right: 24),
           ),
         ],
       ),
@@ -207,7 +192,10 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
                 ? _buildEmptyState()
                 : ListView.builder(
                     controller: _scrollController,
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 24,
+                      vertical: 16,
+                    ),
                     itemCount: _messages.length,
                     itemBuilder: (context, index) {
                       return _buildMessageBubble(_messages[index]);
@@ -218,18 +206,35 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
           // 로딩 인디케이터
           if (_isLoading)
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: Row(
                 children: [
-                  const SizedBox(width: 16),
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF2B4184).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Icon(
+                      Icons.sailing,
+                      color: Color(0xFF2B4184),
+                      size: 24,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
+                      horizontal: 20,
+                      vertical: 16,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(18),
+                      color: const Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: const Color(0xFFE0E0E0),
+                        width: 1,
+                      ),
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -239,17 +244,18 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
                           height: 16,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              Colors.grey[400]!,
+                            valueColor: const AlwaysStoppedAnimation<Color>(
+                              Color(0xFF2B4184),
                             ),
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        Text(
+                        const SizedBox(width: 12),
+                        const Text(
                           '답변 생성 중...',
                           style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 14,
+                            color: Colors.black,
+                            fontSize: 16,
+                            letterSpacing: -0.5,
                           ),
                         ),
                       ],
@@ -269,51 +275,56 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
   /// 빈 상태 위젯
   Widget _buildEmptyState() {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.9),
-              borderRadius: BorderRadius.circular(40),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 80,
+              height: 80,
+              decoration: BoxDecoration(
+                color: const Color(0xFF2B4184).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: const Icon(
+                Icons.sailing,
+                size: 40,
+                color: Color(0xFF2B4184),
+              ),
             ),
-            child: const Icon(
-              Icons.sailing,
-              size: 40,
-              color: Color(0xFF3B5998),
+            const SizedBox(height: 24),
+            const Text(
+              'HooAah Yacht AI',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                letterSpacing: -0.5,
+              ),
             ),
-          ),
-          const SizedBox(height: 24),
-          Text(
-            'HooAah Yacht AI',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.grey[800],
+            const SizedBox(height: 8),
+            Text(
+              '요트에 대해 무엇이든 물어보세요!',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
+                letterSpacing: -0.5,
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            '요트에 대해 무엇이든 물어보세요!',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey[600],
+            const SizedBox(height: 32),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              alignment: WrapAlignment.center,
+              children: [
+                _buildSuggestionChip('Farr 40 크기 알려줘'),
+                _buildSuggestionChip('레이싱 요트 추천해줘'),
+                _buildSuggestionChip('정비 주기는?'),
+              ],
             ),
-          ),
-          const SizedBox(height: 32),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            alignment: WrapAlignment.center,
-            children: [
-              _buildSuggestionChip('Farr 40 크기 알려줘'),
-              _buildSuggestionChip('레이싱 요트 추천해줘'),
-              _buildSuggestionChip('정비 주기는?'),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -321,13 +332,26 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
   /// 추천 질문 칩
   Widget _buildSuggestionChip(String text) {
     return ActionChip(
-      label: Text(text),
+      label: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 14,
+          letterSpacing: -0.5,
+          color: Colors.black,
+        ),
+      ),
       onPressed: () {
         _messageController.text = text;
         _sendMessage();
       },
       backgroundColor: Colors.white,
-      labelStyle: TextStyle(color: Colors.grey[800]),
+      side: const BorderSide(
+        color: Color(0xFF47546F),
+        width: 1,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
     );
   }
 
@@ -336,24 +360,28 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
     final isUser = message.isUser;
     
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.only(bottom: 16),
       child: Row(
         mainAxisAlignment:
             isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (!isUser) ...[
             // AI 아바타
             Container(
-              width: 36,
-              height: 36,
+              width: 40,
+              height: 40,
               decoration: BoxDecoration(
-                color: const Color(0xFF3B5998),
-                borderRadius: BorderRadius.circular(18),
+                color: const Color(0xFF2B4184).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(20),
               ),
-              child: const Icon(Icons.sailing, color: Colors.white, size: 20),
+              child: const Icon(
+                Icons.sailing,
+                color: Color(0xFF2B4184),
+                size: 24,
+              ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 12),
           ],
           
           // 메시지 내용
@@ -364,41 +392,37 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
               children: [
                 Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
+                    horizontal: 20,
+                    vertical: 16,
                   ),
                   decoration: BoxDecoration(
                     color: isUser
-                        ? const Color(0xFFFFEB33) // 카카오톡 노란색
-                        : Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: const Radius.circular(18),
-                      topRight: const Radius.circular(18),
-                      bottomLeft: Radius.circular(isUser ? 18 : 4),
-                      bottomRight: Radius.circular(isUser ? 4 : 18),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 5,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+                        ? const Color(0xFF2B4184) // HooAah 액센트 컬러
+                        : const Color(0xFFF5F5F5), // 연한 회색 배경
+                    borderRadius: BorderRadius.circular(16),
+                    border: isUser
+                        ? null
+                        : Border.all(
+                            color: const Color(0xFFE0E0E0),
+                            width: 1,
+                          ),
                   ),
                   child: Text(
                     message.content,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.black87,
-                      height: 1.4,
+                    style: TextStyle(
+                      fontSize: 16,
+                      letterSpacing: -0.5,
+                      color: isUser ? Colors.white : Colors.black,
+                      height: 1.5,
                     ),
                   ),
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 8),
                 Text(
                   _formatTime(message.timestamp),
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: 12,
+                    letterSpacing: -0.5,
                     color: Colors.grey[600],
                   ),
                 ),
@@ -406,7 +430,23 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
             ),
           ),
           
-          if (isUser) const SizedBox(width: 8),
+          if (isUser) ...[
+            const SizedBox(width: 12),
+            // 사용자 아바타 (선택사항)
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: const Color(0xFF2B4184).withOpacity(0.1),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Icon(
+                Icons.person,
+                color: Color(0xFF2B4184),
+                size: 24,
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -415,39 +455,48 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
   /// 입력 영역
   Widget _buildInputArea() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, -2),
+        border: Border(
+          top: BorderSide(
+            color: Color(0xFFB0B8C1),
+            width: 1,
           ),
-        ],
+        ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: SafeArea(
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            IconButton(
-              icon: const Icon(Icons.add_circle_outline),
-              onPressed: () {
-                // 추가 기능 (파일 첨부 등)
-              },
-              color: Colors.grey[600],
-            ),
             Expanded(
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                constraints: const BoxConstraints(
+                  maxHeight: 120,
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(24),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(
+                    color: const Color(0xFF47546F),
+                    width: 1,
+                  ),
                 ),
                 child: TextField(
                   controller: _messageController,
                   decoration: const InputDecoration(
                     hintText: '메시지를 입력하세요',
+                    hintStyle: TextStyle(
+                      color: Color(0xFF47546F),
+                      fontSize: 16,
+                      letterSpacing: -0.5,
+                    ),
                     border: InputBorder.none,
+                  ),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    letterSpacing: -0.5,
                   ),
                   maxLines: null,
                   textInputAction: TextInputAction.send,
@@ -455,16 +504,18 @@ class _YachtAIChatScreenState extends State<YachtAIChatScreen> {
                 ),
               ),
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 12),
             Container(
+              width: 48,
+              height: 48,
               decoration: BoxDecoration(
-                color: const Color(0xFF3B5998),
-                borderRadius: BorderRadius.circular(24),
+                color: const Color(0xFF2B4184),
+                borderRadius: BorderRadius.circular(16),
               ),
               child: IconButton(
-                icon: const Icon(Icons.send),
+                icon: const Icon(Icons.send, color: Colors.white),
                 onPressed: _sendMessage,
-                color: Colors.white,
+                padding: EdgeInsets.zero,
               ),
             ),
           ],

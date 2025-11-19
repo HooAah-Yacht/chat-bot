@@ -27,8 +27,17 @@ class YachtAIChatbot:
         # Gemini API 설정
         genai.configure(api_key=api_key)
         
-        # 모델 초기화 (gemini-pro 사용)
-        self.model = genai.GenerativeModel('gemini-pro')
+        # 모델 초기화 - Gemini 2.5 Flash 사용 (2025년 6월 출시, 2026년 6월까지 지원)
+        # 참고: https://ai.google.dev/gemini-api/docs/deprecations?hl=ko
+        try:
+            # Gemini 2.5 Flash 모델 사용 (최신 안정 모델)
+            self.model = genai.GenerativeModel('gemini-2.5-flash')
+            print("✅ Gemini 2.5 Flash 모델 사용")
+        except Exception as e:
+            # Fallback: gemini-pro 사용
+            print(f"⚠️ Gemini 2.5 Flash 사용 실패, gemini-pro로 전환: {e}")
+            self.model = genai.GenerativeModel('gemini-pro')
+            print("✅ gemini-pro 모델 사용 (fallback)")
         
         # 대화 히스토리
         self.chat_history: List[Dict[str, str]] = []
@@ -75,14 +84,26 @@ class YachtAIChatbot:
 **지원하는 요트 20종:**
 {', '.join(yacht_list)}
 
+**데이터베이스 구조 (ERD 기반):**
+- User: 사용자 정보
+- Yacht: 요트 정보 (name)
+- Yacht_User: 사용자-요트 연결 (다대다 관계)
+- Part: 부품 정보 (name, manufacturer, model, interval)
+- Repair: 정비 내역 (repairDate만 저장, content 필드 없음)
+- Calendar: 캘린더 이벤트 (content 필드 있음, part_id와 연결)
+- Alert: 알림 (part_id와 일대일 관계)
+
 **답변 가이드라인:**
 1. 친근하고 자연스러운 대화체 사용 (존댓말)
 2. 요트 이름이 언급되면 해당 요트의 상세 정보 제공
 3. 크기/치수 질문: LOA, Beam, Draft, Displacement, Mast Height 등 제공
-4. 부품 질문: 해당 요트의 부품 목록과 정비 주기 안내
+4. 부품 질문: 해당 요트의 부품 목록과 정비 주기(interval) 안내
 5. 비교 질문: 여러 요트를 비교하여 차이점 설명
 6. 추천 질문: 사용 목적에 맞는 요트 추천
-7. 정비/관리 질문: 정비 주기, 점검 항목, 유지보수 팁 제공
+7. 정비/관리 질문: 
+   - 정비 주기(interval): 부품별 몇 달마다 정비해야 하는지
+   - 정비 이력(Repair): repairDate만 저장됨 (정비 내용은 Calendar에 저장)
+   - 정비 이력 등록 시: 다음 정비일 계산, 알림 업데이트, 캘린더 생성
 8. 모르는 내용은 솔직히 모른다고 답변
 
 **답변 형식:**
@@ -114,24 +135,20 @@ class YachtAIChatbot:
 레이싱에 최적화된 크기네요! 다른 궁금한 점 있으신가요?"
 
 사용자: "정비는 언제 해야 해?"
-어시스턴트: "Farr 40의 주요 정비 항목입니다! 🔧
+어시스턴트: "Farr 40의 정비 정보입니다! 🔧
 
-정기 점검 (매 항해 전):
-- 리깅 점검
-- 세일 상태 확인
-- 안전장비 체크
+**부품별 정비 주기 (interval):**
+- 엔진: 12개월마다
+- 리깅: 6개월마다
+- 세일: 3개월마다
+- 윈치: 6개월마다
 
-월간 정비:
-- 윈치 윤활
-- 블록 점검
-- 라인 마모 확인
+**정비 이력 관리:**
+- 정비 이력을 등록하면 자동으로 다음 정비일이 계산됩니다
+- 알림(Alert)이 업데이트되고 캘린더(Calendar)에 일정이 생성됩니다
+- 정비 내용은 캘린더에 저장됩니다
 
-연간 정비:
-- 엔진 오버홀
-- 리깅 전문 점검
-- 선체 검사
-
-더 자세한 부품별 정비 주기가 필요하신가요?"
+현재 정비 이력을 확인하시겠어요?"
 """
         return prompt
     

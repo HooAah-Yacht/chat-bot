@@ -1,0 +1,861 @@
+[
+  {
+    "documentInfo": {
+      "title": "J/70 Owner Guide",
+      "yachtModel": "J/70",
+      "manufacturer": "C&C Fiberglass Components, Inc.",
+      "documentType": "Owner Guide"
+    },
+    "yachtSpecs": {
+      "dimensions": {
+        "LOA": "6.934m (22.75')",
+        "Beam": "2.249m (7.38')",
+        "Draft": "1.45m (4.75') [Keel Down]",
+        "Displacement": "794 kg (1,750 lbs.)",
+        "mastHeight": "10.00 m (32’ 10”) (not including masthead instruments)"
+      },
+      "engine": {
+        "type": "Outboard Engine",
+        "output": "4hp",
+        "model": null
+      },
+      "sailArea": {
+        "total": "21.0 sq m (226 sq ft) (triangles)",
+        "jib": "10.31 sq m (111 sq ft) (OD Class)",
+        "mainsail": "16.07 sq m (173 sq ft) (OD Class)",
+        "spinnaker": "45.61 sq m (491 sq ft) (OD Class)"
+      }
+    },
+    "parts": [
+      {
+        "name": "Foredeck Hatch",
+        "manufacturer": "Global BSI Inc.",
+        "model": null,
+        "interval": null,
+        "category": "Deck Hardware"
+      },
+      {
+        "name": "Rig",
+        "manufacturer": "Southern Spars - Rig Pro USA",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Deck Hardware",
+        "manufacturer": "Harken",
+        "model": null,
+        "interval": null,
+        "category": "Deck Hardware"
+      },
+      {
+        "name": "Deck Hardware",
+        "manufacturer": "Ronstan",
+        "model": null,
+        "interval": null,
+        "category": "Deck Hardware"
+      },
+      {
+        "name": "Running Rigging",
+        "manufacturer": "Marlow",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Lifting Keel",
+        "manufacturer": "C&C Fiberglass Components, Inc.",
+        "model": null,
+        "interval": null,
+        "category": "Hull/Structure"
+      },
+      {
+        "name": "Kelp Cutter",
+        "manufacturer": "C&C Fiberglass Components, Inc.",
+        "model": null,
+        "interval": null,
+        "category": "Hull/Structure"
+      }
+    ],
+    "maintenance": [
+      {
+        "item": "Boat Inspection",
+        "interval": null,
+        "method": "Refer to APPENDIX A - Best Practices - Boat Inspection",
+        "category": "General Maintenance"
+      },
+      {
+        "item": "Inspect and dry out access inspection ports (aft bulkhead, V-berth end) for moisture or condensation",
+        "interval": null,
+        "method": "Inspect periodically for moisture or condensation build up and dry out prior to extended storage.",
+        "category": "Hull/Structure Maintenance"
+      }
+    ],
+    "analysisResult": {
+      "canExtractText": true,
+      "canAnalyze": true,
+      "reason": null
+    },
+    "fileInfo": {
+      "fileName": "j70-user-manual.pdf",
+      "filePath": "data/yachtpdf/j70-user-manual.pdf",
+      "fileSize": 3368383
+    }
+  },
+  {
+    "documentInfo": {
+      "title": "Rigging Manual V16",
+      "yachtModel": "RS 21",
+      "manufacturer": "RS Sailing",
+      "documentType": "Rigging Manual"
+    },
+    "yachtSpecs": {
+      "dimensions": {
+        "LOA": "6.34m",
+        "beam": "2.2m",
+        "draft": "1.38m",
+        "displacement": "650kg",
+        "mastHeight": null
+      },
+      "engine": {
+        "type": "Electric",
+        "output": null,
+        "model": "Epropulsion Motor"
+      },
+      "sailArea": {
+        "mainsailRace": "16.2m2",
+        "jibRace": "8.4m2",
+        "gennakerRace": "40m2",
+        "mainsailClub": "16.2m2",
+        "jibClub": "8.4m2",
+        "gennakerClub": "35m2",
+        "spinnakerClub": "30m2"
+      }
+    },
+    "parts": [
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "30mm Single Swivel",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "40mm Single",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "30mm Single Strap",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "30mm Single Becket Swivel",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "40mm Fiddle Cam",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "40mm Fiddle",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "40mm Single Becket",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "45mm Wire",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "20mm Single Becket",
+        "interval": null,
+        "category": "Engine Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "60mm Single",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Block",
+        "manufacturer": "RS Sailing",
+        "model": "40mm Single Strap",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Shackle",
+        "manufacturer": "RS Sailing",
+        "model": "dia 5,Slotted,Narrow",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Shackle",
+        "manufacturer": "RS Sailing",
+        "model": "ø5x11x26, BOW ST",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Stopper Knob",
+        "manufacturer": "RS Sailing",
+        "model": "6mm - Black",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Spinnaker Bag Tube",
+        "manufacturer": "RS Sailing",
+        "model": "L=650",
+        "interval": null,
+        "category": "Sails Hardware"
+      },
+      {
+        "name": "Spinnaker Bag Tube",
+        "manufacturer": "RS Sailing",
+        "model": "L=830",
+        "interval": null,
+        "category": "Sails Hardware"
+      },
+      {
+        "name": "Block Set",
+        "manufacturer": "RS Sailing",
+        "model": "30mm Three Singles on a Ring",
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Rudder Pin",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Hull Hardware"
+      },
+      {
+        "name": "Keel Strap",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Hull Hardware"
+      },
+      {
+        "name": "Rubber Tapered Bung and Line",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging Hardware"
+      },
+      {
+        "name": "Launch Line",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 5mm Black / Blue Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Tack Line",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 6mm Black / Red Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Jib Cunningham Purchase",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 4mm Black / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Jib Cunningham Control",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 4mm Black / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Spin Sheets",
+        "manufacturer": "RS Sailing",
+        "model": "Braid on Braid 8mm Red / Black Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Cunningham",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 5mm Black / Blue Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Cunningham Tail",
+        "manufacturer": "RS Sailing",
+        "model": "Rig12 4mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Vang",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 5mm Black / Pink Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Vang Purchase",
+        "manufacturer": "RS Sailing",
+        "model": "Rig12 5mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Jib Sheet",
+        "manufacturer": "RS Sailing",
+        "model": "Braid on Braid 8mm Blue / Black Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Mainsheet",
+        "manufacturer": "RS Sailing",
+        "model": "Braid on Braid 8mm Black / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Mainsheet Whipping",
+        "manufacturer": "RS Sailing",
+        "model": "Rig12 1.5mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Engine Uphaul",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 4mm Grey / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Engine Block Tie",
+        "manufacturer": "RS Sailing",
+        "model": "Compact78 1.5mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Backstay Control",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 5mm Black / Neon Yellow Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Backstay Block Tie",
+        "manufacturer": "RS Sailing",
+        "model": "Rig12 4mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Backstay Purchase",
+        "manufacturer": "RS Sailing",
+        "model": "Rig12+ 4mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Back Rest",
+        "manufacturer": "RS Sailing",
+        "model": "Rig 12 2mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Stanchion Rope",
+        "manufacturer": "RS Sailing",
+        "model": "Rig 12 4mm Black",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Main Halyard",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 6mm Black / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Jib Halyard",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 6mm Grey / White Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Spinnaker Halyard",
+        "manufacturer": "RS Sailing",
+        "model": "Evo Race78 6mm Black / Neon Yellow Melange",
+        "interval": null,
+        "category": "Rope"
+      },
+      {
+        "name": "Stanchion",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Guard rail pad",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Guard rail ropes",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Stanchion Pin",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Spinnaker Pole",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Sails Hardware"
+      },
+      {
+        "name": "Hoop",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Hull Hardware"
+      },
+      {
+        "name": "Lower (Shroud)",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Spreader",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Shroud",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Forestay",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Backstay",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Backstay Flicker",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Mast",
+        "manufacturer": "RS Sailing",
+        "model": "One piece carbon composite",
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Boom",
+        "manufacturer": "RS Sailing",
+        "model": "Aluminium alloy",
+        "interval": null,
+        "category": "Rigging"
+      },
+      {
+        "name": "Rudder",
+        "manufacturer": "RS Sailing",
+        "model": "Removeable - composite",
+        "interval": null,
+        "category": "Hull"
+      },
+      {
+        "name": "Keel",
+        "manufacturer": "RS Sailing",
+        "model": "Lifting - with bulb",
+        "interval": null,
+        "category": "Hull"
+      },
+      {
+        "name": "Mainsail",
+        "manufacturer": "RS Sailing",
+        "model": "Race/Club",
+        "interval": null,
+        "category": "Sail"
+      },
+      {
+        "name": "Jib",
+        "manufacturer": "RS Sailing",
+        "model": "Race/Club",
+        "interval": null,
+        "category": "Sail"
+      },
+      {
+        "name": "Gennaker",
+        "manufacturer": "RS Sailing",
+        "model": "Race/Club",
+        "interval": null,
+        "category": "Sail"
+      },
+      {
+        "name": "Spinnaker",
+        "manufacturer": "RS Sailing",
+        "model": "Club",
+        "interval": null,
+        "category": "Sail"
+      },
+      {
+        "name": "Batten",
+        "manufacturer": "RS Sailing",
+        "model": null,
+        "interval": null,
+        "category": "Sail Hardware"
+      },
+      {
+        "name": "Epropulsion Motor",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Communication Cables",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Communication Module",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Battery",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Throttle",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Screen",
+        "manufacturer": "Epropulsion",
+        "model": "Display Panel",
+        "interval": null,
+        "category": "Engine"
+      },
+      {
+        "name": "Kill switch",
+        "manufacturer": "Epropulsion",
+        "model": null,
+        "interval": null,
+        "category": "Engine"
+      }
+    ],
+    "maintenance": [],
+    "analysisResult": {
+      "canExtractText": true,
+      "canAnalyze": true,
+      "reason": ""
+    },
+    "fileInfo": {
+      "fileName": "RS21Riggingguide.pdf",
+      "filePath": "data/yachtpdf/RS21Riggingguide.pdf",
+      "fileSize": 12894228
+    }
+  },
+  {
+    "documentInfo": {
+      "title": "OWNER’S MANUAL",
+      "yachtModel": "FIRST 36.7",
+      "manufacturer": "BENETEAU",
+      "documentType": "OWNER’S MANUAL"
+    },
+    "yachtSpecs": {
+      "dimensions": {
+        "lengthOfHull": "10.68 m",
+        "beam": "3.45 m",
+        "draught": {
+          "deepKeel": "2.20 m",
+          "shoalKeel": "1.80 m"
+        },
+        "airDraught": "17.00 m",
+        "lightDisplacement": "5869 Kg",
+        "maximumLoadDisplacement": "7709 Kg"
+      },
+      "engine": {
+        "maxiAuthorizedPower": "25 kW"
+      },
+      "sailArea": {
+        "total": {
+          "cruising": "73 m²",
+          "racing": "78.5 m²"
+        },
+        "mainSail": {
+          "cruising": "36 m²",
+          "racing": "38 m²"
+        },
+        "genoa": {
+          "cruising": "37 m²",
+          "racing": "40.5 m²"
+        },
+        "spinnaker": {
+          "cruising": "90 m²",
+          "racing": "90 m²"
+        }
+      }
+    },
+    "parts": [
+      {
+        "name": "V1 Shroud Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash17",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "D1 Lower Shroud Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash10",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "V2 Upper Shroud Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash12",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "D2 Inter Shroud Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash6",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "Forestay Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash12",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "Backstay Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash10",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "D3 Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash4",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "V3 D4 Rod",
+        "manufacturer": "BENETEAU",
+        "model": "Dash10",
+        "interval": null,
+        "category": "Standing Rigging"
+      },
+      {
+        "name": "Block – Ø60",
+        "manufacturer": "BENETEAU",
+        "model": "2601",
+        "interval": null,
+        "category": "Deck Fitting"
+      },
+      {
+        "name": "Block – Ø60",
+        "manufacturer": "BENETEAU",
+        "model": "1611",
+        "interval": null,
+        "category": "Deck Fitting"
+      },
+      {
+        "name": "Double Block",
+        "manufacturer": "BENETEAU",
+        "model": "H127",
+        "interval": null,
+        "category": "Deck Fitting"
+      },
+      {
+        "name": "Single Block",
+        "manufacturer": "BENETEAU",
+        "model": "H168",
+        "interval": null,
+        "category": "Deck Fitting"
+      },
+      {
+        "name": "Block Ø80",
+        "manufacturer": "BENETEAU",
+        "model": "2801",
+        "interval": null,
+        "category": "Deck Fitting"
+      }
+    ],
+    "maintenance": [
+      {
+        "item": "Boat (overall)",
+        "interval": "12 months",
+        "method": "Have your boat examined and maintained once a year during the winter storage."
+      },
+      {
+        "item": "Hull and Deck",
+        "interval": "As often as possible",
+        "method": "Hose off with freshwater."
+      },
+      {
+        "item": "Gel coat",
+        "interval": "Regularly",
+        "method": "Preventive and regular maintenance; consult dealer for methods and products."
+      },
+      {
+        "item": "Deck Fitting (blocks, sheaves, turnbuckles, winches, windlass, rails, travellers, etc.)",
+        "interval": "Regularly",
+        "method": "Lubricate with grease or light oil."
+      },
+      {
+        "item": "Stainless steels (deck fitting)",
+        "interval": "Regularly",
+        "method": "Polish with an appropriate polish paste."
+      },
+      {
+        "item": "Outside Teak Woodworks",
+        "interval": null,
+        "method": "Scrub using water. Rub down with fine sandpaper for renovation."
+      },
+      {
+        "item": "Plexiglass",
+        "interval": null,
+        "method": "Rinse with freshwater. Clean using a sponge and a cleaning product for windows."
+      },
+      {
+        "item": "Rudder (steering system)",
+        "interval": "12 months",
+        "method": "Have the whole steering system overhauled every year."
+      },
+      {
+        "item": "Boat Interior (overall)",
+        "interval": "Regularly (weather permitting)",
+        "method": "Air and ventilate regularly. Take off floorboards and berth spreads, put them vertically when leaving the boat."
+      },
+      {
+        "item": "Bilges",
+        "interval": null,
+        "method": "Make sure they are clean and dry."
+      },
+      {
+        "item": "Internal woodworks",
+        "interval": null,
+        "method": "Rinse with fresh water and a liquid detergent, then polish with a chamois leather."
+      },
+      {
+        "item": "Fresh Water System (tanks and pipes)",
+        "interval": "After long periods of non-use",
+        "method": "Rinse with water and vinegar. Sterilize tanks with Clonazone tablets (or equivalent)."
+      },
+      {
+        "item": "Engine (drive system)",
+        "interval": "12 months (during winter storage)",
+        "method": "Overhauled and maintained by a skilled mechanic, referring to manufacturer instructions. Keep fuel tank full to avoid condensation."
+      },
+      {
+        "item": "Running and Standing Rigging",
+        "interval": "12 months (examination), seasonal (rinsing)",
+        "method": "Examine once a year. Rinse running rigging with freshwater at the end of each season."
+      },
+      {
+        "item": "Sails",
+        "interval": "Whenever possible",
+        "method": "Rinse with freshwater and let them dry. Unrig or protect with covers."
+      }
+    ],
+    "analysisResult": {
+      "canExtractText": true,
+      "canAnalyze": true,
+      "reason": null
+    },
+    "fileInfo": {
+      "fileName": "owners_manual.pdf",
+      "filePath": "data/yachtpdf/owners_manual.pdf",
+      "fileSize": 525632
+    }
+  }
+]
