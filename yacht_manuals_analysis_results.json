@@ -1,0 +1,368 @@
+{
+  "analysisDate": "2025-11-20T15:56:13.572787",
+  "totalYachts": 20,
+  "successCount": 15,
+  "failCount": 5,
+  "results": [
+    {
+      "yachtName": "FarEast 28",
+      "pdfFile": "OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "pdfPath": "data\\yachtpdf\\OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:32:57.533819",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "FAREAST 28R",
+        "manufacturer": "Shanghai Far East Boats CO. LTD.",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 143
+      }
+    },
+    {
+      "yachtName": "Farr 40",
+      "pdfFile": "rulebook.pdf",
+      "pdfPath": "data\\yachtpdf\\rulebook.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:33:51.457863",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Farr 40",
+        "manufacturer": "Farr Yacht Design, Inc.",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 109
+      }
+    },
+    {
+      "yachtName": "Beneteau 473",
+      "pdfFile": "Beneteau 473 Owner's Manual_compressed.pdf",
+      "pdfPath": "data\\yachtpdf\\Beneteau 473 Owner's Manual_compressed.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:34:34.702836",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "OCEANIS 473",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 186
+      }
+    },
+    {
+      "yachtName": "J/24",
+      "pdfFile": "J242019CR220319-[24866].pdf",
+      "pdfPath": "data\\yachtpdf\\J242019CR220319-[24866].pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:35:26.878779",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0
+      }
+    },
+    {
+      "yachtName": "Laser",
+      "pdfFile": "Handbook_2109.pdf",
+      "pdfPath": "data\\yachtpdf\\Handbook_2109.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:36:14.562667",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Laser",
+        "manufacturer": null,
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 11
+      }
+    },
+    {
+      "yachtName": "Swan 50",
+      "pdfFile": "ClubSwan50ClassRules07042021-[27210].pdf",
+      "pdfPath": "data\\yachtpdf\\ClubSwan50ClassRules07042021-[27210].pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:36:44.400896",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "ClubSwan 50",
+        "manufacturer": "Nautor Holdings SRL / Oy Nautor Ab",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 54
+      }
+    },
+    {
+      "yachtName": "X-35",
+      "pdfFile": "X352012CR080412-[12381].pdf",
+      "pdfPath": "data\\yachtpdf\\X352012CR080412-[12381].pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:37:23.474713",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "X–35 One Design",
+        "manufacturer": "X–Yachts A/S",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 105
+      }
+    },
+    {
+      "yachtName": "Melges 32",
+      "pdfFile": "M32_CR_2025-03March-30.pdf",
+      "pdfPath": "data\\yachtpdf\\M32_CR_2025-03March-30.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:38:07.107248",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Melges 32",
+        "manufacturer": "Melges Performance Boats",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 91
+      }
+    },
+    {
+      "yachtName": "TP52",
+      "pdfFile": "TP52_CR20220124.pdf",
+      "pdfPath": "data\\yachtpdf\\TP52_CR20220124.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:44:40.971512",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "TP52",
+        "manufacturer": null,
+        "dimensions": {
+          "loa": 15.85,
+          "beam": 4.42,
+          "draft": 3.5
+        },
+        "partsCount": 67
+      }
+    },
+    {
+      "yachtName": "Beneteau First 36",
+      "pdfFile": "owners_manual.pdf",
+      "pdfPath": "data\\yachtpdf\\owners_manual.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:45:22.111590",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "FIRST 36.7",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": 3.45,
+          "draft": null
+        },
+        "partsCount": 158
+      }
+    },
+    {
+      "yachtName": "Jeanneau Sun Fast 3300",
+      "pdfFile": "Sun-Fast-3300-technical-inventory.pdf",
+      "pdfPath": "data\\yachtpdf\\Sun-Fast-3300-technical-inventory.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:45:58.182214",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Sun Fast 3300",
+        "manufacturer": "JEANNEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 145
+      }
+    },
+    {
+      "yachtName": "Dehler 38",
+      "pdfFile": "press-manual-dehler38.pdf",
+      "pdfPath": "data\\yachtpdf\\press-manual-dehler38.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:46:48.397816",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Dehler 38",
+        "manufacturer": "Dehler",
+        "dimensions": {
+          "loa": 11.3,
+          "beam": 3.75,
+          "draft": 2.0
+        },
+        "partsCount": 52
+      }
+    },
+    {
+      "yachtName": "X-Yachts XP 44",
+      "pdfFile": "Xp44-Brochure_July2018_ONLINE.pdf",
+      "pdfPath": "data\\yachtpdf\\Xp44-Brochure_July2018_ONLINE.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:47:29.510545",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0
+      }
+    },
+    {
+      "yachtName": "Hanse 458",
+      "pdfFile": "Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "pdfPath": "data\\yachtpdf\\Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:48:20.918111",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "Hanse 458",
+        "manufacturer": "HanseYachts AG",
+        "dimensions": {
+          "loa": 14.04,
+          "beam": 4.38,
+          "draft": null
+        },
+        "partsCount": 120
+      }
+    },
+    {
+      "yachtName": "Beneteau Oceanis 46",
+      "pdfFile": "14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "pdfPath": "data\\yachtpdf\\14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:49:25.573678",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "OCEANIS 46.1",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": 14.6,
+          "beam": 4.5,
+          "draft": null
+        },
+        "partsCount": 66
+      }
+    },
+    {
+      "yachtName": "Nautor Swan 48",
+      "pdfFile": "2020_03_31_11_03_39-48 owners manual.pdf",
+      "pdfPath": "data\\yachtpdf\\2020_03_31_11_03_39-48 owners manual.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:52:06.418690",
+      "status": "failed",
+      "error": "❌ 문서 분석 중 오류가 발생했습니다:\nPDF에서 텍스트를 추출할 수 없습니다. 스캔된 이미지 PDF일 수 있습니다.",
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0
+      }
+    },
+    {
+      "yachtName": "Grand Soleil GC 42",
+      "pdfFile": "GS42LC_Brochure-1.pdf",
+      "pdfPath": "data\\yachtpdf\\GS42LC_Brochure-1.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:52:06.439741",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'str' object has no attribute 'get'",
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0
+      }
+    },
+    {
+      "yachtName": "RS21",
+      "pdfFile": "RS21Riggingguide.pdf",
+      "pdfPath": "data\\yachtpdf\\RS21Riggingguide.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:52:34.805561",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "RS 21",
+        "manufacturer": "RS Sailing",
+        "dimensions": {
+          "loa": null,
+          "beam": 2.2,
+          "draft": null
+        },
+        "partsCount": 108
+      }
+    },
+    {
+      "yachtName": "J/70",
+      "pdfFile": "j70-user-manual.pdf",
+      "pdfPath": "data\\yachtpdf\\j70-user-manual.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:54:17.516377",
+      "status": "success",
+      "error": null,
+      "extractedInfo": {
+        "yachtName": "J/70",
+        "manufacturer": "J Boats, Inc.",
+        "dimensions": {
+          "loa": 6.934,
+          "beam": 2.249,
+          "draft": null
+        },
+        "partsCount": 44
+      }
+    },
+    {
+      "yachtName": "Solaris 44",
+      "pdfFile": "Solaris-44.pdf",
+      "pdfPath": "data\\yachtpdf\\Solaris-44.pdf",
+      "exists": true,
+      "timestamp": "2025-11-20T15:55:16.005689",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0
+      }
+    }
+  ]
+}

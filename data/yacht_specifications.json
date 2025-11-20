@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "description": "20종 세일링 요트 완전한 스펙 데이터베이스",
-  "lastUpdated": "2024-11-13",
+  "lastUpdated": "2025-11-20",
   "totalYachts": 20,
   "categories": {
     "racing": [
@@ -106,66 +106,22 @@
     {
       "id": "farr-40",
       "name": "Farr 40",
-      "manufacturer": "Farr Yacht Design",
-      "type": "One-Design Racing",
+      "manufacturer": "Farr Yacht Design, Inc.",
+      "type": "Class Rules",
       "year": "1996-Present",
       "designer": "Farr Yacht Design",
-      "manual": "data/yachtpdf/rulebook.pdf",
-      "dimensions": {
-        "loa": {
-          "value": 12.19,
-          "unit": "m",
-          "display": "12.19m (40ft)"
-        },
-        "lwl": {
-          "value": 10.67,
-          "unit": "m",
-          "display": "10.67m"
-        },
-        "beam": {
-          "value": 3.66,
-          "unit": "m",
-          "display": "3.66m"
-        },
-        "draft": {
-          "value": 2.54,
-          "unit": "m",
-          "display": "2.54m"
-        },
-        "displacement": {
-          "value": 4760,
-          "unit": "kg",
-          "display": "4760kg"
-        },
-        "mastHeight": {
-          "value": 17.37,
-          "unit": "m",
-          "display": "17.37m"
-        }
-      },
+      "manual": "rulebook.pdf",
+      "dimensions": {},
       "sailArea": {
-        "main": {
-          "value": 46.5,
-          "unit": "m²"
-        },
-        "jib": {
-          "value": 46.0,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 150.0,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 92.5,
-          "unit": "m²",
-          "display": "92.5m² (upwind)"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "engine": {
-        "type": "Inboard Diesel",
-        "power": "29 HP",
-        "model": "Yanmar 3JH3E"
+        "type": "",
+        "power": "",
+        "model": ""
       },
       "tanks": {
         "fuel": {
@@ -180,7 +136,26 @@
       "accommodation": {
         "crew": "9-11 people",
         "racing": "8-9 crew typical"
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: FARR® 40 ONE DESIGN CLASS RULES"
     },
     {
       "id": "beneteau-473",
@@ -333,59 +308,46 @@
     },
     {
       "id": "laser",
-      "name": "Laser (ILCA)",
-      "manufacturer": "LaserPerformance",
-      "type": "One-Design Dinghy",
+      "name": "Laser",
+      "manufacturer": null,
+      "type": "Handbook (Constitution and Class Rules)",
       "year": "1970-Present",
       "designer": "Bruce Kirby",
-      "manual": "data/yachtpdf/owners_manual.pdf",
-      "dimensions": {
-        "loa": {
-          "value": 4.23,
-          "unit": "m",
-          "display": "4.23m (13.9ft)"
-        },
-        "beam": {
-          "value": 1.42,
-          "unit": "m",
-          "display": "1.42m"
-        },
-        "draft": {
-          "value": 0.79,
-          "unit": "m",
-          "display": "0.79m (daggerboard down)"
-        },
-        "weight": {
-          "value": 59,
-          "unit": "kg",
-          "display": "59kg (hull only)"
-        },
-        "mastHeight": {
-          "value": 6.12,
-          "unit": "m",
-          "display": "6.12m"
-        }
-      },
+      "manual": "Handbook_2109.pdf",
+      "dimensions": {},
       "sailArea": {
-        "standard": {
-          "value": 7.06,
-          "unit": "m²",
-          "display": "7.06m² (Standard rig)"
-        },
-        "radial": {
-          "value": 5.76,
-          "unit": "m²",
-          "display": "5.76m² (Radial rig)"
-        },
-        "4.7": {
-          "value": 4.7,
-          "unit": "m²",
-          "display": "4.70m² (4.7 rig)"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "accommodation": {
         "crew": "1 person (single-handed)"
-      }
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: International Laser Class Association 2019 Handbook"
     },
     {
       "id": "swan-50",
@@ -550,140 +512,111 @@
     {
       "id": "melges-32",
       "name": "Melges 32",
-      "manufacturer": "Melges Performance Sailboats",
-      "type": "One-Design Racing",
+      "manufacturer": "Melges Performance Boats",
+      "type": "Class Rules",
       "year": "2006-Present",
       "designer": "Reichel/Pugh",
-      "manual": "data/yachtpdf/M32_CR_2025-03March-30.pdf",
-      "dimensions": {
-        "loa": {
-          "value": 9.75,
-          "unit": "m",
-          "display": "9.75m (32ft)"
-        },
-        "lwl": {
-          "value": 9.14,
-          "unit": "m",
-          "display": "9.14m"
-        },
-        "beam": {
-          "value": 3.05,
-          "unit": "m",
-          "display": "3.05m"
-        },
-        "draft": {
-          "value": 2.44,
-          "unit": "m",
-          "display": "2.44m"
-        },
-        "displacement": {
-          "value": 2160,
-          "unit": "kg",
-          "display": "2160kg"
-        },
-        "mastHeight": {
-          "value": 14.63,
-          "unit": "m",
-          "display": "14.63m"
-        }
-      },
+      "manual": "M32_CR_2025-03March-30.pdf",
+      "dimensions": {},
       "sailArea": {
-        "main": {
-          "value": 38.0,
-          "unit": "m²"
-        },
-        "jib": {
-          "value": 26.5,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 97.0,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 64.5,
-          "unit": "m²",
-          "display": "64.5m² (upwind)"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "engine": {
         "type": "Outboard",
-        "power": "9.9 HP",
-        "note": "For transport only"
+        "power": "Minimum 9.8HP or 7.2KW",
+        "model": "Tohatsu or Yamaha"
       },
       "accommodation": {
         "crew": "5-6 people",
         "racing": "5 crew typical"
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: 2025 Melges 32 Class Rules"
     },
     {
       "id": "tp52",
       "name": "TP52",
-      "manufacturer": "Various (IRC Class)",
-      "type": "Grand Prix Racing",
+      "manufacturer": null,
+      "type": "Class Rule / Technical Specification",
       "year": "2005-Present",
       "designer": "Various (Class Rules)",
-      "manual": "data/yachtpdf/TP52_CR20220124.pdf",
+      "manual": "TP52_CR20220124.pdf",
       "dimensions": {
         "loa": {
           "value": 15.85,
           "unit": "m",
-          "display": "15.85m (52ft)"
-        },
-        "lwl": {
-          "value": 14.5,
-          "unit": "m",
-          "display": "14.50m"
+          "display": "15.85m"
         },
         "beam": {
-          "value": 4.5,
+          "value": 4.42,
           "unit": "m",
-          "display": "4.50m (max)"
+          "display": "4.42m"
         },
         "draft": {
-          "value": 4.5,
+          "value": 3.5,
           "unit": "m",
-          "display": "4.50m (max)"
+          "display": "3.5m"
         },
         "displacement": {
-          "value": 7500,
+          "value": 6950.0,
           "unit": "kg",
-          "display": "7500kg (approx)"
-        },
-        "mastHeight": {
-          "value": 24.0,
-          "unit": "m",
-          "display": "24.0m (approx)"
+          "display": "6950.0kg"
         }
       },
       "sailArea": {
-        "main": {
-          "value": 120,
-          "unit": "m²"
-        },
-        "jib": {
-          "value": 90,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 350,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 210,
-          "unit": "m²",
-          "display": "210m² (upwind)"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "engine": {
-        "type": "Inboard Diesel",
-        "power": "40-60 HP",
-        "note": "Varies by boat"
+        "type": null,
+        "power": "",
+        "model": null
       },
       "accommodation": {
         "crew": "11-16 people",
         "racing": "11 crew typical"
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: TRANSPAC 52 RULE (TP52 RULE) 2022"
     },
     {
       "id": "beneteau-first-36",
@@ -849,65 +782,42 @@
       "id": "dehler-38",
       "name": "Dehler 38",
       "manufacturer": "Dehler",
-      "type": "Performance Cruiser",
+      "type": "Press Manual / Technical Specifications",
       "year": "2014-Present",
       "designer": "Judel/Vrolijk",
-      "manual": "data/yachtpdf/press-manual-dehler38.pdf",
+      "manual": "press-manual-dehler38.pdf",
       "dimensions": {
         "loa": {
-          "value": 11.38,
+          "value": 11.3,
           "unit": "m",
-          "display": "11.38m (37.3ft)"
-        },
-        "lwl": {
-          "value": 10.6,
-          "unit": "m",
-          "display": "10.60m"
+          "display": "11.3m"
         },
         "beam": {
-          "value": 3.79,
+          "value": 3.75,
           "unit": "m",
-          "display": "3.79m"
+          "display": "3.75m"
         },
         "draft": {
-          "value": 2.25,
+          "value": 2.0,
           "unit": "m",
-          "display": "2.25m (deep keel)"
+          "display": "2.0m"
         },
         "displacement": {
-          "value": 6800,
+          "value": 7.0,
           "unit": "kg",
-          "display": "6800kg"
-        },
-        "mastHeight": {
-          "value": 16.95,
-          "unit": "m",
-          "display": "16.95m"
+          "display": "7.0kg"
         }
       },
       "sailArea": {
-        "main": {
-          "value": 43.0,
-          "unit": "m²"
-        },
-        "genoa": {
-          "value": 50.0,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 140.0,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 93.0,
-          "unit": "m²",
-          "display": "93.0m²"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": 79.3
       },
       "engine": {
-        "type": "Inboard Diesel",
-        "power": "40 HP",
-        "model": "Volvo D2-40"
+        "type": "Volvo",
+        "power": "28 hp",
+        "model": "D1-30"
       },
       "tanks": {
         "fuel": {
@@ -923,71 +833,52 @@
         "cabins": 2,
         "berths": 6,
         "heads": 1
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Dehler 38 Press Manual"
     },
     {
       "id": "xp-44",
-      "name": "X-Yachts XP 44",
+      "name": "Xp 44",
       "manufacturer": "X-Yachts",
-      "type": "Performance Racing/Cruiser",
+      "type": "Product Brochure / Technical Specification",
       "year": "2014-Present",
       "designer": "Niels Jeppesen",
-      "manual": "data/yachtpdf/Xp44-Brochure_July2018_ONLINE.pdf",
+      "manual": "Xp44-Brochure_July2018_ONLINE.pdf",
       "dimensions": {
-        "loa": {
-          "value": 13.5,
-          "unit": "m",
-          "display": "13.50m (44.3ft)"
-        },
-        "lwl": {
-          "value": 12.8,
-          "unit": "m",
-          "display": "12.80m"
-        },
-        "beam": {
-          "value": 4.19,
-          "unit": "m",
-          "display": "4.19m"
-        },
         "draft": {
-          "value": 2.7,
+          "value": 2.3,
           "unit": "m",
-          "display": "2.70m (standard)"
-        },
-        "displacement": {
-          "value": 9500,
-          "unit": "kg",
-          "display": "9500kg"
-        },
-        "mastHeight": {
-          "value": 20.5,
-          "unit": "m",
-          "display": "20.50m"
+          "display": "2.3m"
         }
       },
       "sailArea": {
-        "main": {
-          "value": 62.0,
-          "unit": "m²"
-        },
-        "jib": {
-          "value": 58.0,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 220.0,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 120.0,
-          "unit": "m²",
-          "display": "120.0m²"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "engine": {
-        "type": "Inboard Diesel",
-        "power": "80 HP",
-        "model": "Volvo D2-80"
+        "type": "Sail-drive",
+        "power": "40 HP",
+        "model": null
       },
       "tanks": {
         "fuel": {
@@ -1003,71 +894,62 @@
         "cabins": 3,
         "berths": 8,
         "heads": 2
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Xp 44 Product Brochure / Technical Specifications"
     },
     {
       "id": "hanse-458",
       "name": "Hanse 458",
-      "manufacturer": "Hanse Yachts",
-      "type": "Cruiser",
+      "manufacturer": "HanseYachts AG",
+      "type": "Owner's Safety Manual",
       "year": "2017-Present",
       "designer": "Judel/Vrolijk",
-      "manual": "data/yachtpdf/Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "manual": "Owners-Manual-458-Buch-eng-V8-allg.pdf",
       "dimensions": {
         "loa": {
-          "value": 14.05,
+          "value": 14.04,
           "unit": "m",
-          "display": "14.05m (46.1ft)"
-        },
-        "lwl": {
-          "value": 13.15,
-          "unit": "m",
-          "display": "13.15m"
+          "display": "14.04m"
         },
         "beam": {
-          "value": 4.49,
+          "value": 4.38,
           "unit": "m",
-          "display": "4.49m"
-        },
-        "draft": {
-          "value": 2.2,
-          "unit": "m",
-          "display": "2.20m (standard)"
-        },
-        "displacement": {
-          "value": 11900,
-          "unit": "kg",
-          "display": "11900kg"
+          "display": "4.38m"
         },
         "mastHeight": {
-          "value": 20.8,
+          "value": 20.6,
           "unit": "m",
-          "display": "20.80m"
+          "display": "20.6m"
         }
       },
       "sailArea": {
-        "main": {
-          "value": 56.0,
-          "unit": "m²"
-        },
-        "genoa": {
-          "value": 64.0,
-          "unit": "m²"
-        },
-        "spinnaker": {
-          "value": 200.0,
-          "unit": "m²"
-        },
-        "total": {
-          "value": 120.0,
-          "unit": "m²",
-          "display": "120.0m²"
-        }
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
       },
       "engine": {
-        "type": "Inboard Diesel",
-        "power": "75 HP",
-        "model": "Volvo D2-75"
+        "type": "",
+        "power": "",
+        "model": ""
       },
       "tanks": {
         "fuel": {
@@ -1083,7 +965,26 @@
         "cabins": 4,
         "berths": 8,
         "heads": 3
-      }
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Owner’s Safety Manual"
     },
     {
       "id": "beneteau-oceanis-46",
@@ -1532,6 +1433,658 @@
         "berths": 8,
         "heads": 2
       }
+    },
+    {
+      "id": "swan-48-(third-interpretation,-new-model)",
+      "name": "Swan 48 (Third Interpretation, New Model)",
+      "manufacturer": "Nautor's Swan",
+      "type": "Product Catalogue",
+      "manual": "Swan48-LR-2021.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.78,
+          "unit": "m",
+          "display": "14.78m"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": 62.5,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "Saildrive",
+        "power": "55 kW (75 Hp)",
+        "model": "Volvo D2-75"
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Swan 48 Product Catalogue"
+    },
+    {
+      "id": "oceanis-46.1",
+      "name": "OCEANIS 46.1",
+      "manufacturer": "BENETEAU",
+      "type": "OWNER'S MANUAL",
+      "manual": "14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 14.6,
+          "unit": "m",
+          "display": "14.6m"
+        },
+        "beam": {
+          "value": 4.5,
+          "unit": "m",
+          "display": "4.5m"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: OWNER'S MANUAL"
+    },
+    {
+      "id": "oceanis-473",
+      "name": "OCEANIS 473",
+      "manufacturer": "BENETEAU",
+      "type": "Owner's Manual",
+      "manual": "Beneteau 473 Owner's Manual_compressed.pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": 42.23,
+        "jibSailArea": null,
+        "spinnakerSailArea": 156.0,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: OWNER’S MANUAL"
+    },
+    {
+      "id": "clubswan-50",
+      "name": "ClubSwan 50",
+      "manufacturer": "Nautor Holdings SRL / Oy Nautor Ab",
+      "type": "Class Rules",
+      "manual": "ClubSwan50ClassRules07042021-[27210].pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: ClubSwan50 Class Rules"
+    },
+    {
+      "id": "grand-soleil-42-long-cruise",
+      "name": "Grand Soleil 42 Long Cruise",
+      "manufacturer": "Cantiere del Pardo",
+      "type": "Product Brochure / Specification Sheet",
+      "manual": "GS42LC_Brochure-1.pdf",
+      "dimensions": {
+        "draft": {
+          "value": 2.25,
+          "unit": "m",
+          "display": "2.25m"
+        },
+        "displacement": {
+          "value": 11.1,
+          "unit": "kg",
+          "display": "11.1kg"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": 108.0
+      },
+      "engine": {
+        "type": "N/A",
+        "power": "50 HP (OPT. 60 HP)",
+        "model": "N/A"
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Grand Soleil 42 Long Cruise Product Brochure"
+    },
+    {
+      "id": "j-24",
+      "name": "J/24",
+      "manufacturer": "J Boats, Inc.",
+      "type": "Class Rules",
+      "manual": "J242019CR220319-[24866].pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: J24 Class Rules 2019"
+    },
+    {
+      "id": "j-70",
+      "name": "J/70",
+      "manufacturer": "J Boats, Inc.",
+      "type": "Owner Guide",
+      "manual": "j70-user-manual.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 6.934,
+          "unit": "m",
+          "display": "6.934m"
+        },
+        "beam": {
+          "value": 2.249,
+          "unit": "m",
+          "display": "2.249m"
+        },
+        "displacement": {
+          "value": 794.0,
+          "unit": "kg",
+          "display": "794.0kg"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "4hp",
+        "model": null
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: J/70 Owner Guide"
+    },
+    {
+      "id": "fareast-28r",
+      "name": "FAREAST 28R",
+      "manufacturer": "Shanghai Far East Boats CO. LTD.",
+      "type": "Class Rules",
+      "manual": "OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: FAREAST 28R Class Rules 2015"
+    },
+    {
+      "id": "first-36.7",
+      "name": "FIRST 36.7",
+      "manufacturer": "BENETEAU",
+      "type": "Owner's Manual",
+      "manual": "owners_manual.pdf",
+      "dimensions": {
+        "beam": {
+          "value": 3.45,
+          "unit": "m",
+          "display": "3.45m"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": 90.0,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: FIRST 36.7 OWNER’S MANUAL"
+    },
+    {
+      "id": "rs-21",
+      "name": "RS 21",
+      "manufacturer": "RS Sailing",
+      "type": "Rigging Manual",
+      "manual": "RS21Riggingguide.pdf",
+      "dimensions": {
+        "beam": {
+          "value": 2.2,
+          "unit": "m",
+          "display": "2.2m"
+        },
+        "displacement": {
+          "value": 650.0,
+          "unit": "kg",
+          "display": "650.0kg"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "Electric Drive (Epropulsion Motor)",
+        "power": "",
+        "model": null
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Rigging Manual"
+    },
+    {
+      "id": "sun-fast-3300",
+      "name": "Sun Fast 3300",
+      "manufacturer": "JEANNEAU",
+      "type": "Technical Specification Sheet",
+      "manual": "Sun-Fast-3300-technical-inventory.pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "Diesel",
+        "power": "15 Hp / 10 KW",
+        "model": "Yanmar 2YM15"
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Sun Fast 3300 Specifications"
+    },
+    {
+      "id": "transpac-52-(tp52)",
+      "name": "Transpac 52 (TP52)",
+      "manufacturer": null,
+      "type": "Class Rule",
+      "manual": "TP52_CR20220124.pdf",
+      "dimensions": {
+        "loa": {
+          "value": 15.85,
+          "unit": "m",
+          "display": "15.85m"
+        },
+        "beam": {
+          "value": 4.42,
+          "unit": "m",
+          "display": "4.42m"
+        },
+        "draft": {
+          "value": 3.5,
+          "unit": "m",
+          "display": "3.5m"
+        },
+        "displacement": {
+          "value": 6950.0,
+          "unit": "kg",
+          "display": "6950.0kg"
+        }
+      },
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": null,
+        "power": "",
+        "model": null
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: TRANSPAC 52 RULE (TP52 RULE) 2022"
+    },
+    {
+      "id": "x–35-one-design",
+      "name": "X–35 One Design",
+      "manufacturer": "X–Yachts A/S",
+      "type": "Class Rules",
+      "manual": "X352012CR080412-[12381].pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: X–35 One Design Class Rules"
+    },
+    {
+      "id": "hooaah-yacht-backend-pull-request-#4:-part-and-repair-domain-feature",
+      "name": "HooAah-Yacht Backend Pull Request #4: Part and Repair Domain Feature",
+      "manufacturer": "HooAah-Yacht",
+      "type": "Software Development Pull Request / Technical Specification",
+      "manual": "풀리퀘스트1.pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": null,
+        "power": "",
+        "model": null
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: HooAah-Yacht Backend Pull Request #4: Part and Repair Domain Feature"
+    },
+    {
+      "id": "feat-calendar-by-pu2rile-·-pull-request-#3-·-hooaah-yacht-backend",
+      "name": "Feat/calendar by pu2rile · Pull Request #3 · HooAah-Yacht/backend",
+      "manufacturer": "HooAah-Yacht (Project Name)",
+      "type": "Software Development Pull Request Discussion",
+      "manual": "풀리퀘스트3.pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "accommodations": {
+        "berths": null,
+        "cabins": null,
+        "heads": null
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: Feat/calendar by pu2rile · Pull Request #3 · HooAah-Yacht/backend"
     }
   ]
 }

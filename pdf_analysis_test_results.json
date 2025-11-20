@@ -1,0 +1,466 @@
+{
+  "testDate": "2025-11-20T15:32:49.905012",
+  "totalFiles": 24,
+  "results": [
+    {
+      "fileName": "14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "filePath": "data\\yachtpdf\\14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+      "fileSize": 18485216,
+      "timestamp": "2025-11-20T15:11:17.637575",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: OCEANIS 46.1\n🏭 제조사: BENETEAU\n📄 문서 유형: OWNER'S MANUAL\n\n**추출된 정보:**\n📏 치수 정보: 추출됨\n🔧 부품 정보: 55개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "OCEANIS 46.1",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": 14.6,
+          "beam": 4.5,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "2020_03_31_11_03_39-48 owners manual.pdf",
+      "filePath": "data\\yachtpdf\\2020_03_31_11_03_39-48 owners manual.pdf",
+      "fileSize": 6168186,
+      "timestamp": "2025-11-20T15:13:33.191335",
+      "status": "failed",
+      "error": "❌ 문서 분석 중 오류가 발생했습니다:\nPDF에서 텍스트를 추출할 수 없습니다. 스캔된 이미지 PDF일 수 있습니다.",
+      "analysisResult": null,
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Beneteau 473 Owner's Manual_compressed.pdf",
+      "filePath": "data\\yachtpdf\\Beneteau 473 Owner's Manual_compressed.pdf",
+      "fileSize": 2586906,
+      "timestamp": "2025-11-20T15:13:33.237053",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: OCEANIS 473\n🏭 제조사: BENETEAU\n📄 문서 유형: Owner's Manual\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 195개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "OCEANIS 473",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "ClubSwan50ClassRules07042021-[27210].pdf",
+      "filePath": "data\\yachtpdf\\ClubSwan50ClassRules07042021-[27210].pdf",
+      "fileSize": 1741080,
+      "timestamp": "2025-11-20T15:14:28.730036",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: ClubSwan 50\n🏭 제조사: Nautor Holdings SRL\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 54개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "ClubSwan 50",
+        "manufacturer": "Nautor Holdings SRL",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "GS42LC_Brochure-1.pdf",
+      "filePath": "data\\yachtpdf\\GS42LC_Brochure-1.pdf",
+      "fileSize": 3513383,
+      "timestamp": "2025-11-20T15:15:01.702891",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Grand Soleil 42 Long Cruise\n🏭 제조사: Cantiere del Pardo\n📄 문서 유형: Product Brochure / Specification Sheet\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 25개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Grand Soleil 42 Long Cruise",
+        "manufacturer": "Cantiere del Pardo",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": 2.25
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Handbook_2109.pdf",
+      "filePath": "data\\yachtpdf\\Handbook_2109.pdf",
+      "fileSize": 2338009,
+      "timestamp": "2025-11-20T15:15:37.938774",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Laser\n🏭 제조사: International Laser Class Association (ILCA)\n📄 문서 유형: Handbook\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 15개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Laser",
+        "manufacturer": "International Laser Class Association (ILCA)",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "J242019CR220319-[24866].pdf",
+      "filePath": "data\\yachtpdf\\J242019CR220319-[24866].pdf",
+      "fileSize": 3006470,
+      "timestamp": "2025-11-20T15:15:58.820006",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: J/24\n🏭 제조사: J Boats, Inc.\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 104개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "J/24",
+        "manufacturer": "J Boats, Inc.",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "j70-user-manual.pdf",
+      "filePath": "data\\yachtpdf\\j70-user-manual.pdf",
+      "fileSize": 3368383,
+      "timestamp": "2025-11-20T15:16:45.998249",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: J/70\n🏭 제조사: J Boats, Inc.\n📄 문서 유형: Owner Guide\n\n**추출된 정보:**\n📏 치수 정보: 추출됨\n🔧 부품 정보: 59개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "J/70",
+        "manufacturer": "J Boats, Inc.",
+        "dimensions": {
+          "loa": 6.934,
+          "beam": 2.249,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "M32_CR_2025-03March-30.pdf",
+      "filePath": "data\\yachtpdf\\M32_CR_2025-03March-30.pdf",
+      "fileSize": 1359220,
+      "timestamp": "2025-11-20T15:18:13.848665",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Melges 32\n🏭 제조사: Melges Performance Boats\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 91개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Melges 32",
+        "manufacturer": "Melges Performance Boats",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "filePath": "data\\yachtpdf\\OC15aiiFAREAST28RClassrules-[19458].pdf",
+      "fileSize": 1018798,
+      "timestamp": "2025-11-20T15:18:50.892465",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: FAREAST 28R\n🏭 제조사: Shanghai Far East Boats CO. LTD.\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 141개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "FAREAST 28R",
+        "manufacturer": "Shanghai Far East Boats CO. LTD.",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "filePath": "data\\yachtpdf\\Owners-Manual-458-Buch-eng-V8-allg.pdf",
+      "fileSize": 5255346,
+      "timestamp": "2025-11-20T15:19:56.801135",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Hanse 458\n🏭 제조사: HanseYachts AG\n📄 문서 유형: Safety Manual\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 112개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Hanse 458",
+        "manufacturer": "HanseYachts AG",
+        "dimensions": {
+          "loa": null,
+          "beam": 4.38,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "owners_manual.pdf",
+      "filePath": "data\\yachtpdf\\owners_manual.pdf",
+      "fileSize": 525632,
+      "timestamp": "2025-11-20T15:21:12.450366",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: FIRST 36.7\n🏭 제조사: BENETEAU\n📄 문서 유형: OWNER’S MANUAL\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 167개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "FIRST 36.7",
+        "manufacturer": "BENETEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": 3.45,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "press-manual-dehler38.pdf",
+      "filePath": "data\\yachtpdf\\press-manual-dehler38.pdf",
+      "fileSize": 704938,
+      "timestamp": "2025-11-20T15:21:59.815203",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'list' object has no attribute 'get'",
+      "analysisResult": null,
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "RS21Riggingguide.pdf",
+      "filePath": "data\\yachtpdf\\RS21Riggingguide.pdf",
+      "fileSize": 12894228,
+      "timestamp": "2025-11-20T15:22:39.737694",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: RS 21\n🏭 제조사: RS Sailing\n📄 문서 유형: Rigging Manual\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 127개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "RS 21",
+        "manufacturer": "RS Sailing",
+        "dimensions": {
+          "loa": null,
+          "beam": 2.2,
+          "draft": 1.38
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "rulebook.pdf",
+      "filePath": "data\\yachtpdf\\rulebook.pdf",
+      "fileSize": 210586,
+      "timestamp": "2025-11-20T15:24:23.069110",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Farr 40\n🏭 제조사: Farr Yacht Design, Inc.\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 105개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Farr 40",
+        "manufacturer": "Farr Yacht Design, Inc.",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Solaris-44.pdf",
+      "filePath": "data\\yachtpdf\\Solaris-44.pdf",
+      "fileSize": 2431101,
+      "timestamp": "2025-11-20T15:25:02.387560",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "analysisResult": null,
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Sun-Fast-3300-technical-inventory.pdf",
+      "filePath": "data\\yachtpdf\\Sun-Fast-3300-technical-inventory.pdf",
+      "fileSize": 1363566,
+      "timestamp": "2025-11-20T15:26:14.183678",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Sun Fast 3300\n🏭 제조사: JEANNEAU\n📄 문서 유형: Specifications\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 155개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Sun Fast 3300",
+        "manufacturer": "JEANNEAU",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "TP52_CR20220124.pdf",
+      "filePath": "data\\yachtpdf\\TP52_CR20220124.pdf",
+      "fileSize": 386818,
+      "timestamp": "2025-11-20T15:27:40.335500",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Transpac 52 (TP52)\n🏭 제조사: None\n📄 문서 유형: Class Rule\n\n**추출된 정보:**\n📏 치수 정보: 추출됨\n🔧 부품 정보: 68개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Transpac 52 (TP52)",
+        "manufacturer": null,
+        "dimensions": {
+          "loa": 15.85,
+          "beam": 4.42,
+          "draft": 3.5
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "X352012CR080412-[12381].pdf",
+      "filePath": "data\\yachtpdf\\X352012CR080412-[12381].pdf",
+      "fileSize": 341678,
+      "timestamp": "2025-11-20T15:28:36.991070",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: X–35 One Design\n🏭 제조사: X–Yachts A/S\n📄 문서 유형: Class Rules\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 95개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "X–35 One Design",
+        "manufacturer": "X–Yachts A/S",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "Xp44-Brochure_July2018_ONLINE.pdf",
+      "filePath": "data\\yachtpdf\\Xp44-Brochure_July2018_ONLINE.pdf",
+      "fileSize": 14713612,
+      "timestamp": "2025-11-20T15:29:40.587552",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Xp 44\n🏭 제조사: X-Yachts\n📄 문서 유형: Product Brochure / Technical Specification\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 90개 부품 추출됨\n⚙️ 엔진 정보: 추출됨\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Xp 44",
+        "manufacturer": "X-Yachts",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": 2.3
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "정비 관련 자료.pdf",
+      "filePath": "data\\yachtpdf\\정비 관련 자료.pdf",
+      "fileSize": 4911997,
+      "timestamp": "2025-11-20T15:30:11.411093",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "analysisResult": null,
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "풀리퀘스트1.pdf",
+      "filePath": "data\\yachtpdf\\풀리퀘스트1.pdf",
+      "fileSize": 636111,
+      "timestamp": "2025-11-20T15:31:42.196173",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: HooAah-Yacht Backend Pull Request #4: Part and Repair Domain Feature\n🏭 제조사: HooAah-Yacht\n📄 문서 유형: Software Development Pull Request / Technical Specification\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 1개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "HooAah-Yacht Backend Pull Request #4: Part and Repair Domain Feature",
+        "manufacturer": "HooAah-Yacht",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "풀리퀘스트3.pdf",
+      "filePath": "data\\yachtpdf\\풀리퀘스트3.pdf",
+      "fileSize": 505293,
+      "timestamp": "2025-11-20T15:32:14.828857",
+      "status": "success",
+      "error": null,
+      "analysisResult": "✅ 등록이 완료됐습니다! 🎉\n\n**등록된 요트 정보:**\n⛵ 모델: Feat/calendar by pu2rile · Pull Request #3 · HooAah-Yacht/backend\n🏭 제조사: HooAah-Yacht (Project Name)\n📄 문서 유형: Software Development Pull Request Discussion\n\n**추출된 정보:**\n📏 치수 정보: 없음\n🔧 부품 정보: 0개 부품 추출됨\n⚙️ 엔진 정보: 없음\n\n요트가 성공적으로 등록되었습니다! 이제 부품 관리와 정비 일정을 설정할 수 있습니다.\n\n추가로 궁금한 점이 있으시면 언제든 물어보세요! 💬",
+      "extractedInfo": {
+        "yachtName": "Feat/calendar by pu2rile · Pull Request #3 · HooAah-Yacht/backend",
+        "manufacturer": "HooAah-Yacht (Project Name)",
+        "dimensions": {
+          "loa": null,
+          "beam": null,
+          "draft": null
+        },
+        "partsCount": 0,
+        "textLength": 0
+      }
+    },
+    {
+      "fileName": "후아_디자인 (1).pdf",
+      "filePath": "data\\yachtpdf\\후아_디자인 (1).pdf",
+      "fileSize": 7578303,
+      "timestamp": "2025-11-20T15:32:27.347144",
+      "status": "failed",
+      "error": "❌ PDF 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "analysisResult": null,
+      "extractedInfo": {
+        "yachtName": null,
+        "manufacturer": null,
+        "dimensions": null,
+        "partsCount": 0,
+        "textLength": 0
+      }
+    }
+  ]
+}

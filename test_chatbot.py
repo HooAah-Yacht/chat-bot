@@ -14,7 +14,7 @@ def test_chatbot():
     print()
     
     # API 키 확인
-    api_key = os.getenv('GEMINI_API_KEY')
+    api_key = os.getenv('AIzaSyBhPZDNBTEqYu8ahBIVpK2B1h_CAKgo7JI')
     if not api_key:
         print("❌ GEMINI_API_KEY 환경변수가 설정되지 않았습니다.")
         print("   export GEMINI_API_KEY='your-api-key' 로 설정해주세요.")

@@ -138,11 +138,15 @@ class YachtDocumentAnalyzer:
    - 돛 면적
 
 3. **부품 정보 (있는 경우):**
-   - 부품명 (name)
+   - 부품명 (name) - 필수, 매뉴얼에서 언급된 모든 부품을 추출하세요
    - 제조사 (manufacturer)
    - 모델명 (model)
    - 정비 주기 (interval, 단위: 개월)
-   - 부품 카테고리 (Rigging, Sails, Engine, Hull 등)
+   - 부품 카테고리 (Rigging, Sails, Engine, Hull, Electrical, Plumbing 등)
+   
+   **중요**: 매뉴얼에서 언급된 모든 부품, 정비 항목, 교체 부품을 최대한 많이 추출하세요.
+   예: 마스트(Mast), 붐(Boom), 리깅(Rigging), 세일(Sails), 윈치(Winch), 엔진 부품, 전기 부품, 배관 부품 등
+   부품명이 명확하지 않더라도 가능한 한 추출하세요.
 
 4. **정비 정보 (있는 경우):**
    - 정비 항목
@@ -281,11 +285,15 @@ JSON 형식으로만 응답해주세요. 다른 설명은 필요 없습니다.""
    - 돛 면적
 
 3. **부품 정보 (있는 경우):**
-   - 부품명 (name)
+   - 부품명 (name) - 필수, 매뉴얼에서 언급된 모든 부품을 추출하세요
    - 제조사 (manufacturer)
    - 모델명 (model)
    - 정비 주기 (interval, 단위: 개월)
-   - 부품 카테고리 (Rigging, Sails, Engine, Hull 등)
+   - 부품 카테고리 (Rigging, Sails, Engine, Hull, Electrical, Plumbing 등)
+   
+   **중요**: 매뉴얼에서 언급된 모든 부품, 정비 항목, 교체 부품을 최대한 많이 추출하세요.
+   예: 마스트(Mast), 붐(Boom), 리깅(Rigging), 세일(Sails), 윈치(Winch), 엔진 부품, 전기 부품, 배관 부품 등
+   부품명이 명확하지 않더라도 가능한 한 추출하세요.
 
 4. **정비 정보 (있는 경우):**
    - 정비 항목

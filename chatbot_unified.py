@@ -22,6 +22,15 @@ HooAah Yacht AI Chatbot - 통합 버전
 """
 
 import os
+import sys
+
+# Windows 콘솔 인코딩 설정
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except:
+        pass
 import json
 import sys
 import argparse
@@ -36,7 +45,10 @@ try:
     HAS_DOTENV = True
 except ImportError:
     HAS_DOTENV = False
-    print("⚠️ python-dotenv 패키지가 설치되지 않았습니다. pip install python-dotenv")
+    try:
+        print("[WARNING] python-dotenv 패키지가 설치되지 않았습니다. pip install python-dotenv")
+    except:
+        print("[WARNING] python-dotenv package not installed. pip install python-dotenv")
 
 # Gemini AI 관련
 try:
@@ -44,7 +56,10 @@ try:
     HAS_GEMINI = True
 except ImportError:
     HAS_GEMINI = False
-    print("⚠️ google-generativeai 패키지가 설치되지 않았습니다. pip install google-generativeai")
+    try:
+        print("[WARNING] google-generativeai 패키지가 설치되지 않았습니다. pip install google-generativeai")
+    except:
+        print("[WARNING] google-generativeai package not installed. pip install google-generativeai")
 
 # Flask API 관련
 try:
@@ -55,8 +70,12 @@ try:
 except ImportError:
     HAS_FLASK = False
     secure_filename = None
-    print("⚠️ flask 패키지가 설치되지 않았습니다.")
-    print("📦 자동 설치를 시도합니다...")
+    try:
+        print("[WARNING] flask 패키지가 설치되지 않았습니다.")
+        print("[INFO] 자동 설치를 시도합니다...")
+    except:
+        print("[WARNING] flask package not installed.")
+        print("[INFO] Attempting auto-install...")
     import subprocess
     import sys
     try:
@@ -65,10 +84,17 @@ except ImportError:
         from flask_cors import CORS
         from werkzeug.utils import secure_filename
         HAS_FLASK = True
-        print("✅ Flask 패키지 설치 완료!")
+        try:
+            print("[SUCCESS] Flask 패키지 설치 완료!")
+        except:
+            print("[SUCCESS] Flask package installed!")
     except Exception as e:
-        print(f"❌ Flask 자동 설치 실패: {e}")
-        print("💡 수동 설치: pip install flask flask-cors")
+        try:
+            print(f"[ERROR] Flask 자동 설치 실패: {e}")
+            print("[INFO] 수동 설치: pip install flask flask-cors")
+        except:
+            print(f"[ERROR] Flask auto-install failed: {e}")
+            print("[INFO] Manual install: pip install flask flask-cors")
 
 # PDF 분석 관련
 try:
@@ -81,6 +107,42 @@ except ImportError:
         HAS_PDFPLUMBER = True
     except ImportError:
         HAS_PDFPLUMBER = False
+
+# OCR 관련 (선택사항)
+try:
+    import pytesseract
+    from pdf2image import convert_from_path
+    HAS_OCR = True
+except ImportError:
+    HAS_OCR = False
+
+# Word 문서 처리
+try:
+    from docx import Document
+    HAS_DOCX = True
+except ImportError:
+    HAS_DOCX = False
+
+# HWP 파일 처리
+try:
+    import olefile
+    HAS_OLEFILE = True
+except ImportError:
+    HAS_OLEFILE = False
+
+# Excel 파일 처리
+try:
+    import openpyxl
+    HAS_OPENPYXL = True
+except ImportError:
+    HAS_OPENPYXL = False
+
+# PowerPoint 파일 처리
+try:
+    from pptx import Presentation
+    HAS_PPTX = True
+except ImportError:
+    HAS_PPTX = False
 
 
 class UnifiedYachtChatbot:
@@ -240,60 +302,68 @@ class UnifiedYachtChatbot:
 """
         return prompt
     
-    def _extract_pdf_path_from_message(self, message: str) -> Optional[str]:
+    def _get_file_extension(self, file_path: str) -> str:
+        """파일 확장자 추출"""
+        return os.path.splitext(file_path)[1].lower()
+    
+    def _is_supported_file(self, file_path: str) -> bool:
+        """지원되는 파일 형식인지 확인"""
+        ext = self._get_file_extension(file_path)
+        supported_extensions = ['.pdf', '.docx', '.doc', '.hwp', '.txt', '.xlsx', '.xls', '.pptx', '.ppt']
+        return ext in supported_extensions
+    
+    def _extract_file_path_from_message(self, message: str) -> Optional[str]:
         """
-        사용자 메시지에서 PDF 파일 경로 추출
+        사용자 메시지에서 파일 경로 추출 (PDF, Word, HWP 등)
         모바일 앱에서 전달된 파일 경로도 지원 (iOS, Android)
         """
         import re
         
+        # 지원되는 파일 확장자
+        supported_exts = r'(?:pdf|docx?|hwp|txt|xlsx?)'
+        
         # 1. 따옴표로 감싸진 경로 찾기 (공백 포함 경로 지원)
         quoted_patterns = [
-            r'["\']([^"\']+\.pdf)["\']',
-            r'["\']([^"\']+\.pdf)',
-            r'([^"\']+\.pdf)["\']',
+            rf'["\']([^"\']+\.{supported_exts})["\']',
+            rf'["\']([^"\']+\.{supported_exts})',
+            rf'([^"\']+\.{supported_exts})["\']',
         ]
         
         for pattern in quoted_patterns:
             match = re.search(pattern, message, re.IGNORECASE)
             if match:
                 path = match.group(1).strip()
-                # 절대 경로 확인
-                if os.path.isabs(path) and os.path.exists(path):
-                    return os.path.abspath(path)
-                # 상대 경로 확인
-                elif os.path.exists(path):
+                if os.path.exists(path):
                     return os.path.abspath(path)
         
-        # 2. Windows 절대 경로 패턴 (C:\... 또는 D:\...)
-        windows_abs_pattern = r'([A-Za-z]:[\\/](?:[^"\']+[\\/])*[^"\']+\.pdf)'
+        # 2. Windows 절대 경로 패턴
+        windows_abs_pattern = rf'([A-Za-z]:[\\/](?:[^"\']+[\\/])*[^"\']+\.{supported_exts})'
         match = re.search(windows_abs_pattern, message, re.IGNORECASE)
         if match:
             path = match.group(1).strip()
             if os.path.exists(path):
                 return os.path.abspath(path)
         
-        # 3. Unix/Linux/Mac 절대 경로 패턴 (/Users/... 또는 /storage/...)
-        unix_abs_pattern = r'(/[^"\']+\.pdf)'
+        # 3. Unix/Linux/Mac 절대 경로 패턴
+        unix_abs_pattern = rf'(/[^"\']+\.{supported_exts})'
         match = re.search(unix_abs_pattern, message, re.IGNORECASE)
         if match:
             path = match.group(1).strip()
             if os.path.exists(path):
                 return os.path.abspath(path)
         
-        # 4. 모바일 앱 경로 패턴 (Android: /storage/..., iOS: /var/mobile/...)
+        # 4. 모바일 앱 경로 패턴
         mobile_patterns = [
-            r'(/storage/[^"\']+\.pdf)',  # Android
-            r'(/var/mobile/[^"\']+\.pdf)',  # iOS
-            r'(/data/[^"\']+\.pdf)',  # Android data
-            r'(file://[^"\']+\.pdf)',  # file:// URI
+            rf'(/storage/[^"\']+\.{supported_exts})',  # Android
+            rf'(/var/mobile/[^"\']+\.{supported_exts})',  # iOS
+            rf'(/data/[^"\']+\.{supported_exts})',  # Android data
+            rf'(file://[^"\']+\.{supported_exts})',  # file:// URI
         ]
         
         for pattern in mobile_patterns:
             match = re.search(pattern, message, re.IGNORECASE)
             if match:
                 path = match.group(1).strip()
-                # file:// URI 처리
                 if path.startswith('file://'):
                     path = path.replace('file://', '')
                 if os.path.exists(path):
@@ -302,28 +372,76 @@ class UnifiedYachtChatbot:
         # 5. 메시지 전체가 파일 경로인지 확인
         message_clean = message.strip().strip('"').strip("'")
         
-        # 절대 경로인 경우
-        if os.path.isabs(message_clean) and message_clean.endswith('.pdf'):
+        if os.path.isabs(message_clean) and self._is_supported_file(message_clean):
             if os.path.exists(message_clean):
                 return os.path.abspath(message_clean)
         
-        # 상대 경로인 경우
-        if message_clean.endswith('.pdf'):
-            # 현재 작업 디렉토리 기준
+        if self._is_supported_file(message_clean):
             if os.path.exists(message_clean):
                 return os.path.abspath(message_clean)
-            # 절대 경로로 변환 시도
             abs_path = os.path.abspath(message_clean)
             if os.path.exists(abs_path):
                 return abs_path
         
         return None
     
+    def _extract_pdf_path_from_message(self, message: str) -> Optional[str]:
+        """메시지에서 PDF 파일 경로 추출 (하위 호환성)"""
+        return self._extract_file_path_from_message(message)
+    
     def _is_pdf_upload_request(self, message: str) -> bool:
-        """PDF 업로드 요청인지 확인"""
-        pdf_keywords = ['pdf', '문서', '매뉴얼', '업로드', '등록', '파일']
-        return any(keyword in message.lower() for keyword in pdf_keywords) or \
-               self._extract_pdf_path_from_message(message) is not None
+        """파일 업로드 요청인지 확인 (PDF, Word, HWP 등)"""
+        file_keywords = ['pdf', 'docx', 'doc', 'hwp', 'word', '문서', '매뉴얼', '업로드', '등록', '파일']
+        return any(keyword in message.lower() for keyword in file_keywords) or \
+               self._extract_file_path_from_message(message) is not None
+    
+    def _is_registration_request(self, message: str) -> bool:
+        """요트 등록 요청인지 확인"""
+        message_lower = message.lower()
+        registration_keywords = [
+            '요트 등록', '등록하고 싶어', '등록하고 싶어요', '등록하고 싶습니다',
+            '새 요트', '요트 추가', '추가하고 싶어', '추가하고 싶어요',
+            '부품 추가', '부품 등록', '부품 넣어', '부품 넣어줘'
+        ]
+        return any(keyword in message_lower for keyword in registration_keywords)
+    
+    def _handle_registration_request(self, user_message: str) -> str:
+        """요트 등록/부품 추가 요청 처리"""
+        message_lower = user_message.lower()
+        
+        # 부품 추가 요청인지 확인
+        parts_keywords = ['부품 추가', '부품 등록', '부품 넣어', '부품 넣어줘']
+        if any(keyword in message_lower for keyword in parts_keywords):
+            # 기존 요트에 부품 추가
+            yacht_name = self._extract_yacht_name_from_message(user_message)
+            if yacht_name:
+                return f"""📦 **{yacht_name} 부품 추가**
+
+부품을 추가하려면 다음 방법 중 하나를 선택하세요:
+
+1. **PDF 매뉴얼 업로드** (권장)
+   - PDF 파일 경로를 입력하세요
+   - 예: `data/yachtpdf/manual.pdf`
+
+2. **수동 입력** (준비 중)
+   - 곧 지원 예정입니다
+
+PDF 파일 경로를 입력해주세요! 📎"""
+            else:
+                return """📦 **부품 추가**
+
+어떤 요트에 부품을 추가하시겠어요?
+
+1. 요트 이름을 알려주세요
+   예: "Farr 40 부품 추가"
+
+2. PDF 매뉴얼 파일 경로를 입력하세요
+   예: `data/yachtpdf/manual.pdf`
+
+요트 이름 또는 PDF 파일 경로를 입력해주세요! 📎"""
+        
+        # 일반 요트 등록 요청
+        return self._suggest_pdf_upload()
     
     def _is_yacht_info_request(self, message: str) -> bool:
         """요트 정보 요청인지 확인"""
@@ -346,9 +464,9 @@ class UnifiedYachtChatbot:
             AI 응답 메시지
         """
         try:
-            # 1. 직접 전달된 PDF 파일 경로 확인 (모바일 앱에서 파일 업로드)
+            # 1. 직접 전달된 파일 경로 확인 (모바일 앱에서 파일 업로드)
             if pdf_file_path and os.path.exists(pdf_file_path):
-                return self._handle_pdf_upload(pdf_file_path)
+                return self._handle_file_upload(pdf_file_path)
             
             # 2. 메시지에서 PDF 파일 경로 추출
             pdf_path = self._extract_pdf_path_from_message(user_message)
@@ -373,15 +491,26 @@ class UnifiedYachtChatbot:
                 "timestamp": datetime.now().isoformat()
             })
             
-            # 5. Gemini AI로 의도 파악 및 응답 생성
-            if self.has_gemini:
+            # 5. 간단한 질문 먼저 처리 (크기, 부품 개수 등)
+            simple_response = self._handle_simple_questions(user_message)
+            if simple_response:
+                response = simple_response
+            # 5-1. 요트 등록/부품 추가 요청 처리
+            elif self._is_registration_request(user_message):
+                response = self._handle_registration_request(user_message)
+            # 6. Gemini AI로 의도 파악 및 응답 생성
+            elif self.has_gemini:
+                # 분석 요청인 경우 진행 상황 표시
+                if any(keyword in user_message.lower() for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석']):
+                    print("🤖 AI가 분석 중입니다... ⏳")
+                    sys.stdout.flush()  # 버퍼 강제 출력
                 # AI가 의도를 파악하여 적절한 응답 생성
                 response = self._generate_intelligent_response(user_message)
             else:
                 # 기본 모드: 키워드 기반 응답
                 response = self._generate_keyword_based_response(user_message)
             
-            # 6. 대화 히스토리에 추가
+            # 7. 대화 히스토리에 추가
             self.chat_history.append({
                 "role": "assistant",
                 "content": response,
@@ -406,14 +535,16 @@ class UnifiedYachtChatbot:
 **의도 분류:**
 1. **요트 정보 조회**: 요트 이름, 스펙, 치수 등에 대한 질문
 2. **요트 등록/PDF 업로드**: 새 요트를 등록하거나 PDF 매뉴얼을 업로드하려는 의도
-3. **도움말 요청**: 사용법, 가이드, 도움말을 요청하는 의도
-4. **요트 목록 조회**: 전체 요트 목록을 보려는 의도
-5. **요트 비교/추천**: 여러 요트를 비교하거나 추천을 요청하는 의도
-6. **정비/관리 질문**: 정비 주기, 관리 방법 등에 대한 질문
-7. **일반 대화**: 기타 요트 관련 질문
+3. **요트 분석 요청**: 기존 요트 데이터를 분석하거나 상세 분석을 요청하는 의도 (키워드: "분석", "분석해줘", "분석해주세요", "상세 분석", "데이터 분석" 등)
+4. **도움말 요청**: 사용법, 가이드, 도움말을 요청하는 의도
+5. **요트 목록 조회**: 전체 요트 목록을 보려는 의도
+6. **요트 비교/추천**: 여러 요트를 비교하거나 추천을 요청하는 의도
+7. **정비/관리 질문**: 정비 주기, 관리 방법 등에 대한 질문
+8. **일반 대화**: 기타 요트 관련 질문
 
 **응답 규칙:**
 - 요트 등록/PDF 업로드 의도가 감지되면: PDF 파일 업로드 안내 메시지를 반환
+- 요트 분석 요청 의도가 감지되면: 해당 요트의 상세 분석 정보를 제공 (스펙, 부품, 정비 주기, 특징 등 종합 분석)
 - 도움말 요청 의도가 감지되면: 도움말 내용을 반환
 - 요트 목록 조회 의도가 감지되면: 요트 목록을 반환
 - 요트 정보 조회 의도가 감지되면: 해당 요트의 상세 정보를 제공
@@ -428,13 +559,23 @@ class UnifiedYachtChatbot:
             response = self.model.generate_content(intent_prompt)
             ai_response = response.text.strip()
             
-            # 특수 응답 처리 (PDF 업로드, 도움말 등)
+            # 특수 응답 처리 (PDF 업로드, 분석, 도움말 등)
             ai_response_lower = ai_response.lower()
+            user_message_lower = user_message.lower()
             
             # PDF 업로드 의도가 명확한 경우
             if any(keyword in ai_response_lower for keyword in ['pdf', '업로드', '등록', '파일 경로']):
                 # PDF 업로드 안내 메시지로 대체
                 return self._suggest_pdf_upload()
+            
+            # 요트 분석 의도가 명확한 경우
+            if any(keyword in user_message_lower for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석']):
+                # 요트 이름이 포함되어 있으면 해당 요트 분석, 없으면 전체 분석 안내
+                yacht_name = self._extract_yacht_name_from_message(user_message)
+                if yacht_name:
+                    return self._analyze_yacht_data(yacht_name)
+                else:
+                    return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
             
             # 도움말 의도가 명확한 경우
             if any(keyword in ai_response_lower for keyword in ['도움말', '사용법', '가이드']):
@@ -467,6 +608,15 @@ class UnifiedYachtChatbot:
         if any(keyword in message_lower for keyword in pdf_keywords):
             return self._suggest_pdf_upload_without_ai()
         
+        # 2-1. 요트 분석 관련 키워드
+        analysis_keywords = ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석']
+        if any(keyword in message_lower for keyword in analysis_keywords):
+            yacht_name = self._extract_yacht_name_from_message(user_message)
+            if yacht_name:
+                return self._analyze_yacht_data(yacht_name)
+            else:
+                return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
+        
         # 3. 요트 목록 관련 키워드
         list_keywords = ['목록', '리스트', '전체', '모든 요트', '어떤 요트', '요트 종류', '요트 목록']
         if any(keyword in message_lower for keyword in list_keywords):
@@ -497,13 +647,260 @@ class UnifiedYachtChatbot:
         
         return "죄송합니다. 요트 정보를 찾을 수 없습니다. '/list' 명령어로 요트 목록을 확인하세요."
     
+    def _handle_simple_questions(self, user_message: str) -> Optional[str]:
+        """간단한 질문 처리 (크기, 부품 개수 등)"""
+        message_lower = user_message.lower()
+        
+        # 요트 이름 추출
+        yacht_name = self._extract_yacht_name_from_message(user_message)
+        if not yacht_name:
+            return None
+        
+        # 요트 찾기
+        yacht = None
+        for y in self.yacht_data.get('yachts', []):
+            if y.get('name', '').lower() == yacht_name.lower():
+                yacht = y
+                break
+        
+        if not yacht:
+            return None
+        
+        # 1. 특정 치수 요소 질문 (개별 처리)
+        # 폭 (Beam)
+        beam_keywords = ['폭', 'beam', '너비', '가로']
+        if any(keyword in message_lower for keyword in beam_keywords):
+            return self._format_specific_dimension(yacht, 'beam', '폭 (Beam)')
+        
+        # 길이/전장 (LOA)
+        loa_keywords = ['전장', 'loa', '길이', '전체 길이', '총 길이']
+        if any(keyword in message_lower for keyword in loa_keywords):
+            return self._format_specific_dimension(yacht, 'loa', '전장 (LOA)')
+        
+        # 흘수 (Draft)
+        draft_keywords = ['흘수', 'draft', '드래프트']
+        if any(keyword in message_lower for keyword in draft_keywords):
+            return self._format_specific_dimension(yacht, 'draft', '흘수 (Draft)')
+        
+        # 배수량 (Displacement)
+        displacement_keywords = ['배수량', 'displacement', '무게', '중량']
+        if any(keyword in message_lower for keyword in displacement_keywords):
+            return self._format_specific_dimension(yacht, 'displacement', '배수량 (Displacement)')
+        
+        # 마스트 높이
+        mast_keywords = ['마스트', 'mast', '마스트 높이', 'mast height', '높이']
+        if any(keyword in message_lower for keyword in mast_keywords):
+            return self._format_specific_dimension(yacht, 'mastHeight', '마스트 높이 (Mast Height)')
+        
+        # 세일링/돛 면적
+        sail_keywords = ['세일링', 'sailing', '돛', 'sail', '돛 면적', 'sail area', '세일 면적', '넓이', '면적']
+        if any(keyword in message_lower for keyword in sail_keywords):
+            return self._format_yacht_sail_area(yacht)
+        
+        # 크기/치수 질문 (전체)
+        size_keywords = ['크기', '치수', '수치', 'dimension']
+        if any(keyword in message_lower for keyword in size_keywords):
+            return self._format_yacht_dimensions(yacht)
+        
+        # 2. 부품 개수 질문
+        parts_count_keywords = ['부품', '부품 개수', '부품 수', 'parts', '몇 개', '개수']
+        if any(keyword in message_lower for keyword in parts_count_keywords):
+            parts = self._get_yacht_parts(yacht_name)
+            parts_count = len(parts) if isinstance(parts, list) else 0
+            if parts_count > 0:
+                return f"📦 **{yacht_name} 부품 정보**\n\n총 **{parts_count}개**의 부품이 등록되어 있습니다.\n\n더 자세한 정보를 원하시면 '{yacht_name} 분석해줘'라고 물어보세요."
+            else:
+                return f"📦 **{yacht_name} 부품 정보**\n\n현재 등록된 부품이 없습니다.\n\n부품 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        # 3. 엔진 질문
+        engine_keywords = ['엔진', 'engine', '모터', 'motor', '동력', '파워']
+        if any(keyword in message_lower for keyword in engine_keywords):
+            return self._format_yacht_engine_info(yacht)
+        
+        # 4. 부품 질문 (특정 부품)
+        parts_keywords = ['부품', 'parts', '컴포넌트', 'component']
+        if any(keyword in message_lower for keyword in parts_keywords):
+            parts = self._get_yacht_parts(yacht_name)
+            if isinstance(parts, list) and len(parts) > 0:
+                # 부품 목록 반환
+                return self._format_yacht_parts_list(yacht_name, parts)
+            else:
+                return f"📦 **{yacht_name} 부품 정보**\n\n현재 등록된 부품이 없습니다.\n\n부품 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        # 5. 제조사 질문
+        manufacturer_keywords = ['제조사', 'manufacturer', '만든', '누가']
+        if any(keyword in message_lower for keyword in manufacturer_keywords):
+            manufacturer = yacht.get('manufacturer', 'N/A')
+            return f"🏭 **{yacht_name} 제조사**\n\n제조사: **{manufacturer}**"
+        
+        # 6. 타입 질문
+        type_keywords = ['타입', '유형', '종류', 'type', '어떤']
+        if any(keyword in message_lower for keyword in type_keywords):
+            yacht_type = yacht.get('type', 'N/A')
+            return f"🏷️ **{yacht_name} 유형**\n\n유형: **{yacht_type}**"
+        
+        # 7. 기본 정보 (간단한 질문)
+        info_keywords = ['정보', '스펙', '사양', '알려줘', '뭐야', '어때']
+        if any(keyword in message_lower for keyword in info_keywords) and len(user_message.split()) <= 5:
+            # 매우 간단한 질문만 처리 (예: "TP52 정보", "Farr 40 알려줘")
+            return self._format_basic_yacht_info(yacht)
+        
+        return None
+    
+    def _format_basic_yacht_info(self, yacht: Dict) -> str:
+        """요트 기본 정보 간단 포맷팅"""
+        model_name = yacht.get('name', 'Unknown')
+        manufacturer = yacht.get('manufacturer', 'N/A')
+        yacht_type = yacht.get('type', 'N/A')
+        
+        response = f"📋 **{model_name} 기본 정보**\n\n"
+        response += f"제조사: {manufacturer}\n"
+        response += f"유형: {yacht_type}\n\n"
+        
+        # 치수 정보가 있으면 간단히 표시
+        dim = yacht.get('dimensions', {})
+        if dim:
+            if dim.get('loa'):
+                loa = dim['loa']
+                if isinstance(loa, dict):
+                    response += f"전장 (LOA): {loa.get('display', loa.get('value', 'N/A'))}\n"
+                else:
+                    response += f"전장 (LOA): {loa}\n"
+            if dim.get('beam'):
+                beam = dim['beam']
+                if isinstance(beam, dict):
+                    response += f"폭 (Beam): {beam.get('display', beam.get('value', 'N/A'))}\n"
+                else:
+                    response += f"폭 (Beam): {beam}\n"
+        
+        response += f"\n💡 더 자세한 정보를 원하시면 '{model_name} 분석해줘'라고 물어보세요."
+        
+        return response
+    
+    def _format_yacht_engine_info(self, yacht: Dict) -> str:
+        """요트 엔진 정보 포맷팅"""
+        model_name = yacht.get('name', 'Unknown')
+        engine = yacht.get('engine', {})
+        
+        if not engine or not any([engine.get('type'), engine.get('power'), engine.get('model')]):
+            return f"🔧 **{model_name} 엔진 정보**\n\n등록된 엔진 정보가 없습니다.\n\n엔진 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        response = f"🔧 **{model_name} 엔진 정보**\n\n"
+        
+        if engine.get('type'):
+            response += f"**타입**: {engine['type']}\n"
+        if engine.get('power'):
+            response += f"**출력**: {engine['power']}\n"
+        if engine.get('model'):
+            response += f"**모델**: {engine['model']}\n"
+        
+        response += f"\n💡 더 자세한 정보를 원하시면 '{model_name} 분석해줘'라고 물어보세요."
+        
+        return response
+    
+    def _format_yacht_parts_list(self, yacht_name: str, parts: List[Dict]) -> str:
+        """요트 부품 목록 포맷팅"""
+        if not parts or len(parts) == 0:
+            return f"📦 **{yacht_name} 부품 정보**\n\n등록된 부품이 없습니다."
+        
+        response = f"📦 **{yacht_name} 부품 목록**\n\n"
+        response += f"총 **{len(parts)}개**의 부품이 등록되어 있습니다.\n\n"
+        
+        # 카테고리별로 그룹화
+        categories = {}
+        for part in parts[:20]:  # 최대 20개만 표시
+            if isinstance(part, dict):
+                category = part.get('category', '기타')
+                if category not in categories:
+                    categories[category] = []
+                categories[category].append(part.get('name', 'Unknown'))
+        
+        for category, part_names in categories.items():
+            response += f"**{category}**: {', '.join(part_names[:5])}"
+            if len(part_names) > 5:
+                response += f" 외 {len(part_names) - 5}개"
+            response += "\n"
+        
+        if len(parts) > 20:
+            response += f"\n... 외 {len(parts) - 20}개 부품 더 있음\n"
+        
+        response += f"\n💡 전체 부품 목록을 보려면 '{yacht_name} 분석해줘'라고 물어보세요."
+        
+        return response
+    
+    def _format_specific_dimension(self, yacht: Dict, dimension_key: str, dimension_name: str) -> str:
+        """특정 치수 요소만 포맷팅"""
+        model_name = yacht.get('name', 'Unknown')
+        dim = yacht.get('dimensions', {})
+        
+        dimension_data = dim.get(dimension_key)
+        if not dimension_data:
+            return f"📏 **{model_name} {dimension_name}**\n\n등록된 {dimension_name} 정보가 없습니다.\n\n정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        response = f"📏 **{model_name} {dimension_name}**\n\n"
+        
+        if isinstance(dimension_data, dict):
+            value = dimension_data.get('value', '')
+            unit = dimension_data.get('unit', '')
+            display = dimension_data.get('display', f"{value}{unit}")
+            response += f"**{dimension_name}**: {display}\n"
+        else:
+            response += f"**{dimension_name}**: {dimension_data}\n"
+        
+        response += f"\n💡 더 자세한 치수 정보를 원하시면 '{model_name} 크기' 또는 '{model_name} 치수'라고 물어보세요."
+        
+        return response
+    
+    def _format_yacht_sail_area(self, yacht: Dict) -> str:
+        """요트 돛 면적 정보 포맷팅"""
+        model_name = yacht.get('name', 'Unknown')
+        sail_area = yacht.get('sailArea', {})
+        
+        if not sail_area:
+            return f"⛵ **{model_name} 돛 면적**\n\n등록된 돛 면적 정보가 없습니다.\n\n정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        response = f"⛵ **{model_name} 돛 면적 (Sail Area)**\n\n"
+        
+        if sail_area.get('main'):
+            main = sail_area['main']
+            if isinstance(main, dict):
+                response += f"**메인 세일 (Main)**: {main.get('value', '')}{main.get('unit', '')}\n"
+            else:
+                response += f"**메인 세일 (Main)**: {main}\n"
+        
+        if sail_area.get('jib'):
+            jib = sail_area['jib']
+            if isinstance(jib, dict):
+                response += f"**지브 (Jib)**: {jib.get('value', '')}{jib.get('unit', '')}\n"
+            else:
+                response += f"**지브 (Jib)**: {jib}\n"
+        
+        if sail_area.get('spinnaker'):
+            spinnaker = sail_area['spinnaker']
+            if isinstance(spinnaker, dict):
+                response += f"**스피나커 (Spinnaker)**: {spinnaker.get('value', '')}{spinnaker.get('unit', '')}\n"
+            else:
+                response += f"**스피나커 (Spinnaker)**: {spinnaker}\n"
+        
+        if sail_area.get('total'):
+            total = sail_area['total']
+            if isinstance(total, dict):
+                display = total.get('display', f"{total.get('value', '')}{total.get('unit', '')}")
+                response += f"**총 면적 (Total)**: {display}\n"
+            else:
+                response += f"**총 면적 (Total)**: {total}\n"
+        
+        response += f"\n💡 더 자세한 정보를 원하시면 '{model_name} 분석해줘'라고 물어보세요."
+        
+        return response
+    
     def _format_yacht_dimensions(self, yacht: Dict) -> str:
         """요트 치수 정보 포맷팅"""
         model_name = yacht.get('name', 'Unknown')
         dim = yacht.get('dimensions', {})
         
-        response = f"'{model_name}'의 크기 정보는 아래와 같습니다:\n\n"
-        response += "📏 **기본 치수**\n"
+        response = f"📏 **{model_name} 크기 정보**\n\n"
+        response += "**기본 치수**\n"
         
         if dim.get('loa'):
             loa = dim['loa']
@@ -655,17 +1052,24 @@ class UnifiedYachtChatbot:
         
         return context
     
-    def _handle_pdf_upload(self, pdf_path: str) -> str:
-        """PDF 업로드 및 분석 처리 (완전한 버전)"""
+    def _handle_file_upload(self, file_path: str) -> str:
+        """파일 업로드 및 분석 처리 (PDF, Word, HWP, Excel, PPTX 등)"""
         try:
-            print(f"\n📄 PDF 분석 시작: {os.path.basename(pdf_path)}")
+            file_name = os.path.basename(file_path)
+            file_ext = self._get_file_extension(file_path)
             
-            # PDF 분석 시작 메시지
-            analyzing_msg = "📄 문서를 분석 중입니다...\n잠시만 기다려주세요! ⏳"
+            # 지원되는 파일 형식 확인
+            if not self._is_supported_file(file_path):
+                return f"❌ 지원되지 않는 파일 형식입니다.\n\n지원 형식: PDF, Word (.docx, .doc), HWP, 텍스트 (.txt), Excel (.xlsx, .xls), PowerPoint (.pptx, .ppt)"
+            
+            print(f"\n📄 파일 분석 시작: {file_name} ({file_ext})")
+            
+            # 파일 분석 시작 메시지
+            analyzing_msg = f"📄 {file_name} 문서를 분석 중입니다...\n잠시만 기다려주세요! ⏳"
             
             self.chat_history.append({
                 "role": "user",
-                "content": f"[PDF 업로드: {os.path.basename(pdf_path)}]",
+                "content": f"[파일 업로드: {file_name}]",
                 "timestamp": datetime.now().isoformat()
             })
             
@@ -675,14 +1079,14 @@ class UnifiedYachtChatbot:
                 "timestamp": datetime.now().isoformat()
             })
             
-            # YachtDocumentAnalyzer 사용 (있는 경우)
-            try:
-                from yacht_document_analyzer import YachtDocumentAnalyzer
-                document_analyzer = YachtDocumentAnalyzer(api_key=self.api_key)
-                analysis_result = document_analyzer.analyze_pdf(pdf_path, use_file_upload=False)
-            except ImportError:
-                # yacht_document_analyzer가 없으면 직접 분석
-                analysis_result = self._analyze_pdf_directly(pdf_path)
+            # 파일 형식에 따라 텍스트 추출
+            extracted_text = self._extract_text_from_file(file_path)
+            
+            if not extracted_text or len(extracted_text.strip()) < 100:
+                return f"❌ {file_name}에서 텍스트를 추출할 수 없습니다.\n\n파일이 손상되었거나 암호화되어 있을 수 있습니다."
+            
+            # 분석 실행
+            analysis_result = self._analyze_document_directly(file_path, extracted_text)
             
             # 분석 결과 확인
             if "error" in analysis_result:
@@ -713,12 +1117,12 @@ class UnifiedYachtChatbot:
                 "timestamp": datetime.now().isoformat()
             })
             
-            print("✅ PDF 분석 및 등록 준비 완료!")
+            print(f"✅ {file_name} 분석 및 등록 준비 완료!")
             
             return completion_msg
             
         except Exception as e:
-            error_msg = f"❌ PDF 처리 중 오류가 발생했습니다: {str(e)}"
+            error_msg = f"❌ 파일 처리 중 오류가 발생했습니다: {str(e)}"
             print(f"❌ Error: {e}")
             import traceback
             traceback.print_exc()
@@ -731,29 +1135,18 @@ class UnifiedYachtChatbot:
             
             return error_msg
     
-    def _analyze_pdf_directly(self, pdf_path: str) -> Dict:
-        """PDF 직접 분석 (yacht_document_analyzer 없이)"""
-        extracted_text = self._extract_text_from_pdf(pdf_path)
-        
-        if not extracted_text or len(extracted_text.strip()) < 100:
-            return {
-                "error": "PDF에서 텍스트를 추출할 수 없습니다.",
-                "fileInfo": {
-                    "fileName": os.path.basename(pdf_path),
-                    "filePath": pdf_path
-                }
-            }
-        
+    def _analyze_document_directly(self, file_path: str, extracted_text: str) -> Dict:
+        """문서 직접 분석 (yacht_document_analyzer 없이)"""
         # 텍스트가 너무 길면 앞부분만 사용
         if len(extracted_text) > 30000:
             extracted_text = extracted_text[:30000] + "\n\n[... 텍스트가 너무 길어 일부만 분석합니다 ...]"
         
         if not self.has_gemini:
             return {
-                "error": "PDF 분석 기능은 Gemini API가 필요합니다.",
+                "error": "문서 분석 기능은 Gemini API가 필요합니다.",
                 "fileInfo": {
-                    "fileName": os.path.basename(pdf_path),
-                    "filePath": pdf_path
+                    "fileName": os.path.basename(file_path),
+                    "filePath": file_path
                 }
             }
         
@@ -863,28 +1256,34 @@ JSON 형식으로만 응답해주세요. 다른 설명은 필요 없습니다.""
         
         # 파일 정보 추가
         result["fileInfo"] = {
-            "fileName": os.path.basename(pdf_path),
-            "filePath": pdf_path,
-            "fileSize": os.path.getsize(pdf_path)
+            "fileName": os.path.basename(file_path),
+            "filePath": file_path,
+            "fileSize": os.path.getsize(file_path)
         }
         
         print("✅ 분석 완료!")
         return result
     
     def _extract_text_from_pdf(self, pdf_path: str) -> str:
-        """PDF에서 텍스트 추출"""
+        """PDF에서 텍스트 추출 (일반 방법 실패 시 OCR 시도)"""
         text = ""
         
+        # 방법 1: PyPDF2로 텍스트 추출 시도
         if HAS_PYPDF2:
             try:
                 with open(pdf_path, 'rb') as file:
                     pdf_reader = PyPDF2.PdfReader(file)
                     for page in pdf_reader.pages:
-                        text += page.extract_text() + "\n"
-                return text
+                        page_text = page.extract_text()
+                        if page_text:
+                            text += page_text + "\n"
+                # 텍스트가 충분히 추출되었으면 반환
+                if len(text.strip()) > 100:
+                    return text
             except Exception as e:
                 print(f"⚠️ PyPDF2로 텍스트 추출 실패: {e}")
         
+        # 방법 2: pdfplumber로 텍스트 추출 시도
         if HAS_PDFPLUMBER:
             try:
                 import pdfplumber
@@ -893,11 +1292,220 @@ JSON 형식으로만 응답해주세요. 다른 설명은 필요 없습니다.""
                         page_text = page.extract_text()
                         if page_text:
                             text += page_text + "\n"
-                return text
+                # 텍스트가 충분히 추출되었으면 반환
+                if len(text.strip()) > 100:
+                    return text
             except Exception as e:
                 print(f"⚠️ pdfplumber로 텍스트 추출 실패: {e}")
         
-        return ""
+        # 방법 3: OCR 사용 (스캔된 이미지 PDF인 경우)
+        if HAS_OCR and len(text.strip()) < 100:
+            try:
+                print("📷 텍스트 추출 실패. OCR을 시도합니다...")
+                text = self._extract_text_with_ocr(pdf_path)
+                if len(text.strip()) > 100:
+                    print("✅ OCR로 텍스트 추출 성공!")
+                    return text
+            except Exception as e:
+                print(f"⚠️ OCR 실패: {e}")
+                print("💡 OCR을 사용하려면 다음을 설치하세요:")
+                print("   - Tesseract OCR: https://github.com/tesseract-ocr/tesseract")
+                print("   - pip install pytesseract pdf2image")
+        
+        return text
+    
+    def _extract_text_with_ocr(self, pdf_path: str) -> str:
+        """OCR을 사용한 텍스트 추출 (스캔된 이미지 PDF용)"""
+        if not HAS_OCR:
+            return ""
+        
+        try:
+            import pytesseract
+            from pdf2image import convert_from_path
+            
+            # PDF를 이미지로 변환
+            images = convert_from_path(pdf_path, dpi=300)
+            
+            # 각 이미지에서 텍스트 추출
+            text = ""
+            total_pages = len(images)
+            print(f"   📄 총 {total_pages}페이지를 OCR 처리 중...")
+            
+            for i, image in enumerate(images, 1):
+                # OCR 실행 (영문 우선, 한글도 지원)
+                page_text = pytesseract.image_to_string(image, lang='eng+kor')
+                text += f"\n--- Page {i} ---\n{page_text}\n"
+                
+                if i % 10 == 0:
+                    print(f"   진행 중: {i}/{total_pages} 페이지")
+            
+            return text
+        except Exception as e:
+            print(f"❌ OCR 오류: {e}")
+            return ""
+    
+    def _extract_text_from_file(self, file_path: str) -> str:
+        """파일에서 텍스트 추출 (PDF, Word, HWP, Excel, PPTX 등)"""
+        file_ext = self._get_file_extension(file_path)
+        
+        if file_ext == '.pdf':
+            return self._extract_text_from_pdf(file_path)
+        elif file_ext in ['.docx', '.doc']:
+            return self._extract_text_from_word(file_path)
+        elif file_ext == '.hwp':
+            return self._extract_text_from_hwp(file_path)
+        elif file_ext == '.txt':
+            return self._extract_text_from_txt(file_path)
+        elif file_ext in ['.xlsx', '.xls']:
+            return self._extract_text_from_excel(file_path)
+        elif file_ext in ['.pptx', '.ppt']:
+            return self._extract_text_from_pptx(file_path)
+        else:
+            return ""
+    
+    def _extract_text_from_word(self, file_path: str) -> str:
+        """Word 문서에서 텍스트 추출"""
+        if not HAS_DOCX:
+            print("⚠️ python-docx가 설치되지 않았습니다. pip install python-docx")
+            return ""
+        
+        try:
+            doc = Document(file_path)
+            text = ""
+            for paragraph in doc.paragraphs:
+                text += paragraph.text + "\n"
+            
+            # 테이블에서도 텍스트 추출
+            for table in doc.tables:
+                for row in table.rows:
+                    for cell in row.cells:
+                        text += cell.text + " "
+                    text += "\n"
+            
+            return text
+        except Exception as e:
+            print(f"⚠️ Word 문서 텍스트 추출 실패: {e}")
+            return ""
+    
+    def _extract_text_from_hwp(self, file_path: str) -> str:
+        """HWP 파일에서 텍스트 추출"""
+        if not HAS_OLEFILE:
+            print("⚠️ olefile이 설치되지 않았습니다. pip install olefile")
+            return ""
+        
+        try:
+            # HWP 파일은 OLE 형식
+            if not olefile.isOleFile(file_path):
+                return ""
+            
+            ole = olefile.OleFileIO(file_path)
+            text = ""
+            
+            # HWP 파일 구조에서 텍스트 추출 시도
+            try:
+                # Section0 스트림에서 텍스트 추출 시도
+                if ole.exists('Section0'):
+                    stream = ole.openstream('Section0')
+                    data = stream.read()
+                    # 한글 인코딩 시도
+                    try:
+                        text = data.decode('utf-8', errors='ignore')
+                    except:
+                        try:
+                            text = data.decode('cp949', errors='ignore')
+                        except:
+                            text = data.decode('latin-1', errors='ignore')
+            except Exception as e:
+                print(f"⚠️ HWP 텍스트 추출 시도 중 오류: {e}")
+            
+            ole.close()
+            
+            # 텍스트가 너무 짧으면 실패로 간주
+            if len(text.strip()) < 50:
+                return ""
+            
+            return text
+        except Exception as e:
+            print(f"⚠️ HWP 파일 텍스트 추출 실패: {e}")
+            print("💡 HWP 파일은 복잡한 형식이므로 완벽한 추출이 어려울 수 있습니다.")
+            return ""
+    
+    def _extract_text_from_txt(self, file_path: str) -> str:
+        """텍스트 파일에서 내용 읽기"""
+        try:
+            # 여러 인코딩 시도
+            encodings = ['utf-8', 'cp949', 'euc-kr', 'latin-1']
+            for encoding in encodings:
+                try:
+                    with open(file_path, 'r', encoding=encoding) as f:
+                        return f.read()
+                except UnicodeDecodeError:
+                    continue
+            
+            # 모두 실패하면 바이너리로 읽기
+            with open(file_path, 'rb') as f:
+                return f.read().decode('utf-8', errors='ignore')
+        except Exception as e:
+            print(f"⚠️ 텍스트 파일 읽기 실패: {e}")
+            return ""
+    
+    def _extract_text_from_excel(self, file_path: str) -> str:
+        """Excel 파일에서 텍스트 추출"""
+        if not HAS_OPENPYXL:
+            print("⚠️ openpyxl이 설치되지 않았습니다. pip install openpyxl")
+            return ""
+        
+        try:
+            wb = openpyxl.load_workbook(file_path, data_only=True)
+            text = ""
+            
+            for sheet_name in wb.sheetnames:
+                sheet = wb[sheet_name]
+                text += f"\n[시트: {sheet_name}]\n"
+                
+                for row in sheet.iter_rows(values_only=True):
+                    row_text = " | ".join([str(cell) if cell is not None else "" for cell in row])
+                    if row_text.strip():
+                        text += row_text + "\n"
+            
+            wb.close()
+            return text
+        except Exception as e:
+            print(f"⚠️ Excel 파일 텍스트 추출 실패: {e}")
+            return ""
+    
+    def _extract_text_from_pptx(self, file_path: str) -> str:
+        """PowerPoint 파일에서 텍스트 추출"""
+        if not HAS_PPTX:
+            print("⚠️ python-pptx가 설치되지 않았습니다. pip install python-pptx")
+            return ""
+        
+        try:
+            prs = Presentation(file_path)
+            text = ""
+            
+            for slide_num, slide in enumerate(prs.slides, 1):
+                text += f"\n--- 슬라이드 {slide_num} ---\n"
+                
+                # 슬라이드의 모든 도형에서 텍스트 추출
+                for shape in slide.shapes:
+                    if hasattr(shape, "text"):
+                        shape_text = shape.text.strip()
+                        if shape_text:
+                            text += shape_text + "\n"
+                    
+                    # 테이블이 있는 경우
+                    if shape.has_table:
+                        table = shape.table
+                        for row in table.rows:
+                            row_text = " | ".join([cell.text.strip() if cell.text else "" for cell in row.cells])
+                            if row_text.strip():
+                                text += row_text + "\n"
+            
+            return text
+        except Exception as e:
+            print(f"⚠️ PowerPoint 파일 텍스트 추출 실패: {e}")
+            return ""
     
     def _list_yachts(self) -> str:
         """요트 목록 반환"""
@@ -990,6 +1598,98 @@ Gemini API 키를 설정하려면:
 PDF 파일 경로를 입력해주세요! 📎"""
         
         return message
+    
+    def _extract_yacht_name_from_message(self, message: str) -> Optional[str]:
+        """메시지에서 요트 이름 추출 (하이픈, 공백, 슬래시 등 무시)"""
+        import re
+        # 하이픈, 공백, 언더스코어, 슬래시 등을 제거하여 정규화
+        message_normalized = re.sub(r'[-_\s/]+', '', message.lower())
+        
+        for yacht in self.yacht_data.get('yachts', []):
+            yacht_name = yacht.get('name', '')
+            if not yacht_name:
+                continue
+            
+            # 요트 이름도 정규화 (슬래시도 제거)
+            yacht_name_normalized = re.sub(r'[-_\s/]+', '', yacht_name.lower())
+            
+            # 정규화된 이름이 메시지에 포함되어 있는지 확인
+            if yacht_name_normalized in message_normalized:
+                return yacht_name
+            
+            # 부분 매칭도 시도 (예: "farr40" -> "Farr 40", "j70" -> "J/70")
+            if yacht_name_normalized and message_normalized.find(yacht_name_normalized) != -1:
+                return yacht_name
+            
+            # 숫자만 있는 경우도 시도 (예: "j70" -> "J/70")
+            # 요트 이름에서 숫자 추출
+            yacht_numbers = re.findall(r'\d+', yacht_name_normalized)
+            message_numbers = re.findall(r'\d+', message_normalized)
+            if yacht_numbers and message_numbers:
+                # 숫자가 일치하고, 요트 이름의 문자 부분이 메시지에 포함되어 있으면 매칭
+                if yacht_numbers[0] == message_numbers[0]:
+                    yacht_letters = re.sub(r'\d+', '', yacht_name_normalized)
+                    message_letters = re.sub(r'\d+', '', message_normalized)
+                    if yacht_letters and yacht_letters in message_letters:
+                        return yacht_name
+        
+        return None
+    
+    def _analyze_yacht_data(self, yacht_name: str) -> str:
+        """요트 데이터 종합 분석"""
+        # 요트 정보 찾기
+        yacht = None
+        for y in self.yacht_data.get('yachts', []):
+            if y.get('name', '').lower() == yacht_name.lower():
+                yacht = y
+                break
+        
+        if not yacht:
+            return f"'{yacht_name}' 요트 정보를 찾을 수 없습니다."
+        
+        # Gemini AI를 사용한 상세 분석
+        if self.has_gemini:
+            # 분석 시작 메시지 출력 (즉시 표시)
+            print("📊 요트 데이터를 분석 중입니다... 잠시만 기다려주세요. ⏳")
+            sys.stdout.flush()  # 버퍼 강제 출력
+            
+            try:
+                analysis_prompt = f"""다음 요트 데이터를 종합적으로 분석해주세요:
+
+요트 정보:
+{json.dumps(yacht, ensure_ascii=False, indent=2)}
+
+부품 데이터 (해당 요트):
+{json.dumps(self._get_yacht_parts(yacht_name), ensure_ascii=False, indent=2)[:2000]}
+
+위 데이터를 바탕으로 다음을 포함한 종합 분석을 제공해주세요:
+1. 요트의 주요 특징 및 스펙 요약
+2. 치수 및 성능 분석
+3. 부품 구성 및 정비 주기 분석
+4. 사용 목적에 따른 적합성 평가
+5. 관리 및 정비 권장사항
+
+친근하고 전문적인 톤으로 답변해주세요."""
+                
+                response = self.model.generate_content(analysis_prompt)
+                result = f"📊 **{yacht_name} 종합 분석**\n\n{response.text}"
+                sys.stdout.flush()  # 버퍼 강제 출력
+                return result
+            except Exception as e:
+                # AI 분석 실패 시 기본 정보 제공
+                return self._format_full_yacht_info(yacht)
+        else:
+            # Gemini AI 없을 때 기본 정보 제공
+            return self._format_full_yacht_info(yacht)
+    
+    def _get_yacht_parts(self, yacht_name: str) -> List[Dict]:
+        """요트의 부품 목록 가져오기"""
+        parts_list = []
+        for yacht_data in self.parts_data.get('yachts', []):
+            if yacht_data.get('name', '').lower() == yacht_name.lower():
+                parts_list = yacht_data.get('parts', [])
+                break
+        return parts_list
     
     def clear_history(self):
         """대화 히스토리 초기화"""
@@ -1483,6 +2183,16 @@ PDF 파일 경로를 입력해주세요! 📎"""
             else:
                 data = {"yachts": []}
             
+            # data가 리스트인 경우 딕셔너리로 변환
+            if isinstance(data, list):
+                data = {"yachts": data}
+            
+            # data가 딕셔너리가 아니거나 "yachts" 키가 없는 경우
+            if not isinstance(data, dict):
+                data = {"yachts": []}
+            elif "yachts" not in data:
+                data["yachts"] = []
+            
             yacht_entry = None
             for yacht in data.get("yachts", []):
                 if yacht.get("id") == yacht_id:
@@ -1496,9 +2206,13 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     "manufacturer": manufacturer,
                     "parts": []
                 }
+                if not isinstance(data.get("yachts"), list):
+                    data["yachts"] = []
                 data["yachts"].append(yacht_entry)
             
             # 기존 부품 목록 가져오기 (중복 방지)
+            if not isinstance(yacht_entry, dict):
+                yacht_entry = {"parts": []}
             existing_parts = yacht_entry.get("parts", [])
             existing_part_names = {p.get("name", "") for p in existing_parts if isinstance(p, dict)}
             

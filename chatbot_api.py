@@ -6,24 +6,44 @@ Flutter 앱과 통합을 위한 RESTful API
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from chatbot_gemini import YachtAIChatbot
+from chatbot_with_pdf_upload import YachtAIChatbotWithPDF
 import os
 from datetime import datetime
 import uuid
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 CORS(app)  # Flutter 앱에서 접근 가능하도록 CORS 설정
 
 # 세션별 챗봇 인스턴스 저장
 chatbot_sessions = {}
+chatbot_with_pdf_sessions = {}
 
 # Gemini API 키 (환경변수에서 가져오기)
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+
+# 업로드된 파일 저장 디렉토리
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'pdf'}
+
+# 업로드 폴더 생성
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+def allowed_file(filename):
+    """파일 확장자 확인"""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_or_create_chatbot(session_id: str) -> YachtAIChatbot:
     """세션 ID로 챗봇 인스턴스 가져오기 또는 생성"""
     if session_id not in chatbot_sessions:
         chatbot_sessions[session_id] = YachtAIChatbot(api_key=GEMINI_API_KEY)
     return chatbot_sessions[session_id]
+
+def get_or_create_chatbot_with_pdf(session_id: str) -> YachtAIChatbotWithPDF:
+    """세션 ID로 PDF 업로드 기능이 있는 챗봇 인스턴스 가져오기 또는 생성"""
+    if session_id not in chatbot_with_pdf_sessions:
+        chatbot_with_pdf_sessions[session_id] = YachtAIChatbotWithPDF(api_key=GEMINI_API_KEY)
+    return chatbot_with_pdf_sessions[session_id]
 
 
 @app.route('/api/chat', methods=['POST'])
@@ -276,6 +296,8 @@ def index():
         "version": "1.0.0",
         "endpoints": {
             "POST /api/chat": "채팅 메시지 전송",
+            "POST /api/chat/upload-pdf": "PDF 파일 업로드 및 분석",
+            "GET /api/chat/registration-data": "등록 데이터 조회",
             "GET /api/chat/history": "대화 기록 조회",
             "POST /api/chat/clear": "대화 기록 초기화",
             "GET /api/yachts": "요트 목록 조회",
