@@ -1042,7 +1042,7 @@
       }
     },
     {
-      "id": "j24",
+      "id": "j-24",
       "name": "J/24",
       "manufacturer": "J/Boats",
       "manualPDF": "yachtpdf/J242019CR220319-[24866].pdf",
@@ -1274,7 +1274,7 @@
       }
     },
     {
-      "id": "j70",
+      "id": "j-70",
       "name": "J/70",
       "manufacturer": "J/Boats",
       "manualPDF": "yachtpdf/j70-user-manual.pdf",
@@ -30215,7 +30215,7 @@
       }
     },
     {
-      "id": "x–35-one-design",
+      "id": "x35-one-design",
       "name": "X–35 One Design",
       "manufacturer": "X–Yachts A/S",
       "manualPDF": "X352012CR080412-[12381].pdf",

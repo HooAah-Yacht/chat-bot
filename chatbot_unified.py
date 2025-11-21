@@ -212,13 +212,19 @@ class UnifiedYachtChatbot:
             return {"yachts": []}
     
     def _load_parts_data(self) -> Dict:
-        """부품 데이터 로드"""
+        """부품 데이터 로드 (interval 정보가 있는 yacht_parts_app_data.json 우선)"""
         try:
-            with open('data/yacht_parts_database.json', 'r', encoding='utf-8') as f:
+            # yacht_parts_app_data.json을 우선 로드 (interval 정보 포함)
+            with open('data/yacht_parts_app_data.json', 'r', encoding='utf-8') as f:
                 return json.load(f)
         except FileNotFoundError:
-            print("⚠️ yacht_parts_database.json 파일을 찾을 수 없습니다.")
-            return {"yachts": []}
+            # fallback: yacht_parts_database.json
+            try:
+                with open('data/yacht_parts_database.json', 'r', encoding='utf-8') as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                print("⚠️ 부품 데이터 파일을 찾을 수 없습니다.")
+                return {"yachts": []}
     
     def _create_system_prompt(self) -> str:
         """시스템 프롬프트 생성"""
@@ -727,7 +733,12 @@ PDF 파일 경로를 입력해주세요! 📎"""
         if any(keyword in message_lower for keyword in engine_keywords):
             return self._format_yacht_engine_info(yacht)
         
-        # 4. 부품 질문 (특정 부품)
+        # 4. 정비/유지보수 질문 ✨ 새로 추가
+        maintenance_keywords = ['정비', '유지보수', '관리', '점검', '교체', '주기', 'maintenance', 'repair', 'service', '고장', '수리', '언제']
+        if any(keyword in message_lower for keyword in maintenance_keywords):
+            return self._format_yacht_maintenance_info(yacht, yacht_name)
+        
+        # 5. 부품 질문 (특정 부품)
         parts_keywords = ['부품', 'parts', '컴포넌트', 'component']
         if any(keyword in message_lower for keyword in parts_keywords):
             parts = self._get_yacht_parts(yacht_name)
@@ -737,19 +748,19 @@ PDF 파일 경로를 입력해주세요! 📎"""
             else:
                 return f"📦 **{yacht_name} 부품 정보**\n\n현재 등록된 부품이 없습니다.\n\n부품 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
         
-        # 5. 제조사 질문
+        # 6. 제조사 질문
         manufacturer_keywords = ['제조사', 'manufacturer', '만든', '누가']
         if any(keyword in message_lower for keyword in manufacturer_keywords):
             manufacturer = yacht.get('manufacturer', 'N/A')
             return f"🏭 **{yacht_name} 제조사**\n\n제조사: **{manufacturer}**"
         
-        # 6. 타입 질문
+        # 7. 타입 질문
         type_keywords = ['타입', '유형', '종류', 'type', '어떤']
         if any(keyword in message_lower for keyword in type_keywords):
             yacht_type = yacht.get('type', 'N/A')
             return f"🏷️ **{yacht_name} 유형**\n\n유형: **{yacht_type}**"
         
-        # 7. 기본 정보 (간단한 질문)
+        # 8. 기본 정보 (간단한 질문)
         info_keywords = ['정보', '스펙', '사양', '알려줘', '뭐야', '어때']
         if any(keyword in message_lower for keyword in info_keywords) and len(user_message.split()) <= 5:
             # 매우 간단한 질문만 처리 (예: "TP52 정보", "Farr 40 알려줘")
@@ -790,21 +801,120 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _format_yacht_engine_info(self, yacht: Dict) -> str:
         """요트 엔진 정보 포맷팅"""
         model_name = yacht.get('name', 'Unknown')
-        engine = yacht.get('engine', {})
         
-        if not engine or not any([engine.get('type'), engine.get('power'), engine.get('model')]):
+        # Schema 5.0: yachtSpecs.standard.engine 경로로 검색
+        yacht_specs = yacht.get('yachtSpecs', {})
+        standard_specs = yacht_specs.get('standard', {})
+        engine = standard_specs.get('engine', {})
+        
+        # 추가 정보도 확인 (additional에 엔진 정보가 있을 수 있음)
+        additional_specs = yacht_specs.get('additional', {})
+        
+        # 엔진 정보 수집
+        engine_type = engine.get('type') or additional_specs.get('engineType') or None
+        engine_power = engine.get('power') or additional_specs.get('enginePower') or additional_specs.get('nominalMaximumPropulsionPower') or None
+        engine_model = engine.get('model') or additional_specs.get('engineModel') or None
+        
+        # 정보가 하나도 없으면
+        if not engine_type and not engine_power and not engine_model:
             return f"🔧 **{model_name} 엔진 정보**\n\n등록된 엔진 정보가 없습니다.\n\n엔진 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
         
         response = f"🔧 **{model_name} 엔진 정보**\n\n"
         
-        if engine.get('type'):
-            response += f"**타입**: {engine['type']}\n"
-        if engine.get('power'):
-            response += f"**출력**: {engine['power']}\n"
-        if engine.get('model'):
-            response += f"**모델**: {engine['model']}\n"
+        if engine_type:
+            response += f"**타입**: {engine_type}\n"
+        if engine_power:
+            response += f"**출력**: {engine_power}\n"
+        if engine_model:
+            response += f"**모델**: {engine_model}\n"
+        
+        # 추가 엔진 관련 정보가 있으면 표시
+        if additional_specs.get('maximumRecommendedEngineSizeWeight'):
+            response += f"**권장 엔진 중량**: {additional_specs['maximumRecommendedEngineSizeWeight']}\n"
         
         response += f"\n💡 더 자세한 정보를 원하시면 '{model_name} 분석해줘'라고 물어보세요."
+        
+        return response
+    
+    def _format_yacht_maintenance_info(self, yacht: Dict, yacht_name: str) -> str:
+        """요트 정비/유지보수 정보 포맷팅 ✨ 새로 추가"""
+        model_name = yacht.get('name', 'Unknown')
+        
+        # 부품 정보에서 정비 주기 추출
+        parts = self._get_yacht_parts(yacht_name)
+        
+        if not parts or len(parts) == 0:
+            return f"🔧 **{model_name} 정비 정보**\n\n등록된 부품 및 정비 정보가 없습니다.\n\n정비 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+        
+        response = f"🔧 **{model_name} 정비 및 유지보수 정보**\n\n"
+        
+        # 부품별 정비 주기 정리
+        maintenance_schedule = {}
+        for part in parts:
+            if isinstance(part, dict):
+                interval = part.get('interval') or part.get('maintenanceInterval')
+                if interval:
+                    category = part.get('category', '기타')
+                    part_name = part.get('name', 'Unknown')
+                    
+                    if category not in maintenance_schedule:
+                        maintenance_schedule[category] = []
+                    
+                    # interval 숫자 추출
+                    interval_value = interval
+                    if isinstance(interval, str):
+                        import re
+                        match = re.search(r'(\d+)', interval)
+                        if match:
+                            interval_value = int(match.group(1))
+                    
+                    maintenance_schedule[category].append({
+                        'name': part_name,
+                        'interval': interval_value,
+                        'interval_display': f"{interval}개월" if isinstance(interval, int) else str(interval)
+                    })
+        
+        if not maintenance_schedule:
+            response += "정비 주기 정보가 없습니다.\n\n"
+            response += f"총 **{len(parts)}개**의 부품이 등록되어 있지만, 정비 주기가 명시되지 않았습니다.\n\n"
+        else:
+            response += f"**부품별 정비 주기** (총 {len(parts)}개 부품)\n\n"
+            
+            # 카테고리별로 정리
+            for category, items in sorted(maintenance_schedule.items()):
+                response += f"**📦 {category}**\n"
+                
+                # 정비 주기별로 정렬
+                sorted_items = sorted(items, key=lambda x: x['interval'] if isinstance(x['interval'], int) else 999)
+                
+                for item in sorted_items[:5]:  # 각 카테고리당 최대 5개
+                    response += f"  • {item['name']}: {item['interval_display']}마다 점검\n"
+                
+                if len(items) > 5:
+                    response += f"  ... 외 {len(items) - 5}개 부품\n"
+                
+                response += "\n"
+        
+        # 추가 정보 (maintenance 섹션이 있으면 표시)
+        maintenance_info = yacht.get('maintenance', [])
+        if maintenance_info and len(maintenance_info) > 0:
+            response += "**🔍 추가 정비 정보**\n\n"
+            for maint in maintenance_info[:5]:  # 최대 5개
+                if isinstance(maint, dict):
+                    task = maint.get('task') or maint.get('name', 'Unknown')
+                    interval = maint.get('interval', '')
+                    method = maint.get('method', '')
+                    
+                    response += f"**{task}**\n"
+                    if interval:
+                        response += f"  주기: {interval}\n"
+                    if method:
+                        response += f"  방법: {method[:100]}\n"  # 100자로 제한
+                    response += "\n"
+        
+        response += "\n💡 정비 관련 궁금한 점은 언제든 물어보세요!"
+        response += f"\n📊 전체 부품 목록: '{model_name} 부품'"
+        response += f"\n📖 상세 분석: '{model_name} 분석해줘'"
         
         return response
     
@@ -841,9 +951,16 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _format_specific_dimension(self, yacht: Dict, dimension_key: str, dimension_name: str) -> str:
         """특정 치수 요소만 포맷팅"""
         model_name = yacht.get('name', 'Unknown')
-        dim = yacht.get('dimensions', {})
         
-        dimension_data = dim.get(dimension_key)
+        # Schema 5.0: yachtSpecs.standard.dimensions 경로로 검색
+        yacht_specs = yacht.get('yachtSpecs', {})
+        standard_specs = yacht_specs.get('standard', {})
+        dim = standard_specs.get('dimensions', {})
+        
+        # 추가 정보도 확인 (detailedDimensions에 더 상세한 정보가 있을 수 있음)
+        detailed_dim = yacht.get('detailedDimensions', {})
+        
+        dimension_data = dim.get(dimension_key) or detailed_dim.get(dimension_key)
         if not dimension_data:
             return f"📏 **{model_name} {dimension_name}**\n\n등록된 {dimension_name} 정보가 없습니다.\n\n정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
         
@@ -864,36 +981,55 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _format_yacht_sail_area(self, yacht: Dict) -> str:
         """요트 돛 면적 정보 포맷팅"""
         model_name = yacht.get('name', 'Unknown')
-        sail_area = yacht.get('sailArea', {})
         
-        if not sail_area:
+        # Schema 5.0: yachtSpecs.standard.sailArea 경로로 검색
+        yacht_specs = yacht.get('yachtSpecs', {})
+        standard_specs = yacht_specs.get('standard', {})
+        sail_area = standard_specs.get('sailArea', {})
+        
+        # sailInventory도 확인 (더 상세한 정보)
+        sail_inventory = yacht.get('sailInventory', {})
+        
+        if not sail_area and not sail_inventory:
             return f"⛵ **{model_name} 돛 면적**\n\n등록된 돛 면적 정보가 없습니다.\n\n정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
         
         response = f"⛵ **{model_name} 돛 면적 (Sail Area)**\n\n"
         
-        if sail_area.get('main'):
-            main = sail_area['main']
+        # mainsail (메인 세일)
+        main = sail_area.get('mainsail') or sail_area.get('main')
+        if main:
             if isinstance(main, dict):
-                response += f"**메인 세일 (Main)**: {main.get('value', '')}{main.get('unit', '')}\n"
+                response += f"**메인 세일 (Mainsail)**: {main.get('value', '')}{main.get('unit', '')}\n"
             else:
-                response += f"**메인 세일 (Main)**: {main}\n"
+                response += f"**메인 세일 (Mainsail)**: {main}\n"
         
-        if sail_area.get('jib'):
-            jib = sail_area['jib']
+        # genoa (제노아)
+        genoa = sail_area.get('genoa')
+        if genoa:
+            if isinstance(genoa, dict):
+                response += f"**제노아 (Genoa)**: {genoa.get('value', '')}{genoa.get('unit', '')}\n"
+            else:
+                response += f"**제노아 (Genoa)**: {genoa}\n"
+        
+        # jib (지브)
+        jib = sail_area.get('jib')
+        if jib:
             if isinstance(jib, dict):
                 response += f"**지브 (Jib)**: {jib.get('value', '')}{jib.get('unit', '')}\n"
             else:
                 response += f"**지브 (Jib)**: {jib}\n"
         
-        if sail_area.get('spinnaker'):
-            spinnaker = sail_area['spinnaker']
+        # spinnaker (스피나커)
+        spinnaker = sail_area.get('spinnaker')
+        if spinnaker:
             if isinstance(spinnaker, dict):
                 response += f"**스피나커 (Spinnaker)**: {spinnaker.get('value', '')}{spinnaker.get('unit', '')}\n"
             else:
                 response += f"**스피나커 (Spinnaker)**: {spinnaker}\n"
         
-        if sail_area.get('total'):
-            total = sail_area['total']
+        # total (총 면적)
+        total = sail_area.get('total')
+        if total:
             if isinstance(total, dict):
                 display = total.get('display', f"{total.get('value', '')}{total.get('unit', '')}")
                 response += f"**총 면적 (Total)**: {display}\n"
@@ -907,48 +1043,61 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _format_yacht_dimensions(self, yacht: Dict) -> str:
         """요트 치수 정보 포맷팅"""
         model_name = yacht.get('name', 'Unknown')
-        dim = yacht.get('dimensions', {})
+        
+        # Schema 5.0: yachtSpecs.standard.dimensions 경로로 검색
+        yacht_specs = yacht.get('yachtSpecs', {})
+        standard_specs = yacht_specs.get('standard', {})
+        dim = standard_specs.get('dimensions', {})
+        
+        # detailedDimensions도 확인
+        detailed_dim = yacht.get('detailedDimensions', {})
         
         response = f"📏 **{model_name} 크기 정보**\n\n"
         response += "**기본 치수**\n"
         
-        if dim.get('loa'):
-            loa = dim['loa']
+        # LOA (전장)
+        loa = dim.get('LOA') or detailed_dim.get('LOA')
+        if loa:
             if isinstance(loa, dict):
                 response += f"- LOA (전장): {loa.get('display', loa.get('value', ''))}\n"
             else:
                 response += f"- LOA (전장): {loa}\n"
         
-        if dim.get('lwl'):
-            lwl = dim['lwl']
+        # LWL (수선장)
+        lwl = dim.get('LWL') or dim.get('Lh') or detailed_dim.get('hullLength')
+        if lwl:
             if isinstance(lwl, dict):
                 response += f"- LWL (수선장): {lwl.get('display', lwl.get('value', ''))}\n"
             else:
                 response += f"- LWL (수선장): {lwl}\n"
         
-        if dim.get('beam'):
-            beam = dim['beam']
+        # Beam (폭)
+        beam = dim.get('Beam') or detailed_dim.get('beam')
+        if beam:
             if isinstance(beam, dict):
                 response += f"- Beam (폭): {beam.get('display', beam.get('value', ''))}\n"
             else:
                 response += f"- Beam (폭): {beam}\n"
         
-        if dim.get('draft'):
-            draft = dim['draft']
+        # Draft (흘수)
+        draft = dim.get('Draft') or detailed_dim.get('draughtDeepKeel')
+        if draft:
             if isinstance(draft, dict):
                 response += f"- Draft (흘수): {draft.get('display', draft.get('value', ''))}\n"
             else:
                 response += f"- Draft (흘수): {draft}\n"
         
-        if dim.get('displacement'):
-            disp = dim['displacement']
+        # Displacement (배수량)
+        disp = dim.get('Displacement') or detailed_dim.get('displacement')
+        if disp:
             if isinstance(disp, dict):
                 response += f"- Displacement (배수량): {disp.get('display', disp.get('value', ''))}\n"
             else:
                 response += f"- Displacement (배수량): {disp}\n"
         
-        if dim.get('mastHeight'):
-            mast = dim['mastHeight']
+        # Mast Height (마스트 높이)
+        mast = dim.get('mastHeight') or detailed_dim.get('airDraftClassicalMast')
+        if mast:
             if isinstance(mast, dict):
                 response += f"- Mast Height (마스트 높이): {mast.get('display', mast.get('value', ''))}\n"
             else:
@@ -2320,14 +2469,55 @@ PDF 파일 경로를 입력해주세요! 📎"""
         """대화 히스토리 반환"""
         return self.chat_history
     
+    def _generate_yacht_id(self, yacht_name: str) -> str:
+        """
+        요트 ID 생성 함수
+        
+        규칙:
+        - 소문자 변환
+        - 공백 → 하이픈 (-)
+        - 슬래시 (/) → 하이픈 (-)
+        - 특수문자 제거
+        - 여러 개의 연속된 하이픈을 하나로 통합
+        
+        예시:
+        - "J/70" → "j-70"
+        - "OCEANIS 46.1" → "oceanis-46.1"
+        - "Grand Soleil 42 Long Cruise" → "grand-soleil-42-long-cruise"
+        """
+        import re
+        
+        # 1. 소문자 변환
+        yacht_id = yacht_name.lower()
+        
+        # 2. 슬래시를 하이픈으로 변환
+        yacht_id = yacht_id.replace("/", "-")
+        
+        # 3. 공백을 하이픈으로 변환
+        yacht_id = yacht_id.replace(" ", "-")
+        
+        # 4. 허용된 문자만 남기기 (영문, 숫자, 하이픈, 점)
+        yacht_id = re.sub(r'[^a-z0-9\-\.]', '', yacht_id)
+        
+        # 5. 연속된 하이픈을 하나로 통합
+        yacht_id = re.sub(r'-+', '-', yacht_id)
+        
+        # 6. 앞뒤 하이픈 제거
+        yacht_id = yacht_id.strip('-')
+        
+        return yacht_id
+    
     def _convert_analysis_to_registration(self, analysis_result: Dict) -> Dict:
-        """분석 결과를 요트 등록 형식으로 변환"""
+        """분석 결과를 요트 등록 형식으로 변환 (ID 포함)"""
         doc_info = analysis_result.get("documentInfo", {})
         yacht_specs = analysis_result.get("yachtSpecs", {})
         parts = analysis_result.get("parts", [])
         
         yacht_name = doc_info.get("yachtModel") or doc_info.get("title", "Unknown Yacht")
         manufacturer = doc_info.get("manufacturer", "")
+        
+        # 🆕 요트 ID 생성
+        yacht_id = self._generate_yacht_id(yacht_name)
         
         dimensions = yacht_specs.get("dimensions", {})
         loa_str = dimensions.get("LOA", "") or dimensions.get("loa", "")
@@ -2354,7 +2544,9 @@ PDF 파일 경로를 입력해주세요! 📎"""
             })
         
         registration_data = {
+            "id": yacht_id,  # 🆕 요트 ID 추가
             "basicInfo": {
+                "id": yacht_id,  # 🆕 basicInfo에도 ID 추가
                 "name": yacht_name,
                 "nickName": yacht_name,
                 "manufacturer": manufacturer,
@@ -2444,7 +2636,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             print(f"⚠️ JSON 파일 저장 중 오류: {e}")
     
     def _add_to_yacht_specifications(self, registration_data: Dict, analysis_result: Dict):
-        """yacht_specifications.json에 요트 추가"""
+        """yacht_specifications.json에 요트 추가 (ID 포함)"""
         try:
             spec_file = 'data/yacht_specifications.json'
             if os.path.exists(spec_file):
@@ -2460,13 +2652,19 @@ PDF 파일 경로를 입력해주세요! 📎"""
             
             basic_info = registration_data.get("basicInfo", {})
             specs = registration_data.get("specifications", {})
-            yacht_id = basic_info.get("name", "").lower().replace(" ", "-").replace("/", "-")
+            
+            # 🆕 registration_data에서 ID 가져오기 (없으면 생성)
+            yacht_id = registration_data.get("id") or basic_info.get("id")
+            if not yacht_id:
+                yacht_id = self._generate_yacht_id(basic_info.get("name", ""))
             
             existing_ids = [y.get("id") for y in data.get("yachts", [])]
             if yacht_id in existing_ids:
+                # 기존 요트 업데이트
                 for yacht in data["yachts"]:
                     if yacht.get("id") == yacht_id:
                         yacht.update({
+                            "id": yacht_id,  # 🆕 ID 명시
                             "name": basic_info.get("name", ""),
                             "manufacturer": basic_info.get("manufacturer", ""),
                             "type": basic_info.get("type", ""),
@@ -2475,8 +2673,9 @@ PDF 파일 경로를 입력해주세요! 📎"""
                         })
                         break
             else:
+                # 새 요트 추가
                 new_yacht = {
-                    "id": yacht_id,
+                    "id": yacht_id,  # 🆕 ID 우선 배치
                     "name": basic_info.get("name", ""),
                     "manufacturer": basic_info.get("manufacturer", ""),
                     "type": basic_info.get("type", ""),
@@ -2489,7 +2688,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             with open(spec_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
             
-            print(f"✅ {spec_file}에 저장됨")
+            print(f"✅ {spec_file}에 저장됨 (ID: {yacht_id})")
         except Exception as e:
             print(f"⚠️ yacht_specifications.json 저장 실패: {e}")
     
@@ -2613,11 +2812,16 @@ PDF 파일 경로를 입력해주세요! 📎"""
             print(f"⚠️ registered_yachts.json 저장 실패: {e}")
     
     def _save_parts_to_json_files(self, registration_data: Dict, analysis_result: Dict):
-        """부품 정보를 각 JSON 파일에 저장"""
+        """부품 정보를 각 JSON 파일에 저장 (요트 ID 사용)"""
         try:
             basic_info = registration_data.get("basicInfo", {})
             yacht_name = basic_info.get("name", "")
-            yacht_id = basic_info.get("name", "").lower().replace(" ", "-").replace("/", "-")
+            
+            # 🆕 registration_data에서 ID 가져오기
+            yacht_id = registration_data.get("id") or basic_info.get("id")
+            if not yacht_id:
+                yacht_id = self._generate_yacht_id(yacht_name)
+            
             manufacturer = basic_info.get("manufacturer", "")
             manual_pdf = basic_info.get("manual", "")
             parts = analysis_result.get("parts", [])
@@ -2631,14 +2835,14 @@ PDF 파일 경로를 입력해주세요! 📎"""
             self._add_to_extracted_parts(yacht_id, yacht_name, manufacturer, manual_pdf, parts)
             self._add_to_parts_app_data(yacht_id, yacht_name, manufacturer, manual_pdf, parts)
             
-            print(f"✅ 부품 정보가 {len(parts)}개 JSON 파일에 저장됨")
+            print(f"✅ 부품 정보가 {len(parts)}개 JSON 파일에 저장됨 (Yacht ID: {yacht_id})")
         except Exception as e:
             print(f"⚠️ 부품 JSON 파일 저장 중 오류: {e}")
             import traceback
             traceback.print_exc()
     
     def _add_to_yacht_parts_database(self, yacht_id: str, yacht_name: str, manufacturer: str, manual_pdf: str, parts: List[Dict]):
-        """yacht_parts_database.json에 부품 추가"""
+        """yacht_parts_database.json에 부품 추가 (요트 ID 사용)"""
         try:
             db_file = 'data/yacht_parts_database.json'
             if os.path.exists(db_file):
@@ -2655,7 +2859,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             
             if not yacht_entry:
                 yacht_entry = {
-                    "id": yacht_id,
+                    "id": yacht_id,  # 🆕 올바른 ID 사용
                     "name": yacht_name,
                     "manufacturer": manufacturer,
                     "type": "",
@@ -2714,7 +2918,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             with open(db_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
             
-            print(f"✅ yacht_parts_database.json에 저장됨")
+            print(f"✅ yacht_parts_database.json에 저장됨 (Yacht ID: {yacht_id})")
         except Exception as e:
             print(f"⚠️ yacht_parts_database.json 저장 실패: {e}")
     
@@ -3049,6 +3253,107 @@ def run_api_server(api_key: str = None, port: int = 5000):
         except Exception as e:
             return jsonify({"success": False, "error": str(e)}), 500
     
+    @app.route('/api/yacht/register', methods=['POST'])
+    def register_yacht():
+        """
+        요트 PDF 등록 API - JSON 형식으로 추출 데이터 반환
+        
+        Request:
+        - multipart/form-data
+        - file: PDF 파일
+        
+        Response:
+        - JSON 형식의 추출된 요트 데이터 (자연어 없음)
+        """
+        try:
+            if 'file' not in request.files:
+                return jsonify({"success": False, "error": "파일이 필요합니다."}), 400
+            
+            file = request.files['file']
+            if file.filename == '':
+                return jsonify({"success": False, "error": "파일이 선택되지 않았습니다."}), 400
+            
+            if not file.filename.lower().endswith('.pdf'):
+                return jsonify({"success": False, "error": "PDF 파일만 업로드 가능합니다."}), 400
+            
+            # 파일 저장
+            upload_folder = 'uploads'
+            os.makedirs(upload_folder, exist_ok=True)
+            
+            if secure_filename:
+                filename = secure_filename(file.filename)
+            else:
+                filename = file.filename.replace(' ', '_')
+            file_path = os.path.join(upload_folder, filename)
+            file.save(file_path)
+            
+            # 세션 정보
+            session_id = request.form.get('session_id', 'default')
+            
+            # 챗봇 인스턴스 가져오기
+            chatbot = get_or_create_chatbot(session_id)
+            
+            # 텍스트 추출
+            print(f"📄 파일 분석 시작: {filename}", flush=True)
+            extracted_text = chatbot._extract_text_from_file(file_path)
+            
+            if not extracted_text or len(extracted_text.strip()) < 100:
+                return jsonify({
+                    "success": False,
+                    "error": f"{filename}에서 텍스트를 추출할 수 없습니다."
+                }), 400
+            
+            # AI 분석 (JSON 형식으로)
+            print(f"🤖 AI 분석 중...", flush=True)
+            analysis_result = chatbot._analyze_document_directly(file_path, extracted_text)
+            
+            # 분석 실패 확인
+            if "error" in analysis_result:
+                return jsonify({
+                    "success": False,
+                    "error": analysis_result.get("error", "분석 실패")
+                }), 500
+            
+            # 등록 데이터 변환
+            registration_data = chatbot._convert_analysis_to_registration(analysis_result)
+            
+            # JSON 파일 저장
+            chatbot._save_registration_to_json(registration_data, analysis_result)
+            
+            # JSON 형식으로 응답 (자연어 없음)
+            return jsonify({
+                "success": True,
+                "fileName": filename,
+                "timestamp": datetime.now().isoformat(),
+                "yacht": {
+                    "basicInfo": registration_data.get("basicInfo", {}),
+                    "specifications": registration_data.get("specifications", {}),
+                    "parts": registration_data.get("parts", [])
+                },
+                "analysisResult": {
+                    "documentInfo": analysis_result.get("documentInfo", {}),
+                    "yachtSpecs": analysis_result.get("yachtSpecs", {}),
+                    "detailedDimensions": analysis_result.get("detailedDimensions", {}),
+                    "exterior": analysis_result.get("exterior", {}),
+                    "groundTackle": analysis_result.get("groundTackle", {}),
+                    "sailInventory": analysis_result.get("sailInventory", []),
+                    "deckEquipment": analysis_result.get("deckEquipment", {}),
+                    "accommodations": analysis_result.get("accommodations", {}),
+                    "tanks": analysis_result.get("tanks", {}),
+                    "electricalSystem": analysis_result.get("electricalSystem", {}),
+                    "electronics": analysis_result.get("electronics", {}),
+                    "plumbingSystem": analysis_result.get("plumbingSystem", {}),
+                    "parts": analysis_result.get("parts", []),
+                    "maintenance": analysis_result.get("maintenance", [])
+                }
+            }), 200
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({"success": False, "error": str(e)}), 500
+    
     @app.route('/api/chat/history', methods=['GET'])
     def get_history():
         try:
@@ -3072,6 +3377,8 @@ def run_api_server(api_key: str = None, port: int = 5000):
     print(f"🚀 서버 시작: http://localhost:{port}")
     print("📡 API 엔드포인트:")
     print("  - POST /api/chat - 채팅 메시지 전송")
+    print("  - POST /api/chat/upload - PDF 업로드 (자연어 응답)")
+    print("  - POST /api/yacht/register - 요트 등록 (JSON 응답) ⭐ NEW")
     print("  - GET /api/chat/history - 대화 기록 조회")
     print("  - GET /api/health - 서버 상태 확인")
     print("=" * 60)

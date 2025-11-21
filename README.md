@@ -20,6 +20,7 @@
 ### 문제점 (이전 버전)
 
 ❌ **고정 구조의 한계**
+
 ```json
 {
   "dimensions": {
@@ -28,6 +29,7 @@
   }
 }
 ```
+
 - 프롬프트에 정의된 필드만 추출
 - 추가 정보 손실 (예: ballastWeight, keelType 등)
 - ID 없음 → 데이터 추적 불가
@@ -36,6 +38,7 @@
 ### 해결책 (Schema 5.0)
 
 ✅ **완전 구조화 + ID 시스템**
+
 ```json
 {
   "schemaVersion": "5.0",
@@ -67,6 +70,7 @@
 ### Schema 5.0 핵심 기능
 
 #### 1. **고유 ID 시스템**
+
 ```
 ext-hull-01          → 외관 > Hull
 ext-hull-keel-01     → 외관 > Hull > Keel
@@ -75,6 +79,7 @@ deck-winch-port-01   → 갑판 > 윈치 > Port
 ```
 
 #### 2. **계층 구조 (Parent-Child)**
+
 ```json
 {
   "id": "deck-winch-primary-port-01",
@@ -88,6 +93,7 @@ deck-winch-port-01   → 갑판 > 윈치 > Port
 ```
 
 #### 3. **신뢰도 스코어**
+
 ```json
 {
   "material": "Stainless steel",
@@ -96,6 +102,7 @@ deck-winch-port-01   → 갑판 > 윈치 > Port
 ```
 
 #### 4. **상세 스펙 (Specifications)**
+
 ```json
 {
   "specifications": {
@@ -110,6 +117,7 @@ deck-winch-port-01   → 갑판 > 윈치 > Port
 ```
 
 #### 5. **유지보수 정보**
+
 ```json
 {
   "maintenanceDetails": {
@@ -218,6 +226,7 @@ python chatbot_unified.py --mode api --port 5000
 ```
 
 **API 엔드포인트:**
+
 - `POST /api/chat` - 채팅 메시지
 - `POST /api/chat/upload` - PDF 업로드
 - `GET /api/chat/history` - 대화 기록
@@ -228,11 +237,13 @@ python chatbot_unified.py --mode api --port 5000
 ## 🔧 기술 스택
 
 ### AI & ML
+
 - **Google Gemini AI** (gemini-2.5-flash): 문서 분석
 - **EasyOCR**: 스캔 PDF OCR
 - **PyTorch**: 딥러닝 백엔드
 
 ### 문서 처리
+
 - **PyPDF2**: PDF 텍스트 추출
 - **pdfplumber**: 복잡한 레이아웃 PDF
 - **PyMuPDF (fitz)**: PDF → 이미지 변환
@@ -242,10 +253,12 @@ python chatbot_unified.py --mode api --port 5000
 - **olefile**: HWP (한글)
 
 ### Backend
+
 - **Flask**: REST API 서버
 - **Python 3.11+**: 메인 언어
 
 ### 배포
+
 - **Docker**: 컨테이너화
 - **docker-compose**: 오케스트레이션
 
@@ -267,6 +280,7 @@ python install_ocr_local.py
 ```
 
 **설치 내용:**
+
 - PyMuPDF: PDF → 이미지 변환
 - EasyOCR: OCR (외부 바이너리 불필요!)
 - Pillow: 이미지 처리
@@ -274,6 +288,7 @@ python install_ocr_local.py
 ### 3. 환경 변수 설정
 
 `.env` 파일 생성:
+
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
@@ -290,6 +305,7 @@ docker-compose up -d
 ```
 
 ### Dockerfile 특징
+
 - Tesseract OCR 자동 설치
 - 모든 의존성 포함
 - 환경 변수 지원
@@ -301,20 +317,24 @@ docker-compose up -d
 ### 생성되는 JSON 파일
 
 1. **yacht_specifications.json** (11,414 lines)
+
    - 19척 요트 상세 스펙
    - Schema 5.0 구조
    - 모든 섹션 포함
 
 2. **yacht_parts_database.json** (8,547 lines)
+
    - 614개 부품 정보
    - ID 기반 계층 구조
    - 유지보수 정보
 
 3. **yacht_parts_app_data.json** (4,606 lines)
+
    - 모바일 앱용 간소화 버전
    - 핵심 정보만 포함
 
 4. **yacht_manual_resources.json** (178 lines)
+
    - 매뉴얼 다운로드 정보
    - 문서 유형별 분류
 
@@ -356,15 +376,18 @@ prompt = f"""
 ## 📈 성능 지표
 
 ### 처리 속도
+
 - 일반 PDF: **30초 - 1분**
 - 스캔 PDF (OCR): **2-3분** (21페이지 기준)
 
 ### 정확도
+
 - 텍스트 추출: **95%+**
 - OCR 인식률: **85-90%** (영문 기준)
 - 구조화 정확도: **90%+**
 
 ### 데이터 추출량
+
 - 평균 **30-50개 ID/PDF**
 - 최대 **181개 ID** (FIRST 36.7)
 - 평균 **30개 부품/요트**

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "5.0",
-  "lastUpdated": "2025-11-21T17:07:52.004757",
+  "lastUpdated": "2025-11-21T21:34:11.903203",
   "totalYachts": 19,
   "yachts": [
     {
@@ -7441,7 +7441,7 @@
       ]
     },
     {
-      "id": "x–35-one-design",
+      "id": "x35-one-design",
       "name": "X–35 One Design",
       "manufacturer": "X–Yachts A/S",
       "manualPDF": "X352012CR080412-[12381].pdf",

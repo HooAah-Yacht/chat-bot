@@ -5,6 +5,7 @@
   "totalYachts": 0,
   "yachts": [
     {
+      "id": "swan-41",
       "registrationDate": "2025-11-21T19:18:40.654969",
       "source": "PDF Upload",
       "pdfFile": "2020_03_31_11_03_39-48 owners manual.pdf",
@@ -16,7 +17,8 @@
           "type": "Owner's Manual",
           "year": "",
           "designer": "",
-          "manual": "2020_03_31_11_03_39-48 owners manual.pdf"
+          "manual": "2020_03_31_11_03_39-48 owners manual.pdf",
+          "id": "swan-41"
         },
         "specifications": {
           "dimensions": {
@@ -199,7 +201,8 @@
             "model": "",
             "interval": null
           }
-        ]
+        ],
+        "id": "swan-41"
       },
       "analysisResult": {
         "documentInfo": {
