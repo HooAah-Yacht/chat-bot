@@ -2775,7 +2775,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
         return result
     
     def _save_to_registered_yachts(self, registration_data: Dict, analysis_result: Dict):
-        """등록된 요트를 registered_yachts.json에 저장"""
+        """등록된 요트를 registered_yachts.json에 저장 (ID 포함)"""
         try:
             reg_file = 'data/registered_yachts.json'
             if os.path.exists(reg_file):
@@ -2783,13 +2783,18 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     data = json.load(f)
             else:
                 data = {
-                    "version": "1.0",
-                    "description": "PDF로 등록된 요트 목록",
+                    "schemaVersion": "5.0",
+                    "description": "사용자가 등록한 요트 목록 (chatbot_unified.py로 등록)",
                     "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
+                    "totalYachts": 0,
                     "yachts": []
                 }
             
+            # 🆕 요트 ID 가져오기 (registration_data에 이미 포함됨)
+            yacht_id = registration_data.get("id") or registration_data.get("basicInfo", {}).get("id")
+            
             registration_entry = {
+                "id": yacht_id,  # 🆕 최상위 ID
                 "registrationDate": datetime.now().isoformat(),
                 "source": "PDF Upload",
                 "pdfFile": analysis_result.get("fileInfo", {}).get("fileName", ""),
@@ -2802,12 +2807,13 @@ PDF 파일 경로를 입력해주세요! 📎"""
             }
             
             data["yachts"].append(registration_entry)
+            data["totalYachts"] = len(data["yachts"])
             data["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
             
             with open(reg_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
             
-            print(f"✅ {reg_file}에 저장됨")
+            print(f"✅ {reg_file}에 저장됨 (ID: {yacht_id})")
         except Exception as e:
             print(f"⚠️ registered_yachts.json 저장 실패: {e}")
     
@@ -3364,22 +3370,212 @@ def run_api_server(api_key: str = None, port: int = 5000):
         except Exception as e:
             return jsonify({"success": False, "error": str(e)}), 500
     
+    @app.route('/api/yacht/analyze', methods=['GET'])
+    def analyze_yacht_by_name():
+        """요트 이름으로 부품 정보 조회 (Backend 연동용)"""
+        try:
+            yacht_name = request.args.get('yacht_name', '').strip()
+            
+            if not yacht_name:
+                return jsonify({
+                    "success": False,
+                    "error": "yacht_name parameter is required"
+                }), 400
+            
+            # 챗봇 인스턴스 생성
+            chatbot = get_or_create_chatbot('backend-api')
+            
+            # 요트 데이터 조회
+            yacht_data = None
+            for yacht in chatbot.yacht_data.get('yachts', []):
+                if yacht.get('name', '').lower() == yacht_name.lower():
+                    yacht_data = yacht
+                    break
+            
+            if not yacht_data:
+                return jsonify({
+                    "success": False,
+                    "error": f"Yacht '{yacht_name}' not found"
+                }), 404
+            
+            # 부품 데이터 조회
+            yacht_id = yacht_data.get('id', '')
+            parts_list = []
+            
+            for yacht_parts in chatbot.parts_data.get('yachts', []):
+                if yacht_parts.get('id') == yacht_id:
+                    parts_list = yacht_parts.get('parts', [])
+                    break
+            
+            # Backend DTO 형식으로 변환
+            parts_dto = []
+            for part in parts_list:
+                parts_dto.append({
+                    "id": part.get('id', ''),
+                    "name": part.get('name', ''),
+                    "manufacturer": part.get('manufacturer', ''),
+                    "model": part.get('model', ''),
+                    "interval": part.get('interval'),
+                    "maintenanceDetails": {
+                        "recommendedInterval": part.get('maintenanceDetails', {}).get('recommendedInterval', ''),
+                        "maintenanceMethod": part.get('maintenanceDetails', {}).get('maintenanceMethod', ''),
+                        "notes": part.get('maintenanceDetails', {}).get('notes', '')
+                    }
+                })
+            
+            return jsonify({
+                "success": True,
+                "yachtId": yacht_id,
+                "yachtName": yacht_data.get('name', ''),
+                "parts": parts_dto,
+                "totalParts": len(parts_dto)
+            }), 200
+            
+        except Exception as e:
+            print(f"❌ Error in analyze_yacht_by_name: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({
+                "success": False,
+                "error": str(e)
+            }), 500
+    
+    @app.route('/api/yacht/analyze-pdf', methods=['POST'])
+    def analyze_pdf_file():
+        """PDF 파일로 부품 정보 분석 (Backend 연동용)"""
+        try:
+            if 'file' not in request.files:
+                return jsonify({
+                    "success": False,
+                    "error": "No file provided"
+                }), 400
+            
+            file = request.files['file']
+            
+            if file.filename == '':
+                return jsonify({
+                    "success": False,
+                    "error": "Empty filename"
+                }), 400
+            
+            if not file.filename.lower().endswith('.pdf'):
+                return jsonify({
+                    "success": False,
+                    "error": "Only PDF files are supported"
+                }), 400
+            
+            # 임시 파일로 저장
+            import tempfile
+            with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
+                file.save(tmp_file.name)
+                tmp_path = tmp_file.name
+            
+            try:
+                # 챗봇 인스턴스로 분석
+                chatbot = get_or_create_chatbot('backend-api')
+                
+                # PDF 텍스트 추출
+                extracted_text = chatbot._extract_text_from_pdf(tmp_path)
+                
+                if not extracted_text or len(extracted_text.strip()) < 100:
+                    return jsonify({
+                        "success": False,
+                        "error": "Unable to extract text from PDF"
+                    }), 400
+                
+                # AI 분석
+                analysis_result = chatbot._analyze_document_directly(tmp_path, extracted_text)
+                
+                if not analysis_result or "error" in analysis_result:
+                    return jsonify({
+                        "success": False,
+                        "error": analysis_result.get("error", "Analysis failed")
+                    }), 500
+                
+                # Backend DTO 형식으로 변환
+                parts_list = analysis_result.get('parts', [])
+                parts_dto = []
+                
+                for part in parts_list:
+                    parts_dto.append({
+                        "id": part.get('id', ''),
+                        "name": part.get('name', ''),
+                        "manufacturer": part.get('manufacturer', ''),
+                        "model": part.get('model', ''),
+                        "interval": part.get('maintenanceDetails', {}).get('interval'),
+                        "maintenanceDetails": {
+                            "recommendedInterval": part.get('maintenanceDetails', {}).get('recommendedInterval', ''),
+                            "maintenanceMethod": part.get('maintenanceDetails', {}).get('maintenanceMethod', ''),
+                            "notes": part.get('maintenanceDetails', {}).get('notes', '')
+                        }
+                    })
+                
+                yacht_name = analysis_result.get('documentInfo', {}).get('yachtName', 'Unknown')
+                yacht_id = chatbot._generate_yacht_id(yacht_name)
+                
+                return jsonify({
+                    "success": True,
+                    "yachtId": yacht_id,
+                    "yachtName": yacht_name,
+                    "parts": parts_dto,
+                    "totalParts": len(parts_dto),
+                    "documentInfo": {
+                        "fileName": file.filename,
+                        "manufacturer": analysis_result.get('documentInfo', {}).get('manufacturer', ''),
+                        "model": analysis_result.get('documentInfo', {}).get('model', ''),
+                        "year": analysis_result.get('documentInfo', {}).get('year')
+                    }
+                }), 200
+                
+            finally:
+                # 임시 파일 삭제
+                import os
+                if os.path.exists(tmp_path):
+                    os.remove(tmp_path)
+                    
+        except Exception as e:
+            print(f"❌ Error in analyze_pdf_file: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({
+                "success": False,
+                "error": str(e)
+            }), 500
+    
     @app.route('/api/health', methods=['GET'])
     def health_check():
-        return jsonify({
-            "status": "healthy",
-            "timestamp": datetime.now().isoformat()
-        })
+        """헬스체크 엔드포인트"""
+        try:
+            chatbot = get_or_create_chatbot('health-check')
+            yacht_count = len(chatbot.yacht_data.get('yachts', []))
+            
+            return jsonify({
+                "status": "healthy",
+                "timestamp": datetime.now().isoformat(),
+                "yachtCount": yacht_count,
+                "version": "5.0"
+            }), 200
+        except Exception as e:
+            return jsonify({
+                "status": "unhealthy",
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }), 500
     
     print("=" * 60)
     print("🌐 HooAah Yacht AI Chatbot API Server")
     print("=" * 60)
     print(f"🚀 서버 시작: http://localhost:{port}")
     print("📡 API 엔드포인트:")
+    print("  [챗봇용]")
     print("  - POST /api/chat - 채팅 메시지 전송")
     print("  - POST /api/chat/upload - PDF 업로드 (자연어 응답)")
-    print("  - POST /api/yacht/register - 요트 등록 (JSON 응답) ⭐ NEW")
+    print("  - POST /api/yacht/register - 요트 등록 (JSON 응답)")
     print("  - GET /api/chat/history - 대화 기록 조회")
+    print()
+    print("  [Backend 연동용] ⭐ NEW")
+    print("  - GET /api/yacht/analyze?yacht_name={name} - 요트 이름으로 부품 조회")
+    print("  - POST /api/yacht/analyze-pdf - PDF 파일 분석")
     print("  - GET /api/health - 서버 상태 확인")
     print("=" * 60)
     print()
