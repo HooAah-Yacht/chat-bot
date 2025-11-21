@@ -1,0 +1,250 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-29T00:00:00Z",
+  "documentInfo": {
+    "title": "2019 Handbook Constitution and Class Rules",
+    "yachtModel": "Laser",
+    "manufacturer": null,
+    "documentType": "Class Rules / Association Handbook"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": null,
+        "LWL": null,
+        "Beam": null,
+        "Draft": null,
+        "Displacement": null,
+        "mastHeight": null
+      },
+      "engine": {
+        "type": null,
+        "power": null,
+        "model": null
+      },
+      "sailArea": {
+        "mainsail": null,
+        "jib": null,
+        "spinnaker": null,
+        "total": null
+      }
+    },
+    "additional": {
+      "hullType": "Single-handed sailing dinghy",
+      "_confidence_hullType": "high",
+      "laserFormulaDescription": "3 rig option for one hull, providing a low-cost pathway through age and weight growth and sailing development.",
+      "_confidence_laserFormulaDescription": "high",
+      "laser4_7SailArea": "4.70 m²",
+      "_confidence_laser4_7SailArea": "high",
+      "laserRadialSailArea": "5.76 m²",
+      "_confidence_laserRadialSailArea": "high",
+      "laserStandardSailArea": "7.06 m²",
+      "_confidence_laserStandardSailArea": "high",
+      "totalBoatsInClassWorldwide": "over 200,000",
+      "_confidence_totalBoatsInClassWorldwide": "high",
+      "countriesWithActiveLasers": "over 120",
+      "_confidence_countriesWithActiveLasers": "high"
+    }
+  },
+  "detailedDimensions": null,
+  "exterior": {
+    "hull": null,
+    "deck": null,
+    "windows": null,
+    "hatches": null
+  },
+  "groundTackle": {
+    "anchors": null,
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-laser-4_7-01",
+      "name": "Laser 4.7 Sail",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "4.70 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-laser-radial-01",
+      "name": "Laser Radial Sail",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "5.76 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [
+        {
+          "id": "sail-laser-radial-red-rhombus-01",
+          "parentId": "sail-laser-radial-01",
+          "name": "Red Rhombus",
+          "specifications": {
+            "purpose": "Identification for women’s events",
+            "location": "above the top batten pocket on both sides",
+            "conformance": "ILCA Rules, Part Two, section 4(g)(i)",
+            "_confidence_purpose": "high",
+            "_confidence_location": "high",
+            "_confidence_conformance": "high"
+          }
+        }
+      ],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-laser-standard-01",
+      "name": "Laser Standard Sail",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "7.06 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "deckEquipment": {
+    "winches": null,
+    "cleats": null,
+    "blocks": null,
+    "stanchions": null,
+    "steeringSystem": null
+  },
+  "accommodations": {
+    "summary": null,
+    "galley": null,
+    "cabins": null,
+    "heads": null
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": null,
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": null,
+    "chargers": null,
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null
+  },
+  "electronics": {
+    "navigation": null,
+    "communication": null,
+    "instruments": null,
+    "autopilot": null
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": null,
+    "bilgePumps": null,
+    "seacocks": null
+  },
+  "parts": [
+    {
+      "id": "part-rigging-lower-mast-laser-4_7-01",
+      "name": "Lower Mast (Laser 4.7)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "type": "short pre-bent",
+        "forRigConfiguration": "Laser 4.7",
+        "function": "to maintain a balanced helm",
+        "_confidence_type": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-lower-mast-laser-radial-01",
+      "name": "Lower Mast (Laser Radial)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "type": "more flexible and slightly shorter",
+        "forRigConfiguration": "Laser Radial",
+        "_confidence_type": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-sail-batten-caps-01",
+      "name": "Concave Batten Caps",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Sail Parts",
+      "specifications": {
+        "reference": "Class Rule Interpretations (page 43)",
+        "details": "No specific details provided in the extracted text.",
+        "_confidence_reference": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-hull-general-01",
+      "name": "Hull",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Hull",
+      "specifications": {
+        "description": "One hull used with three different rigs for the Laser Formula.",
+        "_confidence_description": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "maintenance": [],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": "This document is an International Laser Class Association Handbook, focusing on class rules, governance, and general information about Laser sailing and racing, rather than a specific yacht owner's manual or parts list. Consequently, most yacht-specific details (dimensions, engine, hull materials, ground tackle, accommodations, electrical, plumbing, detailed parts lists) are not present and cannot be extracted. Information about sail areas for different Laser rigs and general class structure was extracted."
+  },
+  "fileInfo": {
+    "fileName": "Handbook_2109.pdf",
+    "filePath": "data/yachtpdf\\Handbook_2109.pdf",
+    "fileSize": 2338009
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-01-20T10:30:00Z",
+  "documentInfo": {
+    "title": "J/70 Owner Guide",
+    "yachtModel": "J/70",
+    "manufacturer": "J Boats, Inc.",
+    "documentType": "Owner's Manual"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": "6.934m",
+        "LWL": "6.240m",
+        "Beam": "2.249m",
+        "Draft": "1.45m",
+        "Displacement": "794 kg",
+        "mastHeight": "10.00 m"
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "4hp",
+        "model": null
+      },
+      "sailArea": {
+        "mainsail": "16.07 sq m",
+        "jib": "10.31 sq m",
+        "spinnaker": "45.61 sq m",
+        "total": "21.0 sq m"
+      }
+    },
+    "additional": {
+      "rudderDraft": "0.914m",
+      "ballastWeight": "286 kg",
+      "ballastType": "Cast lead w/3% antimony",
+      "I": "8.159m",
+      "ISP": "9.189m",
+      "J": "2.341m",
+      "P": "7.973m",
+      "E": "2.877m",
+      "headstayPinToPinLength": "8432 mm",
+      "limitOfPositiveStabilitymMOC": "122 degrees",
+      "hullCoreMaterial": "Baltek® AL600 Balsa",
+      "deckCoreMaterial": "Corecell Foam",
+      "hullDeckMoldingProcess": "Hand Lay-up",
+      "mastLength": "9.067m",
+      "DSPLperLength": "91",
+      "upwindSAperDSPL": "31",
+      "downwindSAperDSPL": "73",
+      "ceCertificationDesignCategory": "Category C",
+      "maximumCrew": "6 People",
+      "maximumCrewWeightEach": "75 kg",
+      "maximumTotalLoad": "530 kg",
+      "lightCraftMass": "794 kg",
+      "stixmMOC": "22.53",
+      "angleOfVanishingStabilitymMOC": "122 degrees",
+      "stixmLDC": "18.20",
+      "angleOfVanishingStabilitymLDC": "107 degrees"
+    }
+  },
+  "detailedDimensions": {
+    "LOA": "6.934m (22.75')",
+    "LWL": "6.240m (20.47')",
+    "Beam": "2.249m (7.38')",
+    "Draft": "1.45m (4.75') [Keel Down]",
+    "maxLoadedDraft": "1.50m (4.92')",
+    "rudderDraft": "0.914m (3.00')",
+    "ballastWeight": "286 kg (630 lbs.)",
+    "displacement": "794 kg (1,750 lbs.)",
+    "mastHeight": "10.00 m (32’ 10”) [Above Water, not including masthead instruments]",
+    "mastLength": "9.067m (29.75’)",
+    "I": "8.159m (26.77')",
+    "ISP": "9.189m (30.15’)",
+    "J": "2.341m (7.68')",
+    "P": "7.973m (26.16')",
+    "E": "2.877m (9.44')",
+    "headstayPinToPinLength": "8432 mm (27’ 8” turnbuckle half open)",
+    "_confidence_LOA": "high",
+    "_confidence_LWL": "high",
+    "_confidence_Beam": "high",
+    "_confidence_Draft": "high",
+    "_confidence_displacement": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": null,
+      "specifications": {
+        "type": "Monohull",
+        "material": "E-glass",
+        "color": "White",
+        "thickness": null,
+        "gelcoatType": "VE resin in outer layer for osmotic blister protection (white gelcoat finish), interior brushed on \"air-dry\" gelcoat finish",
+        "coreType": "Baltek® AL600 Balsa",
+        "_confidence_material": "high",
+        "_additional": {
+          "moldingProcess": "Hand Lay-up",
+          "constructionStandard": "ISO Standard 12215 1-5",
+          "hullFlangeType": "Inward turning hull flange trimmed to match the finished deck edge allowing for a significant overlap at the glued hull/deck joint",
+          "reinforcements": "Bi-axial and unidirectional glass fabrics used on both sides of the balsa core, combined with local reinforcements in key highly loaded areas (hull centerline, keel trunk, transom, bow stem, bow sprit housing and hull flanges)"
+        }
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-01",
+          "parentId": "ext-hull-01",
+          "name": "Lifting Keel",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": "Lifting",
+            "material": "Lead bulb with fabricated 316SS spar and lifting bolt, fiberglass shell",
+            "weight": "286 kg (630 lbs.)",
+            "draft": "1.45m (4.75') [Keel Down]",
+            "attachmentMethod": "Four wedges through-bolted at the head of the keel assembly to support and position the keel within the boat; Keel lifting eye positioned inline with the keel CG",
+            "_additional": {
+              "operationMode": "Designed for use ONLY with the keel in its fully lowered position with keel safety plate properly secured in place."
+            }
+          },
+          "maintenanceDetails": {
+            "interval": null,
+            "inspectionItems": [
+              "Keel safety plate properly secured (before operation)",
+              "Moisture/condensation build-up in inspection ports (periodically)"
+            ],
+            "commonIssues": null,
+            "repairCost": null,
+            "_additional": {
+              "caution": "USE OF A YACHT CLUB SINGLE-POINT HOIST OR OTHER NON-STANDARD CRANE TO RAISE THE J/70 KEEL MAY CAUSE DAMAGE TO BOTH THE KEEL AND THE HULL AT THE KEEL TRUNK. J/70 keel lifting eye should only be used with the standard aluminum J/70 keel crane that is designed with a stop to prevent over-hoisting the keel bulb and kelp cutter into the bottom of the hull. Do not attempt to combine the boat lift padeyes with the keel lifting eye during hoist operations."
+            }
+          }
+        },
+        {
+          "id": "ext-hull-kelpcutter-01",
+          "parentId": "ext-hull-01",
+          "name": "Kelp Cutter",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "dimensions": null,
+            "_additional": {
+              "integration": "Internal structure to support kelp cutter installation is included in keel construction."
+            }
+          }
+        },
+        {
+          "id": "ext-hull-rudder-01",
+          "parentId": "ext-hull-01",
+          "name": "Rudder",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "dimensions": null,
+            "draft": "0.914m (3.00’)",
+            "_additional": {
+              "constructionStandard": "ISO Standard 12215 1-5"
+            }
+          }
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Structure",
+      "manufacturer": null,
+      "specifications": {
+        "type": null,
+        "material": "E-glass",
+        "color": "White",
+        "thickness": null,
+        "gelcoatType": "White gelcoat finish, interior brushed on \"air-dry\" gelcoat finish",
+        "coreType": "Core-cell foam",
+        "_confidence_material": "high",
+        "_additional": {
+          "moldingProcess": "Hand Lay-up",
+          "constructionStandard": "ISO Standard 12215 1-5",
+          "blockingMaterial": "Hi density Airex Pxc core blocking is used in place of Core-cell in areas of deck hardware penetrations.",
+          "reinforcements": "Additional E-glass reinforcements specified for areas of deck hardware, mast step, rudder hardware, jib furler, keel recess, toerails, as well as edges and corners as necessary.",
+          "bondingMethod": "Bonded to the hull flange with Plexus MA 550"
+        }
+      },
+      "subComponents": []
+    },
+    "windows": [],
+    "hatches": [
+      {
+        "id": "ext-hatch-foredeck-01",
+        "name": "Foredeck Hatch",
+        "category": "Deck Hardware",
+        "manufacturer": "Global BSI Inc.",
+        "specifications": {
+          "location": "Foredeck",
+          "type": null,
+          "material": null,
+          "dimensions": null,
+          "partNumber": null
+        },
+        "maintenanceDetails": null
+      }
+    ]
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-01",
+      "name": "Mainsail",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": "OD Class",
+      "specifications": {
+        "area": "16.07 sq m (173 sq ft)",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-jib-01",
+      "name": "Jib",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": "OD Class",
+      "specifications": {
+        "area": "10.31 sq m (111 sq ft)",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-spinnaker-01",
+      "name": "Spinnaker",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": "OD Class",
+      "specifications": {
+        "area": "45.61 sq m (491 sq ft)",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "deckEquipment": {
+    "winches": [],
+    "cleats": [],
+    "blocks": [],
+    "stanchions": null,
+    "steeringSystem": {
+      "id": "deck-steeringsystem-01",
+      "name": "Steering Hardware",
+      "category": "Deck Hardware",
+      "manufacturer": null,
+      "specifications": {
+        "type": null,
+        "location": null
+      },
+      "subComponents": [
+        {
+          "id": "part-steering-tiller-01",
+          "parentId": "deck-steeringsystem-01",
+          "name": "Tiller",
+          "category": "Steering",
+          "specifications": {},
+          "maintenanceDetails": null
+        }
+      ]
+    }
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [],
+    "heads": []
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": null,
+    "holdingTank": null
+  },
+  "electricalSystem": null,
+  "electronics": [],
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [],
+    "seacocks": null
+  },
+  "parts": [
+    {
+      "id": "part-structure-interior-01",
+      "name": "Interior Structure",
+      "category": "Structure",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "material": "e-glass, gelcoat and in some cases foam core",
+        "type": "Transverse bulkheads, V-berth platform, reinforced keel trunk and longitudinal hull support members",
+        "partNumber": null,
+        "_additional": {
+          "construction": "Engineered to best distribute the sailing loads per ISO; All fiberglass internal members are glue bonded and/or tabbed with glass tape directly to hull and deck surfaces."
+        }
+      },
+      "subParts": [
+        {
+          "id": "part-rigging-mastcompressionpost-01",
+          "parentId": "part-structure-interior-01",
+          "name": "Mast Compression Post",
+          "category": "Rigging",
+          "manufacturer": null,
+          "model": null,
+          "specifications": {
+            "material": "Anodized aluminum",
+            "function": "Engineered to transfer mast compression loads to the hull",
+            "attachmentMethod": "Fastened mechanically through the deck and at the fiberglass base support"
+          },
+          "maintenanceDetails": null
+        }
+      ],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-keel-kelpcutter-01",
+      "name": "Kelp Cutter",
+      "category": "Keel System",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null,
+        "_additional": {
+          "integration": "Internal structure to support the kelp cutter installation is included in keel construction."
+        }
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-bowspritsystem-01",
+      "name": "Bow Sprit System & Components",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [
+        {
+          "id": "part-rigging-bowsprit-01",
+          "parentId": "part-rigging-bowspritsystem-01",
+          "name": "Bow Sprit",
+          "category": "Rigging",
+          "specifications": {
+            "material": null,
+            "type": null,
+            "_additional": {
+              "integration": "Bow sprit housing is a key highly loaded area on the hull with local reinforcements."
+            }
+          }
+        }
+      ],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-deck-companionwayhardware-01",
+      "name": "Companionway Hardware",
+      "category": "Deck Hardware",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-mast-01",
+      "name": "Mast",
+      "manufacturer": "Southern Spars - Rig Pro USA",
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "length": "9.067m (29.75’)",
+        "weight": null,
+        "partNumber": null,
+        "_confidence_length": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-boom-01",
+      "name": "Boom",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-standingrigging-01",
+      "name": "Standing Rigging",
+      "manufacturer": "Southern Spars - Rig Pro USA",
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-jibhalyardsystem-01",
+      "name": "Jib Halyard System",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-jibfurlingsystem-01",
+      "name": "Jib Furling System",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-deck-cockpitsafetylines-01",
+      "name": "Cockpit Safety Lines",
+      "category": "Deck Hardware",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-runningrigging-01",
+      "name": "Running Rigging",
+      "manufacturer": "Marlow",
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-mainsheetandtraveler-01",
+      "name": "Mainsheet & Traveler",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-backstaysystem-01",
+      "name": "Backstay System",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-boomvangandcunningham-01",
+      "name": "Boom Vang & Cunningham",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-halyardmastbaselayout-01",
+      "name": "Halyard & Mast Base Layout",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-headstaylayout-01",
+      "name": "Headstay Layout",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-jibsheetlayout-01",
+      "name": "2:1 Jib Sheet Layout & Boom Layout",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-deck-deckhardwarelayout-01",
+      "name": "Deck Hardware Layout",
+      "category": "Deck Hardware",
+      "manufacturer": "Harken / Ronstan",
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-bowspritfurlercontrols-01",
+      "name": "Bow Sprit & Furler Controls",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-hull-bowdrainagelocker-01",
+      "name": "Bow Drainage Locker & Access",
+      "category": "Hull System",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-lifting-keelcrane-01",
+      "name": "Custom Keel Crane",
+      "category": "Lifting Equipment",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "specifications": {
+        "material": "Aluminum",
+        "type": "Standard, designed with a stop to prevent over-hoisting the keel bulb and kelp cutter into the bottom of the hull",
+        "partNumber": null
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Access Inspection Ports (at aft bulkhead and on V-berth)",
+      "interval": "Periodically",
+      "method": "Inspect for moisture or condensation build-up and dry out prior to extended storage."
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": ""
+  },
+  "fileInfo": {
+    "fileName": "j70-user-manual.pdf",
+    "filePath": "data/yachtpdf\\j70-user-manual.pdf",
+    "fileSize": 3368383
+  }
+}

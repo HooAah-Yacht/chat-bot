@@ -102,11 +102,12 @@ try:
     HAS_PYPDF2 = True
 except ImportError:
     HAS_PYPDF2 = False
-    try:
-        import pdfplumber
-        HAS_PDFPLUMBER = True
-    except ImportError:
-        HAS_PDFPLUMBER = False
+
+try:
+    import pdfplumber
+    HAS_PDFPLUMBER = True
+except ImportError:
+    HAS_PDFPLUMBER = False
 
 # OCR 관련 (선택사항)
 try:
@@ -471,7 +472,11 @@ PDF 파일 경로를 입력해주세요! 📎"""
             # 2. 메시지에서 PDF 파일 경로 추출
             pdf_path = self._extract_pdf_path_from_message(user_message)
             if pdf_path and os.path.exists(pdf_path):
-                return self._handle_pdf_upload(pdf_path)
+                # 즉시 피드백
+                print(f"\n📥 파일을 인식했습니다: {os.path.basename(pdf_path)}")
+                print("⏳ 분석을 시작합니다. 잠시만 기다려주세요...\n")
+                sys.stdout.flush()
+                return self._handle_file_upload(pdf_path)
             
             # 3. 명령어 처리 (빠른 응답)
             message_lower = user_message.lower().strip()
@@ -500,12 +505,17 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 response = self._handle_registration_request(user_message)
             # 6. Gemini AI로 의도 파악 및 응답 생성
             elif self.has_gemini:
-                # 분석 요청인 경우 진행 상황 표시
+                # AI 응답 생성 시작 표시 (즉시)
+                print("🤖 AI가 생각 중입니다...", end="", flush=True)
+                # 분석 요청인 경우 추가 메시지
                 if any(keyword in user_message.lower() for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석']):
-                    print("🤖 AI가 분석 중입니다... ⏳")
-                    sys.stdout.flush()  # 버퍼 강제 출력
+                    print(" (상세 분석 중) ⏳", flush=True)
+                else:
+                    print(" ⏳", flush=True)
                 # AI가 의도를 파악하여 적절한 응답 생성
                 response = self._generate_intelligent_response(user_message)
+                # 완료 표시 (줄바꿈)
+                print("\r" + " " * 80 + "\r", end="", flush=True)  # 이전 메시지 지우기
             else:
                 # 기본 모드: 키워드 기반 응답
                 response = self._generate_keyword_based_response(user_message)
@@ -1062,7 +1072,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             if not self._is_supported_file(file_path):
                 return f"❌ 지원되지 않는 파일 형식입니다.\n\n지원 형식: PDF, Word (.docx, .doc), HWP, 텍스트 (.txt), Excel (.xlsx, .xls), PowerPoint (.pptx, .ppt)"
             
-            print(f"\n📄 파일 분석 시작: {file_name} ({file_ext})")
+            print(f"📄 파일 분석 시작: {file_name} ({file_ext})", flush=True)
             
             # 파일 분석 시작 메시지
             analyzing_msg = f"📄 {file_name} 문서를 분석 중입니다...\n잠시만 기다려주세요! ⏳"
@@ -1080,12 +1090,15 @@ PDF 파일 경로를 입력해주세요! 📎"""
             })
             
             # 파일 형식에 따라 텍스트 추출
+            print("📖 텍스트 추출 중...", flush=True)
             extracted_text = self._extract_text_from_file(file_path)
             
             if not extracted_text or len(extracted_text.strip()) < 100:
                 return f"❌ {file_name}에서 텍스트를 추출할 수 없습니다.\n\n파일이 손상되었거나 암호화되어 있을 수 있습니다."
             
             # 분석 실행
+            print(f"✅ 텍스트 추출 완료 ({len(extracted_text)} 문자)", flush=True)
+            print("🤖 AI 분석 시작...", flush=True)
             analysis_result = self._analyze_document_directly(file_path, extracted_text)
             
             # 분석 결과 확인
@@ -1150,82 +1163,665 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 }
             }
         
-        # 분석 프롬프트
+        # 분석 프롬프트 (완전한 버전 5.0)
         prompt = f"""다음은 요트 매뉴얼 또는 부품 정보 문서에서 추출한 텍스트입니다:
 
 {extracted_text}
 
-위 텍스트를 분석하여 다음 정보를 추출하여 JSON 형식으로 반환해주세요:
+---
 
-1. **문서 기본 정보:**
-   - 문서 제목
-   - 요트 모델명 (있는 경우)
-   - 제조사 (있는 경우)
-   - 문서 유형 (매뉴얼, 부품 목록, 기술 사양서 등)
+## 📋 작업 지시사항 (Schema Version 5.0)
 
-2. **요트 스펙 정보 (있는 경우):**
-   - 전장 (LOA)
-   - 폭 (Beam)
-   - 흘수 (Draft)
-   - 배수량 (Displacement)
-   - 마스트 높이
-   - 엔진 정보 (타입, 출력, 모델)
-   - 돛 면적
+매뉴얼에서 발견한 **모든 정보**를 최대한 상세하게 추출하세요.
 
-3. **부품 정보 (있는 경우):**
-   - 부품명 (name) - 필수, 매뉴얼에서 언급된 모든 부품을 추출하세요
-   - 제조사 (manufacturer)
-   - 모델명 (model)
-   - 정비 주기 (interval, 단위: 개월)
-   - 부품 카테고리 (Rigging, Sails, Engine, Hull, Electrical, Plumbing 등)
-   
-   **중요**: 매뉴얼에서 언급된 모든 부품, 정비 항목, 교체 부품을 최대한 많이 추출하세요.
-   예: 마스트(Mast), 붐(Boom), 리깅(Rigging), 세일(Sails), 윈치(Winch), 엔진 부품, 전기 부품, 배관 부품 등
-   부품명이 명확하지 않더라도 가능한 한 추출하세요.
+---
 
-4. **정비 정보 (있는 경우):**
-   - 정비 항목
-   - 정비 주기
-   - 정비 방법
+### ✅ 섹션 1: 문서 기본 정보
+```json
+"documentInfo": {{
+  "title": "문서 제목",
+  "yachtModel": "요트 모델명",
+  "manufacturer": "제조사",
+  "documentType": "Owner's Manual / Parts List / Technical Specifications / Class Rules"
+}}
+```
 
-5. **문서 형식 평가:**
-   - 텍스트 추출 가능 여부
-   - 분석 가능 여부 (가능/불가능)
-   - 불가능한 경우 이유
+---
 
-**응답 형식:**
+### ✅ 섹션 2: 요트 기본 스펙
+**standard (표준 필드):**
+- dimensions: LOA, LWL, Beam, Draft, Displacement, mastHeight
+- engine: type, power, model
+- sailArea: mainsail, jib, spinnaker, total
+
+**additional (발견한 모든 추가 정보):**
+- 위 standard에 없는 모든 스펙을 키-값으로 저장
+- 키 이름: camelCase (예: keelWeight, fuelCapacity)
+- 신뢰도: _confidence_{{키이름}}: "high" / "medium" / "low"
+
+---
+
+### ✅ 섹션 3: 상세 치수 (Detailed Dimensions)
+**모든 치수 정보를 추출하세요:**
+- LWL, BOA, freeboard (bow/midship/stern)
+- headroom (saloon/cabins/galley)
+- ballastWeight, ballastRatio
+- keel dimensions, rudder dimensions
+- boom length, pole length
+- 신뢰도: _confidence_{{키이름}}
+
+---
+
+### ✅ 섹션 4: 외관 (Exterior)
+
+**🔑 중요: 모든 항목에 고유 ID 부여!**
+
+**ID 생성 규칙:**
+- Hull: `ext-hull-01`
+- Keel: `ext-hull-keel-01`
+- Rudder: `ext-hull-rudder-01`
+- Deck: `ext-deck-01`
+- Cockpit: `ext-deck-cockpit-01`
+- Windows: `ext-window-{{location}}-{{number}}`
+- Hatches: `ext-hatch-{{location}}-{{number}}`
+
+**hull:**
 ```json
 {{
-  "documentInfo": {{
-    "title": "...",
-    "yachtModel": "...",
-    "manufacturer": "...",
-    "documentType": "..."
+  "id": "ext-hull-01",
+  "name": "Hull",
+  "category": "Structure",
+  "manufacturer": "...",
+  "specifications": {{
+    "type": "Monohull",
+    "material": "GRP / Fiberglass / Carbon",
+    "color": "...",
+    "thickness": "...",
+    "gelcoatType": "...",
+    "coreType": "Balsa / Foam / Solid",
+    "_confidence_material": "high",
+    "_additional": {{}}
   }},
-  "yachtSpecs": {{
-    "dimensions": {{}},
-    "engine": {{}},
-    "sailArea": {{}}
-  }},
-  "parts": [
+  "subComponents": [
     {{
-      "name": "...",
+      "id": "ext-hull-keel-01",
+      "parentId": "ext-hull-01",
+      "name": "Keel",
+      "category": "Hull Structure",
+      "specifications": {{
+        "type": "Fin / Bulb / Canting",
+        "material": "Lead / Iron / Composite",
+        "weight": "...",
+        "draft": "...",
+        "attachmentMethod": "..."
+      }},
+      "maintenanceDetails": {{
+        "interval": 12,
+        "inspectionItems": ["Keel bolts", "Corrosion", "Leakage"],
+        "commonIssues": "...",
+        "repairCost": "..."
+      }}
+    }},
+    {{
+      "id": "ext-hull-rudder-01",
+      "parentId": "ext-hull-01",
+      "name": "Rudder",
+      "specifications": {{
+        "type": "Spade / Skeg-mounted",
+        "material": "...",
+        "dimensions": "..."
+      }}
+    }}
+  ]
+}}
+```
+
+**deck, windows, hatches:** 동일한 구조로 추출
+
+---
+
+### ✅ 섹션 5: 앵커 시스템 (Ground Tackle)
+
+**ID 생성 규칙:**
+- Anchors: `anchor-{{type}}-{{number}}`
+- Chain: `anchor-chain-01`
+- Windlass: `anchor-windlass-01`
+- Windlass parts: `anchor-windlass-{{part}}-{{number}}`
+
+```json
+{{
+  "anchors": [
+    {{
+      "id": "anchor-primary-01",
+      "name": "Primary Anchor",
+      "type": "Delta / CQR / Fortress / Rocna",
       "manufacturer": "...",
       "model": "...",
-      "interval": 12,
-      "category": "..."
+      "specifications": {{
+        "weight": "... kg",
+        "material": "...",
+        "holdingPower": "... kg",
+        "_confidence_weight": "high"
+      }}
     }}
   ],
-  "maintenance": [],
-  "analysisResult": {{
-    "canExtractText": true/false,
-    "canAnalyze": true/false,
-    "reason": "..."
+  "chain": {{
+    "id": "anchor-chain-01",
+    "name": "Anchor Chain",
+    "specifications": {{
+      "material": "Galvanized steel / Stainless",
+      "diameter": "... mm",
+      "length": "... m",
+      "grade": "..."
+    }}
+  }},
+  "windlass": {{
+    "id": "anchor-windlass-01",
+    "name": "Windlass",
+    "manufacturer": "...",
+    "specifications": {{
+      "type": "Electric / Manual / Hydraulic",
+      "power": "...",
+      "maxPull": "..."
+    }},
+    "subComponents": [...]
   }}
 }}
 ```
 
-JSON 형식으로만 응답해주세요. 다른 설명은 필요 없습니다."""
+---
+
+### ✅ 섹션 6: 돛 목록 (Sail Inventory)
+
+**ID 생성 규칙:**
+- Mainsail: `sail-main-01`
+- Genoa: `sail-genoa-{{size}}-01`
+- Spinnaker: `sail-spinnaker-01`
+
+```json
+[
+  {{
+    "id": "sail-main-01",
+    "name": "Mainsail",
+    "category": "Sails",
+    "manufacturer": "North Sails / Quantum / UK Sailmakers",
+    "model": "...",
+    "specifications": {{
+      "area": "... m²",
+      "luffLength": "... m",
+      "footLength": "... m",
+      "material": "Dacron / Mylar / 3Di / Carbon",
+      "weight": "... kg",
+      "year": "...",
+      "reefingPoints": 2,
+      "numberOfBattens": 4,
+      "condition": "Excellent / Good / Fair / Poor",
+      "_confidence_area": "high"
+    }},
+    "subComponents": [
+      {{
+        "id": "sail-main-slides-01",
+        "parentId": "sail-main-01",
+        "name": "Sail Slides",
+        "specifications": {{
+          "type": "...",
+          "quantity": 12
+        }}
+      }}
+    ],
+    "maintenanceDetails": {{
+      "interval": 6,
+      "inspectionItems": ["Stitching", "UV cover", "Battens"],
+      "repairCost": "..."
+    }}
+  }}
+]
+```
+
+---
+
+### ✅ 섹션 7: 갑판 장비 (Deck Equipment)
+
+**ID 생성 규칙:**
+- Winches: `deck-winch-{{location}}-{{number}}`
+- Cleats: `deck-cleat-{{location}}-{{number}}`
+- Blocks: `deck-block-{{type}}-{{number}}`
+
+```json
+{{
+  "winches": [
+    {{
+      "id": "deck-winch-primary-port-01",
+      "name": "Primary Winch Port",
+      "manufacturer": "Harken / Lewmar / Andersen",
+      "model": "...",
+      "category": "Deck Hardware",
+      "specifications": {{
+        "location": "Cockpit coaming port",
+        "type": "Two-speed self-tailing",
+        "gearRatio": "...:1",
+        "drumDiameter": "... mm",
+        "maxLoad": "... kg",
+        "weight": "... kg",
+        "material": "Aluminum / Bronze",
+        "partNumber": "..."
+      }},
+      "subComponents": [
+        {{
+          "id": "deck-winch-primary-port-handle-01",
+          "parentId": "deck-winch-primary-port-01",
+          "name": "Winch Handle",
+          "specifications": {{"length": "... mm"}}
+        }}
+      ],
+      "maintenanceDetails": {{
+        "interval": 12,
+        "inspectionItems": ["Pawls", "Gears", "Drum"],
+        "lubricationType": "Marine winch grease",
+        "repairCost": "$50-200"
+      }}
+    }}
+  ],
+  "cleats": [...],
+  "blocks": [...],
+  "stanchions": {{...}},
+  "steeringSystem": {{...}}
+}}
+```
+
+---
+
+### ✅ 섹션 8: 시설물 (Accommodations)
+
+**ID 생성 규칙:**
+- Galley: `accom-galley-01`
+- Galley components: `accom-galley-{{component}}-01`
+- Cabins: `accom-cabin-{{location}}-01`
+- Heads: `accom-head-{{location}}-01`
+
+```json
+{{
+  "summary": {{
+    "cabins": 3,
+    "berths": 6,
+    "heads": 2,
+    "showers": 1
+  }},
+  "galley": {{
+    "id": "accom-galley-01",
+    "name": "Galley",
+    "location": "Port / Starboard / Center",
+    "specifications": {{
+      "dimensions": "... x ... m",
+      "counterMaterial": "Corian / Laminate",
+      "storageVolume": "... L"
+    }},
+    "components": [
+      {{
+        "id": "accom-galley-stove-01",
+        "parentId": "accom-galley-01",
+        "name": "Stove",
+        "manufacturer": "Force 10 / Eno / Dometic",
+        "model": "...",
+        "specifications": {{
+          "type": "2-burner / 3-burner gas / electric",
+          "fuelType": "LPG / CNG",
+          "power": "...",
+          "gimbalMount": true
+        }},
+        "maintenanceDetails": {{...}}
+      }},
+      {{
+        "id": "accom-galley-fridge-01",
+        "parentId": "accom-galley-01",
+        "name": "Refrigerator",
+        "manufacturer": "Isotherm / Frigoboat",
+        "specifications": {{
+          "capacity": "... L",
+          "type": "12V compressor / Eutectic",
+          "powerConsumption": "... A"
+        }}
+      }},
+      {{
+        "id": "accom-galley-sink-01",
+        "name": "Galley Sink",
+        "specifications": {{
+          "material": "Stainless steel",
+          "numberOfBowls": 1
+        }}
+      }}
+    ]
+  }},
+  "cabins": [
+    {{
+      "id": "accom-cabin-master-01",
+      "name": "Master Cabin",
+      "location": "Aft / Forward",
+      "specifications": {{
+        "berthSize": "Queen / Double / Twin",
+        "headroom": "... m",
+        "privateHead": true
+      }},
+      "components": [...]
+    }}
+  ],
+  "heads": [
+    {{
+      "id": "accom-head-forward-01",
+      "name": "Forward Head",
+      "specifications": {{
+        "shower": true,
+        "showerType": "Wet head / Separate"
+      }},
+      "components": [
+        {{
+          "id": "accom-head-forward-toilet-01",
+          "name": "Marine Toilet",
+          "manufacturer": "Jabsco / Raritan / Tecma",
+          "model": "...",
+          "specifications": {{
+            "type": "Manual / Electric",
+            "discharge": "Overboard / Holding tank"
+          }},
+          "maintenanceDetails": {{...}}
+        }}
+      ]
+    }}
+  ]
+}}
+```
+
+---
+
+### ✅ 섹션 9: 수조 (Tanks)
+
+**ID: `tank-{{type}}-{{number}}`**
+
+```json
+{{
+  "fuel": {{
+    "id": "tank-fuel-01",
+    "name": "Fuel Tank",
+    "specifications": {{
+      "capacity": "... L",
+      "material": "Stainless steel / Aluminum / Plastic",
+      "location": "...",
+      "fuelType": "Diesel / Gasoline"
+    }},
+    "subComponents": [...]
+  }},
+  "freshWater": {{
+    "id": "tank-water-01",
+    "specifications": {{
+      "totalCapacity": "... L",
+      "material": "Food-grade polyethylene",
+      "numberOfTanks": 2
+    }}
+  }},
+  "holdingTank": {{
+    "id": "tank-holding-01",
+    "specifications": {{
+      "capacity": "... L",
+      "pumpout": true
+    }}
+  }}
+}}
+```
+
+---
+
+### ✅ 섹션 10: 전기 시스템 (Electrical System)
+
+**ID: `elec-{{category}}-{{component}}-{{number}}`**
+
+```json
+{{
+  "batteries": {{
+    "house": {{
+      "id": "elec-battery-house-01",
+      "name": "House Battery Bank",
+      "manufacturer": "Victron / Lifeline / Trojan",
+      "model": "...",
+      "specifications": {{
+        "type": "AGM / Gel / Lithium / Flooded Lead-Acid",
+        "totalCapacity": "... Ah",
+        "voltage": "12V / 24V",
+        "numberOfBatteries": 2,
+        "configuration": "Parallel / Series"
+      }}
+    }},
+    "starter": {{...}}
+  }},
+  "chargers": [...],
+  "solarPanels": {{
+    "id": "elec-solar-array-01",
+    "specifications": {{
+      "totalCapacity": "... W",
+      "numberOfPanels": 2
+    }},
+    "subComponents": [
+      {{
+        "id": "elec-solar-controller-01",
+        "name": "Solar Charge Controller",
+        "manufacturer": "Victron / Morningstar",
+        "specifications": {{
+          "type": "MPPT / PWM",
+          "maxPVVoltage": "... V",
+          "maxChargeCurrent": "... A"
+        }}
+      }}
+    ]
+  }},
+  "inverter": {{...}},
+  "shoreConnection": {{...}}
+}}
+```
+
+---
+
+### ✅ 섹션 11: 전자 장비 (Electronics)
+
+**ID: `electron-{{category}}-{{component}}-{{number}}`**
+
+```json
+{{
+  "navigation": [
+    {{
+      "id": "electron-nav-chartplotter-01",
+      "name": "Chartplotter",
+      "manufacturer": "Raymarine / Garmin / Simrad / B&G",
+      "model": "...",
+      "specifications": {{
+        "type": "Multifunction display",
+        "screenSize": "... inch",
+        "resolution": "...",
+        "touchscreen": true,
+        "cartography": "Navionics / C-MAP"
+      }}
+    }},
+    {{
+      "id": "electron-nav-radar-01",
+      "name": "Radar",
+      "specifications": {{
+        "type": "Doppler / Pulse",
+        "range": "... NM"
+      }}
+    }}
+  ],
+  "communication": [
+    {{
+      "id": "electron-comm-vhf-01",
+      "name": "VHF Radio",
+      "manufacturer": "Standard Horizon / Icom",
+      "specifications": {{
+        "type": "Fixed mount / Handheld",
+        "dsc": true,
+        "power": "... W"
+      }}
+    }}
+  ],
+  "instruments": [...],
+  "autopilot": {{
+    "id": "electron-autopilot-01",
+    "specifications": {{
+      "type": "Hydraulic / Electric / Wind vane",
+      "manufacturer": "..."
+    }},
+    "subComponents": [...]
+  }}
+}}
+```
+
+---
+
+### ✅ 섹션 12: 배관 시스템 (Plumbing System)
+
+**ID: `plumb-{{category}}-{{component}}-{{number}}`**
+
+```json
+{{
+  "waterMaker": {{
+    "id": "plumb-watermaker-01",
+    "specifications": {{
+      "type": "Reverse osmosis",
+      "capacity": "... L/hour"
+    }},
+    "subComponents": [...]
+  }},
+  "pumps": [
+    {{
+      "id": "plumb-pump-freshwater-01",
+      "name": "Freshwater Pressure Pump",
+      "manufacturer": "Jabsco / Shurflo / Whale",
+      "specifications": {{
+        "flow": "... L/min",
+        "pressure": "... bar"
+      }}
+    }}
+  ],
+  "bilgePumps": [
+    {{
+      "id": "plumb-bilge-primary-01",
+      "name": "Primary Bilge Pump",
+      "specifications": {{
+        "type": "Automatic / Manual",
+        "capacity": "... GPH"
+      }}
+    }}
+  ],
+  "seacocks": {{
+    "id": "plumb-seacocks-01",
+    "specifications": {{
+      "totalQuantity": 8,
+      "material": "Bronze / Marelon"
+    }},
+    "components": [...]
+  }}
+}}
+```
+
+---
+
+### ✅ 섹션 13: 부품 (Parts) - 통합 리스트
+
+**ID: `part-{{category}}-{{name}}-{{number}}`**
+
+모든 부품을 하나의 배열에 통합하세요.
+
+```json
+[
+  {{
+    "id": "part-rigging-mast-01",
+    "name": "Mast",
+    "manufacturer": "Selden / Z-Spars / Hall Spars",
+    "model": "...",
+    "interval": 12,
+    "category": "Rigging",
+    "specifications": {{
+      "material": "Aluminum / Carbon",
+      "length": "... m",
+      "weight": "... kg",
+      "partNumber": "...",
+      "_confidence_length": "high"
+    }},
+    "subParts": [...],
+    "maintenanceDetails": {{
+      "interval": 12,
+      "inspectionItems": ["Corrosion", "Bolts", "Wiring"],
+      "repairCost": "..."
+    }}
+  }}
+]
+```
+
+---
+
+### ✅ 섹션 14: 유지보수 (Maintenance)
+
+```json
+[
+  {{
+    "item": "...",
+    "interval": "... 개월",
+    "method": "..."
+  }}
+]
+```
+
+---
+
+### ✅ 섹션 15: 분석 결과 (Analysis Result)
+
+```json
+{{
+  "canExtractText": true/false,
+  "canAnalyze": true/false,
+  "reason": "요트 매뉴얼이 아닌 경우 이유 설명"
+}}
+```
+
+---
+
+## 🎯 최종 응답 형식
+
+```json
+{{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2025-11-20T10:30:00Z",
+  "documentInfo": {{...}},
+  "yachtSpecs": {{
+    "standard": {{...}},
+    "additional": {{...}}
+  }},
+  "detailedDimensions": {{...}},
+  "exterior": {{...}},
+  "groundTackle": {{...}},
+  "sailInventory": [...],
+  "deckEquipment": {{...}},
+  "accommodations": {{...}},
+  "tanks": {{...}},
+  "electricalSystem": {{...}},
+  "electronics": {{...}},
+  "plumbingSystem": {{...}},
+  "parts": [...],
+  "maintenance": [...],
+  "analysisResult": {{...}}
+}}
+```
+
+---
+
+## ⚠️ 중요 규칙
+
+1. **ID 필수**: 모든 항목에 고유 ID 부여
+2. **부모-자식 관계**: subComponents/subParts에 parentId 추가
+3. **신뢰도**: 중요 필드에 _confidence 추가
+4. **확장성**: _additional 필드 활용
+5. **중복 방지**: standard에 있는 정보는 additional에 추가 금지
+6. **추측 금지**: 불확실하면 null
+7. **JSON만**: 다른 설명 불필요
+
+**JSON 형식으로만 응답해주세요.**"""
         
         # Gemini API 호출
         print("🤖 AI 분석 중...")
@@ -1298,50 +1894,73 @@ JSON 형식으로만 응답해주세요. 다른 설명은 필요 없습니다.""
             except Exception as e:
                 print(f"⚠️ pdfplumber로 텍스트 추출 실패: {e}")
         
-        # 방법 3: OCR 사용 (스캔된 이미지 PDF인 경우)
-        if HAS_OCR and len(text.strip()) < 100:
+        # 방법 3: EasyOCR 사용 (스캔된 이미지 PDF인 경우)
+        if len(text.strip()) < 100:
             try:
                 print("📷 텍스트 추출 실패. OCR을 시도합니다...")
-                text = self._extract_text_with_ocr(pdf_path)
+                text = self._extract_text_with_easyocr(pdf_path)
                 if len(text.strip()) > 100:
                     print("✅ OCR로 텍스트 추출 성공!")
                     return text
             except Exception as e:
                 print(f"⚠️ OCR 실패: {e}")
-                print("💡 OCR을 사용하려면 다음을 설치하세요:")
-                print("   - Tesseract OCR: https://github.com/tesseract-ocr/tesseract")
-                print("   - pip install pytesseract pdf2image")
+                print("💡 OCR 패키지를 설치하려면:")
+                print("   python install_ocr_local.py")
         
         return text
     
-    def _extract_text_with_ocr(self, pdf_path: str) -> str:
-        """OCR을 사용한 텍스트 추출 (스캔된 이미지 PDF용)"""
-        if not HAS_OCR:
-            return ""
-        
+    def _extract_text_with_easyocr(self, pdf_path: str) -> str:
+        """EasyOCR을 사용한 텍스트 추출 (스캔된 이미지 PDF용)"""
         try:
-            import pytesseract
-            from pdf2image import convert_from_path
+            import fitz  # PyMuPDF
+            import easyocr
+            import numpy as np
+            from PIL import Image
+            import io
             
-            # PDF를 이미지로 변환
-            images = convert_from_path(pdf_path, dpi=300)
+            # EasyOCR 초기화 (영어 + 한국어)
+            print("   🤖 EasyOCR 초기화 중...")
+            reader = easyocr.Reader(['en', 'ko'], gpu=False)
             
-            # 각 이미지에서 텍스트 추출
-            text = ""
-            total_pages = len(images)
+            # PDF 열기
+            doc = fitz.open(pdf_path)
+            total_pages = len(doc)
             print(f"   📄 총 {total_pages}페이지를 OCR 처리 중...")
             
-            for i, image in enumerate(images, 1):
-                # OCR 실행 (영문 우선, 한글도 지원)
-                page_text = pytesseract.image_to_string(image, lang='eng+kor')
-                text += f"\n--- Page {i} ---\n{page_text}\n"
-                
-                if i % 10 == 0:
-                    print(f"   진행 중: {i}/{total_pages} 페이지")
+            text = ""
             
+            for page_num in range(total_pages):
+                # PDF 페이지를 이미지로 변환
+                page = doc[page_num]
+                pix = page.get_pixmap(dpi=300)
+                img_data = pix.tobytes("png")
+                img = Image.open(io.BytesIO(img_data))
+                
+                # numpy 배열로 변환
+                img_array = np.array(img)
+                
+                # OCR 실행
+                results = reader.readtext(img_array)
+                
+                # 결과 텍스트 추출
+                page_text = "\n".join([text_result[1] for text_result in results])
+                text += f"\n--- Page {page_num + 1} ---\n{page_text}\n"
+                
+                if (page_num + 1) % 5 == 0:
+                    print(f"   진행 중: {page_num + 1}/{total_pages} 페이지")
+            
+            doc.close()
+            print(f"   ✅ OCR 완료: {len(text)} 문자 추출")
             return text
+            
+        except ImportError as e:
+            print(f"❌ 필요한 패키지가 설치되지 않았습니다: {e}")
+            print("💡 실행: python install_ocr_local.py")
+            return ""
         except Exception as e:
             print(f"❌ OCR 오류: {e}")
+            import traceback
+            traceback.print_exc()
             return ""
     
     def _extract_text_from_file(self, file_path: str) -> str:
@@ -2463,6 +3082,11 @@ def run_api_server(api_key: str = None, port: int = 5000):
 
 def main():
     """메인 함수"""
+    # 시작 메시지 (즉시 표시)
+    print("🚀 HooAah Yacht 챗봇을 시작하는 중...", flush=True)
+    print("⏳ 잠시만 기다려주세요...", flush=True)
+    print()
+    
     parser = argparse.ArgumentParser(description='HooAah Yacht 통합 챗봇')
     parser.add_argument('--mode', choices=['interactive', 'api'], default='interactive',
                         help='실행 모드 (interactive: 대화형, api: API 서버)')

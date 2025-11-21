@@ -1,0 +1,694 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-30T00:00:00Z",
+  "documentInfo": {
+    "title": "OWNER'S MANUAL",
+    "yachtModel": "OCEANIS 46.1",
+    "manufacturer": "BENETEAU",
+    "documentType": "Owner's Manual",
+    "_additional": {
+      "documentIdentifier": "197837 RCD-2 Index C"
+    }
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": "14.60 m",
+        "Lh": "13.65 m",
+        "Beam": "4.50 m",
+        "Draft": "1.87 m (shallowest version)",
+        "Displacement": "11278 kg (Light Craft Condition, shallow draught keel version)",
+        "mastHeight": "20.31 m (Classical Mast, Air draft - Empty vessel)"
+      },
+      "engine": {
+        "type": "Sailboat Primary Propulsion (Inboard Diesel inferred)",
+        "power": "59 kW"
+      },
+      "sailArea": {
+        "mainsail": "53.75 m² (Classic) / 57.61 m² (Performance) / 44.46 m² (Furling)",
+        "genoa": "52.16 m² (Furling) / 57.78 m² (Furling Performance Mast)",
+        "spinnaker": "151.70 m² (Asymmetric)",
+        "jib": "40.42 m² (Self-tacking)",
+        "code0": "101.84 m²",
+        "total": "107 m²"
+      }
+    },
+    "additional": {
+      "architectDesign": "Pascal Conq / Nauta design",
+      "builder": "SPBI S.A",
+      "principalMeansOfPropulsion": "Sail",
+      "deckConstructionMaterial": "Laminated sandwich glass / GRP / Foam",
+      "hullConstructionMaterial": "Single skin laminated fibreglass / GRP",
+      "deckImplementation": "Injection",
+      "hullImplementation": "Wet laid fiber",
+      "overallWidthBmax": "4.50 m",
+      "beamBh": "4.50 m",
+      "airDraftEmptyVesselClassicalMast": "20.31 m",
+      "airDraftEmptyVesselMastPerformance": "21.31 m",
+      "draughtBoatFullyLadenDeepDraughtKeelVersion": "2.47 m",
+      "draughtBoatFullyLadenShallowDraughtKeelVersion": "1.87 m",
+      "draughtBoatFullyLadenVeryDeepDraughtKeelVersion": "2.68 m",
+      "wettedSurfaceArea": "Approximately 52 m²",
+      "maximumRecommendedEngineSizeWeight": "2 x 229 kg",
+      "circuitTypeDC": "12V",
+      "circuitTypeAC": "220V",
+      "circuitTypeACUSVersion": "110V",
+      "totalMassLiquidContentsFixedTanksWhenFull": "1130 kg",
+      "fuelCapacity": "195 L",
+      "auxiliaryFuelTankCapacity": "200 L",
+      "freshWaterCapacity": "330 L",
+      "extraWaterTankCapacity": "200 L",
+      "blackwaterCapacityForeWC": "50 L",
+      "blackwaterCapacityAftHead": "80 L",
+      "plannedSailAreaDefinition": "Designated by (AS) and calculated as the sum of the projected surfaces in profile of all sails that can be established when the vessel is close hauling, on the booms, horns, bowsprits or other spars, and the surface of fore triangle(s) to the foremost forestay, fixed permanently during operation of the vessel with the mast bearing the established sails, without overlap, assuming that the jackstays and leeches are straight lines. The surface of the spars is not included in the projected calculation sail plan area, with the exception of the wing-masts.",
+      "densityDieselFuel": "0.86 kg/L",
+      "densityWater": "1 kg/L",
+      "designCategoriesShallowDraughtKeelVersion": {
+        "crewLimitA": 10,
+        "crewLimitB": 11,
+        "crewLimitC": 12,
+        "crewLimitD": 12,
+        "lightDisplacementMLC": "11278 kg",
+        "recommendedMaximumLoadML": "4200 kg",
+        "displacementWithMaximumLoadMLDC": "15478 kg"
+      },
+      "designCategoriesDeepDraughtKeelVersion": {
+        "crewLimitA": 10,
+        "crewLimitB": 11,
+        "crewLimitC": 12,
+        "crewLimitD": 12,
+        "lightDisplacementMLC": "10952 kg",
+        "recommendedMaximumLoadML": "4200 kg",
+        "displacementWithMaximumLoadMLDC": "15152 kg"
+      },
+      "designCategoriesVeryDeepDraughtKeelVersion": {
+        "crewLimitA": 10,
+        "crewLimitB": 11,
+        "crewLimitC": 12,
+        "crewLimitD": 12,
+        "lightDisplacementMLC": "10789 kg",
+        "recommendedMaximumLoadML": "4200 kg",
+        "displacementWithMaximumLoadMLDC": "14989 kg"
+      },
+      "angleOfVanishingStabilityMinimalLoad": "117-118 degrees",
+      "angleOfVanishingStabilityMaximumLoad": "109 degrees",
+      "stixMinimalLoad": 44,
+      "stixMaximumLoad": 38
+    }
+  },
+  "detailedDimensions": {
+    "LOA": "14.60 m",
+    "hullLength": "13.65 m",
+    "overallWidth": "4.50 m",
+    "beam": "4.50 m",
+    "airDraftEmptyVesselClassicalMast": "20.31 m",
+    "airDraftEmptyVesselMastPerformance": "21.31 m",
+    "draughtBoatFullyLadenDeepDraughtKeelVersion": "2.47 m",
+    "draughtBoatFullyLadenShallowDraughtKeelVersion": "1.87 m",
+    "draughtBoatFullyLadenVeryDeepDraughtKeelVersion": "2.68 m",
+    "wettedSurfaceArea": "Approximately 52 m²",
+    "classicMastIDimension": "17.72 m",
+    "classicMastJDimension": "5.72 m",
+    "classicMastPDimension": "16.82 m",
+    "classicMastEDimension": "5.63 m",
+    "performanceMastIDimension": "18.33 m",
+    "performanceMastJDimension": "5.71 m",
+    "performanceMastPDimension": "17.82 m",
+    "performanceMastEDimension": "5.63 m",
+    "_confidence_LOA": "high",
+    "_confidence_hullLength": "high",
+    "_confidence_overallWidth": "high",
+    "_confidence_beam": "high",
+    "_confidence_airDraftEmptyVesselClassicalMast": "high",
+    "_confidence_airDraftEmptyVesselMastPerformance": "high",
+    "_confidence_draughtBoatFullyLadenDeepDraughtKeelVersion": "high",
+    "_confidence_draughtBoatFullyLadenShallowDraughtKeelVersion": "high",
+    "_confidence_draughtBoatFullyLadenVeryDeepDraughtKeelVersion": "high",
+    "_confidence_wettedSurfaceArea": "high",
+    "_confidence_classicMastIDimension": "high",
+    "_confidence_classicMastJDimension": "high",
+    "_confidence_classicMastPDimension": "high",
+    "_confidence_classicMastEDimension": "high",
+    "_confidence_performanceMastIDimension": "high",
+    "_confidence_performanceMastJDimension": "high",
+    "_confidence_performanceMastPDimension": "high",
+    "_confidence_performanceMastEDimension": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "SPBI S.A",
+      "specifications": {
+        "type": "Monohull (inferred)",
+        "material": "Single skin laminated fibreglass / GRP",
+        "implementation": "Wet laid fiber",
+        "_confidence_material": "high"
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-shallow-01",
+          "parentId": "ext-hull-01",
+          "name": "Shallow Draught Keel Version",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": "Fin Keel (inferred)",
+            "draft": "1.87 m",
+            "_confidence_draft": "high"
+          }
+        },
+        {
+          "id": "ext-hull-keel-deep-01",
+          "parentId": "ext-hull-01",
+          "name": "Deep Draught Keel Version",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": "Fin Keel (inferred)",
+            "draft": "2.47 m",
+            "_confidence_draft": "high"
+          }
+        },
+        {
+          "id": "ext-hull-keel-verydeep-01",
+          "parentId": "ext-hull-01",
+          "name": "Very Deep Draught Keel Version",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": "Fin Keel (inferred)",
+            "draft": "2.68 m",
+            "_confidence_draft": "high"
+          }
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Structure",
+      "manufacturer": "SPBI S.A",
+      "specifications": {
+        "material": "Laminated sandwich glass / GRP / Foam",
+        "implementation": "Injection",
+        "_confidence_material": "high"
+      }
+    },
+    "cockpit": {
+      "id": "ext-deck-cockpit-01",
+      "name": "Cockpit",
+      "category": "Deck Area",
+      "specifications": {
+        "access": "Guardrails",
+        "_additional": {
+          "securityNote": "Essential that the guardrails remain closed when under way and at sea."
+        }
+      }
+    },
+    "guardrails": {
+      "id": "ext-deck-guardrail-01",
+      "name": "Guardrails",
+      "category": "Safety Equipment",
+      "specifications": {
+        "function": "Safety barrier, access control",
+        "_additional": {
+          "securityNote": "Must remain closed when under way and at sea."
+        }
+      }
+    }
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-classic-01",
+      "name": "Classic Mainsail",
+      "category": "Sails",
+      "specifications": {
+        "area": "53.75 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-main-performance-01",
+      "name": "Performance Version Mainsail",
+      "category": "Sails",
+      "specifications": {
+        "area": "57.61 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-main-furling-01",
+      "name": "Furling Mainsail",
+      "category": "Sails",
+      "specifications": {
+        "area": "44.46 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-genoa-furling-01",
+      "name": "Furling Genoa",
+      "category": "Sails",
+      "specifications": {
+        "area": "52.16 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-genoa-furling-performance-01",
+      "name": "Furling Genoa (Mast Performance)",
+      "category": "Sails",
+      "specifications": {
+        "area": "57.78 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-spinnaker-asymmetric-01",
+      "name": "Asymmetric Spinnaker",
+      "category": "Sails",
+      "specifications": {
+        "area": "151.70 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-jib-selftacking-01",
+      "name": "Self-tacking Jib",
+      "category": "Sails",
+      "specifications": {
+        "area": "40.42 m²",
+        "_confidence_area": "high"
+      }
+    },
+    {
+      "id": "sail-code0-01",
+      "name": "Code 0",
+      "category": "Sails",
+      "specifications": {
+        "area": "101.84 m²",
+        "_confidence_area": "high"
+      }
+    }
+  ],
+  "deckEquipment": {
+    "winches": [],
+    "cleats": [],
+    "blocks": [],
+    "stanchions": null,
+    "steeringSystem": {
+      "id": "deck-steering-01",
+      "name": "Steering System",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": "Not specified"
+      },
+      "_additional": {
+        "referenceChapter": "215"
+      }
+    },
+    "deckFittings": {
+      "id": "deck-fittings-01",
+      "name": "Deck Fittings",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": "Not specified"
+      },
+      "_additional": {
+        "referenceChapter": "223"
+      }
+    },
+    "hullFittings": {
+      "id": "hull-fittings-01",
+      "name": "Hull Fittings",
+      "category": "Hull Hardware",
+      "specifications": {
+        "type": "Not specified"
+      },
+      "_additional": {
+        "referenceChapter": "235"
+      }
+    },
+    "protectionSheets": [
+      {
+        "id": "deck-protection-lazybag-01",
+        "name": "Lazy Bag",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": "Removable protection sheet",
+          "_additional": {
+            "stowageRecommendation": "Recommended to stow if wind exceeds 20 knots"
+          }
+        }
+      },
+      {
+        "id": "deck-protection-bimini-01",
+        "name": "Bimini",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": "Removable protection sheet",
+          "_additional": {
+            "stowageRecommendation": "Recommended to stow if wind exceeds 20 knots"
+          }
+        }
+      },
+      {
+        "id": "deck-protection-awning-01",
+        "name": "Awning",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": "Removable protection sheet",
+          "_additional": {
+            "stowageRecommendation": "Recommended to stow if wind exceeds 20 knots"
+          }
+        }
+      }
+    ]
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": 2
+    },
+    "galley": {
+      "id": "accom-galley-01",
+      "name": "Galley",
+      "location": null,
+      "specifications": {},
+      "components": []
+    },
+    "cabins": [],
+    "heads": [
+      {
+        "id": "accom-head-fore-01",
+        "name": "Fore Head",
+        "specifications": {
+          "shower": null,
+          "showerType": null,
+          "_additional": {
+            "blackwaterTankCapacity": "50 L"
+          }
+        },
+        "components": [
+          {
+            "id": "accom-head-fore-toilet-01",
+            "name": "Fore WC",
+            "manufacturer": null,
+            "model": null,
+            "specifications": {
+              "type": "Not specified",
+              "discharge": "To holding tank (inferred)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "accom-head-aft-01",
+        "name": "Aft Head",
+        "specifications": {
+          "shower": null,
+          "showerType": null,
+          "_additional": {
+            "blackwaterTankCapacity": "80 L"
+          }
+        },
+        "components": [
+          {
+            "id": "accom-head-aft-toilet-01",
+            "name": "Aft Head Toilet",
+            "manufacturer": null,
+            "model": null,
+            "specifications": {
+              "type": "Not specified",
+              "discharge": "To holding tank (inferred)"
+            }
+          }
+        ]
+      }
+    ],
+    "_additional": {
+      "domesticAppliancesReferenceChapter": "125",
+      "audioVisualEquipmentReferenceChapter": "133",
+      "onboardComfortReferenceChapter": "137"
+    }
+  },
+  "tanks": {
+    "fuel": {
+      "id": "tank-fuel-main-01",
+      "name": "Main Fuel Tank",
+      "specifications": {
+        "capacity": "195 L",
+        "material": null,
+        "location": null,
+        "fuelType": "Diesel",
+        "_confidence_capacity": "high",
+        "_confidence_fuelType": "medium"
+      },
+      "subComponents": []
+    },
+    "auxiliaryFuel": {
+      "id": "tank-fuel-auxiliary-01",
+      "name": "Auxiliary Fuel Tank",
+      "specifications": {
+        "capacity": "200 L",
+        "material": null,
+        "location": null,
+        "fuelType": "Diesel",
+        "_confidence_capacity": "high",
+        "_confidence_fuelType": "medium"
+      },
+      "subComponents": []
+    },
+    "freshWater": {
+      "id": "tank-water-main-and-extra-01",
+      "specifications": {
+        "totalCapacity": "530 L (330 L main + 200 L extra)",
+        "material": null,
+        "numberOfTanks": 2,
+        "_confidence_totalCapacity": "high"
+      }
+    },
+    "holdingTank": {
+      "id": "tank-holding-01",
+      "specifications": {
+        "totalCapacity": "130 L (50 L fore WC + 80 L aft head)",
+        "pumpout": null,
+        "material": null
+      }
+    }
+  },
+  "electricalSystem": {
+    "batteries": null,
+    "chargers": null,
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null,
+    "circuitTypes": [
+      {
+        "id": "elec-circuit-dc-01",
+        "name": "Direct Current (DC) System",
+        "specifications": {
+          "voltage": "12V",
+          "_confidence_voltage": "high"
+        }
+      },
+      {
+        "id": "elec-circuit-ac-europe-01",
+        "name": "Alternating Current (AC) System (European Version)",
+        "specifications": {
+          "voltage": "220V",
+          "_confidence_voltage": "high"
+        }
+      },
+      {
+        "id": "elec-circuit-ac-us-01",
+        "name": "Alternating Current (AC) System (US Version)",
+        "specifications": {
+          "voltage": "110V",
+          "_confidence_voltage": "high"
+        }
+      }
+    ],
+    "_additional": {
+      "referenceChapter": "73"
+    }
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [],
+    "instruments": [],
+    "autopilot": null,
+    "audioVisualEquipment": {
+      "id": "electron-av-01",
+      "name": "Audio-visual equipment",
+      "category": "Entertainment",
+      "specifications": {
+        "type": "Not specified"
+      },
+      "_additional": {
+        "referenceChapter": "133"
+      }
+    }
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [],
+    "seacocks": null,
+    "waterSystems": {
+      "id": "plumb-water-system-01",
+      "name": "Water Systems",
+      "category": "Plumbing",
+      "_additional": {
+        "referenceChapter": "157"
+      }
+    },
+    "lpgSystem": {
+      "id": "plumb-lpg-system-01",
+      "name": "Liquefied Petroleum Gas system (LPG)",
+      "category": "Utility System (Gas)",
+      "_additional": {
+        "referenceChapter": "119"
+      }
+    }
+  },
+  "parts": [
+    {
+      "id": "part-engine-main-01",
+      "name": "Engine",
+      "category": "Propulsion",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "type": "Inboard Diesel (inferred from fuel type)",
+        "power": "59 kW",
+        "quantity": 1,
+        "maxRecommendedWeight": "229 kg",
+        "_confidence_power": "high",
+        "_confidence_quantity": "high",
+        "_confidence_maxRecommendedWeight": "high",
+        "_confidence_type": "medium"
+      },
+      "_additional": {
+        "referenceChapter": "203"
+      }
+    },
+    {
+      "id": "part-rigging-mast-classical-01",
+      "name": "Classical Mast",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "material": null,
+        "airDraft": "20.31 m",
+        "I_dimension": "17.72 m",
+        "J_dimension": "5.72 m",
+        "P_dimension": "16.82 m",
+        "E_dimension": "5.63 m",
+        "_confidence_airDraft": "high",
+        "_confidence_I_dimension": "high",
+        "_confidence_J_dimension": "high",
+        "_confidence_P_dimension": "high",
+        "_confidence_E_dimension": "high"
+      }
+    },
+    {
+      "id": "part-rigging-mast-performance-01",
+      "name": "Performance Mast",
+      "category": "Rigging",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "material": null,
+        "airDraft": "21.31 m",
+        "I_dimension": "18.33 m",
+        "J_dimension": "5.71 m",
+        "P_dimension": "17.82 m",
+        "E_dimension": "5.63 m",
+        "_confidence_airDraft": "high",
+        "_confidence_I_dimension": "high",
+        "_confidence_J_dimension": "high",
+        "_confidence_P_dimension": "high",
+        "_confidence_E_dimension": "high"
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Initial set-up and first launch",
+      "interval": "Before first use",
+      "method": "Must be carried out under dealer's supervision to ensure proper functioning of all equipment and correct initial set-up.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Owner's Manual and Equipment Guides",
+      "interval": "Before first use, ongoing",
+      "method": "Read Owner's Manual carefully and take time to get to know your boat. Keep this manual safe and pass it on to new owner. Keep any user's guides supplied by manufacturers of boat equipment together with this manual; read them for each piece of equipment.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Navigation and Manoeuvring Training",
+      "interval": "Before taking helm alone (especially for new boaters or unfamiliar types)",
+      "method": "Learn how to use and manoeuvre safely and with ease. Contact dealer, national sailing/motorboat association, or yacht club for navigation schools or qualified instructors.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Weather Condition Assessment",
+      "interval": "Before sailing",
+      "method": "Ensure wind and sea conditions forecast are appropriate for the design category of your boat and that crew is capable of manoeuvering in these conditions.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Professional Services for Maintenance and Modifications",
+      "interval": "As needed",
+      "method": "Always use the services of an experienced professional for maintenance, fitting accessories, and any modifications. Any alterations affecting safety must be assessed, carried out, and recorded by qualified persons. Contact dealer for problems; use provided maintenance manual if available.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "General Boat Condition Monitoring",
+      "interval": "Ongoing",
+      "method": "Always maintain your boat well and make note of any deterioration due to wear and tear or to heavy or inappropriate use.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Bilge Water Management",
+      "interval": "Ongoing",
+      "method": "It is important to keep water in the bilges to a minimum.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Hatch and Door Security",
+      "interval": "In heavy weather / When at sea",
+      "method": "Close all watertight hatches, lockers, and doors to minimise the risk of water pouring in. All watertight hatches must remain closed when at sea.",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Stowage of Removable Protection Sheets",
+      "interval": "When wind exceeds 20 knots",
+      "method": "It is recommended that you stow all removable protection sheets (lazy bag, Bimini, awnings, ...).",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Safety Gear Familiarization and Usage",
+      "interval": "Ongoing",
+      "method": "If equipped with a life-raft, read its instruction manual carefully. Crew must have all appropriate safety gear onboard (lifejackets, harnesses etc.) and be fully familiarised with its use and emergency manoeuvres (man overboard, towing). Sailing schools and clubs regularly run training sessions. Strongly advised that everyone wears an appropriate flotation device on deck; mandatory in some countries.",
+      "_confidence_method": "high"
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": null
+  },
+  "fileInfo": {
+    "fileName": "14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+    "filePath": "data/yachtpdf\\14670061006300089_USER_MANUAL_OCEANIS_46.1.pdf",
+    "fileSize": 18485216
+  }
+}

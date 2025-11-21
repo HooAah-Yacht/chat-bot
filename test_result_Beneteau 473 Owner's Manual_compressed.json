@@ -1,0 +1,2024 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-30T10:00:00Z",
+  "documentInfo": {
+    "title": "OWNER’S MANUAL",
+    "yachtModel": "OCEANIS 473",
+    "manufacturer": "BENETEAU",
+    "documentType": "Owner's Manual"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": "14.15 m",
+        "Beam": "4.31 m",
+        "Draft": "2.10 m",
+        "Displacement": "11000 kg",
+        "mastHeight": null
+      },
+      "engine": {
+        "type": null,
+        "power": "75 kW",
+        "model": null
+      },
+      "sailArea": {
+        "mainsail": "42.23 m²",
+        "jib": "60.16 m²",
+        "spinnaker": "156 m²",
+        "total": null
+      }
+    },
+    "additional": {
+      "hullLength": "14.15 m",
+      "hullBeam": "4.31 m",
+      "deepDraught": "2.10 m",
+      "shoalDraught": "1.70 m",
+      "airDraught": "18.10 m",
+      "designCategory": "A",
+      "notifiedOrganisationNumber": "CE 0607",
+      "designCategories": [
+        {
+          "category": "A",
+          "waveHeight": "> 4 m",
+          "windStrength": "> 8 Beaufort"
+        },
+        {
+          "category": "B",
+          "waveHeight": "< 4 m",
+          "windStrength": "≤ 8 Beaufort"
+        },
+        {
+          "category": "C",
+          "waveHeight": "< 2 m",
+          "windStrength": "≤ 6 Beaufort"
+        },
+        {
+          "category": "D",
+          "waveHeight": "< 0.5 m",
+          "windStrength": "≤ 4 Beaufort"
+        }
+      ],
+      "maxPersonsByDesignCategory": [
+        {
+          "category": "A",
+          "maxPersons": 10
+        },
+        {
+          "category": "B",
+          "maxPersons": 12
+        },
+        {
+          "category": "C",
+          "maxPersons": 12
+        },
+        {
+          "category": "D",
+          "maxPersons": 14
+        }
+      ],
+      "lightBoatWeight": "10600 kg",
+      "maxLadenDisplacement": "14654 kg",
+      "maximumLoad": "3642 kg",
+      "IMastHeight": "16.42 m",
+      "JForetriangleBase": "5.55 m",
+      "PMainsailLuff": "14.54 m",
+      "EMainsailFoot": "5.20 m",
+      "genoaLP": "7.77 m",
+      "CECertifiedEquipment": [
+        "fuel tanks",
+        "steering system components",
+        "gas system components",
+        "hatches",
+        "portlights"
+      ],
+      "manualNote": "Characteristics are not contractual and can be modified without prior notice and without an obligation to update. Document may list equipment/subjects not concerning specific boat. Refer to boat's inventory in case of doubt."
+    }
+  },
+  "detailedDimensions": {
+    "LOA": "14.15 m",
+    "Beam": "4.31 m",
+    "deepDraught": "2.10 m",
+    "shoalDraught": "1.70 m",
+    "airDraught": "18.10 m",
+    "IMastHeight": "16.42 m",
+    "JForetriangleBase": "5.55 m",
+    "PMainsailLuff": "14.54 m",
+    "EMainsailFoot": "5.20 m",
+    "genoaLP": "7.77 m",
+    "_confidence_LOA": "high",
+    "_confidence_Beam": "high",
+    "_confidence_deepDraught": "high",
+    "_confidence_shoalDraught": "high",
+    "_confidence_airDraught": "high",
+    "_confidence_IMastHeight": "high",
+    "_confidence_JForetriangleBase": "high",
+    "_confidence_PMainsailLuff": "high",
+    "_confidence_EMainsailFoot": "high",
+    "_confidence_genoaLP": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "BENETEAU",
+      "specifications": {
+        "type": "Monohull",
+        "material": "GRP (glass reinforced polyester)",
+        "color": null,
+        "thickness": null,
+        "gelcoatType": "Standard",
+        "coreType": null,
+        "_confidence_material": "high",
+        "_confidence_gelcoatType": "medium",
+        "_additional": {}
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-01",
+          "parentId": "ext-hull-01",
+          "name": "Keel",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "weight": null,
+            "draft": null,
+            "attachmentMethod": null
+          },
+          "maintenanceDetails": null
+        },
+        {
+          "id": "ext-hull-rudder-01",
+          "parentId": "ext-hull-01",
+          "name": "Rudder",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "dimensions": null
+          },
+          "subComponents": [
+            {
+              "id": "ext-hull-rudder-stock-01",
+              "parentId": "ext-hull-rudder-01",
+              "name": "Rudder Stock",
+              "specifications": {}
+            },
+            {
+              "id": "ext-hull-rudder-stock-bearing-01",
+              "parentId": "ext-hull-rudder-01",
+              "name": "Rudder Stock Bearing",
+              "specifications": {}
+            },
+            {
+              "id": "ext-hull-rudder-stock-split-sleeve-01",
+              "parentId": "ext-hull-rudder-01",
+              "name": "Split Sleeve",
+              "specifications": {}
+            },
+            {
+              "id": "ext-hull-rudder-stock-compensation-bush-01",
+              "parentId": "ext-hull-rudder-01",
+              "name": "Compensation Bush",
+              "specifications": {}
+            }
+          ]
+        },
+        {
+          "id": "ext-hull-skeg-01",
+          "parentId": "ext-hull-01",
+          "name": "Skeg",
+          "specifications": {}
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Structure",
+      "specifications": {
+        "material": null,
+        "selfBailingHoles": true,
+        "teakWoodwork": true,
+        "_additional": {
+          "lifeRaftHousing": true,
+          "safetyHarnessLineAttachmentPoints": true,
+          "excludedDeckWorkingArea": "Zone not protected by guardrails",
+          "GRPRemovableCompanionwayPanel": true
+        }
+      },
+      "windows": [
+        {
+          "id": "ext-window-portlight-01",
+          "parentId": "ext-deck-01",
+          "name": "Portlight",
+          "category": "Opening",
+          "specifications": {
+            "type": "Plexiglass",
+            "material": "Plexiglass",
+            "quantity": null,
+            "CECertified": true
+          }
+        }
+      ],
+      "hatches": [
+        {
+          "id": "ext-hatch-deck-01",
+          "parentId": "ext-deck-01",
+          "name": "Hatch",
+          "category": "Opening",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "quantity": null,
+            "CECertified": true
+          }
+        },
+        {
+          "id": "ext-hatch-companionway-01",
+          "parentId": "ext-deck-01",
+          "name": "Companionway Hatch",
+          "category": "Opening",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "washboards": true
+          }
+        }
+      ]
+    },
+    "cockpit": {
+      "id": "ext-deck-cockpit-01",
+      "name": "Cockpit",
+      "category": "Deck Area",
+      "specifications": {
+        "lighting": "12V",
+        "_additional": {
+          "engineControlLever": true,
+          "engineControlPanel": true,
+          "engineStopControl": true,
+          "cockpitLighting12VPlug": true
+        }
+      }
+    }
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-standard-01",
+      "name": "Mainsail (Standard Mast)",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "42.23 m²",
+        "luffLength": "14.54 m",
+        "footLength": "5.20 m",
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": 2,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high",
+        "_confidence_luffLength": "high",
+        "_confidence_footLength": "high",
+        "_confidence_reefingPoints": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-main-furling-01",
+      "name": "Furling Mainsail (In-Mast Furling)",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "35.15 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": 0,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high",
+        "_confidence_reefingPoints": "medium"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-genoa-140-01",
+      "name": "Genoa (140%)",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "60.16 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "LP": "7.77 m",
+        "_confidence_area": "high",
+        "_confidence_LP": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-spinnaker-01",
+      "name": "Spinnaker",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": "156 m²",
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_confidence_area": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "deckEquipment": {
+    "winches": [
+      {
+        "id": "deck-winch-handling-port-01",
+        "name": "Port Handling Winch",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Port gunwale",
+          "type": null,
+          "gearRatio": null,
+          "drumDiameter": null,
+          "maxLoad": null,
+          "weight": null,
+          "material": null,
+          "partNumber": null
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      }
+    ],
+    "cleats": [
+      {
+        "id": "deck-cleat-mooring-01",
+        "name": "Mooring Cleat",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": null,
+          "material": null,
+          "quantity": null,
+          "_additional": {
+            "fasteningPointForSafetyHarnessLines": true
+          }
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      },
+      {
+        "id": "deck-cleat-genoa-halyard-01",
+        "name": "Genoa Halyard Cleat",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Mast",
+          "material": null,
+          "quantity": 1
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      },
+      {
+        "id": "deck-cleat-boom-topping-lift-01",
+        "name": "Boom Topping Lift Cleat",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Mast",
+          "material": null,
+          "quantity": 1
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      }
+    ],
+    "blocks": [
+      {
+        "id": "deck-block-mainsheet-traveller-01",
+        "name": "Mainsheet Traveller Block",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": null,
+          "quantity": null
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      },
+      {
+        "id": "deck-block-furling-line-forward-01",
+        "name": "Furling Line Forward Block",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Gunwale",
+          "type": null,
+          "quantity": 1
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      },
+      {
+        "id": "deck-block-furling-line-aft-01",
+        "name": "Furling Line Aft Block",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Gunwale",
+          "type": null,
+          "quantity": 1
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      }
+    ],
+    "stanchions": {
+      "id": "deck-stanchions-01",
+      "name": "Stanchions",
+      "category": "Safety Equipment",
+      "specifications": {
+        "type": "Articulated",
+        "material": null,
+        "guardrails": true,
+        "_additional": {
+          "furlingLineFixedPoints": true
+        }
+      }
+    },
+    "steeringSystem": {
+      "id": "deck-steering-01",
+      "specifications": {
+        "type": "Wheel steering",
+        "manufacturer": null,
+        "CECertified": true
+      },
+      "subComponents": [
+        {
+          "id": "deck-steering-emergency-tiller-01",
+          "parentId": "deck-steering-01",
+          "name": "Emergency Tiller",
+          "specifications": {
+            "type": "Manual",
+            "material": null,
+            "accessibility": "Accessible at all times"
+          }
+        },
+        {
+          "id": "deck-steering-rudder-stock-cap-01",
+          "parentId": "deck-steering-01",
+          "name": "Rudder Stock Cap",
+          "specifications": {}
+        },
+        {
+          "id": "deck-steering-cable-01",
+          "parentId": "deck-steering-01",
+          "name": "Steering Cable",
+          "specifications": {}
+        },
+        {
+          "id": "deck-steering-quadrant-01",
+          "parentId": "deck-steering-01",
+          "name": "Quadrant",
+          "specifications": {}
+        }
+      ]
+    },
+    "bathingLadder": {
+      "id": "deck-bathing-ladder-01",
+      "name": "Bathing Ladder",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": "Folding",
+        "material": null,
+        "shouldBeInPlace": true
+      }
+    }
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": {
+      "id": "accom-galley-01",
+      "name": "Galley",
+      "location": null,
+      "specifications": {
+        "dimensions": null,
+        "counterMaterial": null,
+        "storageVolume": null
+      },
+      "components": [
+        {
+          "id": "accom-galley-stove-gas-01",
+          "parentId": "accom-galley-01",
+          "name": "Gas Stove",
+          "manufacturer": null,
+          "model": null,
+          "specifications": {
+            "type": "Gas",
+            "fuelType": "LPG",
+            "power": null,
+            "gimbalMount": null,
+            "_additional": {
+              "automaticGasCutOff": "if flame goes out"
+            }
+          },
+          "maintenanceDetails": null
+        },
+        {
+          "id": "accom-galley-stove-alcohol-01",
+          "parentId": "accom-galley-01",
+          "name": "Alcohol Stove",
+          "manufacturer": null,
+          "model": null,
+          "specifications": {
+            "type": "Alcohol",
+            "fuelType": "Methylated spirits / Denatured alcohol",
+            "power": null,
+            "gimbalMount": null
+          },
+          "maintenanceDetails": null
+        },
+        {
+          "id": "accom-galley-fridge-01",
+          "parentId": "accom-galley-01",
+          "name": "Refrigerator",
+          "manufacturer": null,
+          "model": null,
+          "specifications": {
+            "capacity": "220 L",
+            "type": null,
+            "powerConsumption": null
+          }
+        },
+        {
+          "id": "accom-galley-sink-01",
+          "parentId": "accom-galley-01",
+          "name": "Galley Sink",
+          "specifications": {
+            "material": null,
+            "numberOfBowls": null
+          }
+        }
+      ]
+    },
+    "cabins": [],
+    "heads": [
+      {
+        "id": "accom-head-01",
+        "name": "Head",
+        "specifications": {
+          "shower": true,
+          "showerType": null
+        },
+        "components": [
+          {
+            "id": "accom-head-washbasin-shower-01",
+            "parentId": "accom-head-01",
+            "name": "Washbasin/Shower",
+            "specifications": {}
+          },
+          {
+            "id": "accom-head-toilet-01",
+            "parentId": "accom-head-01",
+            "name": "Toilet",
+            "manufacturer": null,
+            "model": null,
+            "specifications": {
+              "type": null,
+              "discharge": "Overboard / Holding tank"
+            },
+            "maintenanceDetails": null
+          }
+        ]
+      }
+    ],
+    "interiorWoodwork": {
+      "id": "accom-interior-woodwork-01",
+      "name": "Interior Woodwork",
+      "specifications": {
+        "type": "Varnished",
+        "material": null
+      }
+    }
+  },
+  "tanks": {
+    "fuel": {
+      "id": "tank-fuel-01",
+      "name": "Fuel Tank",
+      "specifications": {
+        "capacity": "235 L",
+        "material": null,
+        "location": null,
+        "fuelType": null,
+        "CECertified": true
+      },
+      "subComponents": [
+        {
+          "id": "tank-fuel-filter-separator-01",
+          "parentId": "tank-fuel-01",
+          "name": "Water Separator Filter",
+          "specifications": {}
+        },
+        {
+          "id": "tank-fuel-filler-cap-01",
+          "parentId": "tank-fuel-01",
+          "name": "Fuel Filler Cap",
+          "specifications": {}
+        },
+        {
+          "id": "tank-fuel-supply-cut-off-handle-01",
+          "parentId": "tank-fuel-01",
+          "name": "Fuel Supply Cut-off Handle",
+          "specifications": {}
+        }
+      ]
+    },
+    "freshWater": {
+      "id": "tank-water-01",
+      "specifications": {
+        "totalCapacity": "600 L",
+        "material": null,
+        "numberOfTanks": 3
+      },
+      "components": [
+        {
+          "id": "tank-water-forward-01",
+          "parentId": "tank-water-01",
+          "name": "Water Tank (Forward)",
+          "specifications": {
+            "capacity": "210 L"
+          }
+        },
+        {
+          "id": "tank-water-aft-port-01",
+          "parentId": "tank-water-01",
+          "name": "Water Tank (Aft Port)",
+          "specifications": {
+            "capacity": "195 L"
+          }
+        },
+        {
+          "id": "tank-water-aft-starboard-01",
+          "parentId": "tank-water-01",
+          "name": "Water Tank (Aft Starboard)",
+          "specifications": {
+            "capacity": "195 L"
+          }
+        }
+      ],
+      "subComponents": [
+        {
+          "id": "tank-water-filler-01",
+          "parentId": "tank-water-01",
+          "name": "Freshwater Tank Filler",
+          "specifications": {}
+        },
+        {
+          "id": "tank-water-vent-01",
+          "parentId": "tank-water-01",
+          "name": "Freshwater Tank Vent",
+          "specifications": {}
+        }
+      ]
+    },
+    "holdingTank": {
+      "id": "tank-holding-01",
+      "specifications": {
+        "capacity": "130 L",
+        "pumpout": true
+      },
+      "components": [
+        {
+          "id": "tank-holding-01-solid-80l",
+          "parentId": "tank-holding-01",
+          "name": "Black Water Solid Tank (80L)",
+          "specifications": {
+            "capacity": "80 L"
+          }
+        },
+        {
+          "id": "tank-holding-01-solid-50l",
+          "parentId": "tank-holding-01",
+          "name": "Black Water Solid Tank (50L)",
+          "specifications": {
+            "capacity": "50 L"
+          }
+        }
+      ],
+      "subComponents": [
+        {
+          "id": "tank-holding-discharge-cock-01",
+          "parentId": "tank-holding-01",
+          "name": "Holding Tank Discharge Cock",
+          "specifications": {}
+        }
+      ]
+    }
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": {
+        "id": "elec-battery-house-01",
+        "name": "House Battery",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "totalCapacity": null,
+          "voltage": "12V",
+          "numberOfBatteries": 2,
+          "configuration": null,
+          "individualCapacity": "140 Ah",
+          "_confidence_individualCapacity": "high",
+          "_confidence_numberOfBatteries": "high"
+        }
+      },
+      "starter": {
+        "id": "elec-battery-starter-01",
+        "name": "Starter Battery",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "totalCapacity": null,
+          "voltage": "12V",
+          "numberOfBatteries": 1,
+          "configuration": null,
+          "individualCapacity": "110 Ah",
+          "_confidence_individualCapacity": "high",
+          "_confidence_numberOfBatteries": "high"
+        }
+      }
+    },
+    "chargers": [
+      {
+        "id": "elec-charger-battery-01",
+        "name": "Battery Charger",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "power": null,
+          "inputVoltage": "110V/220V",
+          "maxChargeCurrent": "10A"
+        }
+      }
+    ],
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": {
+      "id": "elec-shore-connection-01",
+      "name": "Shore Power Connection",
+      "specifications": {
+        "type": "110V-220V",
+        "plugType": null,
+        "CECertified": true
+      },
+      "subComponents": [
+        {
+          "id": "elec-shore-power-plug-01",
+          "parentId": "elec-shore-connection-01",
+          "name": "Shore Power Plug",
+          "specifications": {}
+        }
+      ]
+    },
+    "panels": [
+      {
+        "id": "elec-panel-12v-01",
+        "name": "12V Electrical Panel",
+        "specifications": {}
+      }
+    ],
+    "outlets": [
+      {
+        "id": "elec-outlet-12v-cockpit-01",
+        "name": "12V Cockpit Plug",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A"
+        }
+      },
+      {
+        "id": "elec-outlet-220v-01",
+        "name": "220V Plug",
+        "specifications": {
+          "voltage": "220V",
+          "amperage": "10A"
+        }
+      }
+    ],
+    "lights": [
+      {
+        "id": "elec-light-bow-navigation-01",
+        "name": "Two-colour Bow Navigation Light",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "A"
+        }
+      },
+      {
+        "id": "elec-light-stern-navigation-01",
+        "name": "White Stern Navigation Light",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "A"
+        }
+      },
+      {
+        "id": "elec-light-riding-01",
+        "name": "Riding Light",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "5A",
+          "functionOnPanel": "B"
+        }
+      },
+      {
+        "id": "elec-light-steaming-01",
+        "name": "Steaming Light",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "5A",
+          "functionOnPanel": "C"
+        }
+      },
+      {
+        "id": "elec-light-deck-01",
+        "name": "Deck Light",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "D"
+        }
+      },
+      {
+        "id": "elec-light-cabin-01",
+        "name": "Cabin Lights",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "E"
+        }
+      },
+      {
+        "id": "elec-light-saloon-01",
+        "name": "Saloon Lights",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "F"
+        }
+      },
+      {
+        "id": "elec-light-instrument-01",
+        "name": "Instrument Lights",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "5A",
+          "functionOnPanel": "I"
+        }
+      },
+      {
+        "id": "elec-light-compass-01",
+        "name": "Compass Light",
+        "specifications": {
+          "voltage": "12V",
+          "functionOnPanel": "G"
+        }
+      }
+    ],
+    "appliances": [
+      {
+        "id": "elec-appliance-waterpump-01",
+        "name": "Water Pump",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "I"
+        }
+      },
+      {
+        "id": "elec-appliance-bilgepump-01",
+        "name": "Bilge Pump",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "J"
+        }
+      },
+      {
+        "id": "elec-appliance-refrigerator-01",
+        "name": "Refrigerator",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "K"
+        }
+      },
+      {
+        "id": "elec-appliance-shower-drainage-pump-01",
+        "name": "Shower Drainage Pump",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": null,
+          "functionOnPanel": "P"
+        }
+      },
+      {
+        "id": "elec-appliance-water-heater-01",
+        "name": "Water Heater",
+        "specifications": {
+          "voltage": "110V/220V",
+          "amperage": "10A",
+          "capacity": "42 L"
+        }
+      }
+    ],
+    "instruments": [
+      {
+        "id": "elec-instrument-water-gauge-fwd-01",
+        "name": "Forward Water Gauge",
+        "specifications": {
+          "voltage": "12V",
+          "functionOnPanel": "Q"
+        }
+      },
+      {
+        "id": "elec-instrument-water-gauge-aft-01",
+        "name": "Aft Water Gauge",
+        "specifications": {
+          "voltage": "12V",
+          "functionOnPanel": "R"
+        }
+      },
+      {
+        "id": "elec-instrument-system-01",
+        "name": "Instruments System",
+        "specifications": {
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "O"
+        }
+      }
+    ],
+    "wiring": [
+      {
+        "id": "elec-wiring-conduit-starboard-port-01",
+        "name": "Optional Starboard to Port Crossover Conduit",
+        "specifications": {}
+      },
+      {
+        "id": "elec-wiring-conduit-panel-autopilot-01",
+        "name": "Conduit from Panel to Autopilot",
+        "specifications": {}
+      },
+      {
+        "id": "elec-wiring-conduit-panel-mast-01",
+        "name": "Conduit from Panel to Foot of Mast",
+        "specifications": {}
+      },
+      {
+        "id": "elec-wiring-conduit-echo-sounder-01",
+        "name": "Conduit to Echo Sounder",
+        "specifications": {}
+      }
+    ],
+    "switches": [
+      {
+        "id": "elec-switch-battery-01",
+        "name": "Battery Switch",
+        "specifications": {}
+      }
+    ]
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [
+      {
+        "id": "electron-comm-vhf-01",
+        "name": "VHF Radio",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "dsc": null,
+          "power": null,
+          "amperage": "16A",
+          "functionOnPanel": "P"
+        }
+      }
+    ],
+    "instruments": [
+      {
+        "id": "electron-instrument-log-sounder-01",
+        "name": "Log / Sounder",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "transducerSkinFitting": true
+        }
+      }
+    ],
+    "autopilot": {
+      "id": "electron-autopilot-01",
+      "specifications": {
+        "type": null,
+        "manufacturer": null,
+        "weight": "25 kg"
+      },
+      "subComponents": []
+    }
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [
+      {
+        "id": "plumb-pump-freshwater-01",
+        "name": "Freshwater Pump",
+        "manufacturer": null,
+        "specifications": {
+          "flow": null,
+          "pressure": null,
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "I"
+        }
+      },
+      {
+        "id": "plumb-pump-shower-drainage-01",
+        "name": "Shower Drainage Pump",
+        "manufacturer": null,
+        "specifications": {
+          "flow": null,
+          "pressure": null,
+          "voltage": "12V",
+          "functionOnPanel": "P"
+        }
+      }
+    ],
+    "bilgePumps": [
+      {
+        "id": "plumb-bilge-electric-01",
+        "name": "Electric Bilge Pump",
+        "specifications": {
+          "type": "Automatic",
+          "capacity": null,
+          "voltage": "12V",
+          "amperage": "10A",
+          "functionOnPanel": "J"
+        },
+        "subComponents": [
+          {
+            "id": "plumb-bilge-electric-filter-01",
+            "parentId": "plumb-bilge-electric-01",
+            "name": "Electric Bilge Pump Filter",
+            "specifications": {}
+          },
+          {
+            "id": "plumb-bilge-electric-intake-01",
+            "parentId": "plumb-bilge-electric-01",
+            "name": "Electric Bilge Pump Intake",
+            "specifications": {}
+          },
+          {
+            "id": "plumb-bilge-electric-outlet-01",
+            "parentId": "plumb-bilge-electric-01",
+            "name": "Electric Bilge Pump Outlet",
+            "specifications": {}
+          },
+          {
+            "id": "plumb-bilge-sump-01",
+            "parentId": "plumb-bilge-electric-01",
+            "name": "Sump",
+            "specifications": {}
+          }
+        ]
+      },
+      {
+        "id": "plumb-bilge-manual-01",
+        "name": "Manual Bilge Pump",
+        "specifications": {
+          "type": "Manual",
+          "capacity": null
+        },
+        "subComponents": [
+          {
+            "id": "plumb-bilge-manual-intake-01",
+            "parentId": "plumb-bilge-manual-01",
+            "name": "Manual Bilge Pump Intake",
+            "specifications": {}
+          },
+          {
+            "id": "plumb-bilge-manual-outlet-01",
+            "parentId": "plumb-bilge-manual-01",
+            "name": "Manual Bilge Pump Outlet",
+            "specifications": {}
+          },
+          {
+            "id": "plumb-bilge-manual-lever-01",
+            "parentId": "plumb-bilge-manual-01",
+            "name": "Manual Pump Operating Lever",
+            "specifications": {}
+          }
+        ]
+      }
+    ],
+    "seacocks": {
+      "id": "plumb-seacocks-01",
+      "specifications": {
+        "totalQuantity": 9,
+        "material": null
+      },
+      "components": [
+        {
+          "id": "plumb-seacock-toilet-outlet-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Toilet Outlet Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-toilet-intake-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Toilet Intake Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-washbasin-outlet-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Washbasin Outlet Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-shower-outlet-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Shower Outlet Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-sink-outlet-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Sink Outlet Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-engine-raw-water-intake-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Engine Raw Water Intake Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-seawater-foot-pump-intake-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Seawater Foot Pump Intake / Cooler Drainage Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-stern-tube-fitting-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Stern Tube Skin Fitting Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-log-sounder-fitting-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Log / Sounder Skin Fitting Seacock",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-seacock-stern-tube-cock-01",
+          "parentId": "plumb-seacocks-01",
+          "name": "Stern Tube Cock",
+          "specifications": {}
+        }
+      ]
+    },
+    "freshwaterSystem": {
+      "id": "plumb-freshwater-system-01",
+      "name": "Freshwater System",
+      "specifications": {},
+      "subComponents": [
+        {
+          "id": "plumb-freshwater-manifold-01",
+          "parentId": "plumb-freshwater-system-01",
+          "name": "Freshwater System Manifold",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-freshwater-filter-01",
+          "parentId": "plumb-freshwater-system-01",
+          "name": "Freshwater System Filter",
+          "specifications": {}
+        },
+        {
+          "id": "plumb-freshwater-expansion-tank-01",
+          "parentId": "plumb-freshwater-system-01",
+          "name": "Freshwater Expansion Tank",
+          "specifications": {}
+        }
+      ]
+    },
+    "showerDrainageFilter": {
+      "id": "plumb-shower-drainage-filter-01",
+      "name": "Shower Drainage Filter",
+      "specifications": {}
+    }
+  },
+  "parts": [
+    {
+      "id": "part-rigging-mast-standard-01",
+      "name": "Mast (Standard)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "length": "16.42 m (I dimension)",
+        "weight": null,
+        "partNumber": null,
+        "_confidence_length": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-shroud-V1-01",
+      "name": "V1 Shroud",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "12 mm",
+        "partNumber": "1"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-shroud-D1-AR-01",
+      "name": "D1 AR (Aft Lower Shroud)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "12 mm",
+        "partNumber": "2"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-shroud-V2-D3-01",
+      "name": "V2 D3 (Cap Shroud)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "10 mm",
+        "partNumber": "3"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-shroud-D2-01",
+      "name": "D2 (Inter)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "8 mm",
+        "partNumber": "4"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-forestay-01",
+      "name": "Forestay",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "12 mm",
+        "partNumber": "5"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-babystay-01",
+      "name": "Baby Stay",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "8 mm",
+        "partNumber": "6"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-backstay-double-01",
+      "name": "Double Backstay",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Standing Rigging",
+      "specifications": {
+        "cableDiameter": "8 mm",
+        "partNumber": "7"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-halyard-genoa-01",
+      "name": "Genoa Halyard",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "2",
+        "location": "Mast with cleat"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-halyard-mainsail-01",
+      "name": "Mainsail Halyard",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "3"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-boom-vang-01",
+      "name": "Boom Vang",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "4"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-mainsheet-01",
+      "name": "Mainsheet",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "5"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-outhaul-mainsail-01",
+      "name": "Mainsail Outhaul",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "6"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-reef-line-1-01",
+      "name": "Reef 1 Line",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "7",
+        "appliesTo": "Standard Mast"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-reef-line-2-01",
+      "name": "Reef 2 Line",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "8",
+        "appliesTo": "Standard Mast"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-furling-line-01",
+      "name": "Furling Line (In-Mast Furling)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "7",
+        "appliesTo": "In-Mast Furling",
+        "route": "along the gunwale to port handling winch"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-unfurling-line-01",
+      "name": "Unfurling Line (In-Mast Furling)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "8",
+        "appliesTo": "In-Mast Furling"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-halyard-spinnaker-01",
+      "name": "Spinnaker Halyard",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "9",
+        "appliesTo": "Spinnaker Option"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-pole-downhaul-spinnaker-01",
+      "name": "Spinnaker Pole Downhaul",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "10",
+        "appliesTo": "Spinnaker Option"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-pole-topping-lift-spinnaker-01",
+      "name": "Spinnaker Pole Topping Lift",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "partNumber": "11",
+        "appliesTo": "Spinnaker Option"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-boom-topping-lift-01",
+      "name": "Boom Topping Lift",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Running Rigging",
+      "specifications": {
+        "type": null,
+        "location": "Mast with cleat"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-ventilation-grille-01",
+      "name": "Engine Ventilation Grille",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "1"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-ventilation-duct-01",
+      "name": "Engine Ventilation Duct",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "2"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-anti-siphon-01",
+      "name": "Anti-Siphon",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "3"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-extinguisher-aperture-01",
+      "name": "Engine Compartment Extinguisher Aperture",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "partNumber": "5"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-coupler-01",
+      "name": "Engine Coupler",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "8"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-water-lock-silencer-01",
+      "name": "Water Lock Silencer",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "9"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-raw-water-intake-01",
+      "name": "Engine Raw Water Intake",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "10"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-stuffing-box-01",
+      "name": "Stuffing Box",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "12"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-propeller-shaft-01",
+      "name": "Propeller Shaft",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "13"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-stern-tube-01",
+      "name": "Stern Tube",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "15"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-propeller-01",
+      "name": "Propeller",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "16"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-exhaust-pipe-01",
+      "name": "Exhaust Pipe",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "17"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-access-panel-01",
+      "name": "Engine Access Panel",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "18"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-strainer-skin-fitting-01",
+      "name": "Strainer Skin Fitting",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "20"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-exhaust-outlet-01",
+      "name": "Exhaust Outlet",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "23"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-raw-water-strainer-01",
+      "name": "Raw Water Strainer",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Engine System",
+      "specifications": {
+        "partNumber": "24"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-gas-locker-01",
+      "name": "Gas Locker",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Gas System",
+      "specifications": {
+        "partNumber": "1",
+        "CECertified": true
+      },
+      "subParts": [
+        {
+          "id": "part-gas-locker-valve-01",
+          "parentId": "part-gas-locker-01",
+          "name": "Gas Locker Valve",
+          "specifications": {
+            "partNumber": "2"
+          }
+        },
+        {
+          "id": "part-gas-locker-regulator-01",
+          "parentId": "part-gas-locker-01",
+          "name": "Gas Regulator",
+          "specifications": {
+            "partNumber": "3"
+          }
+        },
+        {
+          "id": "part-gas-locker-ventilation-01",
+          "parentId": "part-gas-locker-01",
+          "name": "Gas Locker Ventilation",
+          "specifications": {
+            "partNumber": "4"
+          }
+        }
+      ],
+      "maintenanceDetails": {
+        "interval": 12,
+        "inspectionItems": [
+          "Regulator condition"
+        ],
+        "replacementItems": [
+          "Flexible hoses",
+          "Regulator (if necessary, annually)"
+        ]
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Owner's Manual",
+      "interval": "Once (upon delivery)",
+      "method": "Read and familiarise with the boat before casting off. Keep in a safe place and hand over to new owner if vessel is sold."
+    },
+    {
+      "item": "Dealer/Manufacturer",
+      "interval": "As needed (repairs, questions)",
+      "method": "Contact BENETEAU dealer for maintenance, repairs, advice, spare parts."
+    },
+    {
+      "item": "Boat (general)",
+      "interval": "Annual (winter lay-up)",
+      "method": "Have boat maintained and serviced."
+    },
+    {
+      "item": "Hull & Deck",
+      "interval": "As often as possible",
+      "method": "Hose down with freshwater. Regularly rinse deck and fittings with freshwater. Regularly brush deck with mild liquid detergent."
+    },
+    {
+      "item": "Hull gel-coat",
+      "interval": "Regular (preventative)",
+      "method": "Consult dealer for appropriate methods and products. Apply epoxy paint (underbody) and antifouling paint. Degrease underbody and hand rub down with 400 grit wet and dry paper before antifouling."
+    },
+    {
+      "item": "Anodes, electronic instrument transducers, raw water inlet strainers (especially engine cooling)",
+      "interval": "During antifouling application",
+      "method": "Do not cover or obstruct."
+    },
+    {
+      "item": "Deck fittings (blocks, sheaves, bottle-screws, winches, windlass, tracks, travellers)",
+      "interval": "Regularly",
+      "method": "Lubricate with grease or light oil."
+    },
+    {
+      "item": "Stainless steel fittings",
+      "interval": "As needed (oxidation pitting)",
+      "method": "Polish with an appropriate product."
+    },
+    {
+      "item": "Exterior teak woodwork",
+      "interval": "Occasionally",
+      "method": "Scrub with water. Rub down with fine sandpaper to renovate aspect."
+    },
+    {
+      "item": "Plexiglass (windows, portlights)",
+      "interval": "As needed",
+      "method": "Rinse with freshwater. Clean with a sponge and a window-cleaning product."
+    },
+    {
+      "item": "Steering system (entire)",
+      "interval": "Annual",
+      "method": "Check."
+    },
+    {
+      "item": "Steering cables",
+      "interval": "Annual (at least once)",
+      "method": "Check correct tension."
+    },
+    {
+      "item": "Emergency tiller",
+      "interval": "Always",
+      "method": "Ensure it is accessible."
+    },
+    {
+      "item": "Interior ventilation",
+      "interval": "Whenever weather permits (when leaving boat)",
+      "method": "Air and ventilate. Remove soles, cushions, mattresses, and berth boards and place them vertically."
+    },
+    {
+      "item": "Interior protection",
+      "interval": "As often as possible",
+      "method": "Protect with fitted curtains."
+    },
+    {
+      "item": "Bilges (interior)",
+      "interval": "Regularly",
+      "method": "Make sure they are clean and dry."
+    },
+    {
+      "item": "Interior woodwork (varnished)",
+      "interval": "As needed",
+      "method": "Rinse with freshwater and a liquid detergent, then polish with a chamois leather."
+    },
+    {
+      "item": "Fabrics, cushions, linings",
+      "interval": "As needed",
+      "method": "Consult a specialist before any intervention for cleaning and maintenance."
+    },
+    {
+      "item": "Freshwater tanks",
+      "interval": "As needed",
+      "method": "Sterilise with Clanazone tablets (or similar products)."
+    },
+    {
+      "item": "Bailing system",
+      "interval": "Before casting off",
+      "method": "Check that it is operating correctly. Acquaint yourself with its operation (manual pump, electric bilge pump switch, cocks). Make sure strainer is not clogged. Regularly clean intake strainer in sump and system filter (electric bilge pump)."
+    },
+    {
+      "item": "Seacocks",
+      "interval": "When leaving boat / After each use (toilets below waterline) / Before putting out to sea",
+      "method": "Close all seacocks when leaving the boat. Systematically close seacocks after each toilet use if below waterline. Make sure all seacocks not in use are closed before putting out to sea."
+    },
+    {
+      "item": "Electrical installation",
+      "interval": "Never work live. Never modify.",
+      "method": "Consult a qualified marine electrician. Do not modify characteristics of surge protection devices. Never fit/replace equipment exceeding system amperage."
+    },
+    {
+      "item": "Batteries",
+      "interval": "Regularly",
+      "method": "Securely lash down. Do not stow conductive objects close to terminals to prevent short circuits."
+    },
+    {
+      "item": "110V-220V electrical system",
+      "interval": "During connection/disconnection",
+      "method": "Do not work on a live system. Connect shore power cable to boat before connecting to shore supply outlet. Do not immerse plugs. Switch off shore power supply with circuit breaker on board before connecting/disconnecting. Do not modify connections. Only use compatible connections."
+    },
+    {
+      "item": "Gas stove",
+      "interval": "During use",
+      "method": "Do not fit/store flammable materials over stove. Never leave boat unattended when stove is working. Ventilate when in use. Do not obstruct ventilation apertures."
+    },
+    {
+      "item": "Gas leaks / Cylinder change / Gas system work",
+      "interval": "Always",
+      "method": "Do not smoke or use a naked flame. If gas smell or flame extinguished, close gas valves and ventilate. Look for cause. For stoves with integral cylinders, change cylinder outside boat, test before putting back. Ensure stove gimbals are secure."
+    },
+    {
+      "item": "Gas system (general)",
+      "interval": "Regularly",
+      "method": "Do not use cooking appliances to heat boat. Turn off stove knobs before opening supply valve. Turn off supply and cylinder valve when not in use. Do not obstruct access to components/valves. Change flexible hoses according to national legislation. Use safety-standard hoses. Do not use gas lockers for other equipment. Do not damage cylinder thread. Check regulator condition annually; change if necessary with identical one. Close and disconnect empty cylinder valves. Do not use ammonia-based solutions for cleaning/leak detection."
+    },
+    {
+      "item": "Alcohol stove (if fitted)",
+      "interval": "During handling fuel",
+      "method": "Do not smoke. Store fuel in reserved can away from heat sources. Follow manufacturer's recommendations for filling. Do not pour alcohol directly into burner over stove. Only use methylated spirits or denatured alcohol. Immediately wipe up spills."
+    },
+    {
+      "item": "Engine fueling",
+      "interval": "During fueling",
+      "method": "Stop engine and do not smoke."
+    },
+    {
+      "item": "Engine compartment",
+      "interval": "Before starting engine",
+      "method": "Make sure bilge is clean and dry. Do not start if fuel present. For petroleum engines, ventilate 5 minutes with fans to eliminate vapours."
+    },
+    {
+      "item": "Outboard engines (separate fuel tank)",
+      "interval": "During fueling",
+      "method": "Fill tank away from boat in well-ventilated place, far from ignition risks."
+    },
+    {
+      "item": "Fuel not in boat tanks (outboard, jerrycans)",
+      "interval": "Storage",
+      "method": "Stow in a ventilated place."
+    },
+    {
+      "item": "Engine compartment fire extinguishing system (fixed, petroleum engines)",
+      "interval": "Familiarisation",
+      "method": "Locate aperture for extinguishing. Familiarise with discharge mechanism and operation. Ventilate compartment after discharging."
+    },
+    {
+      "item": "Environmental protection (general)",
+      "interval": "Always",
+      "method": "Do not discharge toilets close to shore. Inform yourself about local environmental protection regulations and codes of good practice. Respect international regulations against pollution of marine environment (Marpol)."
+    },
+    {
+      "item": "Holding tank system",
+      "interval": "After each use",
+      "method": "Rinse system: fill bowl with fresh/sea water, then empty. Use domestic cleaning products. Empty system during immobilisation in negative temperatures. Do not discharge contents close to shore; use port/marina pumping systems before leaving port. Ensure discharge cock is closed to avoid inadvertent discharging."
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": null
+  },
+  "fileInfo": {
+    "fileName": "Beneteau 473 Owner's Manual_compressed.pdf",
+    "filePath": "data/yachtpdf\\Beneteau 473 Owner's Manual_compressed.pdf",
+    "fileSize": 2586906
+  }
+}

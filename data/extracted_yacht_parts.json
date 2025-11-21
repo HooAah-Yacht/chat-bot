@@ -36071,6 +36071,174 @@
           "interval": null
         }
       ]
+    },
+    {
+      "id": "swan-41",
+      "name": "SWAN 41",
+      "manufacturer": "Nautor",
+      "parts": [
+        {
+          "name": "Engine Cooling Water Strainer",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Component",
+          "interval": null
+        },
+        {
+          "name": "Warning Light (Low Oil Pressure/High Coolant Temperature)",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "ON/OFF Switch for Engine Controls",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Buzzer Warning (Low Oil Pressure/High Coolant Temperature)",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Tachometer",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Coolant Temperature Gauge",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Oil Pressure Gauge",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Charging Control Lamp",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Starting Button",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Glow Plug Button ('Cold Starting Aid')",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Engine Control Lever",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Stopping Handle",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Control",
+          "interval": null
+        },
+        {
+          "name": "Folding Propeller",
+          "manufacturer": "",
+          "model": "",
+          "category": "Propulsion System",
+          "interval": null
+        },
+        {
+          "name": "Shearable Shaft Lock Pin",
+          "manufacturer": "",
+          "model": "",
+          "category": "Propulsion System",
+          "interval": null
+        },
+        {
+          "name": "Cutless Rubber Bearing",
+          "manufacturer": "",
+          "model": "",
+          "category": "Propulsion System",
+          "interval": null
+        },
+        {
+          "name": "Morse Stuffing Box",
+          "manufacturer": "",
+          "model": "",
+          "category": "Propulsion System",
+          "interval": null
+        },
+        {
+          "name": "Exhaust System",
+          "manufacturer": "",
+          "model": "",
+          "category": "Engine Component",
+          "interval": null
+        },
+        {
+          "name": "Zinc Anode (Propeller Shaft)",
+          "manufacturer": "",
+          "model": "",
+          "category": "Cathodic Protection",
+          "interval": null
+        },
+        {
+          "name": "Spars",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Mast",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Mast Wedges (Partners)",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Slab Reefing Drawing",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Navigation Lights",
+          "manufacturer": "",
+          "model": "",
+          "category": "Electrical",
+          "interval": null
+        }
+      ]
     }
   ]
 }

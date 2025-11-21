@@ -32884,6 +32884,229 @@
         "electrical": [],
         "plumbing": []
       }
+    },
+    {
+      "id": "swan-41",
+      "name": "SWAN 41",
+      "manufacturer": "Nautor",
+      "manualPDF": "2020_03_31_11_03_39-48 owners manual.pdf",
+      "parts": {
+        "rigging": [
+          {
+            "name": "Engine Cooling Water Strainer",
+            "description": "Nautor SWAN 41 - Engine Cooling Water Strainer",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Warning Light (Low Oil Pressure/High Coolant Temperature)",
+            "description": "Nautor SWAN 41 - Warning Light (Low Oil Pressure/High Coolant Temperature)",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "ON/OFF Switch for Engine Controls",
+            "description": "Nautor SWAN 41 - ON/OFF Switch for Engine Controls",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Buzzer Warning (Low Oil Pressure/High Coolant Temperature)",
+            "description": "Nautor SWAN 41 - Buzzer Warning (Low Oil Pressure/High Coolant Temperature)",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Tachometer",
+            "description": "Nautor SWAN 41 - Tachometer",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Coolant Temperature Gauge",
+            "description": "Nautor SWAN 41 - Coolant Temperature Gauge",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Oil Pressure Gauge",
+            "description": "Nautor SWAN 41 - Oil Pressure Gauge",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Charging Control Lamp",
+            "description": "Nautor SWAN 41 - Charging Control Lamp",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Starting Button",
+            "description": "Nautor SWAN 41 - Starting Button",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Glow Plug Button ('Cold Starting Aid')",
+            "description": "Nautor SWAN 41 - Glow Plug Button ('Cold Starting Aid')",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Engine Control Lever",
+            "description": "Nautor SWAN 41 - Engine Control Lever",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Stopping Handle",
+            "description": "Nautor SWAN 41 - Stopping Handle",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Folding Propeller",
+            "description": "Nautor SWAN 41 - Folding Propeller",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Shearable Shaft Lock Pin",
+            "description": "Nautor SWAN 41 - Shearable Shaft Lock Pin",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Cutless Rubber Bearing",
+            "description": "Nautor SWAN 41 - Cutless Rubber Bearing",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Morse Stuffing Box",
+            "description": "Nautor SWAN 41 - Morse Stuffing Box",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Exhaust System",
+            "description": "Nautor SWAN 41 - Exhaust System",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Zinc Anode (Propeller Shaft)",
+            "description": "Nautor SWAN 41 - Zinc Anode (Propeller Shaft)",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Spars",
+            "description": "Nautor SWAN 41 - Spars",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mast",
+            "description": "Nautor SWAN 41 - Mast",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mast Wedges (Partners)",
+            "description": "Nautor SWAN 41 - Mast Wedges (Partners)",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Slab Reefing Drawing",
+            "description": "Nautor SWAN 41 - Slab Reefing Drawing",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "sails": [],
+        "engine": [],
+        "hull": [],
+        "electrical": [
+          {
+            "name": "Navigation Lights",
+            "description": "Nautor SWAN 41 - Navigation Lights",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          }
+        ],
+        "plumbing": []
+      }
     }
   ]
 }

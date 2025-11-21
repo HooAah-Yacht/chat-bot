@@ -1,0 +1,1222 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-30T00:00:00Z",
+  "documentInfo": {
+    "title": "J24 Class Rules 2019",
+    "yachtModel": "J/24",
+    "manufacturer": "J Boats, Inc.",
+    "documentType": "Class Rules"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": null,
+      "engine": {
+        "type": "Outboard (portable)",
+        "power": null,
+        "model": null
+      },
+      "sailArea": null
+    },
+    "additional": {
+      "minBoatWeightExcludingSails": "1270 kg",
+      "_confidence_minBoatWeightExcludingSails": "high",
+      "minBoatWeightIncludingPortableEquipment": "1330 kg",
+      "_confidence_minBoatWeightIncludingPortableEquipment": "high",
+      "maxCrewCombinedWeight": "400 kg",
+      "_confidence_maxCrewCombinedWeight": "high",
+      "minOutboardEngineWeight": "12 kg (empty of fuel)",
+      "_confidence_minOutboardEngineWeight": "high"
+    }
+  },
+  "detailedDimensions": {
+    "headsailTurningBlockMaxVerticalDistance": "110 mm",
+    "_confidence_headsailTurningBlockMaxVerticalDistance": "high",
+    "mainsailTravellerTrackMaxLength": "825 mm",
+    "_confidence_mainsailTravellerTrackMaxLength": "high",
+    "primaryWinchDrumMaxDiameter": "80 mm",
+    "_confidence_primaryWinchDrumMaxDiameter": "high",
+    "secondaryWinchDrumMaxDiameter": "74 mm",
+    "_confidence_secondaryWinchDrumMaxDiameter": "high",
+    "lifelineMinWireDiameter": "4 mm",
+    "_confidence_lifelineMinWireDiameter": "high",
+    "lifelineMaxSagBetweenSupports": "3 mm",
+    "_confidence_lifelineMaxSagBetweenSupports": "high",
+    "lifelineMinHeightAboveSheerline": "500 mm",
+    "_confidence_lifelineMinHeightAboveSheerline": "high",
+    "lifelineLanyardMaxExposedLength": "100 mm",
+    "_confidence_lifelineLanyardMaxExposedLength": "high",
+    "backerPlateFiberglassAluminiumMaxThickness": "8 mm",
+    "_confidence_backerPlateFiberglassAluminiumMaxThickness": "high",
+    "backerPlateStainlessSteelMaxThickness": "4 mm",
+    "_confidence_backerPlateStainlessSteelMaxThickness": "high",
+    "backerPlateMaxArea": "40000 mm² or 5 times equipment base area",
+    "_confidence_backerPlateMaxArea": "high",
+    "headsailSheetTrackMaxLenth": "610 mm",
+    "_confidence_headsailSheetTrackMaxLenth": "high",
+    "spinnakerPoleMaxLength": "2.44 m",
+    "_confidence_spinnakerPoleMaxLength": "high",
+    "mainsailMidGirthLimit": "52%",
+    "_confidence_mainsailMidGirthLimit": "high",
+    "mainsailMaxLuffRound": "150 mm",
+    "_confidence_mainsailMaxLuffRound": "high",
+    "mainsailMaxHeadboardHeight": "170 mm",
+    "_confidence_mainsailMaxHeadboardHeight": "high",
+    "mainsailMaxLeechHollow": "10 mm",
+    "_confidence_mainsailMaxLeechHollow": "high",
+    "mainsailMaxBattens": "4",
+    "_confidence_mainsailMaxBattens": "high",
+    "genoaMidGirthLimit": "50%",
+    "_confidence_genoaMidGirthLimit": "high",
+    "genoaMaxLuffRound": "60 mm",
+    "_confidence_genoaMaxLuffRound": "high",
+    "genoaMaxLeechHollow": "15 mm",
+    "_confidence_genoaMaxLeechHollow": "high",
+    "jibMidGirthLimit": "75%",
+    "_confidence_jibMidGirthLimit": "high",
+    "jibMaxLuffRound": "60 mm",
+    "_confidence_jibMaxLuffRound": "high",
+    "jibMaxLeechHollow": "15 mm",
+    "_confidence_jibMaxLeechHollow": "high",
+    "spinnakerMidGirthMin": "75%",
+    "_confidence_spinnakerMidGirthMin": "high",
+    "spinnakerMidGirthMax": "100%",
+    "_confidence_spinnakerMidGirthMax": "high",
+    "spinnakerMaxWidth": "4.27 m",
+    "_confidence_spinnakerMaxWidth": "high",
+    "spinnakerMaxLuff": "7.92 m",
+    "_confidence_spinnakerMaxLuff": "high",
+    "spinnakerMaxLeech": "7.92 m",
+    "_confidence_spinnakerMaxLeech": "high",
+    "spinnakerMinWidthAboveMidPoint": "45%",
+    "_confidence_spinnakerMinWidthAboveMidPoint": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "specifications": {
+        "type": "Monohull",
+        "material": "Implied Fiberglass (cored sections mentioned)",
+        "color": null,
+        "thickness": null,
+        "gelcoatType": null,
+        "coreType": "Cored (implied by repair rules)",
+        "_confidence_material": "low",
+        "_confidence_coreType": "medium",
+        "_additional": {
+          "certificationRequirement": "Requires initial hull certification and measurement certificate.",
+          "alterationRestriction": "Shall only be altered to the extent permitted in Section C of the class rules.",
+          "compliance": "Must comply with International J/24 Building Specification."
+        }
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-01",
+          "parentId": "ext-hull-01",
+          "name": "Keel",
+          "category": "Hull Appendage",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "weight": null,
+            "draft": null,
+            "attachmentMethod": null,
+            "_additional": {
+              "shapeModificationForbidden": true,
+              "manufacturer": "Licensed builders by J Boats, Inc."
+            }
+          },
+          "maintenanceDetails": {
+            "interval": null,
+            "inspectionItems": [],
+            "commonIssues": null,
+            "repairCost": null,
+            "_additional": {
+              "permittedMaintenance": "Routine maintenance such as cleaning and polishing.",
+              "permittedRepairs": "Small repairs that do not change the shape, without re-measurement and re-certification."
+            }
+          }
+        },
+        {
+          "id": "ext-hull-rudder-01",
+          "parentId": "ext-hull-01",
+          "name": "Rudder",
+          "category": "Hull Appendage",
+          "specifications": {
+            "type": null,
+            "material": "Fibreglass (implied by repair rules)",
+            "dimensions": null,
+            "_confidence_material": "medium",
+            "_additional": {
+              "shapeModificationForbidden": true,
+              "manufacturer": "Licensed builders by J Boats, Inc."
+            }
+          },
+          "maintenanceDetails": {
+            "interval": null,
+            "inspectionItems": [],
+            "commonIssues": null,
+            "repairCost": null,
+            "_additional": {
+              "permittedMaintenance": "Routine maintenance such as cleaning and polishing.",
+              "permittedRepairs": "Small repairs made with fibreglass and fairing resins that do not change the shape. Pins and gudgeons may be replaced with same manufacturer in same holes."
+            }
+          }
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Structure",
+      "specifications": {
+        "material": null,
+        "_additional": {
+          "nonslipMaterialAllowed": true
+        }
+      },
+      "subComponents": [
+        {
+          "id": "ext-deck-pulpit-01",
+          "parentId": "ext-deck-01",
+          "name": "Pulpit",
+          "category": "Deck Hardware",
+          "manufacturer": "Licensed builder or matched to existing licensed design",
+          "specifications": {
+            "location": "Forward (as shown on SECTION H, Plan A)"
+          }
+        },
+        {
+          "id": "ext-deck-pushpit-01",
+          "parentId": "ext-deck-01",
+          "name": "Pushpit",
+          "category": "Deck Hardware",
+          "manufacturer": "Licensed builder or matched to existing licensed design",
+          "specifications": {
+            "location": "Aft (as shown on SECTION H, Plan A)"
+          }
+        },
+        {
+          "id": "ext-deck-stanchion-port-forward-01",
+          "parentId": "ext-deck-01",
+          "name": "Stanchion Port Forward",
+          "category": "Deck Hardware",
+          "specifications": {
+            "quantity": 2,
+            "side": "Port",
+            "location": "As indicated on Plan A",
+            "outboardExtensionForbidden": true
+          }
+        },
+        {
+          "id": "ext-deck-stanchion-port-aft-01",
+          "parentId": "ext-deck-01",
+          "name": "Stanchion Port Aft",
+          "category": "Deck Hardware",
+          "specifications": {
+            "quantity": 2,
+            "side": "Port",
+            "location": "As indicated on Plan A",
+            "outboardExtensionForbidden": true
+          }
+        },
+        {
+          "id": "ext-deck-stanchion-starboard-forward-01",
+          "parentId": "ext-deck-01",
+          "name": "Stanchion Starboard Forward",
+          "category": "Deck Hardware",
+          "specifications": {
+            "quantity": 2,
+            "side": "Starboard",
+            "location": "As indicated on Plan A",
+            "outboardExtensionForbidden": true
+          }
+        },
+        {
+          "id": "ext-deck-stanchion-starboard-aft-01",
+          "parentId": "ext-deck-01",
+          "name": "Stanchion Starboard Aft",
+          "category": "Deck Hardware",
+          "specifications": {
+            "quantity": 2,
+            "side": "Starboard",
+            "location": "As indicated on Plan A",
+            "outboardExtensionForbidden": true
+          }
+        },
+        {
+          "id": "ext-deck-lifeline-01",
+          "parentId": "ext-deck-01",
+          "name": "Lifeline",
+          "category": "Safety Equipment",
+          "specifications": {
+            "material": "Wire",
+            "diameter": "Not less than 4 mm",
+            "tautnessRequirement": "Shall not sag more than 3mm between supports without any external loads",
+            "heightAboveSheerline": "Not less than 500 mm",
+            "lanyardMaterial": "Synthetic rope (if used)",
+            "lanyardMaxExposedLength": "100 mm"
+          }
+        }
+      ]
+    },
+    "cockpit": {
+      "id": "ext-deck-cockpit-01",
+      "name": "Cockpit",
+      "category": "Deck Area",
+      "specifications": {
+        "_additional": {
+          "footrestsBlocksAllowed": true
+        }
+      }
+    },
+    "windows": null,
+    "hatches": {
+      "id": "ext-hatch-companionway-01",
+      "name": "Companionway Hatch Board",
+      "category": "Opening",
+      "manufacturer": "Originally licensed builder, replacement from any source of same design/material",
+      "specifications": {
+        "type": "Vertical",
+        "material": null
+      },
+      "_additional": {
+        "nonslipMaterialAllowed": true
+      }
+    },
+    "ports": [
+      {
+        "id": "ext-port-inspection-01",
+        "name": "Watertight Inspection Ports",
+        "category": "Opening",
+        "specifications": {
+          "purpose": "Facilitate lifting rig use, access to fittings and sealed spaces",
+          "conditionWhileRacing": "Shall be closed when racing"
+        }
+      }
+    ]
+  },
+  "groundTackle": {
+    "anchors": [
+      {
+        "id": "anchor-mandatory-01",
+        "name": "Mandatory Anchor",
+        "type": null,
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "weight": "Not less than 6kg nor more than 9kg (including chain if used)",
+          "material": null,
+          "holdingPower": null,
+          "_confidence_weight": "high",
+          "_additional": {
+            "security": "Shall be secured against movement in the event of capsize."
+          }
+        }
+      }
+    ],
+    "chain": {
+      "id": "anchor-chain-01",
+      "name": "Anchor Chain (optional with anchor)",
+      "specifications": {
+        "material": null,
+        "diameter": null,
+        "length": null,
+        "grade": null,
+        "_additional": {
+          "weightInclusion": "If chain is used, its weight must be included in the anchor's total weight of 6-9kg."
+        }
+      },
+      "subComponents": [
+        {
+          "id": "anchor-line-01",
+          "parentId": "anchor-chain-01",
+          "name": "Anchor Line",
+          "specifications": {
+            "material": null,
+            "diameter": "Minimum 8mm",
+            "length": "Not less than 40m",
+            "_confidence_diameter": "high",
+            "_confidence_length": "high"
+          }
+        }
+      ]
+    },
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-01",
+      "name": "Mainsail",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": "Maximum 4",
+        "_confidence_numberOfBattens": "high",
+        "condition": null,
+        "_additional": {
+          "royaltyLabel": "Required on starboard side near tack.",
+          "measurementControl": "Measurement controlled to designated dimensions.",
+          "luffCurveLimit": "Shall not exceed 150mm from a straight line drawn from top of mast to boom.",
+          "headboardMaxHeight": "170 mm",
+          "midGirthRatioLimit": "52% of foot length (measured between midpoints of luff and leech)",
+          "leechHollowMax": "10 mm",
+          "battensDetails": "Shall be of uniform length, not exceeding 1.22m in length and 75mm in width."
+        }
+      }
+    },
+    {
+      "id": "sail-genoa-01",
+      "name": "Headsail - Genoa",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": "Maximum 2 (full length)",
+        "_confidence_numberOfBattens": "high",
+        "condition": null,
+        "_additional": {
+          "royaltyLabel": "Required on starboard side near tack.",
+          "measurementControl": "Measurement controlled to designated dimensions.",
+          "midGirthRatioLimit": "50% of foot length (measured between midpoints of luff and leech)",
+          "luffCurveMax": "60 mm",
+          "leechHollowMax": "15 mm",
+          "battenDetails": "Battens optional, maximum 2 full length. Total length shall not exceed 60% of leech length."
+        }
+      }
+    },
+    {
+      "id": "sail-jib-01",
+      "name": "Headsail - Jib",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_additional": {
+          "royaltyLabel": "Required on starboard side near tack.",
+          "measurementControl": "Measurement controlled to designated dimensions.",
+          "midGirthRatioLimit": "75% of foot length (measured between midpoints of luff and leech)",
+          "luffCurveMax": "60 mm",
+          "leechHollowMax": "15 mm"
+        }
+      }
+    },
+    {
+      "id": "sail-spinnaker-01",
+      "name": "Spinnaker",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": "Maximum 7.92 m",
+        "_confidence_luffLength": "high",
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_additional": {
+          "royaltyLabel": "Required on starboard side near clew.",
+          "measurementControl": "Measurement controlled to designated dimensions.",
+          "leechLength": "Maximum 7.92 m",
+          "maxWidth": "4.27 m",
+          "midGirthRatioRange": "75% to 100% of maximum width.",
+          "minWidthAboveMidPoint": "45% of maximum width."
+        }
+      }
+    }
+  ],
+  "deckEquipment": {
+    "winches": [
+      {
+        "id": "deck-winch-primary-01",
+        "name": "Primary Winch",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "On deck between mainsheet traveller and aft face of cockpit well",
+          "type": null,
+          "gearRatio": null,
+          "drumDiameter": "Not exceeding 80mm",
+          "_confidence_drumDiameter": "high",
+          "maxLoad": null,
+          "weight": null,
+          "material": null,
+          "partNumber": null,
+          "quantity": 2,
+          "pedestalsAllowed": true
+        }
+      },
+      {
+        "id": "deck-winch-secondary-01",
+        "name": "Secondary Winch (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": null,
+          "type": null,
+          "gearRatio": null,
+          "drumDiameter": "Not exceeding 74mm",
+          "_confidence_drumDiameter": "high",
+          "maxLoad": null,
+          "weight": null,
+          "material": null,
+          "partNumber": null,
+          "quantity": 2
+        }
+      }
+    ],
+    "cleats": [
+      {
+        "id": "deck-cleat-deck-01",
+        "name": "Deck Cleats",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "As shown on SECTION H, Plan A",
+          "type": "Open cleats or 'U' bolts",
+          "quantity": 3,
+          "material": null
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "deck-block-headsail-car-turning-01",
+        "name": "Headsail Car with Turning Block",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "On headsail sheet tracks",
+          "type": null,
+          "quantity": "Up to 4",
+          "ratchetingAllowed": true,
+          "verticalDistanceLimit": "Not more than 110mm from deck to load bearing surface of sheave",
+          "integralCleatsAllowed": true
+        }
+      }
+    ],
+    "stanchions": {
+      "id": "deck-stanchions-01",
+      "name": "Stanchions",
+      "manufacturer": null,
+      "model": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "quantityPerSide": 2,
+        "location": "As indicated on Plan A",
+        "outboardExtensionForbidden": true
+      }
+    },
+    "steeringSystem": {
+      "id": "deck-steering-tiller-01",
+      "name": "Tiller",
+      "specifications": {
+        "type": null,
+        "material": null,
+        "_additional": {
+          "spareAllowed": true
+        }
+      },
+      "subComponents": [
+        {
+          "id": "deck-steering-tiller-extension-01",
+          "name": "Tiller Extension",
+          "parentId": "deck-steering-tiller-01",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "_additional": {
+              "spareAllowed": true
+            }
+          }
+        }
+      ]
+    },
+    "other": [
+      {
+        "id": "deck-equipment-headsail-sheet-track-01",
+        "name": "Headsail Sheet Track",
+        "category": "Deck Hardware",
+        "specifications": {
+          "quantity": 4,
+          "length": "Not more than 610mm",
+          "location": "As indicated on SECTION H, Plan A",
+          "additionalHolesAllowed": true
+        }
+      },
+      {
+        "id": "deck-equipment-mainsail-traveller-track-01",
+        "name": "Mainsail Traveller Track",
+        "category": "Deck Hardware",
+        "specifications": {
+          "length": "Not exceeding 825mm",
+          "location": "As indicated on SECTION H, Plan A"
+        }
+      },
+      {
+        "id": "deck-equipment-mainsail-traveller-support-bar-01",
+        "name": "Mainsail Traveller Track Support Bar",
+        "category": "Deck Hardware",
+        "specifications": {
+          "material": "Any material",
+          "minWeight": "1 kg"
+        }
+      },
+      {
+        "id": "deck-equipment-outboard-motor-bracket-01",
+        "name": "Outboard Motor Bracket (Not for use while racing)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": "Fixed",
+          "location": "Transom"
+        }
+      },
+      {
+        "id": "deck-equipment-drink-holders-01",
+        "name": "Holders for drinks, winches handles, rope tails (Optional)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": null,
+          "quantity": "Any number",
+          "location": "Optional use and location"
+        }
+      },
+      {
+        "id": "deck-equipment-wind-indicator-01",
+        "name": "Mechanical Non-electronic Wind Indicator (Optional)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "type": "Mechanical, non-electronic",
+          "location": "Masthead, sail and/or rigging"
+        }
+      },
+      {
+        "id": "deck-equipment-mainsheet-cleating-platform-01",
+        "name": "Mainsheet Cleating System Support Platform (Optional)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "quantity": 1,
+          "location": "Attached either fore or aft to the centre of the mainsheet traveller bar",
+          "type": "Fixed"
+        }
+      },
+      {
+        "id": "deck-equipment-footrests-01",
+        "name": "Foot Rests/Blocks (Optional)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Mainsheet traveller bar, cockpit sole, cockpit decks and/or foredeck"
+        }
+      },
+      {
+        "id": "deck-equipment-navigation-lights-01",
+        "name": "Navigation/Deck/Anchor Lights (Optional)",
+        "category": "Lighting",
+        "specifications": {
+          "location": "Mast and/or spreaders"
+        }
+      },
+      {
+        "id": "deck-equipment-anti-abrasion-strips-01",
+        "name": "Anti-abrasion Strips (Rub Strakes) (Optional)",
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Aft edge of upper deck in path of jib sheets"
+        }
+      },
+      {
+        "id": "deck-equipment-mast-heel-adjuster-01",
+        "name": "Mechanical Mast Heel Position Adjuster (Not for use while racing)",
+        "category": "Rigging Hardware",
+        "specifications": {
+          "type": "Mechanical (non-hydraulic)",
+          "location": "Mast beam"
+        }
+      }
+    ]
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [
+      {
+        "id": "accom-cabin-quarterberth-01",
+        "name": "Quarter Berth",
+        "location": "Aft",
+        "specifications": {
+          "berthSize": null,
+          "headroom": null,
+          "privateHead": false,
+          "_additional": {
+            "outboardEngineStowage": "Outboard engine/motor may be stowed under a quarter berth.",
+            "correctorWeightLocation": "Two quarters of required corrector weight attached under each quarter berth."
+          }
+        },
+        "components": [
+          {
+            "id": "accom-berth-cushions-01",
+            "name": "Berth Cushions (Optional)",
+            "specifications": {
+              "quantity": "Maximum 4",
+              "totalWeight": "Maximum 21kg"
+            }
+          }
+        ]
+      }
+    ],
+    "heads": [
+      {
+        "id": "accom-head-portable-01",
+        "name": "Portable Toilet (Optional)",
+        "specifications": {
+          "shower": false,
+          "showerType": null
+        },
+        "components": []
+      }
+    ],
+    "other": [
+      {
+        "id": "accom-companionway-step-box-01",
+        "name": "Companionway Step Box or Ice Box (Optional)",
+        "specifications": {
+          "location": "Located but not attached between the bunks on the cabin sole",
+          "emptyWeight": "No more than 9kg"
+        }
+      }
+    ]
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": {
+      "id": "tank-water-portable-01",
+      "name": "Drinking Water Containers (Optional)",
+      "specifications": {
+        "totalCapacity": "No more than 10 litres (across separate containers)",
+        "material": null,
+        "numberOfTanks": null
+      }
+    },
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": {
+        "id": "elec-battery-house-01",
+        "name": "Battery for Electronic Devices (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "totalCapacity": null,
+          "voltage": null,
+          "numberOfBatteries": "Maximum 1",
+          "configuration": null,
+          "maxWeight": "25kg",
+          "security": "Shall be secured against movement in the event of capsize."
+        }
+      },
+      "starter": null
+    },
+    "chargers": null,
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null,
+    "other": [
+      {
+        "id": "elec-music-system-01",
+        "name": "Built-in Music/Entertainment System (Optional)",
+        "category": "Entertainment",
+        "specifications": {
+          "maxWeight": "3kg",
+          "antennaRequired": "If required",
+          "removableForWeighing": true
+        }
+      }
+    ]
+  },
+  "electronics": {
+    "navigation": [
+      {
+        "id": "electron-nav-compass-device-01",
+        "name": "Magnetic Compass Heading / Course Over Ground Device (Mandatory)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Fixed (mount for device is fixed to mast or hull)",
+          "chartingCapabilityForbidden": true
+        }
+      },
+      {
+        "id": "electron-nav-racing-devices-01",
+        "name": "Electronic Devices for Racing (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Records/measures/calculates speed, speed over ground, distance, water depth, distance to fixed point/line, time",
+          "chartingCapabilityForbidden": true
+        }
+      },
+      {
+        "id": "electron-nav-charting-devices-01",
+        "name": "Navigation Devices with Charting Capabilities (Not for use while racing)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "With charting capabilities"
+        }
+      }
+    ],
+    "communication": [
+      {
+        "id": "electron-comm-vhf-fixed-01",
+        "name": "Fixed VHF Radio and Antenna (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Fixed"
+        }
+      },
+      {
+        "id": "electron-comm-vhf-handheld-01",
+        "name": "Handheld VHF Radio (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Handheld"
+        }
+      },
+      {
+        "id": "electron-comm-mobile-telephone-01",
+        "name": "Mobile Telephone (Not for use while racing)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {}
+      }
+    ],
+    "instruments": [
+      {
+        "id": "electron-instr-timing-devices-01",
+        "name": "Electronic or Mechanical Timing Devices (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Electronic or mechanical"
+        }
+      }
+    ],
+    "autopilot": null,
+    "entertainment": [
+      {
+        "id": "electron-entertainment-portable-01",
+        "name": "Portable Music/Radio Entertainment System (Optional)",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {}
+      }
+    ]
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": null,
+    "bilgePumps": [
+      {
+        "id": "plumb-bilge-bucket-01",
+        "name": "Bucket (Mandatory)",
+        "specifications": {
+          "type": null,
+          "capacity": "At least 9 litres",
+          "lanyardLength": "At least 1 meter"
+        }
+      }
+    ],
+    "seacocks": null
+  },
+  "parts": [
+    {
+      "id": "part-hull-j24-01",
+      "name": "J/24 Hull",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "category": "Hull",
+      "specifications": {
+        "certificationRequired": true,
+        "buildingSpecificationCompliance": true,
+        "initialCertificationProcess": "Class measurer, documentation to ICA, fee if required."
+      }
+    },
+    {
+      "id": "part-keel-j24-01",
+      "name": "Keel",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "category": "Hull Appendage",
+      "specifications": {
+        "modificationForbidden": "Shape shall not be modified.",
+        "permittedRepairs": "Small repairs not changing shape."
+      }
+    },
+    {
+      "id": "part-rudder-j24-01",
+      "name": "Rudder Blade",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "category": "Hull Appendage",
+      "specifications": {
+        "modificationForbidden": "Shape shall not be modified.",
+        "permittedRepairs": "Small repairs with fiberglass and fairing resins not changing shape.",
+        "pinsGudgeonsReplacement": "Allowed with same manufacturer in same holes.",
+        "installationCompliance": "Shall be installed in compliance with Plan D."
+      },
+      "subParts": [
+        {
+          "id": "part-rudder-tiller-01",
+          "parentId": "part-rudder-j24-01",
+          "name": "Tiller",
+          "category": "Steering System",
+          "specifications": {
+            "spareAllowed": true
+          }
+        },
+        {
+          "id": "part-rudder-tiller-extension-01",
+          "parentId": "part-rudder-j24-01",
+          "name": "Tiller Extension",
+          "category": "Steering System",
+          "specifications": {
+            "spareAllowed": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-rigging-mast-01",
+      "name": "Mast Spar",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "length": null,
+        "weight": null,
+        "extrusionAlterationForbidden": "Except to facilitate attachment of rigging and fittings or relocation of exit slots.",
+        "fittingModification": "Unused fittings may be removed, tape/sealants may be used to cover holes."
+      },
+      "subParts": [
+        {
+          "id": "part-rigging-mast-sheave-01",
+          "parentId": "part-rigging-mast-01",
+          "name": "Sheaves (Mast)",
+          "category": "Rigging Hardware",
+          "specifications": {
+            "replacement": "Allowed with similar size, bushings or ball bearings permitted."
+          }
+        },
+        {
+          "id": "part-rigging-mast-cleats-01",
+          "parentId": "part-rigging-mast-01",
+          "name": "Mast Cleats",
+          "category": "Rigging Hardware",
+          "specifications": {
+            "attachment": "Any cleats with or without associated fairleads may be attached to stop halyards and control lines."
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-rigging-boom-01",
+      "name": "Boom Spar",
+      "manufacturer": "Licensed builders by J Boats, Inc.",
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "length": null,
+        "weight": null,
+        "extrusionAlterationForbidden": "Except to facilitate attachment of rigging and fittings or relocation of exit slots.",
+        "fittingModification": "Unused fittings may be removed, tape/sealants may be used to cover holes."
+      },
+      "subParts": [
+        {
+          "id": "part-rigging-boom-sheave-01",
+          "parentId": "part-rigging-boom-01",
+          "name": "Sheaves (Boom)",
+          "category": "Rigging Hardware",
+          "specifications": {
+            "replacement": "Allowed with similar size, bushings or ball bearings permitted."
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-rigging-spinnaker-pole-01",
+      "name": "Spinnaker Pole",
+      "manufacturer": null,
+      "category": "Rigging",
+      "specifications": {
+        "maxLength": "2.44 m",
+        "spareAllowed": true,
+        "quantity": "Not more than two (max one for use while racing, one spare)"
+      }
+    },
+    {
+      "id": "part-rigging-standing-01",
+      "name": "Standing Rigging",
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "type": null
+      },
+      "subParts": [
+        {
+          "id": "part-rigging-shrouds-01",
+          "parentId": "part-rigging-standing-01",
+          "name": "Shrouds",
+          "category": "Rigging",
+          "specifications": {
+            "crewContactForbidden": "Crew shall not hang on shrouds to promote roll tacking or gybing."
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-rigging-running-01",
+      "name": "Running Rigging",
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "type": null,
+        "replacementRiggingAllowed": "Any replacement rigging as might be useful to repair or replace minor damages or equipment failures on the water (Optional)."
+      }
+    },
+    {
+      "id": "part-safety-pfd-01",
+      "name": "Personal Flotation Device (PFD)",
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "For each crew member",
+        "minStandard": "ISO 12402-5 (level 50), USCG Type III, or AUS PFD II or equivalent."
+      }
+    },
+    {
+      "id": "part-safety-fire-extinguisher-01",
+      "name": "Fire Extinguisher",
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "Minimum 1",
+        "typeCapacityCompliance": "To comply with local regulations."
+      }
+    },
+    {
+      "id": "part-safety-lifesaving-device-01",
+      "name": "Lifesaving Device with Drogue",
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "Minimum 1",
+        "location": "On deck and ready to be thrown overboard."
+      }
+    },
+    {
+      "id": "part-safety-first-aid-kit-01",
+      "name": "First Aid Kit",
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "Minimum 1"
+      }
+    },
+    {
+      "id": "part-safety-flashlight-01",
+      "name": "Water Resistant Flashlight",
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "Minimum 1"
+      }
+    },
+    {
+      "id": "part-tool-kit-01",
+      "name": "Tool Kit (Optional)",
+      "category": "Tools",
+      "specifications": {}
+    },
+    {
+      "id": "part-outboard-engine-01",
+      "name": "Outboard Engine/Motor (Portable, Not for use while racing)",
+      "category": "Propulsion",
+      "specifications": {
+        "minWeightEmptyOfFuel": "12 kg",
+        "stowageLocation": "Under a quarter berth or aft of the sill of the companionway.",
+        "security": "Shall be secured against movement in the event of capsize.",
+        "electricMotorBatteryWeight": "Weighed with a single battery if battery is mounted on motor during use."
+      },
+      "subParts": [
+        {
+          "id": "part-outboard-fuel-tank-01",
+          "parentId": "part-outboard-engine-01",
+          "name": "Outboard Fuel Tank/Battery",
+          "category": "Propulsion",
+          "specifications": {
+            "security": "Shall be secured against movement in the event of capsize."
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-cutting-equipment-01",
+      "name": "Equipment Capable of Cutting Standing Rigging (Not for use while racing)",
+      "category": "Safety Equipment",
+      "specifications": {}
+    },
+    {
+      "id": "part-corrector-weights-01",
+      "name": "Corrector Weights (Lead)",
+      "category": "Hull",
+      "specifications": {
+        "material": "Lead",
+        "fastening": "Permanently fastened with bolts through required bulkheads and sealed with fiberglass cloth.",
+        "locationAmidships": "Half the required weight on forward half bulkhead (approx. 1000mm forward of main bulkhead).",
+        "locationAft": "Two quarters of required weight (approx. equal ingots) under each quarter berth, forward side of aft cabin bulkhead (approx. 2450mm aft of main bulkhead).",
+        "additionalCorrectors": "If required in addition to builder's correctors, divided into four approx. equal weights fixed on outboard side of builder's correctors."
+      }
+    },
+    {
+      "id": "part-tape-repair-materials-01",
+      "name": "Tape or other materials for temporary repairs (Optional)",
+      "category": "Tools"
+    },
+    {
+      "id": "part-spinnaker-bag-01",
+      "name": "Spinnaker Bag (Optional)",
+      "category": "Sail Handling",
+      "specifications": {
+        "location": "Positioned below deck to facilitate launch through main companionway."
+      },
+      "subParts": [
+        {
+          "id": "part-spinnaker-bag-transport-guides-01",
+          "parentId": "part-spinnaker-bag-01",
+          "name": "Wire or Rope Transport Guides",
+          "category": "Sail Handling",
+          "specifications": {
+            "purpose": "For a below decks spinnaker bag."
+          }
+        }
+      ]
+    },
+    {
+      "id": "part-lifeline-cushions-01",
+      "name": "Foam and/or Plastic Cushions for Lifelines (Optional)",
+      "category": "Deck Hardware"
+    },
+    {
+      "id": "part-elastic-cord-01",
+      "name": "Elastic (Shock) Cord (Optional, restricted use)",
+      "category": "Rigging",
+      "specifications": {
+        "permittedUses": [
+          "To hold down sails",
+          "To retain throwable lifesaving device in ready position in cockpit",
+          "To return backstay adjuster toward un-tensioned position",
+          "Across back of pushpit to keep slack backstay from falling into cockpit area",
+          "As a single length wrapped around mast and/or across cabin top behind mast for retaining rope tails."
+        ]
+      }
+    },
+    {
+      "id": "part-protective-covers-01",
+      "name": "Protective Covers (Optional)",
+      "category": "Rigging",
+      "specifications": {
+        "location": "Any part of the rigging."
+      }
+    },
+    {
+      "id": "part-fenders-dock-lines-01",
+      "name": "Fenders and Dock Lines (Not for use while racing)",
+      "category": "Mooring"
+    },
+    {
+      "id": "part-lifting-equipment-01",
+      "name": "Lifting Equipment for launching and retrieving (Not for use while racing)",
+      "category": "Launching/Hauling",
+      "specifications": {
+        "stowage": "All parts not bolted in the bilge shall be stowed off the cabin sole."
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Hull surface work",
+      "interval": null,
+      "method": "Light sanding, painting and polishing, not changing shape of hull. Permitted without re-certification or approval."
+    },
+    {
+      "item": "Keel",
+      "interval": null,
+      "method": "Routine maintenance such as cleaning and polishing. Permitted without re-measurement and re-certification."
+    },
+    {
+      "item": "Rudder",
+      "interval": null,
+      "method": "Routine maintenance such as cleaning and polishing. Permitted without re-measurement and re-certification."
+    },
+    {
+      "item": "Rig (Spars)",
+      "interval": null,
+      "method": "Routine maintenance such as cleaning and polishing. Permitted without re-certification or approval."
+    },
+    {
+      "item": "Rig Sheaves",
+      "interval": null,
+      "method": "Replaced by ones of similar size; sheaves with bushings or ball bearings permitted."
+    },
+    {
+      "item": "Rig Fittings and Limit Marks",
+      "interval": null,
+      "method": "Replaced as needed with similar fittings and in exactly the same location without re-measurement and re-certification."
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": null
+  },
+  "fileInfo": {
+    "fileName": "J242019CR220319-[24866].pdf",
+    "filePath": "data/yachtpdf\\J242019CR220319-[24866].pdf",
+    "fileSize": 3006470
+  }
+}

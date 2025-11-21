@@ -1,0 +1,565 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-30T10:00:00Z",
+  "documentInfo": {
+    "title": "ClubSwan50 Class Rules",
+    "yachtModel": "ClubSwan 50",
+    "manufacturer": "Nautor Holdings SRL (Copyright Holder), Oy Nautor Ab (Builder)",
+    "documentType": "Class Rules",
+    "effectiveDate": "2021-04-07",
+    "status": "Approved"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": null,
+      "engine": null,
+      "sailArea": null
+    },
+    "additional": {
+      "designedYear": 2016,
+      "designedBy": "Juan Yacht Design",
+      "worldSailingClassAdoptedYear": 2017,
+      "classType": "strict ONE DESIGN class for OWNER DRIVER RACING only",
+      "minimumBoatWeightCertificationCondition": "7750 kg",
+      "_confidence_minimumBoatWeightCertificationCondition": "high",
+      "minimumBoatWeightMeasurementCondition": "8180 kg",
+      "_confidence_minimumBoatWeightMeasurementCondition": "high",
+      "baseBoatConfiguration": "2 cabin or 3 cabin",
+      "twsLimitStartRaceMin": "5 knots",
+      "twsLimitStartRaceMax": "25 knots",
+      "offshoreSpecialRegulationsCategory": "4"
+    }
+  },
+  "detailedDimensions": {
+    "correctorWeightLimitBulkheadBFAftBulkheadF": "40 kg",
+    "_confidence_correctorWeightLimitBulkheadBFAftBulkheadF": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "Oy Nautor Ab and its suppliers",
+      "specifications": {
+        "type": "Monohull (implied)",
+        "material": null,
+        "color": null,
+        "thickness": null,
+        "gelcoatType": null,
+        "coreType": null,
+        "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+        "_confidence_compliance": "high"
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-01",
+          "parentId": "ext-hull-01",
+          "name": "Keel",
+          "category": "Hull Structure",
+          "manufacturer": "Oy Nautor Ab and its suppliers",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "weight": null,
+            "draft": null,
+            "attachmentMethod": null,
+            "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+            "_confidence_compliance": "high"
+          },
+          "maintenanceDetails": null
+        },
+        {
+          "id": "ext-hull-rudder-01",
+          "parentId": "ext-hull-01",
+          "name": "Rudder",
+          "category": "Hull Structure",
+          "manufacturer": "Oy Nautor Ab and its suppliers",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "dimensions": null,
+            "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+            "_confidence_compliance": "high"
+          }
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Structure",
+      "manufacturer": null,
+      "specifications": {
+        "layout": "Appendix B – Deck layout (referenced)"
+      },
+      "subComponents": [
+        {
+          "id": "ext-deck-lifeline-01",
+          "parentId": "ext-deck-01",
+          "name": "Lifelines",
+          "category": "Deck Hardware",
+          "specifications": {
+            "material": "stranded stainless-steel wire",
+            "compliance": "as specified in the building specification",
+            "_confidence_material": "high"
+          }
+        },
+        {
+          "id": "ext-deck-chafe-protection-01",
+          "parentId": "ext-deck-01",
+          "name": "Chafe Protection Plates",
+          "category": "Deck Hardware",
+          "specifications": {
+            "purpose": "to protect the surface finish in the proximity of moving deck hardware",
+            "functionality": "shall not alter the function of the fitting nor modify the sheeting angle of any sail when loaded",
+            "installation": "may be fitted"
+          }
+        }
+      ]
+    },
+    "windows": null,
+    "hatches": null
+  },
+  "groundTackle": {
+    "anchors": [
+      {
+        "id": "anchor-mandatory-01",
+        "name": "Mandatory Anchor",
+        "type": null,
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "weight": "minimum 8.0kg",
+          "material": null,
+          "holdingPower": null,
+          "_confidence_weight": "high"
+        }
+      }
+    ],
+    "chain": null,
+    "windlass": null,
+    "anchorRopeAndChain": {
+      "id": "anchor-rope-chain-01",
+      "name": "Anchor Rope and Chain",
+      "specifications": {
+        "material": "Rope and chain",
+        "diameterRope": "8mm",
+        "length": "minimum 30 meter",
+        "combinedTotalWeight": "minimum 25kg"
+      }
+    }
+  },
+  "sailInventory": [
+    {
+      "id": "sail-general-01",
+      "name": "Sails",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "certification": "Every sail shall carry a CS50 sail card attached as specified in rule C.10 (CS50 approved sail)",
+        "insigniaAndNumbers": "Appendix E – Sail insignia & numbers (referenced)"
+      },
+      "subComponents": null,
+      "maintenanceDetails": null
+    }
+  ],
+  "deckEquipment": {
+    "winches": null,
+    "cleats": null,
+    "blocks": null,
+    "stanchions": null,
+    "steeringSystem": null,
+    "footChocks": {
+      "id": "deck-foot-chocks-01",
+      "name": "Foot Chocks",
+      "category": "Deck Hardware",
+      "specifications": {
+        "location": "cockpit",
+        "installation": "may be permanently fastened"
+      }
+    },
+    "spinnakerRetrievalSystem": {
+      "id": "deck-spinnaker-retrieval-01",
+      "name": "Spinnaker Retrieval System",
+      "category": "Deck Hardware",
+      "specifications": {
+        "installation": "may be installed as specified in Appendix J"
+      }
+    },
+    "lifelineProtection": {
+      "id": "deck-lifeline-protection-01",
+      "name": "Lifeline Protectors",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": "Rollers, tubes or similar",
+        "purpose": "to protect or clear the spinnaker or headsail on drops or manoeuvres",
+        "installation": "may be added to the lifelines"
+      }
+    },
+    "lifelinePadding": {
+      "id": "deck-lifeline-padding-01",
+      "name": "Lifeline Padding",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": "Padding, or similar",
+        "purpose": "for crew comfort whilst hiking",
+        "installation": "may be fitted to the lifelines"
+      }
+    }
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": "2 or 3",
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [
+      {
+        "id": "accom-cabin-configuration-01",
+        "name": "Cabin Configuration",
+        "location": null,
+        "specifications": {
+          "type": "2 cabin or 3 cabin basic configurations",
+          "notes": "Both are treated the same with regards to class controls and all measurements and considered as the Base Boat."
+        },
+        "components": [
+          {
+            "id": "accom-cabin-doors-01",
+            "parentId": "accom-cabin-configuration-01",
+            "name": "Cabin Doors",
+            "specifications": {
+              "removable": "Cabin and shower compartment doors may be removed",
+              "notRemovable": "The toilet door is not removable"
+            }
+          },
+          {
+            "id": "accom-saloon-seat-backs-01",
+            "parentId": "accom-cabin-configuration-01",
+            "name": "Saloon Hinged Seat Backs",
+            "specifications": {
+              "removable": "may be removed"
+            }
+          },
+          {
+            "id": "accom-owners-cabin-side-panels-01",
+            "parentId": "accom-cabin-configuration-01",
+            "name": "Owner’s Cabin Side Panels",
+            "specifications": {
+              "movable": "may be moved for protection to under the Owner’s cabin berth"
+            }
+          },
+          {
+            "id": "accom-interior-fabrics-01",
+            "parentId": "accom-cabin-configuration-01",
+            "name": "Interior Fabrics",
+            "specifications": {
+              "replaceable": "may be replaced with alternatives supplied by ONA"
+            }
+          },
+          {
+            "id": "accom-interior-surface-covering-01",
+            "parentId": "accom-cabin-configuration-01",
+            "name": "Interior Surface Covering Material",
+            "specifications": {
+              "purpose": "to protect the surface finish",
+              "weightInMeasurementCondition": "not included",
+              "installation": "may be applied to interior surfaces"
+            }
+          }
+        ]
+      }
+    ],
+    "heads": null
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": null,
+    "holdingTank": null,
+    "liquidsGeneral": {
+      "id": "tank-liquids-general-01",
+      "name": "Liquids (General)",
+      "specifications": {
+        "level": "shall be maintained at minimum service levels as specified in the building specification"
+      }
+    }
+  },
+  "electricalSystem": {
+    "batteries": null,
+    "chargers": null,
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null,
+    "_additional": {
+      "electronicsLayoutReference": "Appendix I – Electronics (referenced)"
+    }
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [],
+    "instruments": [],
+    "autopilot": null,
+    "_additional": {
+      "electronicsLayoutReference": "Appendix I – Electronics (referenced)"
+    }
+  },
+  "plumbingSystem": null,
+  "parts": [
+    {
+      "id": "part-hull-01",
+      "name": "Hull",
+      "manufacturer": "Oy Nautor Ab and its suppliers",
+      "model": null,
+      "interval": null,
+      "category": "Structure",
+      "specifications": {
+        "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+        "alterationLimits": "only altered to the extent permitted in Section C of the class rules"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-hull-appendages-01",
+      "name": "Hull Appendages",
+      "manufacturer": "Oy Nautor Ab and its suppliers",
+      "model": null,
+      "interval": null,
+      "category": "Structure",
+      "specifications": {
+        "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+        "alterationLimits": "only altered to the extent permitted in Section C of the class rules",
+        "measurementReference": "Appendix A – Hull appendage measurement"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rig-01",
+      "name": "Rig",
+      "manufacturer": "Oy Nautor Ab and its suppliers",
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "compliance": "manufacturer controlled and certified; comply with ClubSwan50 Building Specification",
+        "alterationLimits": "only altered to the extent permitted in Section C of the class rules",
+        "geometryReference": "Appendix D – Rig geometry"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-mast-01",
+      "name": "Mast",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "length": null,
+        "weight": null,
+        "partNumber": null,
+        "includedInMeasurementCondition": "Yes, with all components specified in the building specification and corrector weights"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-boom-01",
+      "name": "Boom",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "includedInMeasurementCondition": "Yes, with all components specified in the building specification and corrector weights"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-bowsprit-01",
+      "name": "Bowsprit",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "includedInMeasurementCondition": "Yes, with all components specified in the building specification and corrector weights"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-standing-01",
+      "name": "Standing Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {},
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rigging-running-01",
+      "name": "Running Rigging",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "includedInMeasurementCondition": "Yes, as specified in Appendix D",
+        "notIncludedInMeasurementCondition": "Running rigging not specified in Appendix D"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-corrector-weights-01",
+      "name": "Corrector Weights",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Ballast",
+      "specifications": {
+        "location1": "permanently fastened forward of Bulkhead B and aft of Bulkhead F",
+        "totalWeightLimit1": "not exceed 40 kg",
+        "distribution1": "equally between the corrector weight locations to achieve a weight of 8150kg",
+        "location2": "permanently fastened between Bulkhead C & D and aft of Bulkhead E",
+        "distribution2": "equally between these corrector weight locations to achieve a minimum weight of 8180kg",
+        "marking": "permanently marked by the official measurer after fixing",
+        "adjustment": "only by the 50CA after measurement in measurement condition has been repeated following a significant repair or alteration",
+        "removalRestriction": "once installed shall not be removed or moved unless by the 50CA"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-safety-equipment-01",
+      "name": "Safety Equipment",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety",
+      "specifications": {
+        "type": "off the shelf / production articles (no custom or modified items)",
+        "minimumRequirement": "OSR Category 4",
+        "portable": "portable safety equipment not included in measurement condition"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-boat-cs50-01",
+      "name": "ClubSwan50 OD Boat",
+      "manufacturer": "Oy Nautor Ab",
+      "model": "ClubSwan 50",
+      "interval": null,
+      "category": "Whole Yacht",
+      "specifications": {
+        "buildingSpecificationCompliance": "required to comply with the ClubSwan50 Building Specification",
+        "manufacturingControlSystem": "may be subject to a ClubSwan 50 approved manufacturing control system",
+        "modificationsPermitted": "only by an amendment to the class rule or with prior approval of the 50CA",
+        "configurations": "available in two basic configurations (2 cabin or 3 cabin)"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-document-building-specification-01",
+      "name": "Building Specification",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Document",
+      "specifications": {
+        "description": "the boat as described and detailed in associated documentation that defines the design, construction, assembly and quality control as approved by the 50CA"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-document-quality-assurance-01",
+      "name": "Quality Assurance Documents",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Document",
+      "specifications": {
+        "description": "the quality assurance documents that have been completed as required by the 50CA during the construction and assembly of that specific CS50 boat"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-optional-cruising-features-01",
+      "name": "Standard Optional Cruising Features",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Optional Equipment",
+      "specifications": {
+        "reference": "Appendix F",
+        "removal": "may be removed for the purpose of all class measurements, equipment inspection and whilst racing",
+        "restriction": "If included for the purpose of Class Measurement and recorded on the Class Certificate they are not permitted to be removed or modified whilst racing."
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-optional-racing-features-01",
+      "name": "Standard Optional Racing Features",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Optional Equipment",
+      "specifications": {
+        "reference": "Appendix G",
+        "requirement": "shall remain on board for the purposes of all class measurements, equipment inspection and whilst racing"
+      },
+      "subParts": null,
+      "maintenanceDetails": null
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Boat",
+      "interval": null,
+      "method": "All maintenance shall be carried out in a way that the boat is retained in the original condition as when first launched, unless changes are made as a result of an amendment to the class rules."
+    },
+    {
+      "item": "Repairs (General)",
+      "interval": null,
+      "method": "Repairs may only be carried out by parties approved by NH. Owner shall inform 50CA immediately for action determination. Temporary repairs may be carried out during an event if no 50CA representative is available."
+    },
+    {
+      "item": "Boat Weight Check",
+      "interval": "yearly",
+      "method": "All boats racing in CS50 OD events shall carry out a yearly single point weight check prior to the mid-year CS50 event in which they have entered that calendar year. Always prior to a CS50 World Championship."
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": "The document is a yacht class rule manual, providing specific information about the ClubSwan 50 yacht, its components, rules, and some specifications. While not a typical owner's manual with detailed system breakdowns, it contains significant structured data relevant to the yacht's characteristics and regulations."
+  },
+  "fileInfo": {
+    "fileName": "ClubSwan50ClassRules07042021-[27210].pdf",
+    "filePath": "data/yachtpdf\\ClubSwan50ClassRules07042021-[27210].pdf",
+    "fileSize": 1741080
+  }
+}

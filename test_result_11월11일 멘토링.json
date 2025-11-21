@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-05-15T09:41:00Z",
+  "documentInfo": {
+    "title": "멘토링 브리핑 자료 앱 디자인 (Mentoring Briefing Material App Design)",
+    "yachtModel": "Farr 40",
+    "manufacturer": null,
+    "documentType": "App Design Document"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": null,
+      "engine": null,
+      "sailArea": null
+    },
+    "additional": {}
+  },
+  "detailedDimensions": {},
+  "exterior": {
+    "hull": null,
+    "deck": null,
+    "windows": [],
+    "hatches": []
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [],
+  "deckEquipment": {
+    "winches": [],
+    "cleats": [],
+    "blocks": [],
+    "stanchions": null,
+    "steeringSystem": null
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [],
+    "heads": []
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": null,
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": null,
+      "starter": null
+    },
+    "chargers": [],
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [],
+    "instruments": [],
+    "autopilot": null
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [],
+    "seacocks": null
+  },
+  "parts": [
+    {
+      "id": "part-engine-impeller-01",
+      "name": "임펠러 (Impeller)",
+      "manufacturer": "야마하 (Yamaha)",
+      "model": "6CE-44352-00 IMP. . . / 6CE-44352-00 IMPELLER",
+      "category": "Engine",
+      "specifications": {
+        "partNumber": "6CE-44352-00",
+        "_confidence_partNumber": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": {
+        "interval": 12,
+        "inspectionItems": [
+          "Replacement as part of routine maintenance"
+        ],
+        "commonIssues": "고장 (failure)",
+        "repairCost": null
+      },
+      "maintenanceHistory": [
+        {
+          "date": "2025-03-02",
+          "performer": "아무개",
+          "description": "임펠러 고장으로 정비 함 (Impeller repaired due to failure)."
+        },
+        {
+          "date": "2024-09-11",
+          "performer": "아무개",
+          "description": "정기 점검 (Routine inspection)."
+        },
+        {
+          "date": "2024-12-10",
+          "performer": null,
+          "description": "최근 정비일 (Last maintenance date for an upcoming service)."
+        },
+        {
+          "date": "2023-10-23",
+          "performer": null,
+          "description": "최근 정비일 (Last maintenance date for an overdue service)."
+        },
+        {
+          "date": "2025-03-02",
+          "performer": null,
+          "description": "최근 정비일 (Last maintenance date for a service with ample time remaining)."
+        }
+      ]
+    },
+    {
+      "id": "part-engine-gearoil-01",
+      "name": "기어 오일 (Gear Oil)",
+      "manufacturer": "야마하 (Yamaha)",
+      "model": "GL-4",
+      "category": "Engine Consumables",
+      "specifications": {
+        "type": "GL-4"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "임펠러 (Impeller)",
+      "interval": "12 개월 (12 months)",
+      "method": "정기 점검 또는 필요 시 교체 (Routine inspection or replacement as needed)"
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": false,
+    "reason": "Provided text is a UI/UX design document for a yacht management application, not a traditional yacht manual or parts list. Detailed yacht specifications, dimensions, and system descriptions are largely absent. Information extracted primarily relates to app features, a specific yacht model ('Farr 40' mentioned as a user's yacht), two specific parts ('Impeller', 'Gear Oil') and their maintenance records within the application's context."
+  },
+  "fileInfo": {
+    "fileName": "11월11일 멘토링.pdf",
+    "filePath": "data/yachtpdf\\11월11일 멘토링.pdf",
+    "fileSize": 1626662
+  }
+}

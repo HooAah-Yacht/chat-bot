@@ -1,0 +1,108 @@
+{
+  "testDate": "2025-11-20T16:55:44.268994",
+  "totalFiles": 2,
+  "results": [
+    {
+      "fileName": "11월11일 멘토링.pdf",
+      "filePath": "data/yachtpdf/11월11일 멘토링.pdf",
+      "timestamp": "2025-11-20T16:56:06.080729",
+      "status": "success",
+      "textLength": 2711,
+      "textPreview": "2 0 2 5 . 1 1 . 1 1 ( 화 )  멘 토 링  브 리 핑  자 료앱  디 자 인\n0 9 : 4 1요 트  등 록 하 기요 트 를  등 록 하 고\n편 하 게  관 리 해 보 세 요요 트  기 본  정 보요 트 를  선 택 해 주 세 요요 트  별 칭별 칭 이  없 으 면  요 트  이 름 으 로  자 동  저 장 돼 요요 트  문 서  등 록문 서 를  등 록 해  주 세 요요 트  매 뉴 얼 ,  부 품  정 보  등  관 련  자 료 를  첨 부 할  수  있 어 요등 록 된  파 일매 뉴 얼 . p d f매 뉴 얼 . p d f다 음\n0 9 : 4 1요 트  등 록 하 기내  요 트 에  필 요 한  부 품 만\n직 접  관 리 해 요\n등 록 하 기부 품  등 록\n+등 록 된  부 품 이  없 어 요\n필 요 할  때  언 제 든  추 가 할  수  있 어 요추 천  부 품\n장 비 명임 펠 러제 조 사 명야 마 하모 델 명6 C E - 4 4 3 5 2 - 0 0  I M P . . .\n장 비 명기 어 오 일제 조 사 명야 마 하모 델 명G L - 4\n0 9 : 4 1요 트  등 록 하 기내  요 트 에  필 요 한  부 품 만\n직 접  관 리 해 요\n등 록 하 기부 품  등 록\n+등 록 된  부 품 이  없 어 요\n필 요 할  때  언 제 든  추 가 할  수  있 어 요추 천  부 품\n장 비 명임 펠 러제 조 사 명야 마 하모 델 명6 C E - 4 4 3 5 2 - 0 0  I M P . . .\n장 비 명기 어 오 일제 조 사 명야 마 하모 델 명G L - 4\n장 비 명제 조 사 명모 델 명최 근  정 비 일  정 비  주 기  ( e x .  1 년 일  경 우  숫 자  1 2  작 성 )등 록 하 기취 소1 - 1 .  요 트  등 록\n1 - 2 .  요 트  관 리\n1 - 3 .  알 림\n0 9 : 4 1\n홈\n요 트A I달 력설 정요 트  관 리멤 버  목 록\n홍 길 동e x a m p l e @ e x a m p l e . c o ",
+      "analysisResult": {
+        "documentInfo": {
+          "title": "멘토링 브리핑 자료 앱 디자인",
+          "yachtModel": "Farr 40",
+          "manufacturer": null,
+          "documentType": "앱 디자인 문서"
+        },
+        "yachtSpecs": {
+          "dimensions": {},
+          "engine": {},
+          "sailArea": {}
+        },
+        "parts": [
+          {
+            "name": "임펠러",
+            "manufacturer": "야마하",
+            "model": "6CE-44352-00 IMPELLER",
+            "interval": 12,
+            "category": "엔진 부품"
+          },
+          {
+            "name": "기어 오일",
+            "manufacturer": "야마하",
+            "model": "GL-4",
+            "interval": null,
+            "category": "소모품"
+          }
+        ],
+        "maintenance": [
+          {
+            "item": "임펠러 점검 및 교체",
+            "interval": "12개월",
+            "method": "주기적 점검 및 고장 발생 시 정비/교체"
+          },
+          {
+            "item": "정기 점검",
+            "interval": null,
+            "method": null
+          }
+        ],
+        "analysisResult": {
+          "canExtractText": true,
+          "canAnalyze": true,
+          "reason": null
+        },
+        "fileInfo": {
+          "fileName": "11월11일 멘토링.pdf",
+          "filePath": "data/yachtpdf/11월11일 멘토링.pdf",
+          "fileSize": 1626662
+        }
+      }
+    },
+    {
+      "fileName": "11월17일 멘토링.pdf",
+      "filePath": "data/yachtpdf/11월17일 멘토링.pdf",
+      "timestamp": "2025-11-20T16:56:18.985192",
+      "status": "success",
+      "textLength": 367,
+      "textPreview": "1 1 / 1 7 ( 월 )  멘 토 링  브 리 핑  자 료회 의  내 용\n진 행  상 황캘 린 더 에  대 한  멘 토 님 의  피 드 백  이 후  회 의 를  통 해  기 능  확 장 .\n회 의  결 과\nf r o n t e n d\n복 잡 하 게  느 껴 지 는  u i  디 자 인  개 선\nc a l e n d a r  u i  디 자 인  작 업  중\n요 트  등 록  a p i  연 결\n요 트  관 리  개 발  중\n\nb a c k e n d\n캘 린 더  기 능  회 의  결 과  반 영  수 정\n알 림  도 메 인  개 발  예 정\n요 트  등 록  a p i  수 정  및  추 가\n\nA I\n요 트  및  부 품  데 이 터  추 출\n",
+      "analysisResult": {
+        "documentInfo": {
+          "title": "멘토링 브리핑 자료회의 내용",
+          "yachtModel": null,
+          "manufacturer": null,
+          "documentType": "프로젝트 브리핑 자료"
+        },
+        "yachtSpecs": {
+          "dimensions": {
+            "LOA": null,
+            "beam": null,
+            "draft": null,
+            "displacement": null,
+            "mastHeight": null
+          },
+          "engine": {
+            "type": null,
+            "output": null,
+            "model": null
+          },
+          "sailArea": null
+        },
+        "parts": [],
+        "maintenance": [],
+        "analysisResult": {
+          "canExtractText": true,
+          "canAnalyze": false,
+          "reason": "제공된 텍스트는 요트 매뉴얼이나 부품 정보 문서가 아닌 소프트웨어 개발 프로젝트 관련 회의록/브리핑 자료입니다. 따라서 요청된 요트 스펙, 부품 정보, 정비 정보를 추출할 수 없습니다."
+        },
+        "fileInfo": {
+          "fileName": "11월17일 멘토링.pdf",
+          "filePath": "data/yachtpdf/11월17일 멘토링.pdf",
+          "fileSize": 269759
+        }
+      }
+    }
+  ]
+}

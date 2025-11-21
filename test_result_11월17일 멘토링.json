@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-29T10:00:00Z",
+  "documentInfo": {
+    "title": "1 1 / 1 7 ( 월 ) 멘 토 링 브 리 핑 자 료회 의 내 용",
+    "yachtModel": null,
+    "manufacturer": null,
+    "documentType": null
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": null,
+        "LWL": null,
+        "Beam": null,
+        "Draft": null,
+        "Displacement": null,
+        "mastHeight": null
+      },
+      "engine": {
+        "type": null,
+        "power": null,
+        "model": null
+      },
+      "sailArea": {
+        "mainsail": null,
+        "jib": null,
+        "spinnaker": null,
+        "total": null
+      }
+    },
+    "additional": {}
+  },
+  "detailedDimensions": {
+    "LWL": null,
+    "BOA": null,
+    "freeboard": {
+      "bow": null,
+      "midship": null,
+      "stern": null
+    },
+    "headroom": {
+      "saloon": null,
+      "cabins": null,
+      "galley": null
+    },
+    "ballastWeight": null,
+    "ballastRatio": null,
+    "keelDimensions": null,
+    "rudderDimensions": null,
+    "boomLength": null,
+    "poleLength": null
+  },
+  "exterior": {
+    "hull": null,
+    "deck": null,
+    "windows": [],
+    "hatches": []
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [],
+  "deckEquipment": {
+    "winches": [],
+    "cleats": [],
+    "blocks": [],
+    "stanchions": null,
+    "steeringSystem": null
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [],
+    "heads": []
+  },
+  "tanks": {
+    "fuel": null,
+    "freshWater": null,
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": null,
+      "starter": null
+    },
+    "chargers": [],
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [],
+    "instruments": [],
+    "autopilot": null
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [],
+    "seacocks": null
+  },
+  "parts": [],
+  "maintenance": [],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": false,
+    "reason": "제공된 텍스트는 요트 매뉴얼 또는 관련 문서가 아니라 소프트웨어 개발 회의록 또는 진행 상황 보고서입니다."
+  },
+  "fileInfo": {
+    "fileName": "11월17일 멘토링.pdf",
+    "filePath": "data/yachtpdf\\11월17일 멘토링.pdf",
+    "fileSize": 269759
+  }
+}

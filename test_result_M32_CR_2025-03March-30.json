@@ -1,0 +1,1030 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-01-29T10:00:00Z",
+  "documentInfo": {
+    "title": "2025 Melges 32 Class Rules",
+    "yachtModel": "Melges 32",
+    "manufacturer": "Melges Performance Boats",
+    "documentType": "Class Rules"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": null,
+        "LWL": null,
+        "Beam": null,
+        "Draft": null,
+        "Displacement": null,
+        "mastHeight": null
+      },
+      "engine": {
+        "type": "Outboard",
+        "power": "minimum 9.8HP or 7.2KW",
+        "model": "Tohatsu or Yamaha nominal power minimum of 9.8HP or 7.2KW"
+      },
+      "sailArea": {
+        "mainsail": null,
+        "jib": null,
+        "spinnaker": null,
+        "total": null
+      }
+    },
+    "additional": {
+      "crewWeightLimit": "629 kgs",
+      "_confidence_crewWeightLimit": "high",
+      "ownerAllocatedWeight": "104 kgs (if not weighed in)",
+      "_confidence_ownerAllocatedWeight": "high",
+      "engineWeight": "minimum 39 kg (empty of fuel), maximum 43 kg",
+      "_confidence_engineWeight": "high",
+      "engineFuelCapacityDeparture": "at least 3 liters",
+      "_confidence_engineFuelCapacityDeparture": "high",
+      "fireExtinguisherWeight": "no less than 1.05 kgs",
+      "_confidence_fireExtinguisherWeight": "high",
+      "battery12VWeight": "no less than 9 kgs",
+      "_confidence_battery12VWeight": "high"
+    }
+  },
+  "detailedDimensions": {
+    "LWL": null,
+    "BOA": null,
+    "freeboard": {
+      "bow": null,
+      "midship": null,
+      "stern": null
+    },
+    "headroom": {
+      "saloon": null,
+      "cabins": null,
+      "galley": null
+    },
+    "ballastWeight": null,
+    "ballastRatio": null,
+    "keelDimensions": null,
+    "rudderDimensions": null,
+    "boomLength": null,
+    "poleLength": null,
+    "anchorChainLinkDiameter": "6mm (minimum)",
+    "_confidence_anchorChainLinkDiameter": "high",
+    "anchorWarpLength": "48 meters (minimum)",
+    "_confidence_anchorWarpLength": "high",
+    "anchorWarpDiameter": "8mm (minimum)",
+    "_confidence_anchorWarpDiameter": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "Melges Performance Boats (licensed)",
+      "specifications": {
+        "type": null,
+        "material": null,
+        "color": null,
+        "thickness": null,
+        "gelcoatType": null,
+        "coreType": null,
+        "_additional": {
+          "designYear": "2005 (by Reichel Pugh Yacht Design)",
+          "_confidence_designYear": "high",
+          "worldSailingClassAdopted": "2008",
+          "_confidence_worldSailingClassAdopted": "high",
+          "identificationNumber": "Required for Manufacturer's Declaration",
+          "_confidence_identificationNumber": "high",
+          "buildingSpecification": "Equipment is built in accordance with the MELGES 32 Building Specification",
+          "_confidence_buildingSpecification": "high",
+          "manufacturerControlled": true,
+          "_confidence_manufacturerControlled": "high"
+        }
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-appendages-01",
+          "parentId": "ext-hull-01",
+          "name": "Hull Appendages",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "serialNumbers": "Required for Manufacturer's Declaration"
+          },
+          "_additional": {
+            "manufacturerControlled": true,
+            "_confidence_manufacturerControlled": "high",
+            "weedSticksOptional": true
+          }
+        },
+        {
+          "id": "ext-hull-bowsprit-01",
+          "parentId": "ext-hull-01",
+          "name": "Bow Sprit",
+          "category": "Hull Structure",
+          "specifications": {},
+          "_additional": {
+            "gasketsOrSealsOptional": true,
+            "_confidence_gasketsOrSealsOptional": "high"
+          }
+        }
+      ]
+    },
+    "deck": null,
+    "windows": null,
+    "hatches": {
+      "id": "ext-hatch-companionway-01",
+      "name": "Companionway Hatches",
+      "category": "Deck Hardware",
+      "specifications": {
+        "type": null,
+        "quantity": 2,
+        "location": "Main companionway",
+        "function": "Enable the cabin to be closed off"
+      },
+      "subComponents": [
+        {
+          "id": "ext-hatch-companionway-drop-01",
+          "parentId": "ext-hatch-companionway-01",
+          "name": "Companionway Drop Hatch",
+          "category": "Deck Hardware",
+          "specifications": {},
+          "_additional": {
+            "stowage": "May be stowed in a protective bag"
+          }
+        }
+      ]
+    }
+  },
+  "groundTackle": {
+    "anchors": [
+      {
+        "id": "anchor-main-01",
+        "name": "Main Anchor",
+        "type": null,
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "weight": "4.5 kg (minimum)",
+          "material": null,
+          "holdingPower": null,
+          "_confidence_weight": "high"
+        }
+      }
+    ],
+    "chain": {
+      "id": "anchor-chain-01",
+      "name": "Anchor Chain",
+      "specifications": {
+        "material": null,
+        "diameter": "6 mm (minimum link diameter)",
+        "length": "1 meter (minimum)",
+        "grade": null,
+        "_additional": {
+          "combinedWeightWithAnchor": "5.5 kg (minimum)",
+          "_confidence_combinedWeightWithAnchor": "high"
+        }
+      }
+    },
+    "windlass": null,
+    "warp": {
+      "id": "anchor-warp-01",
+      "name": "Anchor Warp",
+      "specifications": {
+        "length": "48 meters (minimum)",
+        "diameter": "8 mm (minimum)",
+        "material": null,
+        "_confidence_length": "high",
+        "_confidence_diameter": "high"
+      }
+    }
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-01",
+      "name": "Mainsail",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer (measurement controlled)",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_additional": {
+          "certification": "Required by official measurer, class approved measurer, or manufacturer licensed under WS In House Certification",
+          "_confidence_certification": "high",
+          "alterationRestriction": "Only to extent permitted in Section C after certification control",
+          "_confidence_alterationRestriction": "high",
+          "classRuleSection": "Section G.3"
+        }
+      }
+    },
+    {
+      "id": "sail-headsail-01",
+      "name": "Headsail",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer (measurement controlled)",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_additional": {
+          "certification": "Required by official measurer, class approved measurer, or manufacturer licensed under WS In House Certification",
+          "_confidence_certification": "high",
+          "alterationRestriction": "Only to extent permitted in Section C after certification control",
+          "_confidence_alterationRestriction": "high",
+          "classRuleSection": "Section G.4"
+        }
+      }
+    },
+    {
+      "id": "sail-gennaker-01",
+      "name": "Gennaker",
+      "category": "Sails",
+      "manufacturer": "Any manufacturer (measurement controlled)",
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "_additional": {
+          "certification": "Required by official measurer, class approved measurer, or manufacturer licensed under WS In House Certification",
+          "_confidence_certification": "high",
+          "alterationRestriction": "Only to extent permitted in Section C after certification control",
+          "_confidence_alterationRestriction": "high",
+          "classRuleSection": "Section G.5",
+          "sheetAttachmentRestriction": "Sail when flown will not fly further than 30cm from the intended sheet rope",
+          "_confidence_sheetAttachmentRestriction": "high"
+        }
+      }
+    }
+  ],
+  "deckEquipment": {
+    "winches": [],
+    "cleats": [],
+    "blocks": [
+      {
+        "id": "deck-block-tack-01",
+        "name": "Spinnaker Turning Block",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "V area",
+          "type": null,
+          "restriction": "Helmsperson or Crew shall not sit in a way over the 'V' or spinnaker turning block and hike so that their upper body is outside the upper lifeline.",
+          "_confidence_restriction": "high"
+        }
+      }
+    ],
+    "stanchions": {
+      "id": "deck-stanchions-01",
+      "name": "Stanchions",
+      "specifications": {
+        "type": null
+      },
+      "_additional": {
+        "lifelines": "Lifelines shall meet the tautness requirements in the Class Rules.",
+        "_confidence_lifelines": "high",
+        "lifelineRule": "Competitors shall not position any part of their torsos outside the lifelines, except briefly to perform a necessary task. However, a competitor sitting on the deck facing outboard with his waist inside the lower lifeline may have the upper part of his body outside the upper lifeline.",
+        "_confidence_lifelineRule": "high"
+      }
+    },
+    "steeringSystem": null,
+    "hikingStraps": {
+      "id": "deck-hikingstraps-01",
+      "name": "Hiking Straps",
+      "category": "Deck Hardware",
+      "specifications": {
+        "use": "Allowed for positioning bodies outboard",
+        "type": null
+      },
+      "_confidence_use": "high"
+    },
+    "bowNumberGraphic": {
+      "id": "deck-bownumbergraphic-01",
+      "name": "Factory Supplied Bow Number Graphic",
+      "category": "Markings",
+      "specifications": {
+        "location": "Port and starboard bow area",
+        "status": "Shall remain affixed for all class sanctioned events",
+        "classRule": "C.4.1(a)"
+      },
+      "_confidence_status": "high"
+    },
+    "melges32Logo": {
+      "id": "deck-melges32logo-01",
+      "name": "MELGES 32 Logo",
+      "category": "Markings",
+      "specifications": {
+        "location": "Cabin house",
+        "status": "Shall be displayed while racing in class sanctioned events",
+        "placement": "Per the manufactures original placement",
+        "colors": "Other than standard shall be approved by MPS",
+        "classRule": "C.4.1(b)"
+      },
+      "_confidence_status": "high"
+    },
+    "sheetBags": {
+      "id": "deck-sheetbags-01",
+      "name": "Sheet Bags",
+      "category": "Stowage",
+      "specifications": {
+        "use": "May be added to the boat to stow equipment, food, tools, and or drinks",
+        "type": "Optional"
+      },
+      "_confidence_use": "high"
+    },
+    "windIndicators": {
+      "id": "deck-windindicators-01",
+      "name": "Wind Indicators",
+      "category": "Instrumentation",
+      "specifications": {
+        "use": "Optional"
+      },
+      "_confidence_use": "high"
+    }
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": null,
+      "berths": null,
+      "heads": null,
+      "showers": null
+    },
+    "galley": null,
+    "cabins": [
+      {
+        "id": "accom-cabin-general-01",
+        "name": "Cabin",
+        "location": "Interior",
+        "specifications": {
+          "berthSize": null,
+          "headroom": null,
+          "privateHead": null
+        },
+        "components": [
+          {
+            "id": "accom-cabin-pipe-cot-01",
+            "parentId": "accom-cabin-general-01",
+            "name": "Pipe Cots",
+            "specifications": {
+              "quantity": "Up to two",
+              "installation": "May be installed",
+              "oneDesignWeight": "If included in one design weight, must remain on board while racing"
+            },
+            "_confidence_quantity": "high"
+          },
+          {
+            "id": "accom-cabin-bunk-cushions-01",
+            "parentId": "accom-cabin-general-01",
+            "name": "Bunk Cushions",
+            "specifications": {
+              "type": "Portable",
+              "use": "May be carried"
+            }
+          }
+        ]
+      }
+    ],
+    "heads": [
+      {
+        "id": "accom-head-portable-01",
+        "name": "Portable Toilet",
+        "specifications": {
+          "shower": null,
+          "showerType": null,
+          "use": "May be carried"
+        }
+      }
+    ]
+  },
+  "tanks": {
+    "fuel": {
+      "id": "tank-fuel-engine-01",
+      "name": "Engine Fuel Tank",
+      "specifications": {
+        "capacity": null,
+        "material": null,
+        "location": null,
+        "fuelType": null,
+        "_additional": {
+          "minimumFuelAtDeparture": "3 liters",
+          "_confidence_minimumFuelAtDeparture": "high"
+        }
+      }
+    },
+    "freshWater": null,
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": null,
+      "starter": {
+        "id": "elec-battery-starter-01",
+        "name": "12 Volt Battery",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "totalCapacity": null,
+          "voltage": "12V",
+          "numberOfBatteries": 1,
+          "configuration": null,
+          "weight": "no less than 9 kgs",
+          "_confidence_weight": "high"
+        }
+      }
+    },
+    "chargers": [],
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null,
+    "navigationLights": {
+      "id": "elec-navigationlights-01",
+      "name": "Navigation Lights",
+      "category": "Lighting",
+      "specifications": {
+        "installation": "May be installed"
+      }
+    }
+  },
+  "electronics": {
+    "navigation": [
+      {
+        "id": "electron-nav-timingdevice-01",
+        "name": "Electronic or Mechanical Timing Devices",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Optional",
+          "function": "Timing"
+        }
+      },
+      {
+        "id": "electron-nav-instruments-01",
+        "name": "Tactical and Navigation Instruments",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Optional",
+          "associatedPowerSources": "Allowed"
+        }
+      },
+      {
+        "id": "electron-nav-charts-01",
+        "name": "Charts and Means of Recording Compass Headings",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": "Optional"
+        }
+      }
+    ],
+    "communication": [
+      {
+        "id": "electron-comm-vhf-01",
+        "name": "VHF Radio",
+        "manufacturer": null,
+        "model": null,
+        "specifications": {
+          "type": null,
+          "dsc": null,
+          "power": null,
+          "status": "One functioning VHF Radio",
+          "usageRestriction": "Not For Use during racing"
+        },
+        "_confidence_status": "high",
+        "_confidence_usageRestriction": "high"
+      }
+    ],
+    "instruments": [],
+    "autopilot": null
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [
+      {
+        "id": "plumb-bilge-electric-01",
+        "name": "Electric Bilge Pumps",
+        "specifications": {
+          "type": "Optional",
+          "capacity": null,
+          "classRule": "Refer to C.6.1(t)"
+        }
+      }
+    ],
+    "seacocks": null
+  },
+  "parts": [
+    {
+      "id": "part-hull-01",
+      "name": "Hull",
+      "manufacturer": "Melges Performance Boats (licensed)",
+      "model": "Melges 32",
+      "interval": null,
+      "category": "Structure",
+      "specifications": {
+        "material": null,
+        "partNumber": "Hull identification number (required for declaration)",
+        "manufacturerControlled": true,
+        "buildingSpecification": "Equipment is built in accordance with the MELGES 32 Building Specification"
+      },
+      "maintenanceDetails": {
+        "inspectionItems": [
+          "Modifications",
+          "Maintenance",
+          "Repair details (recorded on declaration)"
+        ],
+        "commonIssues": null,
+        "repairCost": null
+      }
+    },
+    {
+      "id": "part-hull-appendages-01",
+      "name": "Hull Appendages",
+      "manufacturer": "Melges Performance Boats (licensed)",
+      "model": "Melges 32",
+      "interval": null,
+      "category": "Structure",
+      "specifications": {
+        "material": null,
+        "partNumber": "Hull Appendage serial numbers (required for declaration)",
+        "manufacturerControlled": true
+      },
+      "maintenanceDetails": {
+        "inspectionItems": [
+          "Modifications",
+          "Maintenance",
+          "Repair details (recorded on declaration)"
+        ],
+        "commonIssues": null,
+        "repairCost": null
+      }
+    },
+    {
+      "id": "part-rig-01",
+      "name": "Rig",
+      "manufacturer": "Melges Performance Boats (licensed)",
+      "model": "Melges 32",
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "material": null,
+        "manufacturerControlled": true
+      },
+      "subParts": [
+        {
+          "id": "part-rig-mast-spar-01",
+          "parentId": "part-rig-01",
+          "name": "Mast Spar",
+          "manufacturer": null,
+          "model": null,
+          "specifications": {
+            "partNumber": "Mast Spar identification number (required for declaration)"
+          },
+          "maintenanceDetails": {
+            "inspectionItems": [
+              "Modification",
+              "Maintenance",
+              "Repair details (recorded on declaration)"
+            ]
+          }
+        },
+        {
+          "id": "part-rig-standingrigging-01",
+          "parentId": "part-rig-01",
+          "name": "Standing Rigging",
+          "specifications": {},
+          "maintenanceDetails": {}
+        },
+        {
+          "id": "part-rig-runningrigging-01",
+          "parentId": "part-rig-01",
+          "name": "Running Rigging",
+          "specifications": {},
+          "maintenanceDetails": {}
+        }
+      ],
+      "maintenanceDetails": {
+        "inspectionItems": [
+          "Modification",
+          "Maintenance",
+          "Repair details (recorded on declaration)"
+        ]
+      }
+    },
+    {
+      "id": "part-sails-01",
+      "name": "Sails",
+      "manufacturer": "Any manufacturer (measurement controlled)",
+      "model": "Melges 32 Class",
+      "interval": null,
+      "category": "Sails",
+      "specifications": {
+        "certification": "Required by official measurer, class approved measurer, or manufacturer licensed under WS In House Certification",
+        "alterationRestriction": "Only to extent permitted in Section C after certification control"
+      }
+    },
+    {
+      "id": "part-engine-outboard-01",
+      "name": "Engine",
+      "manufacturer": "Tohatsu or Yamaha",
+      "model": null,
+      "interval": null,
+      "category": "Propulsion",
+      "specifications": {
+        "type": "Outboard",
+        "nominalPower": "minimum 9.8HP or 7.2KW",
+        "weightEmptyFuel": "minimum 39 kg, maximum 43 kg",
+        "stowageLocation": "Engine box compartment",
+        "modifications": "Weighed prior to adding factory cavitation plate and fiberglass hood modification",
+        "fuelTankContent": "at least 3 liters of fuel at departure from dockside"
+      }
+    },
+    {
+      "id": "part-equipment-floatationdevice-01",
+      "name": "Personal Floatation Device",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": "For each crew member",
+        "standard": "Minimum ISO 12402-5 (Level 50), USCG Type III, AS 4758 Level 50, or equivalent",
+        "compliance": "Compliant with local regulations"
+      }
+    },
+    {
+      "id": "part-equipment-buckets-01",
+      "name": "Buckets",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "quantity": 2,
+        "volume": "minimum 9 liters",
+        "lanyard": "minimum 1m length and 4mm diameter",
+        "prohibited": "Collapsable buckets are prohibited"
+      }
+    },
+    {
+      "id": "part-equipment-firstaidkit-01",
+      "name": "First Aid Kit",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "container": "Waterproof container or bag",
+        "minimumContents": "ammonia inhalants, alcohol pads, bandages, first aid guide, first aid cream, gauze pads, aspirin tablets, scissors, tape, antibiotic packs, tweezers"
+      }
+    },
+    {
+      "id": "part-equipment-fireextinguisher-01",
+      "name": "Fire Extinguisher",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "weight": "no less than 1.05kgs"
+      }
+    },
+    {
+      "id": "part-equipment-throwablelifepreserver-01",
+      "name": "Throwable Life Preserver Cushion or Lifebuoy",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "type": "USCG Type IV approved (for cushion)"
+      }
+    },
+    {
+      "id": "part-equipment-vhfradio-01",
+      "name": "VHF Radio",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Communication",
+      "specifications": {
+        "quantity": 1,
+        "functionality": "Functioning",
+        "useRestriction": "Not For Use during racing"
+      }
+    },
+    {
+      "id": "part-equipment-timingdevice-01",
+      "name": "Electronic or Mechanical Timing Devices",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Navigation",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-navinstruments-01",
+      "name": "Tactical and Navigation Instruments and their associated power sources",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Navigation",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-mooringlines-01",
+      "name": "Mooring line or lines",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-waterbottleholders-01",
+      "name": "Water Bottle Holders",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior/Deck",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-looserope-01",
+      "name": "Loose ropes",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "restriction": "Unrestricted provided fixing does not change structural properties or give performance advantage"
+      }
+    },
+    {
+      "id": "part-equipment-fenders-01",
+      "name": "Fenders",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "restriction": "Unrestricted provided fixing does not change structural properties or give performance advantage"
+      }
+    },
+    {
+      "id": "part-equipment-spares-01",
+      "name": "Spares",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted provided fixing does not change structural properties or give performance advantage"
+      }
+    },
+    {
+      "id": "part-equipment-internalbuoyancy-01",
+      "name": "Internal Buoyancy",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Safety Equipment",
+      "specifications": {
+        "restriction": "Unrestricted provided fixing does not change structural properties or give performance advantage"
+      }
+    },
+    {
+      "id": "part-equipment-charts-01",
+      "name": "Charts",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Navigation",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-ropegags-01",
+      "name": "Rope, bags, tape or fittings to secure safety or other equipment",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-netting-01",
+      "name": "Netting, bags, socks or protective coverings (below deck)",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Stowage",
+      "specifications": {
+        "purpose": "To facilitate sail stowage and protect the spinnaker against tearing or water",
+        "use": "May be installed"
+      }
+    },
+    {
+      "id": "part-equipment-telltales-01",
+      "name": "Tell tales",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Sails/Rigging",
+      "specifications": {
+        "installation": "May be added to any part of the rig and sails"
+      }
+    },
+    {
+      "id": "part-equipment-weedsticks-01",
+      "name": "Weed sticks",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Maintenance",
+      "specifications": {
+        "design": "Optional design",
+        "use": "May be carried on board for the removal of weeds from the hull appendages"
+      }
+    },
+    {
+      "id": "part-equipment-coolicebox-01",
+      "name": "Cool/ice box",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior",
+      "specifications": {
+        "use": "May be carried"
+      }
+    },
+    {
+      "id": "part-equipment-mastgaiter-01",
+      "name": "Mast Gaiter",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Rigging",
+      "specifications": {
+        "location": "Below the gooseneck",
+        "purpose": "To prevent damage from the jib clew and blocks",
+        "installation": "May be fitted"
+      }
+    },
+    {
+      "id": "part-equipment-tools-01",
+      "name": "Tools",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Maintenance",
+      "specifications": {
+        "type": "Necessary and appropriate tools",
+        "use": "Optional"
+      }
+    },
+    {
+      "id": "part-equipment-velcro-01",
+      "name": "Velcro",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-shockcord-01",
+      "name": "Shockcord",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-teflontape-01",
+      "name": "Teflon tape",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-flexibletapecord-01",
+      "name": "Flexible adhesive tape",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-stainlessrings-01",
+      "name": "Stainless rings",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-pulleys-01",
+      "name": "Pulleys",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    },
+    {
+      "id": "part-equipment-shackles-01",
+      "name": "Shackles",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "General",
+      "specifications": {
+        "restriction": "Unrestricted as long as it does not modify sheeting angle or restrict intended purpose, and conforms to C.6.1.(b)"
+      }
+    }
+  ],
+  "maintenance": [
+    {
+      "item": "Hull modifications, maintenance and repair",
+      "interval": null,
+      "method": "Details recorded on Manufacturer's Declaration, re-issue discretion of LM for A.10.1 (g), (h), (i)",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Rig modifications, maintenance and repair",
+      "interval": null,
+      "method": "Details recorded on Manufacturer's Declaration, re-issue discretion of LM for A.11.1(e)",
+      "_confidence_method": "high"
+    },
+    {
+      "item": "Crew weighing",
+      "interval": "Prior to racing (during registration period)",
+      "method": "Re-weighing only if valid protest shows pre-race weights were false. Owner responsibility to advise race committee of changes and post on notice board.",
+      "_confidence_interval": "high"
+    },
+    {
+      "item": "Sail event limitation mark",
+      "interval": "As needed",
+      "method": "If damaged or lost, report to race committee. Measurer or IM32CA representative may date and sign over the mark.",
+      "_confidence_method": "high"
+    }
+  ],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": ""
+  },
+  "fileInfo": {
+    "fileName": "M32_CR_2025-03March-30.pdf",
+    "filePath": "data/yachtpdf\\M32_CR_2025-03March-30.pdf",
+    "fileSize": 1359220
+  }
+}

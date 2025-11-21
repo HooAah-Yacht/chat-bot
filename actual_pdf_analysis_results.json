@@ -1,0 +1,22 @@
+{
+  "testDate": "2025-11-20T16:54:28.424870",
+  "totalFiles": 2,
+  "results": [
+    {
+      "fileName": "11월11일 멘토링.pdf",
+      "filePath": "data/yachtpdf/11월11일 멘토링.pdf",
+      "timestamp": "2025-11-20T16:54:53.472960",
+      "status": "success",
+      "chatbotResponse": "❌ 파일 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "registrationData": null
+    },
+    {
+      "fileName": "11월17일 멘토링.pdf",
+      "filePath": "data/yachtpdf/11월17일 멘토링.pdf",
+      "timestamp": "2025-11-20T16:55:02.964968",
+      "status": "success",
+      "chatbotResponse": "❌ 파일 처리 중 오류가 발생했습니다: 'NoneType' object has no attribute 'get'",
+      "registrationData": null
+    }
+  ]
+}

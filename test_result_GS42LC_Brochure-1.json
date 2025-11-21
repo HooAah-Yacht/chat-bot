@@ -1,0 +1,757 @@
+{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2024-07-30T00:00:00Z",
+  "documentInfo": {
+    "title": "GRAND SOLEIL 42 LONG CRUISE",
+    "yachtModel": "Grand Soleil 42 Long Cruise",
+    "manufacturer": "Cantiere del Pardo",
+    "documentType": "Product Brochure / Specifications"
+  },
+  "yachtSpecs": {
+    "standard": {
+      "dimensions": {
+        "LOA": "13.83 m (45.37 FT)",
+        "LWL": "12.95 m (42.49 FT)",
+        "Beam": "4.18 m (13.71 FT)",
+        "Draft": "2.25 m (7.38 ft)",
+        "Displacement": "11.1 t approx (22200 lb approx)",
+        "mastHeight": null,
+        "_confidence_LOA": "high",
+        "_confidence_LWL": "high",
+        "_confidence_Beam": "high",
+        "_confidence_Draft": "high",
+        "_confidence_Displacement": "high"
+      },
+      "engine": {
+        "type": "Inboard",
+        "power": "50 HP (opt. 60 HP)",
+        "model": null,
+        "_confidence_power": "high"
+      },
+      "sailArea": {
+        "mainsail": null,
+        "jib": null,
+        "spinnaker": null,
+        "total": "108 m² (1163 FT²)",
+        "_confidence_total": "high"
+      }
+    },
+    "additional": {
+      "fuelCapacity": "200 L approx (53 gal approx)",
+      "waterCapacity": "300 L approx (79 gal approx)",
+      "guests": 6,
+      "navalArchitect": "Marco Lostuzzi",
+      "interiorExteriorDesign": "Nauta Design",
+      "shipyard": "Cantiere del Pardo",
+      "_confidence_fuelCapacity": "high",
+      "_confidence_waterCapacity": "high",
+      "_confidence_guests": "high",
+      "_confidence_navalArchitect": "high",
+      "_confidence_interiorExteriorDesign": "high",
+      "_confidence_shipyard": "high"
+    }
+  },
+  "detailedDimensions": {
+    "overallLength": "13.83 m (45.37 FT)",
+    "hullLength": "12.95 m (42.49 FT)",
+    "maxBeam": "4.18 m (13.71 FT)",
+    "draft": "2.25 m (7.38 ft)",
+    "displacement": "11.1 t approx (22200 lb approx)",
+    "freeboard": null,
+    "headroom": null,
+    "ballastWeight": null,
+    "ballastRatio": null,
+    "keelDimensions": null,
+    "rudderDimensions": null,
+    "boomLength": null,
+    "poleLength": null,
+    "_confidence_overallLength": "high",
+    "_confidence_hullLength": "high",
+    "_confidence_maxBeam": "high",
+    "_confidence_draft": "high",
+    "_confidence_displacement": "high"
+  },
+  "exterior": {
+    "hull": {
+      "id": "ext-hull-01",
+      "name": "Hull",
+      "category": "Structure",
+      "manufacturer": "Cantiere del Pardo",
+      "specifications": {
+        "type": "Monohull",
+        "material": "GRP / Fiberglass",
+        "color": null,
+        "thickness": null,
+        "gelcoatType": null,
+        "coreType": null,
+        "volume": "Generous",
+        "_confidence_material": "medium",
+        "_confidence_volume": "high"
+      },
+      "subComponents": [
+        {
+          "id": "ext-hull-keel-01",
+          "parentId": "ext-hull-01",
+          "name": "Keel",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "weight": null,
+            "draft": "2.25 m (7.38 ft)",
+            "attachmentMethod": null,
+            "stability": "High form stability",
+            "_confidence_draft": "high",
+            "_confidence_stability": "high"
+          },
+          "maintenanceDetails": null
+        },
+        {
+          "id": "ext-hull-rudder-01",
+          "parentId": "ext-hull-01",
+          "name": "Rudder",
+          "category": "Hull Structure",
+          "specifications": {
+            "type": null,
+            "material": null,
+            "dimensions": null
+          }
+        }
+      ]
+    },
+    "deck": {
+      "id": "ext-deck-01",
+      "name": "Deck",
+      "category": "Deck Structure",
+      "manufacturer": "Cantiere del Pardo",
+      "specifications": {
+        "designFocus": "Comfort and functionality",
+        "_confidence_designFocus": "high"
+      },
+      "subComponents": [
+        {
+          "id": "ext-deck-cockpit-01",
+          "parentId": "ext-deck-01",
+          "name": "Cockpit",
+          "category": "Deck Area",
+          "specifications": {
+            "description": "Large and wide cockpit designed for comfort and relaxation",
+            "layoutOptions": "Rollbar version (clear from clutter), Sportier version (without aft benches)",
+            "_confidence_description": "high",
+            "_confidence_layoutOptions": "high"
+          }
+        },
+        {
+          "id": "ext-deck-rollbar-01",
+          "parentId": "ext-deck-01",
+          "name": "Carbon Rollbar",
+          "category": "Deck Hardware",
+          "specifications": {
+            "material": "Carbon",
+            "function": "Frees cockpit from clutter, supports bimini and sprayhood, improves comfort and safety",
+            "availability": "Optional / Specific version",
+            "_confidence_material": "high",
+            "_confidence_function": "high",
+            "_confidence_availability": "high"
+          }
+        },
+        {
+          "id": "ext-deck-sternplatform-01",
+          "parentId": "ext-deck-01",
+          "name": "Fold-down Stern Platform",
+          "category": "Deck Feature",
+          "specifications": {
+            "type": "Fold-down",
+            "_confidence_type": "high"
+          }
+        }
+      ]
+    },
+    "windows": [],
+    "hatches": []
+  },
+  "groundTackle": {
+    "anchors": [],
+    "chain": null,
+    "windlass": null
+  },
+  "sailInventory": [
+    {
+      "id": "sail-main-01",
+      "name": "Mainsail",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "type": "Furling mainsail in the mast (opt)",
+        "_confidence_type": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "sail-jib-01",
+      "name": "Self-tacking Jib",
+      "category": "Sails",
+      "manufacturer": null,
+      "model": null,
+      "specifications": {
+        "area": null,
+        "luffLength": null,
+        "footLength": null,
+        "material": null,
+        "weight": null,
+        "year": null,
+        "reefingPoints": null,
+        "numberOfBattens": null,
+        "condition": null,
+        "type": "Self-tacking jib with hanging rail",
+        "standard": true,
+        "_confidence_type": "high",
+        "_confidence_standard": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "deckEquipment": {
+    "winches": [
+      {
+        "id": "deck-winch-port-aft-01",
+        "name": "Winch (Port, Aft)",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Near helmsman's station, port side",
+          "type": null,
+          "powerType": "Manual (Electric as option)",
+          "quantity": 2,
+          "_confidence_location": "high",
+          "_confidence_powerType": "high",
+          "_confidence_quantity": "high"
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      },
+      {
+        "id": "deck-winch-starboard-aft-01",
+        "name": "Winch (Starboard, Aft)",
+        "manufacturer": null,
+        "model": null,
+        "category": "Deck Hardware",
+        "specifications": {
+          "location": "Near helmsman's station, starboard side",
+          "type": null,
+          "powerType": "Manual (Electric as option)",
+          "quantity": 2,
+          "_confidence_location": "high",
+          "_confidence_powerType": "high",
+          "_confidence_quantity": "high"
+        },
+        "subComponents": [],
+        "maintenanceDetails": null
+      }
+    ],
+    "cleats": [],
+    "blocks": [],
+    "stanchions": null,
+    "steeringSystem": {
+      "id": "deck-steering-01",
+      "name": "Steering System",
+      "manufacturer": null,
+      "model": null,
+      "category": "Steering",
+      "specifications": {
+        "type": "Twin helm wheels",
+        "location": "Helmsman's station",
+        "seating": "Dedicated seating available (optional), creates storage",
+        "_confidence_type": "high",
+        "_confidence_location": "high",
+        "_confidence_seating": "high"
+      },
+      "subComponents": [],
+      "maintenanceDetails": null
+    },
+    "_additional": {
+      "maneuveringLinesRouting": {
+        "id": "deck-lines-routing-01",
+        "name": "Maneuvering Lines Routing",
+        "specifications": {
+          "description": "All maneuverings are arranged below deck at the helmsman’s station",
+          "_confidence_description": "high"
+        }
+      }
+    }
+  },
+  "accommodations": {
+    "summary": {
+      "cabins": "2 / 3",
+      "berths": null,
+      "heads": 2,
+      "showers": 2
+    },
+    "galley": {
+      "id": "accom-galley-01",
+      "name": "Galley",
+      "location": null,
+      "specifications": {
+        "dimensions": null,
+        "counterMaterial": null,
+        "storageVolume": null,
+        "design": "Maximum comfort and ample storage space",
+        "layoutIn2CabinVersion": "Larger galley with more storage space (compared to 3-cabin version)",
+        "_confidence_design": "high",
+        "_confidence_layoutIn2CabinVersion": "high"
+      },
+      "components": []
+    },
+    "cabins": [
+      {
+        "id": "accom-cabin-master-01",
+        "name": "Master Cabin",
+        "location": null,
+        "specifications": {
+          "berthSize": null,
+          "headroom": null,
+          "privateHead": null,
+          "stowage": "3 lockers, 2 drawers under the bed, lockers and bookcases at the sides of the bed, a large wardrobe",
+          "_confidence_stowage": "high"
+        },
+        "components": []
+      },
+      {
+        "id": "accom-cabin-aft-port-01",
+        "name": "Aft Guest Cabin Port",
+        "location": "Aft",
+        "specifications": {
+          "berthSize": "Double bed (in 3-cabin layout)",
+          "headroom": null,
+          "privateHead": false,
+          "_confidence_berthSize": "high"
+        },
+        "components": []
+      },
+      {
+        "id": "accom-cabin-aft-starboard-01",
+        "name": "Aft Guest Cabin Starboard",
+        "location": "Aft",
+        "specifications": {
+          "berthSize": "Double bed (in 3-cabin layout) / Two single V-shaped berths (in 2-cabin layout)",
+          "headroom": null,
+          "privateHead": false,
+          "layoutOption": "Space is used for larger galley and more storage in 2-cabin version",
+          "_confidence_berthSize": "high",
+          "_confidence_layoutOption": "high"
+        },
+        "components": []
+      }
+    ],
+    "heads": [
+      {
+        "id": "accom-head-01",
+        "name": "Head 1",
+        "specifications": {
+          "shower": true,
+          "showerType": "Separate shower stall",
+          "_confidence_shower": "high",
+          "_confidence_showerType": "high"
+        },
+        "components": []
+      },
+      {
+        "id": "accom-head-02",
+        "name": "Head 2",
+        "specifications": {
+          "shower": true,
+          "showerType": "Separate shower stall",
+          "_confidence_shower": "high",
+          "_confidence_showerType": "high"
+        },
+        "components": []
+      }
+    ],
+    "_additional": {
+      "dinette": {
+        "id": "accom-dinette-01",
+        "name": "Dinette",
+        "specifications": {
+          "seating": "Three-seat sofa on the right side of the saloon",
+          "chartTableConversion": "Central seat can become a chart table",
+          "_confidence_seating": "high",
+          "_confidence_chartTableConversion": "high"
+        }
+      },
+      "interiorLighting": {
+        "id": "accom-lighting-01",
+        "name": "Interior Lighting",
+        "specifications": {
+          "description": "Large windows give the interior a light and airy feel",
+          "_confidence_description": "high"
+        }
+      }
+    }
+  },
+  "tanks": {
+    "fuel": {
+      "id": "tank-fuel-01",
+      "name": "Fuel Tank",
+      "specifications": {
+        "capacity": "200 L approx (53 gal approx)",
+        "material": null,
+        "location": null,
+        "fuelType": "Diesel",
+        "_confidence_capacity": "high",
+        "_confidence_fuelType": "medium"
+      },
+      "subComponents": []
+    },
+    "freshWater": {
+      "id": "tank-water-01",
+      "name": "Water Tank",
+      "specifications": {
+        "totalCapacity": "300 L approx (79 gal approx)",
+        "material": null,
+        "numberOfTanks": null,
+        "_confidence_totalCapacity": "high"
+      },
+      "subComponents": []
+    },
+    "holdingTank": null
+  },
+  "electricalSystem": {
+    "batteries": {
+      "house": null,
+      "starter": null
+    },
+    "chargers": [],
+    "solarPanels": null,
+    "inverter": null,
+    "shoreConnection": null,
+    "_additional": {
+      "electricWinchesOption": {
+        "id": "elec-winch-option-01",
+        "name": "Electric Winches Option",
+        "specifications": {
+          "description": "Electric winches available as an option",
+          "_confidence_description": "high"
+        }
+      }
+    }
+  },
+  "electronics": {
+    "navigation": [],
+    "communication": [],
+    "instruments": [],
+    "autopilot": null
+  },
+  "plumbingSystem": {
+    "waterMaker": null,
+    "pumps": [],
+    "bilgePumps": [],
+    "seacocks": null,
+    "_additional": {
+      "showerSystem": {
+        "id": "plumb-shower-system-01",
+        "name": "Shower System",
+        "specifications": {
+          "description": "Two bathrooms with shower stalls",
+          "_confidence_description": "high"
+        }
+      }
+    }
+  },
+  "parts": [
+    {
+      "id": "part-hull-01",
+      "name": "Hull",
+      "manufacturer": "Cantiere del Pardo",
+      "model": "Grand Soleil 42 Long Cruise",
+      "interval": null,
+      "category": "Structure",
+      "specifications": {
+        "material": "GRP / Fiberglass",
+        "volume": "Generous",
+        "_confidence_material": "medium",
+        "_confidence_volume": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-keel-01",
+      "name": "Keel",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Hull Structure",
+      "specifications": {
+        "draft": "2.25 m (7.38 ft)",
+        "_confidence_draft": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-engine-01",
+      "name": "Engine",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Propulsion",
+      "specifications": {
+        "power": "50 HP (opt. 60 HP)",
+        "_confidence_power": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-mainsail-furling-01",
+      "name": "Furling Mainsail in the Mast",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Sails",
+      "specifications": {
+        "type": "Furling",
+        "location": "In the mast",
+        "availability": "Optional",
+        "_confidence_type": "high",
+        "_confidence_location": "high",
+        "_confidence_availability": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-jib-selftacking-01",
+      "name": "Self-tacking Jib",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Sails",
+      "specifications": {
+        "system": "with hanging rail",
+        "standard": true,
+        "_confidence_system": "high",
+        "_confidence_standard": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-fueltank-01",
+      "name": "Fuel Tank",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Tanks",
+      "specifications": {
+        "capacity": "200 L approx",
+        "_confidence_capacity": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-watertank-01",
+      "name": "Water Tank",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Tanks",
+      "specifications": {
+        "capacity": "300 L approx",
+        "_confidence_capacity": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-winch-01",
+      "name": "Winch",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "quantity": "4 (2 per side)",
+        "location": "Near the two helm wheels",
+        "powerOption": "Electric (optional)",
+        "_confidence_quantity": "high",
+        "_confidence_location": "high",
+        "_confidence_powerOption": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-helmwheel-01",
+      "name": "Helm Wheel",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Steering System",
+      "specifications": {
+        "quantity": 2,
+        "_confidence_quantity": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-rollbar-carbon-01",
+      "name": "Carbon Rollbar",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Hardware",
+      "specifications": {
+        "material": "Carbon",
+        "function": "Frees cockpit, supports bimini/sprayhood",
+        "_confidence_material": "high",
+        "_confidence_function": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-platform-stern-01",
+      "name": "Fold-down Stern Platform",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Deck Feature",
+      "specifications": {
+        "type": "Fold-down",
+        "_confidence_type": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-charttable-01",
+      "name": "Chart Table",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "conversion": "Central seat of dinette sofa",
+        "_confidence_conversion": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-dinettesofa-01",
+      "name": "Dinette Sofa",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "seats": 3,
+        "_confidence_seats": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-cabin-master-wardrobe-01",
+      "name": "Master Cabin Wardrobe",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "size": "Large",
+        "_confidence_size": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-cabin-master-drawers-01",
+      "name": "Master Cabin Drawers",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "quantity": 2,
+        "location": "Under the bed",
+        "_confidence_quantity": "high",
+        "_confidence_location": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-cabin-master-lockers-01",
+      "name": "Master Cabin Lockers",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "quantity": 3,
+        "location": "Various",
+        "_confidence_quantity": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-cabin-master-bookcases-01",
+      "name": "Master Cabin Bookcases",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Furniture",
+      "specifications": {
+        "location": "At the sides of the bed",
+        "_confidence_location": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    },
+    {
+      "id": "part-window-interior-01",
+      "name": "Interior Windows",
+      "manufacturer": null,
+      "model": null,
+      "interval": null,
+      "category": "Interior Features",
+      "specifications": {
+        "size": "Large",
+        "effect": "Give a light and airy feel",
+        "_confidence_size": "high",
+        "_confidence_effect": "high"
+      },
+      "subParts": [],
+      "maintenanceDetails": null
+    }
+  ],
+  "maintenance": [],
+  "analysisResult": {
+    "canExtractText": true,
+    "canAnalyze": true,
+    "reason": null
+  },
+  "fileInfo": {
+    "fileName": "GS42LC_Brochure-1.pdf",
+    "filePath": "data/yachtpdf\\GS42LC_Brochure-1.pdf",
+    "fileSize": 3513383
+  }
+}
