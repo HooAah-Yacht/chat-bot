@@ -228,12 +228,14 @@ python chatbot_unified.py --mode api --port 5000
 **API 엔드포인트:**
 
 #### 챗봇용
+
 - `POST /api/chat` - 채팅 메시지
 - `POST /api/chat/upload` - PDF 업로드 (자연어 응답)
 - `POST /api/yacht/register` - 요트 등록 (JSON 응답)
 - `GET /api/chat/history` - 대화 기록
 
 #### Backend 연동용 ⭐ NEW
+
 - `GET /api/yacht/analyze?yacht_name={name}` - 요트 이름으로 부품 조회
 - `POST /api/yacht/analyze-pdf` - PDF 파일 분석
 - `GET /api/health` - 헬스체크 (서버 상태, 요트 개수)
@@ -259,12 +261,14 @@ List<PartDto>
 ```
 
 **주요 특징:**
+
 - ✅ **Stateless 설계**: AI 상태는 DB에 저장하지 않고 API 응답으로만 사용
 - ✅ **Fallback 메커니즘**: AI 서버 다운 시 기본 데이터 반환
 - ✅ **타임아웃 설정**: 연결 5초, 읽기 30초
 - ✅ **상세 로깅**: 모든 API 호출 추적
 
 **📚 상세 문서:**
+
 - [전체 통합 요약](../INTEGRATION_SUMMARY.md) - 빠른 개요 및 테스트 방법
 - [상세 통합 가이드](AI_BACKEND_INTEGRATION_COMPLETE.md) - API 명세 및 배포 가이드
 
@@ -448,6 +452,7 @@ prompt = f"""
 **최종 업데이트:** 2025-11-21
 
 **주요 변경사항:**
+
 - ✅ Schema 5.0: 완전 구조화된 데이터 시스템
 - ✅ Backend 연동: Spring Boot RestTemplate 통합
 - ✅ OCR 지원: 스캔 PDF 처리 가능
