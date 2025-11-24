@@ -328,11 +328,40 @@ python install_ocr_local.py
 
 ### 3. 환경 변수 설정
 
-`.env` 파일 생성:
+`.env.example` 파일을 복사하여 `.env` 파일을 생성하고 실제 값을 입력하세요:
+
+```bash
+# .env.example을 복사
+cp .env.example .env
+
+# .env 파일을 편집하여 실제 값 입력
+# Windows: notepad .env
+# Linux/Mac: nano .env
+```
+
+**`.env` 파일 내용:**
 
 ```env
-GEMINI_API_KEY=your_api_key_here
+# Gemini API Key (Google AI Studio에서 발급)
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# Secret Key (JWT 토큰 생성용)
+SECRET_KEY=your_secret_key_here
+
+# Database Configuration
+DB_URL=localhost:3306/HooYah
+DB_USERNAME=root
+DB_PASSWORD=your_database_password_here
 ```
+
+**🔑 API 키 발급 방법:**
+1. [Google AI Studio](https://makersuite.google.com/app/apikey) 접속
+2. "Create API Key" 클릭
+3. 생성된 키를 `.env` 파일의 `GEMINI_API_KEY`에 입력
+
+**⚠️ 보안 주의사항:**
+- `.env` 파일은 절대 GitHub에 올리지 마세요!
+- `.gitignore`에 `.env`가 포함되어 있는지 확인하세요
 
 ---
 
