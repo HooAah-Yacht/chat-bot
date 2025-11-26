@@ -442,7 +442,8 @@ class YachtManualUploader:
                     "manufacturer": part.get("manufacturer", ""),
                     "model": part.get("model", ""),
                     "category": part.get("category", "rigging"),
-                    "interval": part.get("interval")
+                    "interval": part.get("interval"),
+                    "latestMaintenanceDate": part.get("latestMaintenanceDate") or part.get("lastMaintenanceDate") or part.get("servicedOn") or None
                 }
                 
                 yacht_entry["parts"].append(part_entry)
@@ -796,4 +797,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

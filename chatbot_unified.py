@@ -2540,7 +2540,8 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 "name": part.get("name", ""),
                 "manufacturer": part.get("manufacturer", ""),
                 "model": part.get("model", ""),
-                "interval": part.get("interval") if part.get("interval") else None
+                "interval": part.get("interval") if part.get("interval") else None,
+                "latestMaintenanceDate": part.get("latestMaintenanceDate") or part.get("lastMaintenanceDate") or part.get("servicedOn") or None
             })
         
         registration_data = {
