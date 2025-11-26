@@ -1875,8 +1875,39 @@ PDF 파일 경로를 입력해주세요! 📎"""
 
 **ID: `part-{{category}}-{{name}}-{{number}}`**
 
-모든 부품을 하나의 배열에 통합하세요.
+⚠️ **중요: 대체 가능한 부품 (Alternative Parts) 통합 규칙**
 
+**1. 같은 이름의 부품이 여러 제조사로 나열된 경우:**
+   - 하나의 부품으로 통합
+   - manufacturer 필드에 모든 제조사를 슬래시(/)로 구분
+   - model 필드에 모든 모델을 슬래시(/)로 구분
+
+**2. "OR", "alternatively", "/" 키워드 발견 시:**
+   - 대체 부품으로 인식하여 하나로 통합
+   
+**3. 같은 카테고리 + 같은 위치의 부품:**
+   - 기능이 같다면 하나로 통합
+
+**올바른 예시:**
+```json
+{{
+  "name": "Primary Winch",
+  "manufacturer": "Harken / Lewmar",
+  "model": "B480TCR / Ocean Racing 440 / 44",
+  "category": "Deck Equipment"
+}}
+```
+
+**잘못된 예시 (중복 - 하지 마세요):**
+```json
+[
+  {{"name": "Primary Winch", "manufacturer": "Harken", "model": "B480TCR"}},
+  {{"name": "Primary Winch", "manufacturer": "Lewmar", "model": "Ocean Racing 440"}},
+  {{"name": "Primary Winch", "manufacturer": "Lewmar", "model": "44"}}
+]
+```
+
+**부품 추출 형식:**
 ```json
 [
   {{
