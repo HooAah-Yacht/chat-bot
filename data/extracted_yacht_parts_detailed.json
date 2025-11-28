@@ -26284,6 +26284,78 @@
               "",
               ""
             ]
+          },
+          {
+            "name": "Mast",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Mast",
+            "specifications": [
+              null,
+              "Whale Spar / Hi-Tech / McConaghy",
+              ""
+            ]
+          },
+          {
+            "name": "Boom",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Boom",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Spinnaker Pole",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Spinnaker Pole",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Standing Rigging",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Standing Rigging",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Running Rigging",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Running Rigging",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Throttle Faceplate",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Throttle Faceplate",
+            "specifications": [
+              "ATCU",
+              "Spinlock",
+              ""
+            ]
+          },
+          {
+            "name": "Sail Drive Leg",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Sail Drive Leg",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Propeller Bolt Heads",
+            "description": "Farr Yacht Design, Inc. / Stagg Yachts, Inc. Farr 40 - Propeller Bolt Heads",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
           }
         ],
         "sails": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "5.0",
-  "lastUpdated": "2025-11-21",
+  "lastUpdated": "2025-11-27",
   "totalYachts": 19,
   "yachts": [
     {
@@ -7501,7 +7501,7 @@
     {
       "id": "farr-40",
       "name": "Farr 40",
-      "manufacturer": "Farr Yacht Design, Inc.",
+      "manufacturer": "Farr Yacht Design, Inc. / Stagg Yachts, Inc.",
       "type": "Class Rules",
       "schemaVersion": "5.0",
       "updatedAt": "2025-11-21T17:07:51.973893",
@@ -7995,39 +7995,9 @@
         ]
       },
       "accommodations": {
-        "summary": {
-          "cabins": null,
-          "berths": null,
-          "heads": null,
-          "showers": null
-        },
-        "galley": null,
-        "cabins": [],
-        "heads": [],
-        "interiorFitOut": {
-          "id": "accom-interior-01",
-          "name": "Interior Fit Out",
-          "category": "Accommodations",
-          "specifications": {
-            "weightAndWeightDistribution": "Identical as possible"
-          },
-          "components": [
-            {
-              "id": "accom-interior-bunkCushions-01",
-              "name": "Bunk Cushions",
-              "specifications": {
-                "removalProhibited": "For designated Farr 40 One Design distance races"
-              }
-            },
-            {
-              "id": "accom-interior-pipeBerths-01",
-              "name": "Pipe Berths (Optional)",
-              "specifications": {
-                "removalAllowed": "For Farr 40 One Design Class Racing (as boats are weighed prior to installation of builder supplied options)"
-              }
-            }
-          ]
-        }
+        "berths": null,
+        "cabins": null,
+        "heads": null
       },
       "tanks": null,
       "electricalSystem": {
@@ -8058,7 +8028,34 @@
         "instruments": [],
         "autopilot": null
       },
-      "plumbingSystem": null
+      "plumbingSystem": null,
+      "manual": "manual_farr40.pdf",
+      "dimensions": {},
+      "sailArea": {
+        "mainSailArea": null,
+        "jibSailArea": null,
+        "spinnakerSailArea": null,
+        "totalSailArea": null
+      },
+      "engine": {
+        "type": "",
+        "power": "",
+        "model": ""
+      },
+      "hull": {
+        "hullMaterial": "",
+        "deckMaterial": "",
+        "keelType": ""
+      },
+      "capacity": {
+        "fuelCapacity": null,
+        "waterCapacity": null
+      },
+      "performance": {
+        "maxSpeed": null,
+        "cruisingSpeed": null
+      },
+      "description": "PDF 매뉴얼에서 자동 추출: FARR® 40 ONE DESIGN CLASS RULES"
     },
     {
       "id": "solaris-44",

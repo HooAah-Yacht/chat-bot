@@ -1,8 +1,8 @@
 {
   "schemaVersion": "5.0",
-  "lastUpdated": "2025-11-21",
+  "lastUpdated": "2025-11-27",
   "description": "사용자가 등록한 요트 목록 (chatbot_unified.py로 등록)",
-  "totalYachts": 0,
+  "totalYachts": 2,
   "yachts": [
     {
       "id": "swan-41",
@@ -216,6 +216,135 @@
           }
         },
         "partsCount": 23,
+        "analysisStatus": "success"
+      }
+    },
+    {
+      "id": "farr-40",
+      "registrationDate": "2025-11-27T10:21:37.403208",
+      "source": "PDF Upload",
+      "pdfFile": "manual_farr40.pdf",
+      "registrationData": {
+        "id": "farr-40",
+        "basicInfo": {
+          "id": "farr-40",
+          "name": "Farr 40",
+          "nickName": "Farr 40",
+          "manufacturer": "Farr Yacht Design, Inc. / Stagg Yachts, Inc.",
+          "type": "Class Rules",
+          "year": "",
+          "designer": "",
+          "manual": "manual_farr40.pdf"
+        },
+        "specifications": {
+          "dimensions": {
+            "loa": null,
+            "lwl": null,
+            "beam": null,
+            "draft": null,
+            "displacement": null,
+            "mastHeight": null
+          },
+          "sailArea": {
+            "mainSailArea": null,
+            "jibSailArea": null,
+            "spinnakerSailArea": null,
+            "totalSailArea": null
+          },
+          "engine": {
+            "type": "",
+            "power": "",
+            "model": ""
+          },
+          "hull": {
+            "hullMaterial": "",
+            "deckMaterial": "",
+            "keelType": ""
+          },
+          "accommodations": {
+            "berths": null,
+            "cabins": null,
+            "heads": null
+          },
+          "capacity": {
+            "fuelCapacity": null,
+            "waterCapacity": null
+          },
+          "performance": {
+            "maxSpeed": null,
+            "cruisingSpeed": null
+          },
+          "ceCertification": "",
+          "description": "PDF 매뉴얼에서 자동 추출: FARR® 40 ONE DESIGN CLASS RULES",
+          "features": ""
+        },
+        "parts": [
+          {
+            "name": "Mast",
+            "manufacturer": "Whale Spar / Hi-Tech / McConaghy",
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Boom",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Spinnaker Pole",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Standing Rigging",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Running Rigging",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Throttle Faceplate",
+            "manufacturer": "Spinlock",
+            "model": "ATCU",
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Sail Drive Leg",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          },
+          {
+            "name": "Propeller Bolt Heads",
+            "manufacturer": null,
+            "model": null,
+            "interval": null,
+            "latestMaintenanceDate": null
+          }
+        ]
+      },
+      "analysisResult": {
+        "documentInfo": {
+          "title": "FARR® 40 ONE DESIGN CLASS RULES",
+          "yachtModel": "Farr 40",
+          "manufacturer": "Farr Yacht Design, Inc. / Stagg Yachts, Inc.",
+          "documentType": "Class Rules"
+        },
+        "partsCount": 8,
         "analysisStatus": "success"
       }
     }

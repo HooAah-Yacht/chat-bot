@@ -494,3 +494,4 @@ def analyze_pdf_by_pages(pdf_path, page_range=50):
 - `backend/src/test/java/HooYah/Yacht/YachtApplicationTests.java`
 - `frontend/test/widget_test.dart`
 
+

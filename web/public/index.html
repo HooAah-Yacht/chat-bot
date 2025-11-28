@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yacht Chatbot Tester</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Yacht Chatbot Tester</h1>
+      <div class="env">
+        <label>Flask Target:</label>
+        <input id="flaskHost" type="text" value="http://localhost:5000" />
+        <button id="saveEnv">적용</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="chat" class="chat"></div>
+      <form id="chatForm" class="chat-form">
+        <input id="messageInput" type="text" placeholder="메시지를 입력하세요..." required />
+        <button type="submit">전송</button>
+      </form>
+
+      <section class="tools">
+        <h2>도구</h2>
+        <div class="tool-row">
+          <button id="previewParts">PDF 부품 미리보기 호출</button>
+          <input id="pdfPath" type="text" placeholder="PDF 경로 (옵션)" />
+        </div>
+        <div class="tool-row">
+          <button id="registerSelected">선택 부품 등록 호출</button>
+          <input id="selectedParts" type="text" placeholder='["엔진", "펌프"]' />
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

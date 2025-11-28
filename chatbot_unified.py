@@ -3156,6 +3156,203 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def get_registration_data(self) -> Optional[Dict]:
         """현재 등록 중인 요트 데이터 반환"""
         return self.current_yacht_registration
+    
+    def _analyze_document_for_preview(self, file_path: str, extracted_text: str) -> Dict:
+        """문서 분석 - 부품 목록만 빠르게 추출 (미리보기용)"""
+        if len(extracted_text) > 30000:
+            extracted_text = extracted_text[:30000] + "\n\n[... 텍스트 일부만 분석 ...]"
+        
+        if not self.has_gemini:
+            return {"error": "문서 분석 기능은 Gemini API가 필요합니다."}
+        
+        # 부품 목록만 빠르게 추출하는 프롬프트
+        prompt = f"""다음은 요트 또는 부품 매뉴얼에서 추출한 텍스트입니다:
+
+{extracted_text}
+
+---
+
+## 📋 작업 지시사항
+
+**목적: 부품 목록 빠른 추출 (사용자 선택을 위한 미리보기)**
+
+매뉴얼에서 발견되는 **모든 부품**을 간단히 나열하세요.
+
+**부품 추출 규칙:**
+
+1. **ID 생성**: `part-{{순번}}` (예: part-001, part-002)
+2. **필수 필드**: id, name, category
+3. **선택 필드**: manufacturer, model, interval (있으면 포함)
+4. **중복 통합**: 같은 이름의 부품은 하나로 통합
+5. **세부 부품 포함**: 
+   - 엔진의 구성 부품 (예: 해수펌프, 연료여과기)
+   - 시스템의 하위 부품 (예: 배터리, 충전기)
+   - 모두 개별 부품으로 추출
+
+**중요도 표시:**
+- importance: "high" (핵심 부품, 엔진/돛/키 등)
+- importance: "medium" (중요 하위 부품, 펌프/필터 등)
+- importance: "low" (소모품, 볼트/개스킷 등)
+
+**응답 형식:**
+
+```json
+{{
+  "documentInfo": {{
+    "title": "문서 제목",
+    "yachtModel": "요트 모델명 (있다면)",
+    "manufacturer": "제조사",
+    "documentType": "Owner's Manual / Parts Manual / Service Manual"
+  }},
+  "parts": [
+    {{
+      "id": "part-001",
+      "name": "부품명",
+      "category": "Engine / Rigging / Deck / Electrical / Plumbing",
+      "manufacturer": "제조사 (있다면)",
+      "model": "모델명 (있다면)",
+      "interval": 12,
+      "importance": "high",
+      "description": "간단한 설명 (선택사항)"
+    }}
+  ],
+  "totalPartsCount": 59,
+  "summary": {{
+    "high": 5,
+    "medium": 20,
+    "low": 34
+  }}
+}}
+```
+
+**주의사항:**
+- 모든 부품을 빠짐없이 추출 (개수 제한 없음)
+- 부품이 많아도 (50개 이상) 모두 나열
+- 불확실한 정보는 null로 표시
+- JSON 형식으로만 응답"""
+        
+        try:
+            print("🤖 부품 목록 추출 중...")
+            response = self.model.generate_content(prompt)
+            result_text = response.text
+            
+            # JSON 추출
+            if "```json" in result_text:
+                json_start = result_text.find("```json") + 7
+                json_end = result_text.find("```", json_start)
+                result_text = result_text[json_start:json_end].strip()
+            elif "```" in result_text:
+                json_start = result_text.find("```") + 3
+                json_end = result_text.find("```", json_start)
+                result_text = result_text[json_start:json_end].strip()
+            
+            result = json.loads(result_text)
+            result["fileInfo"] = {
+                "fileName": os.path.basename(file_path),
+                "filePath": file_path
+            }
+            
+            print(f"✅ {len(result.get('parts', []))}개 부품 발견!")
+            return result
+            
+        except Exception as e:
+            print(f"❌ 부품 목록 추출 실패: {e}")
+            return {"error": str(e)}
+    
+    def _analyze_with_selected_parts(self, file_path: str, extracted_text: str, selected_part_ids: List[str]) -> Dict:
+        """선택된 부품만 포함하여 전체 문서 분석"""
+        if len(extracted_text) > 30000:
+            extracted_text = extracted_text[:30000] + "\n\n[... 텍스트 일부만 분석 ...]"
+        
+        if not self.has_gemini:
+            return {"error": "문서 분석 기능은 Gemini API가 필요합니다."}
+        
+        # 선택된 부품 ID 목록을 문자열로 변환
+        selected_ids_str = ", ".join(selected_part_ids) if selected_part_ids else "없음"
+        
+        prompt = f"""다음은 요트 매뉴얼에서 추출한 텍스트입니다:
+
+{extracted_text}
+
+---
+
+## 📋 작업 지시사항 (선택된 부품만 추출)
+
+**선택된 부품 ID:** {selected_ids_str}
+
+위 ID에 해당하는 부품만 상세하게 분석하세요. 다른 부품은 무시하세요.
+
+**부품이 선택되지 않은 경우 (ID: 없음):**
+- parts 배열을 빈 배열 []로 반환
+- 요트 기본 정보(documentInfo, yachtSpecs)는 여전히 추출
+
+**응답 형식 (Schema 5.0):**
+
+```json
+{{
+  "schemaVersion": "5.0",
+  "analyzedAt": "2025-11-28T...",
+  "documentInfo": {{
+    "title": "...",
+    "yachtModel": "...",
+    "manufacturer": "...",
+    "documentType": "..."
+  }},
+  "yachtSpecs": {{
+    "standard": {{
+      "dimensions": {{}},
+      "engine": {{}},
+      "sailArea": {{}}
+    }},
+    "additional": {{}}
+  }},
+  "parts": [
+    // 선택된 ID의 부품만 포함 (상세 정보)
+    {{
+      "id": "선택된 ID",
+      "name": "...",
+      "manufacturer": "...",
+      "model": "...",
+      "category": "...",
+      "interval": 12,
+      "specifications": {{}},
+      "maintenanceDetails": {{}}
+    }}
+  ]
+}}
+```
+
+**중요:**
+- 선택되지 않은 부품은 절대 포함하지 마세요
+- JSON 형식으로만 응답"""
+        
+        try:
+            print(f"🤖 선택된 {len(selected_part_ids)}개 부품 상세 분석 중...")
+            response = self.model.generate_content(prompt)
+            result_text = response.text
+            
+            # JSON 추출
+            if "```json" in result_text:
+                json_start = result_text.find("```json") + 7
+                json_end = result_text.find("```", json_start)
+                result_text = result_text[json_start:json_end].strip()
+            elif "```" in result_text:
+                json_start = result_text.find("```") + 3
+                json_end = result_text.find("```", json_start)
+                result_text = result_text[json_start:json_end].strip()
+            
+            result = json.loads(result_text)
+            result["fileInfo"] = {
+                "fileName": os.path.basename(file_path),
+                "filePath": file_path
+            }
+            
+            print(f"✅ {len(result.get('parts', []))}개 부품 분석 완료!")
+            return result
+            
+        except Exception as e:
+            print(f"❌ 부품 분석 실패: {e}")
+            return {"error": str(e)}
 
 
 def run_interactive_mode(api_key: str = None):
@@ -3392,6 +3589,167 @@ def run_api_server(api_key: str = None, port: int = 5000):
             traceback.print_exc()
             return jsonify({"success": False, "error": str(e)}), 500
     
+    @app.route('/api/yacht/preview-parts', methods=['POST'])
+    def preview_parts():
+        """
+        PDF 부품 미리보기 API - 추출 가능한 부품 목록만 반환
+        
+        Request:
+        - multipart/form-data
+        - file: PDF 파일
+        
+        Response:
+        - 부품 목록 (사용자가 선택할 수 있도록)
+        """
+        try:
+            if 'file' not in request.files:
+                return jsonify({"success": False, "error": "파일이 필요합니다."}), 400
+            
+            file = request.files['file']
+            if file.filename == '':
+                return jsonify({"success": False, "error": "파일이 선택되지 않았습니다."}), 400
+            
+            if not file.filename.lower().endswith('.pdf'):
+                return jsonify({"success": False, "error": "PDF 파일만 업로드 가능합니다."}), 400
+            
+            # 파일 저장
+            upload_folder = 'uploads'
+            os.makedirs(upload_folder, exist_ok=True)
+            
+            if secure_filename:
+                filename = secure_filename(file.filename)
+            else:
+                filename = file.filename.replace(' ', '_')
+            file_path = os.path.join(upload_folder, filename)
+            file.save(file_path)
+            
+            # 세션 정보
+            session_id = request.form.get('session_id', 'default')
+            chatbot = get_or_create_chatbot(session_id)
+            
+            # 텍스트 추출
+            print(f"📄 파일 분석 시작: {filename}", flush=True)
+            extracted_text = chatbot._extract_text_from_file(file_path)
+            
+            if not extracted_text or len(extracted_text.strip()) < 100:
+                return jsonify({
+                    "success": False,
+                    "error": f"{filename}에서 텍스트를 추출할 수 없습니다."
+                }), 400
+            
+            # 부품 목록만 빠르게 추출
+            preview_result = chatbot._analyze_document_for_preview(file_path, extracted_text)
+            
+            if "error" in preview_result:
+                return jsonify({
+                    "success": False,
+                    "error": preview_result.get("error", "분석 실패")
+                }), 500
+            
+            # 응답
+            return jsonify({
+                "success": True,
+                "fileName": filename,
+                "filePath": file_path,  # 다음 단계에서 사용
+                "timestamp": datetime.now().isoformat(),
+                "documentInfo": preview_result.get("documentInfo", {}),
+                "parts": preview_result.get("parts", []),
+                "totalPartsCount": preview_result.get("totalPartsCount", len(preview_result.get("parts", []))),
+                "summary": preview_result.get("summary", {}),
+                "message": f"총 {len(preview_result.get('parts', []))}개의 부품이 발견되었습니다. 등록할 부품을 선택하세요."
+            }), 200
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({"success": False, "error": str(e)}), 500
+    
+    @app.route('/api/yacht/register-selected', methods=['POST'])
+    def register_selected_parts():
+        """
+        선택된 부품만 등록 API
+        
+        Request (JSON):
+        {
+          "filePath": "uploads/manual.pdf",
+          "selectedPartIds": ["part-001", "part-005", "part-010"],
+          "session_id": "default"
+        }
+        
+        Response:
+        - 선택된 부품만 포함된 전체 분석 결과
+        """
+        try:
+            data = request.get_json()
+            
+            if not data:
+                return jsonify({"success": False, "error": "JSON 데이터가 필요합니다."}), 400
+            
+            file_path = data.get('filePath')
+            selected_part_ids = data.get('selectedPartIds', [])
+            session_id = data.get('session_id', 'default')
+            
+            if not file_path:
+                return jsonify({"success": False, "error": "filePath가 필요합니다."}), 400
+            
+            if not os.path.exists(file_path):
+                return jsonify({"success": False, "error": "파일을 찾을 수 없습니다."}), 404
+            
+            # 챗봇 인스턴스
+            chatbot = get_or_create_chatbot(session_id)
+            
+            # 텍스트 재추출
+            print(f"📄 파일 재분석: {os.path.basename(file_path)}", flush=True)
+            extracted_text = chatbot._extract_text_from_file(file_path)
+            
+            if not extracted_text or len(extracted_text.strip()) < 100:
+                return jsonify({
+                    "success": False,
+                    "error": "텍스트 추출 실패"
+                }), 400
+            
+            # 선택된 부품만 상세 분석
+            analysis_result = chatbot._analyze_with_selected_parts(file_path, extracted_text, selected_part_ids)
+            
+            if "error" in analysis_result:
+                return jsonify({
+                    "success": False,
+                    "error": analysis_result.get("error", "분석 실패")
+                }), 500
+            
+            # 등록 데이터 변환
+            registration_data = chatbot._convert_analysis_to_registration(analysis_result)
+            
+            # JSON 파일 저장
+            chatbot._save_registration_to_json(registration_data, analysis_result)
+            
+            # 응답
+            return jsonify({
+                "success": True,
+                "fileName": os.path.basename(file_path),
+                "timestamp": datetime.now().isoformat(),
+                "selectedPartsCount": len(selected_part_ids),
+                "registeredPartsCount": len(analysis_result.get("parts", [])),
+                "yacht": {
+                    "basicInfo": registration_data.get("basicInfo", {}),
+                    "specifications": registration_data.get("specifications", {}),
+                    "parts": registration_data.get("parts", [])
+                },
+                "analysisResult": {
+                    "documentInfo": analysis_result.get("documentInfo", {}),
+                    "yachtSpecs": analysis_result.get("yachtSpecs", {}),
+                    "parts": analysis_result.get("parts", [])
+                },
+                "message": f"{len(analysis_result.get('parts', []))}개 부품이 등록되었습니다."
+            }), 200
+            
+        except Exception as e:
+            print(f"❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+            return jsonify({"success": False, "error": str(e)}), 500
+    
     @app.route('/api/chat/history', methods=['GET'])
     def get_history():
         try:
@@ -3605,7 +3963,11 @@ def run_api_server(api_key: str = None, port: int = 5000):
     print("  - POST /api/yacht/register - 요트 등록 (JSON 응답)")
     print("  - GET /api/chat/history - 대화 기록 조회")
     print()
-    print("  [Backend 연동용] ⭐ NEW")
+    print("  [부품 선택 등록] ⭐ NEW")
+    print("  - POST /api/yacht/preview-parts - PDF 부품 미리보기 (선택 전)")
+    print("  - POST /api/yacht/register-selected - 선택된 부품만 등록")
+    print()
+    print("  [Backend 연동용]")
     print("  - GET /api/yacht/analyze?yacht_name={name} - 요트 이름으로 부품 조회")
     print("  - POST /api/yacht/analyze-pdf - PDF 파일 분석")
     print("  - GET /api/health - 서버 상태 확인")

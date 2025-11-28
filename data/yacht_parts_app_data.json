@@ -3395,6 +3395,62 @@
           "category": "Certification",
           "manufacturer": null,
           "interval": null
+        },
+        {
+          "name": "Mast",
+          "manufacturer": "Whale Spar / Hi-Tech / McConaghy",
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Boom",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Spinnaker Pole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Standing Rigging",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Running Rigging",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Throttle Faceplate",
+          "manufacturer": "Spinlock",
+          "model": "ATCU",
+          "category": "Propulsion",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Sail Drive Leg",
+          "manufacturer": null,
+          "model": null,
+          "category": "Propulsion",
+          "maintenanceInterval": null
+        },
+        {
+          "name": "Propeller Bolt Heads",
+          "manufacturer": null,
+          "model": null,
+          "category": "Propulsion",
+          "maintenanceInterval": null
         }
       ]
     },

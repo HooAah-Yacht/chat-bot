@@ -27536,6 +27536,27 @@
           "model": "",
           "category": "Rigging",
           "interval": null
+        },
+        {
+          "name": "Throttle Faceplate",
+          "manufacturer": "Spinlock",
+          "model": "ATCU",
+          "category": "Propulsion",
+          "interval": null
+        },
+        {
+          "name": "Sail Drive Leg",
+          "manufacturer": null,
+          "model": null,
+          "category": "Propulsion",
+          "interval": null
+        },
+        {
+          "name": "Propeller Bolt Heads",
+          "manufacturer": null,
+          "model": null,
+          "category": "Propulsion",
+          "interval": null
         }
       ]
     },
