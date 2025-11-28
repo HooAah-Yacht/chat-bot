@@ -12,23 +12,52 @@
   let baseApi = '/api'; // proxied by Node server
 
   const addMsg = (role, text, isLoading = false) => {
-    const div = document.createElement('div');
-    div.className = `msg ${role}${isLoading ? ' loading' : ''}`;
-    if (isLoading) div.id = 'loading-msg';
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `msg ${role}${isLoading ? ' loading' : ''}`;
+    if (isLoading) msgDiv.id = 'loading-msg';
     
-    const roleSpan = document.createElement('span');
-    roleSpan.className = 'role';
-    roleSpan.textContent = role === 'user' ? '사용자:' : 'AI:';
+    // 메시지 래퍼 (프로필 + 말풍선)
+    const wrapper = document.createElement('div');
+    wrapper.className = 'msg-wrapper';
     
-    const textSpan = document.createElement('span');
-    textSpan.className = 'content';
-    textSpan.textContent = text;
+    // 프로필 아이콘
+    const profile = document.createElement('div');
+    profile.className = 'profile';
+    profile.textContent = role === 'user' ? '👤' : '🤖';
     
-    div.appendChild(roleSpan);
-    div.appendChild(textSpan);
-    chatEl.appendChild(div);
+    // 말풍선 + 메타 컨테이너
+    const bubbleContainer = document.createElement('div');
+    bubbleContainer.style.display = 'flex';
+    bubbleContainer.style.flexDirection = 'column';
+    bubbleContainer.style.maxWidth = 'calc(100% - 44px)';
+    
+    // 말풍선
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    
+    const content = document.createElement('div');
+    content.className = 'content';
+    content.textContent = text;
+    
+    bubble.appendChild(content);
+    bubbleContainer.appendChild(bubble);
+    
+    // 메타 정보 (시간)
+    if (!isLoading) {
+      const meta = document.createElement('div');
+      meta.className = 'msg-meta';
+      const time = new Date().toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: true });
+      meta.textContent = time;
+      bubbleContainer.appendChild(meta);
+    }
+    
+    wrapper.appendChild(profile);
+    wrapper.appendChild(bubbleContainer);
+    msgDiv.appendChild(wrapper);
+    
+    chatEl.appendChild(msgDiv);
     chatEl.scrollTop = chatEl.scrollHeight;
-    return div;
+    return msgDiv;
   };
 
   const removeLoadingMsg = () => {
