@@ -589,7 +589,9 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 # 요트 이름이 포함되어 있으면 해당 요트 분석, 없으면 전체 분석 안내
                 yacht_name = self._extract_yacht_name_from_message(user_message)
                 if yacht_name:
-                    return self._analyze_yacht_data(yacht_name)
+                    # 특정 섹션 요청 감지 (예: "사용 목적", "적합성 평가", "정비 권장사항")
+                    section_filter = self._extract_section_keyword(user_message)
+                    return self._analyze_yacht_data(yacht_name, section_filter)
                 else:
                     return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
             
@@ -629,7 +631,9 @@ PDF 파일 경로를 입력해주세요! 📎"""
         if any(keyword in message_lower for keyword in analysis_keywords):
             yacht_name = self._extract_yacht_name_from_message(user_message)
             if yacht_name:
-                return self._analyze_yacht_data(yacht_name)
+                # 특정 섹션 요청 감지
+                section_filter = self._extract_section_keyword(user_message)
+                return self._analyze_yacht_data(yacht_name, section_filter)
             else:
                 return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
         
@@ -2398,6 +2402,41 @@ PDF 파일 경로를 입력해주세요! 📎"""
         
         return message
     
+    def _extract_section_keyword(self, message: str) -> Optional[str]:
+        """메시지에서 섹션 키워드 추출
+        
+        Args:
+            message: 사용자 메시지
+            
+        Returns:
+            섹션 키워드 (예: "사용 목적에 따른 적합성 평가") 또는 None
+        """
+        message_lower = message.lower()
+        
+        # 섹션 키워드 매핑 (사용자 입력 → 정확한 섹션 제목)
+        section_keywords = {
+            "사용 목적": "사용 목적에 따른 적합성 평가",
+            "적합성": "사용 목적에 따른 적합성 평가",
+            "적합성 평가": "사용 목적에 따른 적합성 평가",
+            "정비": "관리 및 정비 권장사항",
+            "정비 권장": "관리 및 정비 권장사항",
+            "관리": "관리 및 정비 권장사항",
+            "권장사항": "관리 및 정비 권장사항",
+            "특징": "요트의 주요 특징 및 스펙 요약",
+            "스펙": "요트의 주요 특징 및 스펙 요약",
+            "치수": "치수 및 성능 분석",
+            "성능": "치수 및 성능 분석",
+            "부품": "부품 구성 및 정비 주기 분석",
+            "부품 구성": "부품 구성 및 정비 주기 분석"
+        }
+        
+        # 키워드 검색
+        for keyword, section_title in section_keywords.items():
+            if keyword in message_lower:
+                return section_title
+        
+        return None
+    
     def _extract_yacht_name_from_message(self, message: str) -> Optional[str]:
         """메시지에서 요트 이름 추출 (하이픈, 공백, 슬래시 등 무시)"""
         import re
@@ -2434,8 +2473,13 @@ PDF 파일 경로를 입력해주세요! 📎"""
         
         return None
     
-    def _analyze_yacht_data(self, yacht_name: str) -> str:
-        """요트 데이터 종합 분석"""
+    def _analyze_yacht_data(self, yacht_name: str, section_filter: str = None) -> str:
+        """요트 데이터 종합 분석
+        
+        Args:
+            yacht_name: 분석할 요트 이름
+            section_filter: 특정 섹션만 추출 (예: "사용 목적", "적합성 평가", "정비 권장사항")
+        """
         # 요트 정보 찾기
         yacht = None
         for y in self.yacht_data.get('yachts', []):
@@ -2471,7 +2515,18 @@ PDF 파일 경로를 입력해주세요! 📎"""
 친근하고 전문적인 톤으로 답변해주세요."""
                 
                 response = self.model.generate_content(analysis_prompt)
-                result = f"📊 **{yacht_name} 종합 분석**\n\n{response.text}"
+                full_result = response.text
+                
+                # 특정 섹션만 요청된 경우 필터링
+                if section_filter:
+                    filtered = self._extract_section_from_analysis(full_result, section_filter)
+                    if filtered:
+                        result = f"📊 **{yacht_name} - {section_filter}**\n\n{filtered}"
+                    else:
+                        result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}\n\n💡 요청하신 '{section_filter}' 섹션을 찾지 못해 전체 분석을 보여드립니다."
+                else:
+                    result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}"
+                
                 sys.stdout.flush()  # 버퍼 강제 출력
                 return result
             except Exception as e:
@@ -2480,6 +2535,53 @@ PDF 파일 경로를 입력해주세요! 📎"""
         else:
             # Gemini AI 없을 때 기본 정보 제공
             return self._format_full_yacht_info(yacht)
+    
+    def _extract_section_from_analysis(self, full_text: str, section_keyword: str) -> str:
+        """분석 결과에서 특정 섹션만 추출
+        
+        Args:
+            full_text: 전체 분석 텍스트
+            section_keyword: 찾을 섹션 키워드 (예: "사용 목적", "적합성", "정비")
+        
+        Returns:
+            추출된 섹션 텍스트 또는 빈 문자열
+        """
+        import re
+        
+        # 섹션 제목 패턴 (###, ####, ** 등으로 시작하는 제목)
+        lines = full_text.split('\n')
+        section_start = -1
+        section_end = len(lines)
+        section_level = 0
+        
+        # 키워드 정규화 (공백, 특수문자 제거)
+        keyword_normalized = re.sub(r'[^\w가-힣]', '', section_keyword.lower())
+        
+        for i, line in enumerate(lines):
+            # 마크다운 제목 감지 (###, ####, **)
+            if re.match(r'^#+\s+', line) or re.match(r'^\*\*.*\*\*', line):
+                # 현재 줄에서 키워드 검색
+                line_normalized = re.sub(r'[^\w가-힣]', '', line.lower())
+                
+                if keyword_normalized in line_normalized:
+                    section_start = i
+                    # 제목 레벨 파악 (# 개수)
+                    match = re.match(r'^(#+)\s+', line)
+                    section_level = len(match.group(1)) if match else 2
+                    continue
+                
+                # 섹션 시작 후 같은 레벨의 다른 제목을 만나면 종료
+                if section_start >= 0:
+                    match = re.match(r'^(#+)\s+', line)
+                    current_level = len(match.group(1)) if match else 2
+                    if current_level <= section_level:
+                        section_end = i
+                        break
+        
+        if section_start >= 0:
+            return '\n'.join(lines[section_start:section_end]).strip()
+        
+        return ""
     
     def _get_yacht_parts(self, yacht_name: str) -> List[Dict]:
         """요트의 부품 목록 가져오기"""
