@@ -34,9 +34,21 @@ if sys.platform == 'win32':
 import json
 import sys
 import argparse
+import logging
 from datetime import datetime
 from typing import List, Dict, Optional
 from pathlib import Path
+
+# 로깅 설정
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+    handlers=[
+        logging.FileHandler('yacht_chatbot.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger('YachtChatbot')
 
 # Environment variables (.env 파일 로드)
 try:
@@ -168,18 +180,14 @@ class UnifiedYachtChatbot:
             print("💡 .env 파일에 GEMINI_API_KEY를 설정하거나 --api-key 옵션을 사용하세요.")
             print("📝 .env.example 파일을 참고하여 .env 파일을 생성하세요.")
         
-        # Gemini AI 초기화
+        # Gemini AI 초기화 (lazy init으로 변경하여 초기 로딩 개선)
         if HAS_GEMINI and self.api_key:
             genai.configure(api_key=self.api_key)
-            try:
-                self.model = genai.GenerativeModel('gemini-2.5-flash')
-                print("✅ Gemini 2.5 Flash 모델 사용")
-            except Exception as e:
-                print(f"⚠️ Gemini 2.5 Flash 사용 실패, gemini-pro로 전환: {e}")
-                self.model = genai.GenerativeModel('gemini-pro')
-                print("✅ gemini-pro 모델 사용 (fallback)")
+            self.model = None  # 첫 요청 시 생성
             self.has_gemini = True
+            print("✅ Gemini AI 준비 (첫 요청 시 모델 초기화)")
         else:
+            self.model = None
             self.has_gemini = False
             print("⚠️ Gemini AI를 사용할 수 없습니다. 기본 모드로 실행됩니다.")
         
@@ -197,11 +205,69 @@ class UnifiedYachtChatbot:
         # 등록 데이터
         self.current_yacht_registration = None
         
+        # 응답 캐싱 (TTL 10분)
+        self.response_cache = {}
+        self.cache_ttl = 600  # 10분
+        
+        # 현재 사용자 메시지 (정비 키워드 검사용)
+        self._current_user_message = ""
+        
         print("✅ HooAah Yacht 통합 챗봇이 준비되었습니다!")
+
+        # 별칭/버전 매핑 (요트명 혼동 방지용) 확장
+        self.alias_map = {
+            # Nautor Swan 계열 오매칭 방지
+            'swan 41': ['swan41', 'swan 41', 'nautor swan 41', 'nautor 41'],
+            'nautor swan 41': ['swan 41', 'swan41', 'nautor swan 41'],
+            'nautor swan 48': ['swan48', 'swan 48', 'nautor swan 48', 'nautor 48'],
+            # Farr 계열
+            'farr 40': ['farr40', 'farr-40', 'farr 40', 'farr yacht 40'],
+            # J/계열
+            'j/24': ['j24', 'j 24', 'j-24', 'j/24'],
+            'j/70': ['j70', 'j 70', 'j-70', 'j/70', 'j boats 70'],
+            # Beneteau Oceanis
+            'beneteau oceanis 45': ['oceanis 45', 'beneteau 45']
+        }
         if mode == "interactive":
             print("💬 자연스럽게 요트에 대해 질문해보세요.")
             print("📄 PDF 파일 경로를 입력하면 자동으로 분석합니다.\n")
     
+    def _ensure_model_ready(self):
+        """Gemini 모델이 준비되지 않았으면 초기화 (lazy init)"""
+        if self.has_gemini and self.model is None:
+            try:
+                self.model = genai.GenerativeModel('gemini-2.5-flash')
+                print("🚀 Gemini 2.5 Flash 모델 초기화 완료")
+            except Exception as e:
+                print(f"⚠️ Gemini 2.5 Flash 사용 실패, gemini-pro로 전환: {e}")
+                self.model = genai.GenerativeModel('gemini-pro')
+                print("✅ gemini-pro 모델 사용 (fallback)")
+    
+    def _get_cache_key(self, query: str) -> str:
+        """캐시 키 생성 (쿼리 정규화)"""
+        return self._normalize_text(query)
+    
+    def _get_cached_response(self, query: str) -> Optional[str]:
+        """캐시된 응답 조회"""
+        key = self._get_cache_key(query)
+        if key in self.response_cache:
+            cached_data = self.response_cache[key]
+            timestamp, response = cached_data['timestamp'], cached_data['response']
+            if (datetime.now() - timestamp).total_seconds() < self.cache_ttl:
+                print("💾 캐시된 응답 사용")
+                return response
+            else:
+                del self.response_cache[key]
+        return None
+    
+    def _set_cached_response(self, query: str, response: str):
+        """응답 캐싱"""
+        key = self._get_cache_key(query)
+        self.response_cache[key] = {
+            'timestamp': datetime.now(),
+            'response': response
+        }
+
     def _load_yacht_data(self) -> Dict:
         """요트 스펙 데이터 로드"""
         try:
@@ -511,17 +577,26 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 response = self._handle_registration_request(user_message)
             # 6. Gemini AI로 의도 파악 및 응답 생성
             elif self.has_gemini:
-                # AI 응답 생성 시작 표시 (즉시)
-                print("🤖 AI가 생각 중입니다...", end="", flush=True)
-                # 분석 요청인 경우 추가 메시지
-                if any(keyword in user_message.lower() for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석']):
-                    print(" (상세 분석 중) ⏳", flush=True)
+                # 캐시 확인 (분석 요청만)
+                is_analysis = any(keyword in user_message.lower() for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석', '적합성', '부품 구성', '정비 권장'])
+                cached = self._get_cached_response(user_message) if is_analysis else None
+                if cached:
+                    response = cached
                 else:
-                    print(" ⏳", flush=True)
-                # AI가 의도를 파악하여 적절한 응답 생성
-                response = self._generate_intelligent_response(user_message)
-                # 완료 표시 (줄바꿈)
-                print("\r" + " " * 80 + "\r", end="", flush=True)  # 이전 메시지 지우기
+                    # AI 응답 생성 시작 표시 (즉시)
+                    print("🤖 AI가 생각 중입니다...", end="", flush=True)
+                    # 분석 요청인 경우 추가 메시지
+                    if is_analysis:
+                        print(" (상세 분석 중) ⏳", flush=True)
+                    else:
+                        print(" ⏳", flush=True)
+                    # AI가 의도를 파악하여 적절한 응답 생성
+                    response = self._generate_intelligent_response(user_message)
+                    # 완료 표시 (줄바꿈)
+                    print("\r" + " " * 80 + "\r", end="", flush=True)  # 이전 메시지 지우기
+                    # 캐싱 (분석 응답만)
+                    if is_analysis and len(response) > 100:
+                        self._set_cached_response(user_message, response)
             else:
                 # 기본 모드: 키워드 기반 응답
                 response = self._generate_keyword_based_response(user_message)
@@ -543,6 +618,10 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _generate_intelligent_response(self, user_message: str) -> str:
         """Gemini AI를 사용한 지능형 응답 생성 (의도 파악)"""
         try:
+            # Gemini 모델 준비 (lazy init)
+            self._ensure_model_ready()
+            # 요청 섹션(토픽) 다중 추출
+            requested_sections = self._extract_section_keywords(user_message)
             # 의도 파악을 위한 프롬프트
             intent_prompt = f"""사용자 메시지: "{user_message}"
 
@@ -569,7 +648,11 @@ PDF 파일 경로를 입력해주세요! 📎"""
 **지원하는 요트 20종:**
 {', '.join([yacht.get('name', '') for yacht in self.yacht_data.get('yachts', [])])}
 
-위 규칙에 따라 사용자에게 적절한 응답을 생성해주세요."""
+위 규칙에 따라 사용자에게 적절한 응답을 생성해주세요.
+
+중요: 사용자가 요청한 섹션(토픽)이 있는 경우, 해당 섹션만 생성하세요. 요청하지 않은 섹션은 포함하지 마세요.
+요청 섹션: {', '.join(requested_sections) if requested_sections else '없음'}
+"""
             
             # 의도 파악 및 응답 생성
             response = self.model.generate_content(intent_prompt)
@@ -589,9 +672,17 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 # 요트 이름이 포함되어 있으면 해당 요트 분석, 없으면 전체 분석 안내
                 yacht_name = self._extract_yacht_name_from_message(user_message)
                 if yacht_name:
-                    # 특정 섹션 요청 감지 (예: "사용 목적", "적합성 평가", "정비 권장사항")
+                    # 현재 메시지 저장 (정비 키워드 검사용)
+                    self._current_user_message = user_message
+                    # 다중/단일 섹션 요청 우선 확인
+                    sections = self._extract_section_keywords(user_message)
+                    if sections:
+                        return self._analyze_yacht_data(yacht_name, sections=sections)
                     section_filter = self._extract_section_keyword(user_message)
-                    return self._analyze_yacht_data(yacht_name, section_filter)
+                    if section_filter:
+                        return self._analyze_yacht_data(yacht_name, section_filter=section_filter)
+                    # 섹션 미지정 → 간결한 요약만 제공
+                    return self._analyze_yacht_summary(yacht_name)
                 else:
                     return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
             
@@ -600,12 +691,15 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 # 도움말 메시지로 대체
                 return self._get_help()
             
-            # 요트 목록 의도가 명확한 경우
-            if any(keyword in ai_response_lower for keyword in ['목록', '리스트', '전체 요트']):
-                # 요트 목록으로 대체
+            # 요트 목록 의도가 명확한 경우 (단, 섹션 요청이 없을 때만)
+            if not requested_sections and any(keyword in ai_response_lower for keyword in ['목록', '리스트', '전체 요트']):
                 return self._list_yachts()
             
-            # 일반 응답 반환
+            # 일반 응답 반환 (요청 섹션이 있으면 해당 섹션만 필터링)
+            if requested_sections:
+                filtered = self._extract_sections_from_text(ai_response, requested_sections)
+                if filtered:
+                    return filtered
             return ai_response
             
         except Exception as e:
@@ -627,18 +721,30 @@ PDF 파일 경로를 입력해주세요! 📎"""
             return self._suggest_pdf_upload_without_ai()
         
         # 2-1. 요트 분석 관련 키워드
-        analysis_keywords = ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석']
+        analysis_keywords = ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석', '요약', '세부 항목']
         if any(keyword in message_lower for keyword in analysis_keywords):
             yacht_name = self._extract_yacht_name_from_message(user_message)
             if yacht_name:
-                # 특정 섹션 요청 감지
+                # 현재 메시지 저장 (정비 키워드 검사용)
+                self._current_user_message = user_message
+                # 다중 섹션 요청 감지
+                sections = self._extract_section_keywords(user_message)
+                if sections:
+                    return self._analyze_yacht_data(yacht_name, sections=sections)
+                # 단일 섹션 필터도 고려
                 section_filter = self._extract_section_keyword(user_message)
-                return self._analyze_yacht_data(yacht_name, section_filter)
+                if section_filter:
+                    return self._analyze_yacht_data(yacht_name, section_filter=section_filter)
+                # 섹션 미지정 → 간결 요약
+                return self._analyze_yacht_summary(yacht_name)
             else:
                 return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
         
         # 3. 요트 목록 관련 키워드
         list_keywords = ['목록', '리스트', '전체', '모든 요트', '어떤 요트', '요트 종류', '요트 목록']
+        # 섹션/도메인 요청이 있으면 목록 라우트 차단
+        if self._extract_section_keywords(user_message):
+            list_keywords = []
         if any(keyword in message_lower for keyword in list_keywords):
             return self._list_yachts()
         
@@ -843,12 +949,13 @@ PDF 파일 경로를 입력해주세요! 📎"""
     def _format_yacht_maintenance_info(self, yacht: Dict, yacht_name: str) -> str:
         """요트 정비/유지보수 정보 포맷팅 ✨ 새로 추가"""
         model_name = yacht.get('name', 'Unknown')
+        doc_type = yacht.get('type', '')
         
         # 부품 정보에서 정비 주기 추출
         parts = self._get_yacht_parts(yacht_name)
         
         if not parts or len(parts) == 0:
-            return f"🔧 **{model_name} 정비 정보**\n\n등록된 부품 및 정비 정보가 없습니다.\n\n정비 정보를 추가하려면 PDF 매뉴얼을 업로드해주세요."
+            return f"🔧 **{model_name} 정비 정보**\n\n등록된 부품 및 정비 정보가 없습니다.\n\n정비 정보를 추가하려면 Owner's Manual PDF를 업로드해주세요."
         
         response = f"🔧 **{model_name} 정비 및 유지보수 정보**\n\n"
         
@@ -879,9 +986,20 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     })
         
         if not maintenance_schedule:
-            response += "정비 주기 정보가 없습니다.\n\n"
-            response += f"총 **{len(parts)}개**의 부품이 등록되어 있지만, 정비 주기가 명시되지 않았습니다.\n\n"
+            # 문서 유형별 안내 메시지
+            if 'class rules' in doc_type.lower() or 'rules' in doc_type.lower():
+                response += "⚠️ **현재 문서는 클래스 규정(Class Rules)입니다.**\n\n"
+                response += f"이 문서는 경기 규정 및 장비 제한사항을 다루며, 정비 주기 정보는 포함하지 않습니다.\n\n"
+                response += f"총 **{len(parts)}개**의 부품(장비 항목)이 등록되어 있습니다.\n\n"
+                response += "📖 **정비 정보를 얻으려면:**\n"
+                response += "- Owner's Manual 또는 Maintenance Guide를 업로드해주세요.\n"
+                response += "- 제조사 홈페이지에서 정비 매뉴얼을 확인하세요.\n\n"
+            else:
+                response += "정비 주기 정보가 명시되지 않았습니다.\n\n"
+                response += f"총 **{len(parts)}개**의 부품이 등록되어 있지만, 정비 주기가 없습니다.\n\n"
+                response += "💡 Owner's Manual에 정비 주기가 있다면 해당 PDF를 업로드해주세요.\n\n"
         else:
+            # 정비 스케줄이 있는 경우
             response += f"**부품별 정비 주기** (총 {len(parts)}개 부품)\n\n"
             
             # 카테고리별로 정리
@@ -2442,6 +2560,13 @@ PDF 파일 경로를 입력해주세요! 📎"""
         import re
         # 하이픈, 공백, 언더스코어, 슬래시 등을 제거하여 정규화
         message_normalized = re.sub(r'[-_\s/]+', '', message.lower())
+
+        # 별칭 매핑 우선 확인
+        for canonical, aliases in getattr(self, 'alias_map', {}).items():
+            for alias in aliases:
+                alias_norm = re.sub(r'[-_\s/]+', '', alias.lower())
+                if alias_norm in message_normalized:
+                    return canonical.title() if '/' not in canonical else canonical
         
         for yacht in self.yacht_data.get('yachts', []):
             yacht_name = yacht.get('name', '')
@@ -2472,13 +2597,142 @@ PDF 파일 경로를 입력해주세요! 📎"""
                         return yacht_name
         
         return None
+
+    # ====== 후보 매칭 점수화 (단순 버전 스텁) ======
+    def _match_yacht_candidates(self, message: str) -> List[Dict]:
+        """메시지로부터 상위 요트 후보 3개를 점수화하여 반환(확장 버전)
+
+        스코어 구성:
+        - 이름 토큰 Jaccard (0.35)
+        - 제조사 토큰 Jaccard (0.15)
+        - 이름 Levenshtein 유사도 (0.35)
+        - 별칭 매칭 보너스 (<= 0.2)
+        - 부분 포함 보너스 (<= 0.15)
+        """
+        import re
+
+        def norm_text(s: str) -> str:
+            s = (s or '').lower().strip()
+            s = s.replace('-', ' ').replace('/', ' ')
+            s = re.sub(r'\s+', ' ', s)
+            return s
+
+        def tokenize(s: str) -> List[str]:
+            return [t for t in norm_text(s).split(' ') if t]
+
+        def jaccard(a: List[str], b: List[str]) -> float:
+            sa, sb = set(a), set(b)
+            if not sa and not sb:
+                return 0.0
+            inter = sa & sb
+            union = sa | sb
+            return len(inter) / max(1, len(union))
+
+        def levenshtein_sim(a: str, b: str) -> float:
+            if a == b:
+                return 1.0
+            if not a or not b:
+                return 0.0
+            m, n = len(a), len(b)
+            dp = [[0] * (n + 1) for _ in range(m + 1)]
+            for i in range(m + 1):
+                dp[i][0] = i
+            for j in range(n + 1):
+                dp[0][j] = j
+            for i in range(1, m + 1):
+                for j in range(1, n + 1):
+                    cost = 0 if a[i - 1] == b[j - 1] else 1
+                    dp[i][j] = min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + cost,
+                    )
+            dist = dp[m][n]
+            return 1.0 - (dist / max(m, n))
+
+        def alias_bonus(q: str, c: str) -> float:
+            qn = norm_text(q)
+            cn = norm_text(c)
+            if qn == cn:
+                return 0.25
+            for canonical, aliases in getattr(self, 'alias_map', {}).items():
+                can = norm_text(canonical)
+                if qn == can and (cn == can or cn in [norm_text(a) for a in aliases]):
+                    return 0.2
+                if cn == can and (qn == can or qn in [norm_text(a) for a in aliases]):
+                    return 0.2
+            return 0.0
+
+        msg = norm_text(message)
+        qtokens = tokenize(msg)
+        ranked = []
+        for yacht in self.yacht_data.get('yachts', []):
+            name = yacht.get('name', '')
+            manu = yacht.get('manufacturer', '')
+            cname = norm_text(name)
+            mname = norm_text(manu)
+            ctokens = tokenize(cname)
+            mtokens = tokenize(mname)
+            j_name = jaccard(qtokens, ctokens)
+            j_man = jaccard(qtokens, mtokens)
+            l_name = levenshtein_sim(msg, cname)
+            a_bonus = alias_bonus(msg, cname)
+            p_bonus = 0.15 if any(tok and tok in cname for tok in qtokens) else 0.0
+            score = 0.35 * j_name + 0.15 * j_man + 0.35 * l_name + a_bonus + p_bonus
+            ranked.append({
+                'name': name,
+                'manufacturer': manu,
+                'score': round(score, 4),
+                'evidence': {
+                    'jaccard_name': round(j_name, 4),
+                    'jaccard_manufacturer': round(j_man, 4),
+                    'levenshtein_name': round(l_name, 4),
+                    'alias_bonus': round(a_bonus, 4),
+                    'partial_bonus': round(p_bonus, 4)
+                }
+            })
+        ranked.sort(key=lambda x: x['score'], reverse=True)
+        # confidence 라벨 부여
+        for r in ranked:
+            r['confidence'] = 'high' if r['score'] >= 0.75 else ('medium' if r['score'] >= 0.55 else 'low')
+        return ranked[:3]
     
-    def _analyze_yacht_data(self, yacht_name: str, section_filter: str = None) -> str:
+    def _analyze_yacht_summary(self, yacht_name: str) -> str:
+        """요트 간결 요약 (3-5줄 핵심 정보만)
+        
+        Args:
+            yacht_name: 분석할 요트 이름
+        """
+        yacht = None
+        for y in self.yacht_data.get('yachts', []):
+            if y.get('name', '').lower() == yacht_name.lower():
+                yacht = y
+                break
+        if not yacht:
+            return f"'{yacht_name}' 요트 정보를 찾을 수 없습니다."
+        
+        model_name = yacht.get('name', 'Unknown')
+        manufacturer = yacht.get('manufacturer', 'N/A')
+        yacht_type = yacht.get('type', 'N/A')
+        parts = self._get_yacht_parts(yacht_name)
+        parts_count = len(parts) if isinstance(parts, list) else 0
+        
+        response = f"📊 **{model_name} 간결 요약**\n\n"
+        response += f"제조사: {manufacturer} | 유형: {yacht_type}\n"
+        response += f"등록 부품: {parts_count}개\n\n"
+        response += f"💡 **상세 분석을 원하시면:**\n"
+        response += f"- '{model_name} 적합성 평가'\n"
+        response += f"- '{model_name} 부품 구성'\n"
+        response += f"- '{model_name} 정비 권장사항'\n"
+        return response
+
+    def _analyze_yacht_data(self, yacht_name: str, section_filter: str = None, sections: list = None) -> str:
         """요트 데이터 종합 분석
         
         Args:
             yacht_name: 분석할 요트 이름
             section_filter: 특정 섹션만 추출 (예: "사용 목적", "적합성 평가", "정비 권장사항")
+            sections: 다중 섹션 리스트
         """
         # 요트 정보 찾기
         yacht = None
@@ -2492,11 +2746,32 @@ PDF 파일 경로를 입력해주세요! 📎"""
         
         # Gemini AI를 사용한 상세 분석
         if self.has_gemini:
+            # Gemini 모델 준비 (lazy init)
+            self._ensure_model_ready()
             # 분석 시작 메시지 출력 (즉시 표시)
             print("📊 요트 데이터를 분석 중입니다... 잠시만 기다려주세요. ⏳")
             sys.stdout.flush()  # 버퍼 강제 출력
             
             try:
+                # 정비 키워드 검사
+                user_msg_context = getattr(self, '_current_user_message', '')
+                has_maint_keyword = any(k in self._normalize_text(user_msg_context) for k in ['정비', '유지보수', '서비스', 'maintenance', '관리', '점검', '교체'])
+                
+                # 요청 섹션에 따라 프롬프트 동적 구성
+                requested_sections_list = sections or ([section_filter] if section_filter else [])
+                if not requested_sections_list:  # 섹션 미지정 시 전체 분석
+                    sections_to_include = [
+                        "1. 요트의 주요 특징 및 스펙 요약",
+                        "2. 치수 및 성능 분석",
+                        "3. 부품 구성 및 정비 주기 분석",
+                        "4. 사용 목적에 따른 적합성 평가"
+                    ]
+                    if has_maint_keyword:
+                        sections_to_include.append("5. 관리 및 정비 권장사항")
+                    sections_text = '\n'.join(sections_to_include)
+                else:
+                    sections_text = "사용자가 요청한 섹션만 포함하세요."
+                
                 analysis_prompt = f"""다음 요트 데이터를 종합적으로 분석해주세요:
 
 요트 정보:
@@ -2506,24 +2781,26 @@ PDF 파일 경로를 입력해주세요! 📎"""
 {json.dumps(self._get_yacht_parts(yacht_name), ensure_ascii=False, indent=2)[:2000]}
 
 위 데이터를 바탕으로 다음을 포함한 종합 분석을 제공해주세요:
-1. 요트의 주요 특징 및 스펙 요약
-2. 치수 및 성능 분석
-3. 부품 구성 및 정비 주기 분석
-4. 사용 목적에 따른 적합성 평가
-5. 관리 및 정비 권장사항
+{sections_text}
 
 친근하고 전문적인 톤으로 답변해주세요."""
                 
                 response = self.model.generate_content(analysis_prompt)
                 full_result = response.text
                 
-                # 특정 섹션만 요청된 경우 필터링
-                if section_filter:
+                # 다중/단일 섹션 요청 필터링
+                if sections:
+                    filtered_multi = self._extract_sections_from_text(full_result, sections)
+                    if filtered_multi:
+                        result = f"📊 **{yacht_name} - 요청 섹션**\n\n{filtered_multi}"
+                    else:
+                        result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}"
+                elif section_filter:
                     filtered = self._extract_section_from_analysis(full_result, section_filter)
                     if filtered:
                         result = f"📊 **{yacht_name} - {section_filter}**\n\n{filtered}"
                     else:
-                        result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}\n\n💡 요청하신 '{section_filter}' 섹션을 찾지 못해 전체 분석을 보여드립니다."
+                        result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}"
                 else:
                     result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}"
                 
@@ -2582,6 +2859,58 @@ PDF 파일 경로를 입력해주세요! 📎"""
             return '\n'.join(lines[section_start:section_end]).strip()
         
         return ""
+
+    def _normalize_text(self, s: str) -> str:
+        """간단 텍스트 정규화: 소문자, 슬래시→공백, 특수문자 제거, 다중 공백 축소"""
+        if not s:
+            return ''
+        import re
+        s = s.lower().strip()
+        s = s.replace('/', ' ')
+        s = re.sub(r'\s+', ' ', s)
+        s = re.sub(r'[^\w가-힣\s]', '', s)
+        return s
+
+    def _get_section_alias_map(self) -> dict:
+        """섹션 동의어 매핑"""
+        return {
+            # 치수/성능
+            '치수 및 성능 분석': ['치수', '크기', '스펙', 'spec', 'dimension', '성능', 'performance', '크기정보', '치수정보'],
+            # 선체/구조
+            '선체/구조 요약': ['선체', 'hull', '구조', 'structure', '헐'],
+            # 부품
+            '부품 구성 및 정비 주기 분석': ['부품', '파트', 'rigging', '윈치', 'parts', '컴포넌트', 'component', '스페어', 'spare'],
+            # 적합성
+            '사용 목적에 따른 적합성 평가': ['적합성', '목적', '용도', 'use', 'suitability', '컴플라이언스', 'compliance'],
+            # 정비/관리
+            '관리 및 정비 권장사항': ['정비', '유지보수', '서비스', 'maintenance', '관리', '점검', '교체', 'service']
+        }
+
+    def _extract_section_keywords(self, message: str) -> list:
+        """메시지에서 다중 섹션 키워드 추출"""
+        ml = self._normalize_text(message)
+        aliases = self._get_section_alias_map()
+        found = []
+        for section, keys in aliases.items():
+            for k in keys:
+                if k in ml:
+                    found.append(section)
+                    break
+        # 중복 제거, 순서 유지
+        dedup = []
+        for s in found:
+            if s not in dedup:
+                dedup.append(s)
+        return dedup
+
+    def _extract_sections_from_text(self, full_text: str, sections: list) -> str:
+        """전체 텍스트에서 지정 섹션들만 병합 추출"""
+        combined = []
+        for sec in sections:
+            part = self._extract_section_from_analysis(full_text, sec)
+            if part:
+                combined.append(part)
+        return '\n\n'.join(combined)
     
     def _get_yacht_parts(self, yacht_name: str) -> List[Dict]:
         """요트의 부품 목록 가져오기"""
@@ -3517,27 +3846,101 @@ def run_api_server(api_key: str = None, port: int = 5000):
     
     @app.route('/api/chat', methods=['POST'])
     def chat():
+        start_time = datetime.now()
         try:
             data = request.get_json()
             if not data or 'message' not in data:
-                return jsonify({"success": False, "error": "메시지가 필요합니다."}), 400
+                logger.warning("Chat API: Missing message in request")
+                return jsonify({"success": False, "error": "메시지가 필요합니다.", "code": "MISSING_MESSAGE"}), 400
             
             user_message = data['message']
             session_id = data.get('session_id', 'default')
-            pdf_file_path = data.get('pdf_file_path')  # 모바일 앱에서 파일 경로 전달
+            pdf_file_path = data.get('pdf_file_path')
+            
+            logger.info(f"Chat request - Session: {session_id}, Message: {user_message[:50]}...")
             
             chatbot = get_or_create_chatbot(session_id)
             ai_response = chatbot.chat(user_message, pdf_file_path=pdf_file_path)
+            
+            elapsed = (datetime.now() - start_time).total_seconds()
+            logger.info(f"Chat response completed in {elapsed:.2f}s")
             
             return jsonify({
                 "success": True,
                 "response": ai_response,
                 "session_id": session_id,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
+                "elapsed_seconds": round(elapsed, 2)
+            })
+        except ValueError as e:
+            logger.error(f"Chat API validation error: {e}")
+            return jsonify({"success": False, "error": f"입력 오류: {str(e)}", "code": "VALIDATION_ERROR"}), 400
+        except Exception as e:
+            logger.exception(f"Chat API error: {e}")
+            return jsonify({"success": False, "error": f"서버 오류: {str(e)}", "code": "INTERNAL_ERROR"}), 500
+    
+    @app.route('/api/yacht/audit', methods=['GET'])
+    def audit_yachts():
+        """멘토 기준 리스트와 등록 데이터 자동 비교 보고서(강화 버전)
+
+        Query params:
+        - mentor: CSV of mentor yacht names (optional; else uses internal list)
+        """
+        try:
+            logger.info("Yacht audit request received")
+            mentor_param = request.args.get('mentor')
+            if mentor_param:
+                mentor_list = [x.strip() for x in mentor_param.split(',') if x.strip()]
+                logger.info(f"Using custom mentor list: {len(mentor_list)} entries")
+            else:
+                mentor_list = [
+                    'OCEANIS 46.1','OCEANIS 473','ClubSwan 50','Grand Soleil 42 Long Cruise','Laser','J/24','J/70',
+                    'Melges 32','FAREAST 28R','Hanse 458','FIRST 36.7','Dehler 38','RS 21','Farr 40','Solaris 44',
+                    'Sun Fast 3300','TP52','X–35 One Design','Xp 44','SWAN 41'
+                ]
+                logger.info(f"Using default mentor list: {len(mentor_list)} entries")
+
+            reg_bot = get_or_create_chatbot('audit')
+            registered = [y.get('name','') for y in reg_bot.yacht_data.get('yachts', [])]
+
+            # 정규화
+            def norm(n: str) -> str:
+                import re
+                n = (n or '').lower().strip().replace('/', ' ')
+                n = re.sub(r'\s+', ' ', n)
+                return n
+            normalized_mentor = [norm(name) for name in mentor_list]
+            normalized_registered = [norm(name) for name in registered]
+
+            missing = sorted(list(set(normalized_mentor) - set(normalized_registered)))
+            extra = sorted(list(set(normalized_registered) - set(normalized_mentor)))
+
+            # 퍼지 제안: missing 각각에 대해 registered 상위3 후보 제시
+            suggestions = {}
+            # 후보 풀 구성
+            candidate_pool = [{'name': r, 'manufacturer': ''} for r in registered]
+            for miss in missing:
+                top3 = reg_bot._match_yacht_candidates(miss)
+                # _match_yacht_candidates(message) 버전은 내부 데이터 사용하므로 그대로 활용
+                suggestions[miss] = top3
+
+            logger.info(f"Audit complete - Missing: {len(missing)}, Extra: {len(extra)}")
+            return jsonify({
+                'success': True,
+                'counts': {
+                    'mentor': len(mentor_list),
+                    'registered': len(registered),
+                    'missing': len(missing),
+                    'extra': len(extra)
+                },
+                'missingFromRegistered': missing,
+                'extraInRegistered': extra,
+                'suggestions': suggestions
             })
         except Exception as e:
-            return jsonify({"success": False, "error": str(e)}), 500
-    
+            logger.exception(f"Audit API error: {e}")
+            return jsonify({"success": False, "error": f"감사 오류: {str(e)}", "code": "AUDIT_ERROR"}), 500
+
     @app.route('/api/chat/upload', methods=['POST'])
     def upload_pdf():
         """
