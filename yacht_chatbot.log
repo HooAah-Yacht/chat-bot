@@ -84,3 +84,40 @@
 2025-12-01 16:23:41,295 [INFO] werkzeug:  * Debugger PIN: 797-382-766
 2025-12-01 16:23:42,557 [WARNING] werkzeug:  * Debugger is active!
 2025-12-01 16:23:42,559 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 18:58:11,625 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.95.136:5000
+2025-12-01 18:58:11,625 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-12-01 18:58:11,627 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 18:58:13,026 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 18:58:13,030 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 18:58:28,305 [INFO] YachtChatbot: Chat request - Session: default, Message: Farr 40 선체 세부 항목 요약해줘...
+2025-12-01 18:59:00,689 [INFO] YachtChatbot: Chat response completed in 32.38s
+2025-12-01 18:59:00,689 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 18:59:00] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 18:59:23,319 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.95.136:5000
+2025-12-01 18:59:23,319 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-12-01 18:59:23,321 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 18:59:24,777 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 18:59:24,780 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 18:59:39,743 [INFO] YachtChatbot: Chat request - Session: default, Message: Farr 40 선체 세부 항목 요약해줘...
+2025-12-01 19:00:16,478 [INFO] YachtChatbot: Chat response completed in 36.73s
+2025-12-01 19:00:16,479 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:00:16] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:00:58,062 [INFO] YachtChatbot: Chat request - Session: default, Message: Nautor Swan 48 치수...
+2025-12-01 19:00:58,062 [INFO] YachtChatbot: Chat response completed in 0.00s
+2025-12-01 19:00:58,063 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:00:58] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:01:05,450 [INFO] YachtChatbot: Chat request - Session: default, Message: OCEANIS 46.1 엔진...
+2025-12-01 19:01:05,451 [INFO] YachtChatbot: Chat response completed in 0.00s
+2025-12-01 19:01:05,451 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:01:05] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:01:16,661 [INFO] YachtChatbot: Chat request - Session: default, Message: Farr 40 정비...
+2025-12-01 19:01:16,661 [INFO] YachtChatbot: Chat response completed in 0.00s
+2025-12-01 19:01:16,662 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:01:16] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:03:23,479 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\chatbot_unified.py', reloading
+2025-12-01 19:03:25,701 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 19:03:27,368 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 19:03:27,370 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 19:03:31,742 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\chatbot_unified.py', reloading
+2025-12-01 19:03:31,950 [INFO] werkzeug:  * Restarting with stat

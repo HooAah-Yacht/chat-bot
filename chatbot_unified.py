@@ -2772,10 +2772,8 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     if has_maint_keyword:
                         sections_to_include.append("5. 관리 및 정비 권장사항")
                     sections_text = '\n'.join(sections_to_include)
-                else:
-                    sections_text = "사용자가 요청한 섹션만 포함하세요."
-                
-                analysis_prompt = f"""다음 요트 데이터를 종합적으로 분석해주세요:
+                    
+                    analysis_prompt = f"""다음 요트 데이터를 종합적으로 분석해주세요:
 
 요트 정보:
 {json.dumps(yacht, ensure_ascii=False, indent=2)}
@@ -2787,17 +2785,39 @@ PDF 파일 경로를 입력해주세요! 📎"""
 {sections_text}
 
 친근하고 전문적인 톤으로 답변해주세요."""
+                else:
+                    # 특정 섹션만 요청된 경우 - 간결하고 직접적인 프롬프트
+                    sections_names = ', '.join(requested_sections_list)
+                    analysis_prompt = f"""요트 데이터에서 다음 섹션만 간결하게 분석해주세요:
+
+요청 섹션: {sections_names}
+
+요트 정보:
+{json.dumps(yacht, ensure_ascii=False, indent=2)}
+
+부품 데이터:
+{json.dumps(self._get_yacht_parts(yacht_name), ensure_ascii=False, indent=2)[:2000]}
+
+**중요 지침:**
+1. 요청된 섹션 "{sections_names}"에 대한 정보만 제공하세요
+2. 다른 섹션은 포함하지 마세요
+3. 간결하고 핵심적인 정보만 제공하세요 (3-5개 핵심 포인트)
+4. 불릿 포인트나 간단한 문단으로 작성하세요
+
+응답 형식:
+**{requested_sections_list[0]}**
+
+• [핵심 포인트 1]
+• [핵심 포인트 2]
+• [핵심 포인트 3]
+..."""
                 
                 response = self.model.generate_content(analysis_prompt)
                 full_result = response.text
                 
-                # 다중/단일 섹션 요청 필터링
-                if sections:
-                    filtered_multi = self._extract_sections_from_text(full_result, sections)
-                    if filtered_multi:
-                        result = f"📊 **{yacht_name} - 요청 섹션**\n\n{filtered_multi}"
-                    else:
-                        result = f"📊 **{yacht_name} 종합 분석**\n\n{full_result}"
+                # 다중/단일 섹션 요청 시 직접 결과 반환 (필터링 불필요 - AI가 이미 요청된 섹션만 생성)
+                if sections or section_filter:
+                    result = f"📊 **{yacht_name}**\n\n{full_result}"
                 elif section_filter:
                     filtered = self._extract_section_from_analysis(full_result, section_filter)
                     if filtered:
