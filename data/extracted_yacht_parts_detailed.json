@@ -33179,6 +33179,868 @@
         ],
         "plumbing": []
       }
+    },
+    {
+      "id": "swan-48",
+      "name": "SWAN 48",
+      "manufacturer": "Nautor’s Swan",
+      "manualPDF": "nautor-swan-48-galatea.pdf",
+      "parts": {
+        "rigging": [
+          {
+            "name": "Engine",
+            "description": "Nautor’s Swan SWAN 48 - Engine",
+            "specifications": [
+              "D2 75",
+              "Volvo Penta",
+              ""
+            ]
+          },
+          {
+            "name": "Hydraulic Gear Box",
+            "description": "Nautor’s Swan SWAN 48 - Hydraulic Gear Box",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Folding Propeller",
+            "description": "Nautor’s Swan SWAN 48 - Folding Propeller",
+            "specifications": [
+              null,
+              "Max-prop",
+              ""
+            ]
+          },
+          {
+            "name": "Diesel Pre-filters with Water Separator",
+            "description": "Nautor’s Swan SWAN 48 - Diesel Pre-filters with Water Separator",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Mast",
+            "description": "Nautor’s Swan SWAN 48 - Mast",
+            "specifications": [
+              null,
+              "Nautor Swan",
+              ""
+            ]
+          },
+          {
+            "name": "Boom",
+            "description": "Nautor’s Swan SWAN 48 - Boom",
+            "specifications": [
+              null,
+              "Nautor Swan",
+              ""
+            ]
+          },
+          {
+            "name": "Spinnaker Pole",
+            "description": "Nautor’s Swan SWAN 48 - Spinnaker Pole",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Jockey Pole",
+            "description": "Nautor’s Swan SWAN 48 - Jockey Pole",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Main Mast Track System",
+            "description": "Nautor’s Swan SWAN 48 - Main Mast Track System",
+            "specifications": [
+              "System B",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Furler for Head Sail",
+            "description": "Nautor’s Swan SWAN 48 - Furler for Head Sail",
+            "specifications": [
+              "Unit 3",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Halyards",
+            "description": "Nautor’s Swan SWAN 48 - Halyards",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Sheet / Guys for Spinnaker",
+            "description": "Nautor’s Swan SWAN 48 - Sheet / Guys for Spinnaker",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Runners & Check Stays",
+            "description": "Nautor’s Swan SWAN 48 - Runners & Check Stays",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Spreader Deck Light",
+            "description": "Nautor’s Swan SWAN 48 - Spreader Deck Light",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "LED Top Light",
+            "description": "Nautor’s Swan SWAN 48 - LED Top Light",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Mast Steps",
+            "description": "Nautor’s Swan SWAN 48 - Mast Steps",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Windex",
+            "description": "Nautor’s Swan SWAN 48 - Windex",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Aluminum Bow Sprit",
+            "description": "Nautor’s Swan SWAN 48 - Aluminum Bow Sprit",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Carbon Bow Sprit",
+            "description": "Nautor’s Swan SWAN 48 - Carbon Bow Sprit",
+            "specifications": [
+              null,
+              "Offshore Spars",
+              ""
+            ]
+          },
+          {
+            "name": "Clutch for Furling Line",
+            "description": "Nautor’s Swan SWAN 48 - Clutch for Furling Line",
+            "specifications": [
+              "H3012 / H1963",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Hydraulic Panel",
+            "description": "Nautor’s Swan SWAN 48 - Hydraulic Panel",
+            "specifications": [
+              "System 50",
+              "Navtec",
+              ""
+            ]
+          },
+          {
+            "name": "Flagpole",
+            "description": "Nautor’s Swan SWAN 48 - Flagpole",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Dinghy",
+            "description": "Nautor’s Swan SWAN 48 - Dinghy",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Outboard Engine",
+            "description": "Nautor’s Swan SWAN 48 - Outboard Engine",
+            "specifications": [
+              null,
+              "Honda",
+              ""
+            ]
+          },
+          {
+            "name": "Life Raft",
+            "description": "Nautor’s Swan SWAN 48 - Life Raft",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Fire Extinguisher in Engine Room",
+            "description": "Nautor’s Swan SWAN 48 - Fire Extinguisher in Engine Room",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Mainsail Cover",
+            "description": "Nautor’s Swan SWAN 48 - Mainsail Cover",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Spray Dodgers",
+            "description": "Nautor’s Swan SWAN 48 - Spray Dodgers",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Cover for Pedestal",
+            "description": "Nautor’s Swan SWAN 48 - Cover for Pedestal",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Custom Made Cockpit Cushions",
+            "description": "Nautor’s Swan SWAN 48 - Custom Made Cockpit Cushions",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Saloon Settees, Chairs, Navigation Seat",
+            "description": "Nautor’s Swan SWAN 48 - Saloon Settees, Chairs, Navigation Seat",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Carpet in all cabins",
+            "description": "Nautor’s Swan SWAN 48 - Carpet in all cabins",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Mattresses",
+            "description": "Nautor’s Swan SWAN 48 - Mattresses",
+            "specifications": [
+              null,
+              "Sirius",
+              ""
+            ]
+          },
+          {
+            "name": "Day cover for all beds",
+            "description": "Nautor’s Swan SWAN 48 - Day cover for all beds",
+            "specifications": [
+              null,
+              "Sirius",
+              ""
+            ]
+          },
+          {
+            "name": "Curtains",
+            "description": "Nautor’s Swan SWAN 48 - Curtains",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Leather upholstery for saloon",
+            "description": "Nautor’s Swan SWAN 48 - Leather upholstery for saloon",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Additional bulkhead lights in saloon",
+            "description": "Nautor’s Swan SWAN 48 - Additional bulkhead lights in saloon",
+            "specifications": [
+              null,
+              "Cabin 21",
+              ""
+            ]
+          },
+          {
+            "name": "Engine",
+            "description": "Nautor's Swan SWAN 48 - Engine",
+            "specifications": [
+              "D2 75",
+              "Volvo Penta",
+              ""
+            ]
+          },
+          {
+            "name": "Hydraulic gear box",
+            "description": "Nautor's Swan SWAN 48 - Hydraulic gear box",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Folding propeller",
+            "description": "Nautor's Swan SWAN 48 - Folding propeller",
+            "specifications": [
+              "",
+              "Max-prop",
+              ""
+            ]
+          },
+          {
+            "name": "Diesel pre-filters",
+            "description": "Nautor's Swan SWAN 48 - Diesel pre-filters",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mast",
+            "description": "Nautor's Swan SWAN 48 - Mast",
+            "specifications": [
+              "",
+              "Nautor Swan",
+              ""
+            ]
+          },
+          {
+            "name": "Boom",
+            "description": "Nautor's Swan SWAN 48 - Boom",
+            "specifications": [
+              "",
+              "Nautor Swan",
+              ""
+            ]
+          },
+          {
+            "name": "Spinnaker pole",
+            "description": "Nautor's Swan SWAN 48 - Spinnaker pole",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Jockey pole",
+            "description": "Nautor's Swan SWAN 48 - Jockey pole",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Main mast track system",
+            "description": "Nautor's Swan SWAN 48 - Main mast track system",
+            "specifications": [
+              "System B",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Furler for head sail",
+            "description": "Nautor's Swan SWAN 48 - Furler for head sail",
+            "specifications": [
+              "unit 3",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Halyards",
+            "description": "Nautor's Swan SWAN 48 - Halyards",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Sheet / guys for spinnaker",
+            "description": "Nautor's Swan SWAN 48 - Sheet / guys for spinnaker",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Runners & check stays",
+            "description": "Nautor's Swan SWAN 48 - Runners & check stays",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Spreader deck light",
+            "description": "Nautor's Swan SWAN 48 - Spreader deck light",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "LED top light",
+            "description": "Nautor's Swan SWAN 48 - LED top light",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mast steps",
+            "description": "Nautor's Swan SWAN 48 - Mast steps",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Windex",
+            "description": "Nautor's Swan SWAN 48 - Windex",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Aluminum bow sprit",
+            "description": "Nautor's Swan SWAN 48 - Aluminum bow sprit",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Carbon bow sprit",
+            "description": "Nautor's Swan SWAN 48 - Carbon bow sprit",
+            "specifications": [
+              "",
+              "Offshore Spars",
+              ""
+            ]
+          },
+          {
+            "name": "Blocks and clutch for furling line",
+            "description": "Nautor's Swan SWAN 48 - Blocks and clutch for furling line",
+            "specifications": [
+              "H3012, H1963",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Pole for radar antenna",
+            "description": "Nautor's Swan SWAN 48 - Pole for radar antenna",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Primary Winch",
+            "description": "Nautor's Swan SWAN 48 - Primary Winch",
+            "specifications": [
+              "64 CEST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Secondary Winch",
+            "description": "Nautor's Swan SWAN 48 - Secondary Winch",
+            "specifications": [
+              "64 CST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Main sheet winch",
+            "description": "Nautor's Swan SWAN 48 - Main sheet winch",
+            "specifications": [
+              "48 CST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Main sheet winch",
+            "description": "Nautor's Swan SWAN 48 - Main sheet winch",
+            "specifications": [
+              "44 CST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Traveler control winch",
+            "description": "Nautor's Swan SWAN 48 - Traveler control winch",
+            "specifications": [
+              "16 CST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Halyard winch",
+            "description": "Nautor's Swan SWAN 48 - Halyard winch",
+            "specifications": [
+              "48 CST",
+              "Lewmar",
+              ""
+            ]
+          },
+          {
+            "name": "Hydraulic panel",
+            "description": "Nautor's Swan SWAN 48 - Hydraulic panel",
+            "specifications": [
+              "50",
+              "Navtec System",
+              ""
+            ]
+          },
+          {
+            "name": "Flagpole",
+            "description": "Nautor's Swan SWAN 48 - Flagpole",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Deck wash system",
+            "description": "Nautor's Swan SWAN 48 - Deck wash system",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Deck shower",
+            "description": "Nautor's Swan SWAN 48 - Deck shower",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Cleats",
+            "description": "Nautor's Swan SWAN 48 - Cleats",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mooring lines",
+            "description": "Nautor's Swan SWAN 48 - Mooring lines",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Fenders",
+            "description": "Nautor's Swan SWAN 48 - Fenders",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mainsail cover",
+            "description": "Nautor's Swan SWAN 48 - Mainsail cover",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Spray dodgers",
+            "description": "Nautor's Swan SWAN 48 - Spray dodgers",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Cover for pedestal",
+            "description": "Nautor's Swan SWAN 48 - Cover for pedestal",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Custom made cockpit cushions",
+            "description": "Nautor's Swan SWAN 48 - Custom made cockpit cushions",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Dinghy",
+            "description": "Nautor's Swan SWAN 48 - Dinghy",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Outboard engine",
+            "description": "Nautor's Swan SWAN 48 - Outboard engine",
+            "specifications": [
+              "",
+              "Honda",
+              ""
+            ]
+          },
+          {
+            "name": "Life raft",
+            "description": "Nautor's Swan SWAN 48 - Life raft",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Fire extinguisher",
+            "description": "Nautor's Swan SWAN 48 - Fire extinguisher",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Electrical fans",
+            "description": "Nautor's Swan SWAN 48 - Electrical fans",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Mattresses",
+            "description": "Nautor's Swan SWAN 48 - Mattresses",
+            "specifications": [
+              "",
+              "Sirius",
+              ""
+            ]
+          },
+          {
+            "name": "Day cover for all beds",
+            "description": "Nautor's Swan SWAN 48 - Day cover for all beds",
+            "specifications": [
+              "",
+              "Sirius",
+              ""
+            ]
+          },
+          {
+            "name": "Flush push button lockers",
+            "description": "Nautor's Swan SWAN 48 - Flush push button lockers",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Curtains",
+            "description": "Nautor's Swan SWAN 48 - Curtains",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Toilet hoses",
+            "description": "Nautor's Swan SWAN 48 - Toilet hoses",
+            "specifications": [
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "Main Engine",
+            "description": "Nautor's Swan SWAN 48 - Main Engine",
+            "specifications": [
+              "D2 75",
+              "Volvo",
+              ""
+            ]
+          },
+          {
+            "name": "Hydraulic Gearbox",
+            "description": "Nautor's Swan SWAN 48 - Hydraulic Gearbox",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Folding Propeller",
+            "description": "Nautor's Swan SWAN 48 - Folding Propeller",
+            "specifications": [
+              null,
+              "Max-prop",
+              ""
+            ]
+          },
+          {
+            "name": "Diesel Pre-filters",
+            "description": "Nautor's Swan SWAN 48 - Diesel Pre-filters",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Blocks and Clutch for Furling Line",
+            "description": "Nautor's Swan SWAN 48 - Blocks and Clutch for Furling Line",
+            "specifications": [
+              "H3012 / H1963",
+              "Harken",
+              ""
+            ]
+          },
+          {
+            "name": "Life Raft",
+            "description": "Nautor's Swan SWAN 48 - Life Raft",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Fire Extinguisher",
+            "description": "Nautor's Swan SWAN 48 - Fire Extinguisher",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          },
+          {
+            "name": "Dinghy",
+            "description": "Nautor's Swan SWAN 48 - Dinghy",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          }
+        ],
+        "sails": [],
+        "engine": [],
+        "hull": [],
+        "electrical": [
+          {
+            "name": "Pole for Radar Antenna",
+            "description": "Nautor’s Swan SWAN 48 - Pole for Radar Antenna",
+            "specifications": [
+              null,
+              null,
+              ""
+            ]
+          }
+        ],
+        "plumbing": []
+      }
     }
   ]
 }

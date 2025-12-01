@@ -4657,6 +4657,671 @@
           "maintenanceInterval": 12
         }
       ]
+    },
+    {
+      "id": "swan-48",
+      "name": "SWAN 48",
+      "manufacturer": "Nautor’s Swan",
+      "parts": [
+        {
+          "name": "Engine",
+          "manufacturer": "Volvo Penta",
+          "model": "D2 75",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Hydraulic Gear Box",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Folding Propeller",
+          "manufacturer": "Max-prop",
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Diesel Pre-filters with Water Separator",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mast",
+          "manufacturer": "Nautor Swan",
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Boom",
+          "manufacturer": "Nautor Swan",
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spinnaker Pole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Jockey Pole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Main Mast Track System",
+          "manufacturer": "Harken",
+          "model": "System B",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Furler for Head Sail",
+          "manufacturer": "Harken",
+          "model": "Unit 3",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Halyards",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Sheet / Guys for Spinnaker",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Runners & Check Stays",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spreader Deck Light",
+          "manufacturer": null,
+          "model": null,
+          "category": "Lighting",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "LED Top Light",
+          "manufacturer": null,
+          "model": null,
+          "category": "Lighting",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mast Steps",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Windex",
+          "manufacturer": null,
+          "model": null,
+          "category": "Navigation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Aluminum Bow Sprit",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Carbon Bow Sprit",
+          "manufacturer": "Offshore Spars",
+          "model": null,
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Clutch for Furling Line",
+          "manufacturer": "Harken",
+          "model": "H3012 / H1963",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Pole for Radar Antenna",
+          "manufacturer": null,
+          "model": null,
+          "category": "Electronics",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Hydraulic Panel",
+          "manufacturer": "Navtec",
+          "model": "System 50",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Flagpole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Dinghy",
+          "manufacturer": null,
+          "model": null,
+          "category": "Tender",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Outboard Engine",
+          "manufacturer": "Honda",
+          "model": null,
+          "category": "Tender",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Life Raft",
+          "manufacturer": null,
+          "model": null,
+          "category": "Safety Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Fire Extinguisher in Engine Room",
+          "manufacturer": null,
+          "model": null,
+          "category": "Safety Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mainsail Cover",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spray Dodgers",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Cover for Pedestal",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Custom Made Cockpit Cushions",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Saloon Settees, Chairs, Navigation Seat",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Carpet in all cabins",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mattresses",
+          "manufacturer": "Sirius",
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Day cover for all beds",
+          "manufacturer": "Sirius",
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Curtains",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Leather upholstery for saloon",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Additional bulkhead lights in saloon",
+          "manufacturer": "Cabin 21",
+          "model": null,
+          "category": "Lighting",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Engine",
+          "manufacturer": "Volvo Penta",
+          "model": "D2 75",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Hydraulic gear box",
+          "manufacturer": "",
+          "model": "",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Folding propeller",
+          "manufacturer": "Max-prop",
+          "model": "",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Diesel pre-filters",
+          "manufacturer": "",
+          "model": "",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mast",
+          "manufacturer": "Nautor Swan",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Boom",
+          "manufacturer": "Nautor Swan",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spinnaker pole",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Jockey pole",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Main mast track system",
+          "manufacturer": "Harken",
+          "model": "System B",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Furler for head sail",
+          "manufacturer": "Harken",
+          "model": "unit 3",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Halyards",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Sheet / guys for spinnaker",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Runners & check stays",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spreader deck light",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "LED top light",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mast steps",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Windex",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Aluminum bow sprit",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Carbon bow sprit",
+          "manufacturer": "Offshore Spars",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Blocks and clutch for furling line",
+          "manufacturer": "Harken",
+          "model": "H3012, H1963",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Pole for radar antenna",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Primary Winch",
+          "manufacturer": "Lewmar",
+          "model": "64 CEST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Secondary Winch",
+          "manufacturer": "Lewmar",
+          "model": "64 CST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Main sheet winch",
+          "manufacturer": "Lewmar",
+          "model": "48 CST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Main sheet winch",
+          "manufacturer": "Lewmar",
+          "model": "44 CST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Traveler control winch",
+          "manufacturer": "Lewmar",
+          "model": "16 CST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Halyard winch",
+          "manufacturer": "Lewmar",
+          "model": "48 CST",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Hydraulic panel",
+          "manufacturer": "Navtec System",
+          "model": "50",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Flagpole",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Deck wash system",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Deck shower",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Cleats",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Hardware",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mooring lines",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Fenders",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mainsail cover",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Spray dodgers",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Cover for pedestal",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Custom made cockpit cushions",
+          "manufacturer": "",
+          "model": "",
+          "category": "Cushions",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Dinghy",
+          "manufacturer": "",
+          "model": "",
+          "category": "Tender",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Outboard engine",
+          "manufacturer": "Honda",
+          "model": "",
+          "category": "Tender",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Life raft",
+          "manufacturer": "",
+          "model": "",
+          "category": "Safety Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Fire extinguisher",
+          "manufacturer": "",
+          "model": "",
+          "category": "Fire-fighting equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Electrical fans",
+          "manufacturer": "",
+          "model": "",
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Mattresses",
+          "manufacturer": "Sirius",
+          "model": "",
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Day cover for all beds",
+          "manufacturer": "Sirius",
+          "model": "",
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Flush push button lockers",
+          "manufacturer": "",
+          "model": "",
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Curtains",
+          "manufacturer": "",
+          "model": "",
+          "category": "Accommodation",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Toilet hoses",
+          "manufacturer": "",
+          "model": "",
+          "category": "Plumbing System",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Main Engine",
+          "manufacturer": "Volvo",
+          "model": "D2 75",
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Hydraulic Gearbox",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Folding Propeller",
+          "manufacturer": "Max-prop",
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Diesel Pre-filters",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Blocks and Clutch for Furling Line",
+          "manufacturer": "Harken",
+          "model": "H3012 / H1963",
+          "category": "Rigging",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Life Raft",
+          "manufacturer": null,
+          "model": null,
+          "category": "Safety Equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Fire Extinguisher",
+          "manufacturer": null,
+          "model": null,
+          "category": "Fire-fighting equipment",
+          "maintenanceInterval": 12
+        },
+        {
+          "name": "Dinghy",
+          "manufacturer": null,
+          "model": null,
+          "category": "Tender & Outboard",
+          "maintenanceInterval": 12
+        }
+      ]
     }
   ]
 }

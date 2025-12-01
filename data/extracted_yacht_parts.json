@@ -36260,6 +36260,573 @@
           "interval": null
         }
       ]
+    },
+    {
+      "id": "swan-48",
+      "name": "SWAN 48",
+      "manufacturer": "Nautor’s Swan",
+      "parts": [
+        {
+          "name": "Engine",
+          "manufacturer": "Volvo Penta",
+          "model": "D2 75",
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Hydraulic Gear Box",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Folding Propeller",
+          "manufacturer": "Max-prop",
+          "model": null,
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Diesel Pre-filters with Water Separator",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Mast",
+          "manufacturer": "Nautor Swan",
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Boom",
+          "manufacturer": "Nautor Swan",
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Spinnaker Pole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Jockey Pole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Main Mast Track System",
+          "manufacturer": "Harken",
+          "model": "System B",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Furler for Head Sail",
+          "manufacturer": "Harken",
+          "model": "Unit 3",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Halyards",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Sheet / Guys for Spinnaker",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Runners & Check Stays",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Spreader Deck Light",
+          "manufacturer": null,
+          "model": null,
+          "category": "Lighting",
+          "interval": null
+        },
+        {
+          "name": "LED Top Light",
+          "manufacturer": null,
+          "model": null,
+          "category": "Lighting",
+          "interval": null
+        },
+        {
+          "name": "Mast Steps",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Windex",
+          "manufacturer": null,
+          "model": null,
+          "category": "Navigation",
+          "interval": null
+        },
+        {
+          "name": "Aluminum Bow Sprit",
+          "manufacturer": null,
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Carbon Bow Sprit",
+          "manufacturer": "Offshore Spars",
+          "model": null,
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Clutch for Furling Line",
+          "manufacturer": "Harken",
+          "model": "H3012 / H1963",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Pole for Radar Antenna",
+          "manufacturer": null,
+          "model": null,
+          "category": "Electronics",
+          "interval": null
+        },
+        {
+          "name": "Hydraulic Panel",
+          "manufacturer": "Navtec",
+          "model": "System 50",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Flagpole",
+          "manufacturer": null,
+          "model": null,
+          "category": "Deck Equipment",
+          "interval": null
+        },
+        {
+          "name": "Dinghy",
+          "manufacturer": null,
+          "model": null,
+          "category": "Tender",
+          "interval": null
+        },
+        {
+          "name": "Outboard Engine",
+          "manufacturer": "Honda",
+          "model": null,
+          "category": "Tender",
+          "interval": null
+        },
+        {
+          "name": "Life Raft",
+          "manufacturer": null,
+          "model": null,
+          "category": "Safety Equipment",
+          "interval": null
+        },
+        {
+          "name": "Fire Extinguisher in Engine Room",
+          "manufacturer": null,
+          "model": null,
+          "category": "Safety Equipment",
+          "interval": null
+        },
+        {
+          "name": "Mainsail Cover",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Spray Dodgers",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Cover for Pedestal",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Custom Made Cockpit Cushions",
+          "manufacturer": null,
+          "model": null,
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Saloon Settees, Chairs, Navigation Seat",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Carpet in all cabins",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Mattresses",
+          "manufacturer": "Sirius",
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Day cover for all beds",
+          "manufacturer": "Sirius",
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Curtains",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Leather upholstery for saloon",
+          "manufacturer": null,
+          "model": null,
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Additional bulkhead lights in saloon",
+          "manufacturer": "Cabin 21",
+          "model": null,
+          "category": "Lighting",
+          "interval": null
+        },
+        {
+          "name": "Hydraulic gear box",
+          "manufacturer": "",
+          "model": "",
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Folding propeller",
+          "manufacturer": "Max-prop",
+          "model": "",
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Diesel pre-filters",
+          "manufacturer": "",
+          "model": "",
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Spinnaker pole",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Jockey pole",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Main mast track system",
+          "manufacturer": "Harken",
+          "model": "System B",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Furler for head sail",
+          "manufacturer": "Harken",
+          "model": "unit 3",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Sheet / guys for spinnaker",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Runners & check stays",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Spreader deck light",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "LED top light",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Mast steps",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Aluminum bow sprit",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Carbon bow sprit",
+          "manufacturer": "Offshore Spars",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Blocks and clutch for furling line",
+          "manufacturer": "Harken",
+          "model": "H3012, H1963",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Pole for radar antenna",
+          "manufacturer": "",
+          "model": "",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Primary Winch",
+          "manufacturer": "Lewmar",
+          "model": "64 CEST",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Secondary Winch",
+          "manufacturer": "Lewmar",
+          "model": "64 CST",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Main sheet winch",
+          "manufacturer": "Lewmar",
+          "model": "48 CST",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Traveler control winch",
+          "manufacturer": "Lewmar",
+          "model": "16 CST",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Halyard winch",
+          "manufacturer": "Lewmar",
+          "model": "48 CST",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Hydraulic panel",
+          "manufacturer": "Navtec System",
+          "model": "50",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Deck wash system",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "interval": null
+        },
+        {
+          "name": "Deck shower",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "interval": null
+        },
+        {
+          "name": "Cleats",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Hardware",
+          "interval": null
+        },
+        {
+          "name": "Mooring lines",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "interval": null
+        },
+        {
+          "name": "Fenders",
+          "manufacturer": "",
+          "model": "",
+          "category": "Deck Equipment",
+          "interval": null
+        },
+        {
+          "name": "Mainsail cover",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Spray dodgers",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Cover for pedestal",
+          "manufacturer": "",
+          "model": "",
+          "category": "Covers & Canvas",
+          "interval": null
+        },
+        {
+          "name": "Custom made cockpit cushions",
+          "manufacturer": "",
+          "model": "",
+          "category": "Cushions",
+          "interval": null
+        },
+        {
+          "name": "Outboard engine",
+          "manufacturer": "Honda",
+          "model": "",
+          "category": "Tender",
+          "interval": null
+        },
+        {
+          "name": "Life raft",
+          "manufacturer": "",
+          "model": "",
+          "category": "Safety Equipment",
+          "interval": null
+        },
+        {
+          "name": "Fire extinguisher",
+          "manufacturer": "",
+          "model": "",
+          "category": "Fire-fighting equipment",
+          "interval": null
+        },
+        {
+          "name": "Electrical fans",
+          "manufacturer": "",
+          "model": "",
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Flush push button lockers",
+          "manufacturer": "",
+          "model": "",
+          "category": "Accommodation",
+          "interval": null
+        },
+        {
+          "name": "Toilet hoses",
+          "manufacturer": "",
+          "model": "",
+          "category": "Plumbing System",
+          "interval": null
+        },
+        {
+          "name": "Main Engine",
+          "manufacturer": "Volvo",
+          "model": "D2 75",
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Hydraulic Gearbox",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Diesel Pre-filters",
+          "manufacturer": null,
+          "model": null,
+          "category": "Machinery",
+          "interval": null
+        },
+        {
+          "name": "Blocks and Clutch for Furling Line",
+          "manufacturer": "Harken",
+          "model": "H3012 / H1963",
+          "category": "Rigging",
+          "interval": null
+        },
+        {
+          "name": "Fire Extinguisher",
+          "manufacturer": null,
+          "model": null,
+          "category": "Fire-fighting equipment",
+          "interval": null
+        }
+      ]
     }
   ]
 }

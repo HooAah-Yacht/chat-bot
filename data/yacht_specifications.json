@@ -1,6 +1,6 @@
 {
   "schemaVersion": "5.0",
-  "lastUpdated": "2025-11-27",
+  "lastUpdated": "2025-12-01",
   "totalYachts": 19,
   "yachts": [
     {
@@ -11370,42 +11370,45 @@
       }
     },
     {
-      "id": "swan-41",
-      "name": "SWAN 41",
-      "manufacturer": "Nautor",
-      "type": "Owner's Manual",
-      "manual": "2020_03_31_11_03_39-48 owners manual.pdf",
-      "dimensions": {},
-      "sailArea": {
-        "mainSailArea": null,
-        "jibSailArea": null,
-        "spinnakerSailArea": null,
-        "totalSailArea": null
-      },
-      "engine": {
-        "type": "",
-        "power": "",
-        "model": ""
-      },
-      "hull": {
-        "hullMaterial": "",
-        "deckMaterial": "",
-        "keelType": ""
-      },
-      "accommodations": {
-        "berths": null,
-        "cabins": null,
-        "heads": null
-      },
-      "capacity": {
-        "fuelCapacity": null,
-        "waterCapacity": null
-      },
-      "performance": {
-        "maxSpeed": null,
-        "cruisingSpeed": null
-      },
-      "description": "PDF 매뉴얼에서 자동 추출: OWNER MANUAL"
+      "id": "swan-48",
+      "name": "Nautor Swan 48",
+      "manufacturer": "Nautor's Swan",
+      "type": "Broker's Listing / Technical Specifications",
+      "schemaVersion": "5.0",
+      "updatedAt": "2025-12-01T16:10:00",
+      "manualPDF": "nautor-swan-48-galatea.pdf",
+      "yachtSpecs": {
+        "standard": {
+          "dimensions": {
+            "LOA": "14.83m (48'8\")",
+            "Beam": "4.32m (14'2\")",
+            "Draft": "2.37m (7'9\")",
+            "Displacement": "15,000kg (33,069lb)"
+          },
+          "engine": {
+            "type": "Inboard Diesel",
+            "power": "75HP",
+            "model": "Volvo D2 75"
+          },
+          "sailArea": {}
+        },
+        "additional": {
+          "year": "2000",
+          "designer": "German Frers",
+          "builder": "Nautor's Swan",
+          "hullMaterial": "GRP",
+          "berths": "6 berths in 3 cabins",
+          "propeller": "3-blade folding propeller (Max-prop)",
+          "maxSpeed": "9.0 knots (approx.)",
+          "cruisingSpeed": "7.5 knots (approx.)",
+          "location": "Vindö, Sweden",
+          "yachtName": "GALATEA",
+          "HIN": "FI-SWN48137E000",
+          "buildPeriod": "1995-2002",
+          "totalBuilt": "57 units",
+          "description": "The Nautor Swan 48 was designed by German Frers and built between 1995-2002. A total of 57 units were delivered from the renowned Finnish yacht builder. Nautor Swan 48s are cruiser racers that offer exciting sailing performance and great accommodation for six people in three cabins."
+        }
+      }
     }
   ]
 }

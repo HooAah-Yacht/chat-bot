@@ -8542,6 +8542,796 @@
           "maintenanceItems": []
         }
       }
+    },
+    {
+      "id": "swan-48",
+      "name": "SWAN 48",
+      "manufacturer": "Nautor’s Swan",
+      "type": "",
+      "length": null,
+      "officialWebsite": null,
+      "manualPDF": "nautor-swan-48-galatea.pdf",
+      "dimensions": {},
+      "parts": {
+        "rigging": {
+          "physicalParts": [
+            {
+              "id": "swan-48-rigging-01",
+              "category": "Machinery",
+              "name": "Engine",
+              "partNumber": "D2 75",
+              "manufacturer": "Volvo Penta",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-02",
+              "category": "Machinery",
+              "name": "Hydraulic Gear Box",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-03",
+              "category": "Machinery",
+              "name": "Folding Propeller",
+              "partNumber": null,
+              "manufacturer": "Max-prop",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-04",
+              "category": "Machinery",
+              "name": "Diesel Pre-filters with Water Separator",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-05",
+              "category": "Rigging",
+              "name": "Mast",
+              "partNumber": null,
+              "manufacturer": "Nautor Swan",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-06",
+              "category": "Rigging",
+              "name": "Boom",
+              "partNumber": null,
+              "manufacturer": "Nautor Swan",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-07",
+              "category": "Rigging",
+              "name": "Spinnaker Pole",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-08",
+              "category": "Rigging",
+              "name": "Jockey Pole",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-09",
+              "category": "Rigging",
+              "name": "Main Mast Track System",
+              "partNumber": "System B",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-10",
+              "category": "Rigging",
+              "name": "Furler for Head Sail",
+              "partNumber": "Unit 3",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-11",
+              "category": "Rigging",
+              "name": "Halyards",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-12",
+              "category": "Rigging",
+              "name": "Sheet / Guys for Spinnaker",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-13",
+              "category": "Rigging",
+              "name": "Runners & Check Stays",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-14",
+              "category": "Lighting",
+              "name": "Spreader Deck Light",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-15",
+              "category": "Lighting",
+              "name": "LED Top Light",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-16",
+              "category": "Rigging",
+              "name": "Mast Steps",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-17",
+              "category": "Navigation",
+              "name": "Windex",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-18",
+              "category": "Rigging",
+              "name": "Aluminum Bow Sprit",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-19",
+              "category": "Rigging",
+              "name": "Carbon Bow Sprit",
+              "partNumber": null,
+              "manufacturer": "Offshore Spars",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-20",
+              "category": "Deck hardware",
+              "name": "Clutch for Furling Line",
+              "partNumber": "H3012 / H1963",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-21",
+              "category": "Deck hardware",
+              "name": "Hydraulic Panel",
+              "partNumber": "System 50",
+              "manufacturer": "Navtec",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-22",
+              "category": "Deck equipment",
+              "name": "Flagpole",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-23",
+              "category": "Tender",
+              "name": "Dinghy",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-24",
+              "category": "Tender",
+              "name": "Outboard Engine",
+              "partNumber": null,
+              "manufacturer": "Honda",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-25",
+              "category": "Safety equipment",
+              "name": "Life Raft",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-26",
+              "category": "Safety equipment",
+              "name": "Fire Extinguisher in Engine Room",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-27",
+              "category": "Covers & canvas",
+              "name": "Mainsail Cover",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-28",
+              "category": "Covers & canvas",
+              "name": "Spray Dodgers",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-29",
+              "category": "Covers & canvas",
+              "name": "Cover for Pedestal",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-30",
+              "category": "Covers & canvas",
+              "name": "Custom Made Cockpit Cushions",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-31",
+              "category": "Accommodation",
+              "name": "Saloon Settees, Chairs, Navigation Seat",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-32",
+              "category": "Accommodation",
+              "name": "Carpet in all cabins",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-33",
+              "category": "Accommodation",
+              "name": "Mattresses",
+              "partNumber": null,
+              "manufacturer": "Sirius",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-34",
+              "category": "Accommodation",
+              "name": "Day cover for all beds",
+              "partNumber": null,
+              "manufacturer": "Sirius",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-35",
+              "category": "Accommodation",
+              "name": "Curtains",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-36",
+              "category": "Accommodation",
+              "name": "Leather upholstery for saloon",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-37",
+              "category": "Lighting",
+              "name": "Additional bulkhead lights in saloon",
+              "partNumber": null,
+              "manufacturer": "Cabin 21",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-38",
+              "category": "Machinery",
+              "name": "Engine",
+              "partNumber": "D2 75",
+              "manufacturer": "Volvo Penta",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-39",
+              "category": "Machinery",
+              "name": "Hydraulic gear box",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-40",
+              "category": "Machinery",
+              "name": "Folding propeller",
+              "partNumber": "",
+              "manufacturer": "Max-prop",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-41",
+              "category": "Machinery",
+              "name": "Diesel pre-filters",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-42",
+              "category": "Rigging",
+              "name": "Mast",
+              "partNumber": "",
+              "manufacturer": "Nautor Swan",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-43",
+              "category": "Rigging",
+              "name": "Boom",
+              "partNumber": "",
+              "manufacturer": "Nautor Swan",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-44",
+              "category": "Rigging",
+              "name": "Spinnaker pole",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-45",
+              "category": "Rigging",
+              "name": "Jockey pole",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-46",
+              "category": "Rigging",
+              "name": "Main mast track system",
+              "partNumber": "System B",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-47",
+              "category": "Rigging",
+              "name": "Furler for head sail",
+              "partNumber": "unit 3",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-48",
+              "category": "Rigging",
+              "name": "Halyards",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-49",
+              "category": "Rigging",
+              "name": "Sheet / guys for spinnaker",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-50",
+              "category": "Rigging",
+              "name": "Runners & check stays",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-51",
+              "category": "Rigging",
+              "name": "Spreader deck light",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-52",
+              "category": "Rigging",
+              "name": "LED top light",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-53",
+              "category": "Rigging",
+              "name": "Mast steps",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-54",
+              "category": "Rigging",
+              "name": "Windex",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-55",
+              "category": "Rigging",
+              "name": "Aluminum bow sprit",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-56",
+              "category": "Rigging",
+              "name": "Carbon bow sprit",
+              "partNumber": "",
+              "manufacturer": "Offshore Spars",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-57",
+              "category": "Deck hardware",
+              "name": "Blocks and clutch for furling line",
+              "partNumber": "H3012, H1963",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-58",
+              "category": "Rigging",
+              "name": "Pole for radar antenna",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-59",
+              "category": "Deck hardware",
+              "name": "Primary Winch",
+              "partNumber": "64 CEST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-60",
+              "category": "Deck hardware",
+              "name": "Secondary Winch",
+              "partNumber": "64 CST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-61",
+              "category": "Deck hardware",
+              "name": "Main sheet winch",
+              "partNumber": "48 CST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-62",
+              "category": "Deck hardware",
+              "name": "Main sheet winch",
+              "partNumber": "44 CST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-63",
+              "category": "Deck hardware",
+              "name": "Traveler control winch",
+              "partNumber": "16 CST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-64",
+              "category": "Deck hardware",
+              "name": "Halyard winch",
+              "partNumber": "48 CST",
+              "manufacturer": "Lewmar",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-65",
+              "category": "Deck hardware",
+              "name": "Hydraulic panel",
+              "partNumber": "50",
+              "manufacturer": "Navtec System",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-66",
+              "category": "Deck equipment",
+              "name": "Flagpole",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-67",
+              "category": "Deck equipment",
+              "name": "Deck wash system",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-68",
+              "category": "Deck equipment",
+              "name": "Deck shower",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-69",
+              "category": "Deck hardware",
+              "name": "Cleats",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-70",
+              "category": "Deck equipment",
+              "name": "Mooring lines",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-71",
+              "category": "Deck equipment",
+              "name": "Fenders",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-72",
+              "category": "Covers & canvas",
+              "name": "Mainsail cover",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-73",
+              "category": "Covers & canvas",
+              "name": "Spray dodgers",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-74",
+              "category": "Covers & canvas",
+              "name": "Cover for pedestal",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-75",
+              "category": "Cushions",
+              "name": "Custom made cockpit cushions",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-76",
+              "category": "Tender",
+              "name": "Dinghy",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-77",
+              "category": "Tender",
+              "name": "Outboard engine",
+              "partNumber": "",
+              "manufacturer": "Honda",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-78",
+              "category": "Safety equipment",
+              "name": "Life raft",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-79",
+              "category": "Fire-fighting equipment",
+              "name": "Fire extinguisher",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-80",
+              "category": "Accommodation",
+              "name": "Electrical fans",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-81",
+              "category": "Accommodation",
+              "name": "Mattresses",
+              "partNumber": "",
+              "manufacturer": "Sirius",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-82",
+              "category": "Accommodation",
+              "name": "Day cover for all beds",
+              "partNumber": "",
+              "manufacturer": "Sirius",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-83",
+              "category": "Accommodation",
+              "name": "Flush push button lockers",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-84",
+              "category": "Accommodation",
+              "name": "Curtains",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-85",
+              "category": "Plumbing system",
+              "name": "Toilet hoses",
+              "partNumber": "",
+              "manufacturer": "",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-86",
+              "category": "Machinery",
+              "name": "Main Engine",
+              "partNumber": "D2 75",
+              "manufacturer": "Volvo",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-87",
+              "category": "Machinery",
+              "name": "Hydraulic Gearbox",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-88",
+              "category": "Machinery",
+              "name": "Folding Propeller",
+              "partNumber": null,
+              "manufacturer": "Max-prop",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-89",
+              "category": "Machinery",
+              "name": "Diesel Pre-filters",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-90",
+              "category": "Rigging",
+              "name": "Blocks and Clutch for Furling Line",
+              "partNumber": "H3012 / H1963",
+              "manufacturer": "Harken",
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-91",
+              "category": "Safety equipment",
+              "name": "Life Raft",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-92",
+              "category": "Fire-fighting equipment",
+              "name": "Fire Extinguisher",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            },
+            {
+              "id": "swan-48-rigging-93",
+              "category": "Tender & outboard",
+              "name": "Dinghy",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            }
+          ],
+          "maintenanceItems": []
+        },
+        "sails": {
+          "physicalParts": [],
+          "maintenanceItems": []
+        },
+        "engine": {
+          "physicalParts": [],
+          "maintenanceItems": []
+        },
+        "hull": {
+          "physicalParts": [],
+          "maintenanceItems": []
+        },
+        "electrical": {
+          "physicalParts": [
+            {
+              "id": "swan-48-electrical-01",
+              "category": "Electronics",
+              "name": "Pole for Radar Antenna",
+              "partNumber": null,
+              "manufacturer": null,
+              "maintenanceInterval": "Annual inspection"
+            }
+          ],
+          "maintenanceItems": []
+        },
+        "plumbing": {
+          "physicalParts": [],
+          "maintenanceItems": []
+        }
+      }
     }
   ]
 }

@@ -26,3 +26,28 @@
 2025-12-01 15:44:15,553 [INFO] werkzeug:  * Debugger PIN: 797-382-766
 2025-12-01 15:44:28,009 [INFO] werkzeug:  * Detected change in 'C:\\Users\\user\\Documents\\Yacht2\\chat-bot\\chatbot_unified.py', reloading
 2025-12-01 15:44:28,177 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 16:14:46,662 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.95.136:5000
+2025-12-01 16:14:46,663 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-12-01 16:14:46,665 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 16:14:48,514 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 16:14:48,521 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 16:15:09,534 [INFO] YachtChatbot: Chat request - Session: default, Message: Swan 48 분석해줘...
+2025-12-01 16:15:23,450 [INFO] YachtChatbot: Chat response completed in 13.92s
+2025-12-01 16:15:23,451 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 16:15:23] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 16:15:32,776 [INFO] YachtChatbot: Chat request - Session: default, Message: Nautor Swan 48 정보...
+2025-12-01 16:15:39,913 [INFO] YachtChatbot: Chat response completed in 7.14s
+2025-12-01 16:15:39,913 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 16:15:39] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 16:15:41,592 [INFO] YachtChatbot: Chat request - Session: default, Message: Swan 정보...
+2025-12-01 16:15:45,671 [INFO] YachtChatbot: Chat response completed in 4.08s
+2025-12-01 16:15:45,672 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 16:15:45] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 16:16:01,062 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\register_swan48.py', reloading
+2025-12-01 16:16:03,255 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 16:16:04,681 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 16:16:04,685 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 16:16:51,276 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\chatbot_unified.py', reloading
+2025-12-01 16:16:51,609 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 16:16:54,615 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 16:16:54,615 [INFO] werkzeug:  * Debugger PIN: 797-382-766

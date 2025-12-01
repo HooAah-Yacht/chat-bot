@@ -214,19 +214,19 @@ class UnifiedYachtChatbot:
         
         print("✅ HooAah Yacht 통합 챗봇이 준비되었습니다!")
 
-        # 별칭/버전 매핑 (요트명 혼동 방지용) 확장
+        # 별칭/버전 매핑 (요트명 혼동 방지용) - canonical은 JSON의 정확한 이름
         self.alias_map = {
-            # Nautor Swan 계열 오매칭 방지
-            'swan 41': ['swan41', 'swan 41', 'nautor swan 41', 'nautor 41'],
-            'nautor swan 41': ['swan 41', 'swan41', 'nautor swan 41'],
-            'nautor swan 48': ['swan48', 'swan 48', 'nautor swan 48', 'nautor 48'],
+            # Nautor Swan 계열
+            'Nautor Swan 48': ['swan48', 'swan 48', 'nautor swan 48', 'nautor 48', 'galatea', 'swan', 'swan48', 'nautor swan', 'nautor'],
+            'ClubSwan 50': ['clubswan50', 'club swan 50', 'clubswan 50', 'club swan'],
             # Farr 계열
-            'farr 40': ['farr40', 'farr-40', 'farr 40', 'farr yacht 40'],
+            'Farr 40': ['farr40', 'farr-40', 'farr 40', 'farr yacht 40', 'farr'],
             # J/계열
-            'j/24': ['j24', 'j 24', 'j-24', 'j/24'],
-            'j/70': ['j70', 'j 70', 'j-70', 'j/70', 'j boats 70'],
+            'J/24': ['j24', 'j 24', 'j-24', 'j/24', 'j24'],
+            'J/70': ['j70', 'j 70', 'j-70', 'j/70', 'j boats 70', 'j70'],
             # Beneteau Oceanis
-            'beneteau oceanis 45': ['oceanis 45', 'beneteau 45']
+            'OCEANIS 46.1': ['oceanis 46.1', 'oceanis 46', 'oceanis46', 'beneteau 46'],
+            'OCEANIS 473': ['oceanis 473', 'oceanis473', 'beneteau 473']
         }
         if mode == "interactive":
             print("💬 자연스럽게 요트에 대해 질문해보세요.")
@@ -681,8 +681,8 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     section_filter = self._extract_section_keyword(user_message)
                     if section_filter:
                         return self._analyze_yacht_data(yacht_name, section_filter=section_filter)
-                    # 섹션 미지정 → 간결한 요약만 제공
-                    return self._analyze_yacht_summary(yacht_name)
+                    # 섹션 미지정 → 전체 상세 분석 제공
+                    return self._analyze_yacht_data(yacht_name)
                 else:
                     return "어떤 요트를 분석하시겠어요? 요트 이름을 알려주시면 상세 분석을 제공해드리겠습니다.\n예: 'Farr 40 분석해줘'"
             
@@ -1433,6 +1433,9 @@ PDF 파일 경로를 입력해주세요! 📎"""
                     "filePath": file_path
                 }
             }
+        
+        # Gemini 모델 초기화 (lazy init)
+        self._ensure_model_ready()
         
         # 분석 프롬프트 (완전한 버전 5.0)
         prompt = f"""다음은 요트 매뉴얼 또는 부품 정보 문서에서 추출한 텍스트입니다:
@@ -2561,12 +2564,12 @@ PDF 파일 경로를 입력해주세요! 📎"""
         # 하이픈, 공백, 언더스코어, 슬래시 등을 제거하여 정규화
         message_normalized = re.sub(r'[-_\s/]+', '', message.lower())
 
-        # 별칭 매핑 우선 확인
+        # 별칭 매핑 우선 확인 (canonical은 이미 정확한 이름)
         for canonical, aliases in getattr(self, 'alias_map', {}).items():
             for alias in aliases:
                 alias_norm = re.sub(r'[-_\s/]+', '', alias.lower())
                 if alias_norm in message_normalized:
-                    return canonical.title() if '/' not in canonical else canonical
+                    return canonical  # canonical을 그대로 반환 (이미 정확한 JSON 이름)
         
         for yacht in self.yacht_data.get('yachts', []):
             yacht_name = yacht.get('name', '')
@@ -3896,7 +3899,7 @@ def run_api_server(api_key: str = None, port: int = 5000):
                 mentor_list = [
                     'OCEANIS 46.1','OCEANIS 473','ClubSwan 50','Grand Soleil 42 Long Cruise','Laser','J/24','J/70',
                     'Melges 32','FAREAST 28R','Hanse 458','FIRST 36.7','Dehler 38','RS 21','Farr 40','Solaris 44',
-                    'Sun Fast 3300','TP52','X–35 One Design','Xp 44','SWAN 41'
+                    'Sun Fast 3300','TP52','X–35 One Design','Xp 44','Nautor Swan 48'
                 ]
                 logger.info(f"Using default mentor list: {len(mentor_list)} entries")
 
