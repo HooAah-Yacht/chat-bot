@@ -668,7 +668,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
                 return self._suggest_pdf_upload()
             
             # 요트 분석 의도가 명확한 경우
-            if any(keyword in user_message_lower for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석']):
+            if any(keyword in user_message_lower for keyword in ['분석', '분석해줘', '분석해주세요', '상세 분석', '데이터 분석', '요트 분석', '요약', '요약해줘']):
                 # 요트 이름이 포함되어 있으면 해당 요트 분석, 없으면 전체 분석 안내
                 yacht_name = self._extract_yacht_name_from_message(user_message)
                 if yacht_name:
@@ -843,8 +843,8 @@ PDF 파일 경로를 입력해주세요! 📎"""
         if any(keyword in message_lower for keyword in engine_keywords):
             return self._format_yacht_engine_info(yacht)
         
-        # 4. 정비/유지보수 질문 ✨ 새로 추가
-        maintenance_keywords = ['정비', '유지보수', '관리', '점검', '교체', '주기', 'maintenance', 'repair', 'service', '고장', '수리', '언제']
+        # 4. 정비/유지보수 질문 ✨ 새로 추가 (구체적인 키워드만)
+        maintenance_keywords = ['정비', '유지보수', 'maintenance', '정비 주기', '점검 주기', '교체 주기', '관리 주기', '정비 일정']
         if any(keyword in message_lower for keyword in maintenance_keywords):
             return self._format_yacht_maintenance_info(yacht, yacht_name)
         
@@ -2880,7 +2880,7 @@ PDF 파일 경로를 입력해주세요! 📎"""
             # 치수/성능
             '치수 및 성능 분석': ['치수', '크기', '스펙', 'spec', 'dimension', '성능', 'performance', '크기정보', '치수정보'],
             # 선체/구조
-            '선체/구조 요약': ['선체', 'hull', '구조', 'structure', '헐'],
+            '선체/구조 요약': ['선체', 'hull', '구조', 'structure', '헐', '선체세부', '선체항목'],
             # 부품
             '부품 구성 및 정비 주기 분석': ['부품', '파트', 'rigging', '윈치', 'parts', '컴포넌트', 'component', '스페어', 'spare'],
             # 적합성
