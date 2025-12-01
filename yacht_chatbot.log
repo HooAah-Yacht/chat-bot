@@ -121,3 +121,31 @@
 2025-12-01 19:03:27,370 [INFO] werkzeug:  * Debugger PIN: 797-382-766
 2025-12-01 19:03:31,742 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\chatbot_unified.py', reloading
 2025-12-01 19:03:31,950 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 19:03:33,764 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 19:03:33,766 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 19:07:07,429 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.95.136:5000
+2025-12-01 19:07:07,429 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-12-01 19:07:07,430 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 19:07:08,767 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 19:07:08,771 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 19:07:32,757 [INFO] YachtChatbot: Chat request - Session: default, Message: Nautor Swan 48 치수...
+2025-12-01 19:07:32,791 [INFO] YachtChatbot: Chat response completed in 0.03s
+2025-12-01 19:07:32,791 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:07:32] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:07:40,508 [INFO] YachtChatbot: Chat request - Session: default, Message: OCEANIS 46.1 엔진...
+2025-12-01 19:07:40,508 [INFO] YachtChatbot: Chat response completed in 0.00s
+2025-12-01 19:07:40,510 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:07:40] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:07:48,537 [INFO] YachtChatbot: Chat request - Session: default, Message: Farr 40 정비...
+2025-12-01 19:07:48,537 [INFO] YachtChatbot: Chat response completed in 0.00s
+2025-12-01 19:07:48,537 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:07:48] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:07:57,882 [INFO] YachtChatbot: Chat request - Session: default, Message: Farr 40 선체 세부 항목 요약해줘...
+2025-12-01 19:08:14,076 [INFO] YachtChatbot: Chat response completed in 16.19s
+2025-12-01 19:08:14,077 [INFO] werkzeug: 127.0.0.1 - - [01/Dec/2025 19:08:14] "POST /api/chat HTTP/1.1" 200 -
+2025-12-01 19:11:13,840 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\list_all_yachts.py', reloading
+2025-12-01 19:11:16,231 [INFO] werkzeug:  * Restarting with stat
+2025-12-01 19:11:19,452 [WARNING] werkzeug:  * Debugger is active!
+2025-12-01 19:11:19,456 [INFO] werkzeug:  * Debugger PIN: 797-382-766
+2025-12-01 19:12:34,569 [INFO] werkzeug:  * Detected change in 'c:\\Users\\user\\Documents\\Yacht2\\chat-bot\\verify_all_fixes.py', reloading
+2025-12-01 19:12:34,824 [INFO] werkzeug:  * Restarting with stat
